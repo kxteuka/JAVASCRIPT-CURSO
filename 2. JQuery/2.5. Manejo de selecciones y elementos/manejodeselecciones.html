@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      li {
+        cursor: pointer;
+      }
+    </style>
+    <title>Proyecto Web</title>
+    <script src="/.js/libs/jquery/jquery.js"></script>
+    <script>
+      $().ready(function () {
+        $(":button").click(function () {
+            console.log($("li").text());
+            console.log($("#lista_mono").val());
+            //Cambiar el color de fondo de la lista
+            $("#lista_mono").css("background-color", "#0000ff");
+          $(":checkbox:checked").each(function () {
+            console.log($(this).val());
+          });
+        });
+        $("li").click(function () {
+          //Indice respecto de li dentro de form
+          console.log(
+            "Sin argumento: " +
+              $(this).text() +
+              " en posicion: " +
+              $(this).index()
+          );
+        });
+        $("li").click(function () {
+          //Indice respecto de li dentro de la pagina
+          var $elemento = $(this);
+          console.log(
+            "Indice respecto de li: " +
+              $elemento.text() +
+              " en posicion: " +
+              $("li").index($elemento)
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <form>
+      <li><input type="checkbox" name="opciones" value="0" />0<br /></li>
+      <li><input type="checkbox" name="opciones" value="1" />1<br /></li>
+      <li><input type="checkbox" name="opciones" value="2" />2<br /></li>
+      <li><input type="checkbox" name="opciones" value="3" />3<br /></li>
+      <select id="lista_mono">
+        <option>Opcion 1</option>
+        <option>Opcion 2</option>
+      </select>
+      <input type="button" value="Validar" />
+    </form>
+  </body>
+</html>

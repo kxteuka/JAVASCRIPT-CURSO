@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      div {
+        background-color: white;
+        border: 5px solid gray;
+      }
+      .seleccionado {
+        background-color: yellow;
+      }
+      .seleccionado2 {
+        background-color: red;
+      }
+      .seleccionado3 {
+        background-color: blueviolet;
+      }
+    </style>
+    <title>Proyecto Web</title>
+    <script src="/.js/libs/jquery/jquery.js"></script>
+    <script>
+      $().ready(function () {
+        $('#padre').find('p').addClass('seleccionado3'); 
+        $("#hijo").parent().addClass("seleccionado");
+        $("#nieto").parentsUntil("#padre").addClass("seleccionado2");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="bisabuelo" class="capa">
+      BISABUELO
+      <div id="abuelo">
+        ABUELO
+        <div id="padre">
+          PADRE
+          <div id="hijo">
+            HIJO
+            <div id="nieto">NIETO</div>
+            <p>Hola</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

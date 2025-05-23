@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Proyecto Web</title>
+    <script src="/.js/libs/jquery/jquery.js"></script>
+    <script>
+      $(function () {
+        $("button").click(function () {
+          $("#parrafo").text("Seleccion por ID");
+          $(".estilo").text("Seleccion por estilo");
+          $(".filas").text("Filas que no son la 0");
+          $('[name="saludos"]').text("Seleccion por atributo");
+          $("div:has(table)").css({ "background-color": "#ffff12" });
+          $("tr:first").css({ "background-color": "#ff0000" });
+          $("tr:eq(2)").css({ "background-color": "#0000ff" });
+          $("tr:odd").css({ "background-color": "#00ff00" });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button>Cambiar texto y fondo</button>
+    <div>
+      <p id="parrafo">Hola que tal</p>
+      <p class="estilo">Esto se va a cambiar</p>
+      <p name="saludos">Buenos días</p>
+      <p name="saludos">Buenas tardes</p>
+      <p name="saludos">Buenas noches</p>
+    </div>
+    <div>
+      <table border="1">
+        <tr class="estilo">
+          <td>Fila 0</td>
+        </tr>
+        <tr class="filas">
+          <td>Fila 1</td>
+        </tr>
+        <tr class="filas">
+          <td>Fila 2</td>
+        </tr>
+        <tr class="filas">
+          <td>Fila 3</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

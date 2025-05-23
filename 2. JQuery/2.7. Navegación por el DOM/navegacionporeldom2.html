@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+      .sel {
+        background-color: seagreen;
+      }
+      .nosel {
+        background-color: white;
+      }
+    </style>
+    <script src="/.js/libs/jquery/jquery.js"></script>
+    <script>
+      $().ready(function () {
+        $("#btn_primero").click(function (event) {
+          $("ol li").removeClass("sel");
+          $("ol li").first().addClass("sel");
+        });
+        $("#btn_ultimo").click(function (event) {
+          $("ol li").removeClass("sel");
+          $("ol li").last().addClass("sel");
+        });
+        $("#btn_tercero").click(function (event) {
+          $("ol li").removeClass("sel");
+          $("ol li").eq(3).addClass("sel");
+        });
+        $("#btn_siguiente").click(function (event) {
+          $("ol li").removeClass("sel");
+          $("ol li").eq(3).next().addClass("sel");
+        });
+        $("#btn_anterior").click(function (event) {
+          $("ol li").removeClass("sel");
+          $("ol li").eq(3).prev().addClass("sel");
+        });
+        $("#btn_todos_siguientes").click(function (event) {
+          $("ol li").removeClass("sel");
+          $("ol li").eq(3).nextAll().addClass("sel");
+        });
+        $("#btn_todos_ultimos").click(function (event) {
+          $("ol li").removeClass("sel");
+          $("ol li").eq(3).prevAll().addClass("sel");
+        });
+        $("#btn_pares").click(function (event) {
+          $("ol li").removeClass("sel");
+          $("ol li:odd").addClass("sel");
+        });
+        $("#btn_impares").click(function (event) {
+          $("ol li").removeClass("sel");
+          $("ol li:even").addClass("sel");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <ol>
+      <li>A</li>
+      <li>B</li>
+      <li>C</li>
+      <li>D</li>
+      <li>E</li>
+      <li>F</li>
+      <li>G</li>
+    </ol>
+    <button id="btn_primero">PRIMERO</button><br />
+    <button id="btn_ultimo">ULTIMO</button><br />
+    <button id="btn_tercero">TERCERA OPCION</button><br />
+    <button id="btn_siguiente">SIGUIENTE AL 3</button><br />
+    <button id="btn_anterior">ANTERIOR AL 3</button><br />
+    <button id="btn_todos_siguientes">TODOS SIGUIENTES AL 3</button><br />
+    <button id="btn_todos_ultimos">TODOS ANTERIORES AL 3</button><br />
+    <button id="btn_pares">PARES</button><br />
+    <button id="btn_impares">IMPARES</button><br />
+  </body>
+</html>
