@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="/.js/libs/jquery/jquery.js"></script>
+    <script>
+      $().ready(function () {
+            $('button').click(function(event) {
+                var color = $(this).data('color');
+                $('body').css({'background-color':color}); 
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <button id="btn_azul" data-color="#0000FF">AZUL</button>
+      <button id="btn_verde" data-color="#00FF00">VERDE</button>
+      <button id="btn_rojo" data-color="#FF0000">ROJO</button>
+      <button id="btn_morado" data-color="#800080">MORADO</button>
+    </div>
+  </body>
+</html>

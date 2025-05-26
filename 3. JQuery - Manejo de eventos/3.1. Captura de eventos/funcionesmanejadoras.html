@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="/.js/libs/jquery/jquery.js"></script>
+    <script>
+      $().ready(function () {
+        function manejadora(event) {
+          if (event.target.id === "btn_azul") {
+            $("body").css({ "background-color": "blue" });
+          } else if (event.target.id === "btn_verde") {
+            $("body").css({ "background-color": "green" });
+          } else if (event.target.id === "btn_morado") {
+            $("body").css({ "background-color": "purple" });
+          } else if (event.target.id === "btn_rojo") {
+            $("body").css({ "background-color": "red" });
+          }
+        }
+        $("#btn_azul").click(manejadora);
+        $("#btn_rojo").click(manejadora);
+        $("#btn_verde").click(manejadora);
+        $("#btn_morado").click(manejadora);
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <button id="btn_azul">AZUL</button>
+      <button id="btn_verde">VERDE</button>
+      <button id="btn_rojo">ROJO</button>
+      <button id="btn_morado">MORADO</button>
+    </div>
+  </body>
+</html>

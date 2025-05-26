@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+      li {
+        cursor: pointer;
+      }
+      .rojo {
+        color: red;
+      }
+      .azul {
+        color: blue;
+      }
+      .amarillo {
+        color: yellow;
+      }
+      .morado {
+        color: purple;
+      }
+    </style>
+    <script src="/.js/libs/jquery/jquery.js"></script>
+    <script>
+      $().ready(function () {
+        $("#btn_opcion_rojo").click(function (event) {
+          $("ul").append(
+            $("<li>", { text: "OPCION ROJO", class: "rojo" }).click(function (
+              event
+            ) {
+              console.log("ROJO");
+            })
+          );
+        });
+        $("#btn_opcion_azul").click(function (event) {
+          $("ul").append(
+            $("<li>", { text: "OPCION AZUL", class: "azul" }).on(
+              "click",
+              function (event) {
+                console.log("AZUL");
+              }
+            )
+          );
+        });
+        $("#btn_opcion_amarillo").click(function (event) {
+          $("ul").append(
+            $("<li>", { text: "OPCION AMARILLO", class: "amarillo" }).on(
+              "click",
+              function (event) {
+                console.log("AMARILLO");
+              }
+            )
+          );
+        });
+        $("#btn_opcion_morado").click(function (event) {
+          $("ul").append(
+            $("<li>", { text: "OPCION MORADO", class: "morado" }).on(
+              "click",
+              function (event) {
+                console.log("MORADO");
+              }
+            )
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="btn_opcion_azul">OPCION AZUL</button>
+    <button id="btn_opcion_rojo">OPCION ROJO</button>
+    <button id="btn_opcion_amarillo">OPCION AMARILLO</button>
+    <button id="btn_opcion_morado">OPCION MORADO</button>
+    <ul></ul>
+  </body>
+</html>
