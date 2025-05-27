@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+      #imagen {
+        position: relative;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $().ready(function () {
+        function MoverArriba() {
+          $("#imagen").css("top", "-=1px");
+        }
+        function MoverAbajo() {
+          $("#imagen").css("top", "+=1px");
+        }
+        function MoverIzquierda() {
+          $("#imagen").css("left", "-=1px");
+        }
+        function MoverDerecha() {
+          $("#imagen").css("left", "+=1px");
+        }
+        $("#arriba").click(function () {
+          MoverArriba();
+        });
+        $("#abajo").click(function () {
+          MoverAbajo();
+        });
+        $("#izquierda").click(function () {
+          MoverIzquierda();
+        });
+        $("#derecha").click(function () {
+          MoverDerecha();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="arriba">Arriba</button>
+    <button id="abajo">Abajo</button>
+    <button id="izquierda">Izquierda</button>
+    <button id="derecha">Derecha</button>
+    <br />
+    <img id="imagen" src="tierra.jpg" />
+  </body>
+</html>
