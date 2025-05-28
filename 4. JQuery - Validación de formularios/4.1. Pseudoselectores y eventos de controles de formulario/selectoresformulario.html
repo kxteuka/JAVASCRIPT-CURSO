@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        var $valores = $("input:text");
+        var $resultado = $("#resultado");
+        $valores.focus(function () {
+          $(this).css("background-color", "blue");
+        });
+        $valores.blur(function () {
+          $(this).css("background-color", "white");
+        });
+        $resultado.focus(function () {
+          $(this).css("background-color", "red");
+        });
+        $resultado.blur(function () {
+            $(this).css("background-color", "white");
+          $(this).css("border", "2px solid green");
+        });
+        $("input:button").click(function () {
+          var sumatorio = 0;
+          $valores.each(function () {
+            sumatorio += parseInt($(this).val());
+            $resultado.val(sumatorio);
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <form>
+      valor1: <input type="text" /><br />
+      valor2: <input type="text" /><br />
+      valor3: <input type="text" /><br />
+      <input type="button" value="calculo" />
+      resultado: <input type="number" id="resultado" readonly />
+    </form>
+  </body>
+</html>

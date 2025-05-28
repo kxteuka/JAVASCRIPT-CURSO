@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $().ready(function () {
+        $("#confirmarpago").click(function () {
+          comprobarRegistro();
+        });
+      });
+
+      function comprobarRegistro() {
+        var idiomaseleccionado = $("#idiomas option:selected").text();
+        var metodoPago = $("#metodosPago option:selected").text();
+        if (metodoPago) {
+          alert(
+            "Se ha completado el registro. Has seleccionado el idioma: " +
+              idiomaseleccionado +
+              ". Metodo de pago: " +
+              metodoPago +
+              "."
+          );
+        } else {
+          alert("No has seleccionado ningun metodo de pago");
+        }
+      }
+    </script>
+    <title>Insert title here</title>
+  </head>
+  <body>
+    <h2>Escuela de idiomas</h2>
+    <div>
+      <form>
+        Seleccione el idioma:
+        <select id="idiomas">
+          <option value="0">Castellano</option>
+          <option value="1">Ingles</option>
+          <option value="2">Euskera</option>
+          <option value="3">Frances</option>
+        </select>
+        Metodo de pago:
+        <select id="metodosPago">
+          <option value="0">Efectivo</option>
+          <option value="1">Tarjeta de credito</option>
+          <option value="2">Transferencia bancaria</option>
+          <option value="3">Paypal</option>
+        </select>
+      </form>
+    </div>
+    <br />
+    <input id="confirmarpago" type="button" value="Confirmar registro" />
+  </body>
+</html>

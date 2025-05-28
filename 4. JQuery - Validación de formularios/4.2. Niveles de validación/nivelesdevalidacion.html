@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Validación de Formulario</title>
+    <style>
+      .error {
+        border-color: red;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        function verificarUsuario() {
+          var usuario = $("#usuario").val();
+          if (usuario.length < 4) {
+            $("#usuario").addClass("error");
+            $("#usuario")
+              .get(0)
+              .setCustomValidity(
+                "El usuario debe tener al menos 4 caracteres."
+              );
+            return false;
+          } else {
+            $("#usuario").removeClass("error");
+            $("#usuario").get(0).setCustomValidity("");
+            return true;
+          }
+        }
+
+        function verificarContraseña() {
+          var contraseña = $("#contraseña").val();
+          var regex =
+            /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,20}$/;
+          if (!regex.test(contraseña)) {
+            $("#contraseña").addClass("error");
+            $("#contraseña")
+              .get(0)
+              .setCustomValidity(
+                "La contraseña debe tener entre 5 y 20 caracteres, incluir al menos una mayúscula, un número y un carácter especial."
+              );
+
+            return false;
+          } else {
+            $("#contraseña").removeClass("error");
+            $("#contraseña").get(0).setCustomValidity("");
+            return true;
+          }
+        }
+
+        function validarFormulario() {
+          var usuarioValido = verificarUsuario();
+          var contraseñaValida = verificarContraseña();
+
+          if (usuarioValido && contraseñaValida) {
+            alert("Bienvenido.");
+          }
+        }
+
+        $("#miformulario").submit(function (event) {
+          validarFormulario();
+          if (!verificarUsuario() || !verificarContraseña()) {
+            event.preventDefault();
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <form name="miformulario" id="miformulario" method="get">
+      <input
+        type="text"
+        name="usuario"
+        id="usuario"
+        placeholder="Usuario"
+        required
+      />
+      <br />
+      <input
+        type="text"
+        name="contraseña"
+        id="contraseña"
+        placeholder="Contraseña"
+        required
+      />
+      <br />
+      <input type="submit" value="Iniciar sesión" />
+    </form>
+  </body>
+</html>
