@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Validación de Formulario</title>
+    <style></style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        function validarVacio() {
+          var nombre = $("#comprador").val();
+          if (nombre === "") {
+            alert("El campo de nombre no puede estar vacío.");
+            return false;
+          }
+          return true;
+        }
+
+        function validarValor() {
+          var peso = parseFloat($("#peso").val());
+          if (isNaN(peso) || peso <= 0.0 || peso > 10.0) {
+            alert("El peso debe ser un número entre 1 y 10.");
+            return false;
+          }
+          return true;
+        }
+
+        function validarSeleccion() {
+          var frutaSeleccionada = $("#frutas").val();
+          if (frutaSeleccionada === "") {
+            alert("Debe seleccionar una fruta.");
+            return false;
+          }
+          return true;
+        }
+
+        function calcular() {
+          if (validarVacio() && validarValor() && validarSeleccion()) {
+            var frutaSeleccionada = $("#frutas").val();
+            var peso = parseFloat($("#peso").val());
+            var formaPago = $("#pago").val();
+            var precioPorKilo = {
+              naranjas: 3.0,
+              manzanas: 2.5,
+              limones: 2.25,
+              tomates: 4.25,
+            };
+            var descuento = 0;
+
+            if (peso > 5.0) {
+              if (formaPago === "visa") {
+                descuento = 0.04;
+              } else if (formaPago === "mastercard") {
+                descuento = 0.025;
+              }
+            }
+
+            var total =
+              peso * precioPorKilo[frutaSeleccionada] * (1 - descuento);
+            alert(
+              "El total a pagar por " +
+                peso +
+                " kg de " +
+                frutaSeleccionada +
+                " es: " +
+                total.toFixed(2) +
+                " €"
+            );
+          }
+        }
+
+        $("form").submit(function (event) {
+          event.preventDefault();
+          calcular();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Frutería Online</h1>
+    <form>
+      <p>Introduzca su nombre:</p>
+      <input
+        type="text"
+        id="comprador"
+        placeholder="Nombre del Comprador"
+        required
+      />
+      <br /><br />
+      <select id="frutas" required>
+        <option value="">Seleccione la fruta que desee</option>
+        <option value="naranjas">Naranjas</option>
+        <option value="manzanas">Manzanas</option>
+        <option value="limones">Limones</option>
+        <option value="tomates">Tomates</option>
+      </select>
+      <p>Forma de pago:</p>
+      <select id="pago" required>
+        <option value="visa">VISA</option>
+        <option value="mastercard">MASTERCARD</option>
+      </select>
+      <p>Introduzca el peso que desea comprar:</p>
+      <input
+        type="number"
+        id="peso"
+        placeholder="Peso en kg"
+        min="1"
+        max="10"
+        step="0.01"
+        style="width: 100px"
+        required
+      />
+      <button type="submit">Calcular</button>
+    </form>
+  </body>
+</html>
