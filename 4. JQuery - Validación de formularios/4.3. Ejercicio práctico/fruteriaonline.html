@@ -46,6 +46,8 @@
               tomates: 4.25,
             };
             var descuento = 0;
+            var total =
+              peso * precioPorKilo[frutaSeleccionada] * (1 - descuento);
 
             if (peso > 5.0) {
               if (formaPago === "visa") {
@@ -55,8 +57,6 @@
               }
             }
 
-            var total =
-              peso * precioPorKilo[frutaSeleccionada] * (1 - descuento);
             alert(
               "El total a pagar por " +
                 peso +
