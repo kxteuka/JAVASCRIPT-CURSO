@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- Libreria JQuery comprimida -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Tema 'base' para JQueryUI -->
+    <link
+      href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css"
+      rel="stylesheet"
+    />
+    <!-- Libreria JQueryUI comprimida -->
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        var widget_spinner = $("#spinner").spinner();
+        $("#select").selectmenu({
+          width: 200,
+          icons: { button: "ui-icon-triangle-1-s" },
+        });
+      });
+    </script>
+  </head>
+  <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+    <p>
+      <label for="spinner">Select a value:</label><br />
+      <input id="spinner" name="value" />
+    </p>
+
+    <p>
+      <label for="select">Choose an option:</label><br />
+      <select id="select" name="value">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+      </select>
+    </p>
+  </body>
+</html>
