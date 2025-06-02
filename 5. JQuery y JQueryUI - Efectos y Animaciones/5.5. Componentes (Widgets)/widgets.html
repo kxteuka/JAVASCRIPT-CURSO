@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejemplo jQuery UI</title>
+    <style>
+      .ui-menu {
+        width: 300px;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link
+      href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        $("#spinner").spinner({
+          min: 5,
+          max: 2500,
+          step: 25,
+        });
+        $("#accordion").accordion();
+        $("#tabs").tabs();
+        var cuadro_dialogo = $("#dialogo").dialog({
+          autoOpen: false,
+          height: "auto",
+          width: "auto",
+          modal: true,
+          buttons: {
+            Registrar: function () {
+              console.log("Nombre: " + $("#nombre").val());
+              console.log("Mail: " + $("#correo").val());
+              $(this).dialog("close");
+            },
+          },
+        });
+        $("#boton").click(function () {
+          cuadro_dialogo.dialog("open");
+        });
+        $("#menu").menu({
+          select: function (event, ui) {
+            console.log(ui.item.text());
+          },
+        });
+        $("#select").selectmenu();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1">Explicación</a></li>
+        <li><a href="#tabs-2">Ejemplo de Spinner</a></li>
+        <li><a href="#tabs-3">Ejemplo de Dialog</a></li>
+        <li><a href="#tabs-4">Ejemplo de Menu</a></li>
+        <li><a href="#tabs-5">Ejemplo de Select</a></li>
+      </ul>
+      <div id="tabs-1">
+        <div id="accordion">
+          <h3>Spinner</h3>
+          <div>
+            <p>
+              El widget Spinner permite seleccionar un valor numérico dentro de
+              un rango definido. Puedes incrementar o decrementar el valor
+              usando las flechas o escribiendo directamente en el campo.
+            </p>
+          </div>
+          <h3>Accordion</h3>
+          <div>
+            <p>
+              El widget Accordion permite mostrar contenido en secciones que se
+              pueden expandir y contraer.
+            </p>
+          </div>
+          <h3>Dialog</h3>
+          <div>
+            <p>
+              El widget Dialog permite mostrar un cuadro de diálogo
+              customizable, donde podemos mostrar avisos o hacer formularios,
+              por ejemplo.
+            </p>
+          </div>
+          <h3>Menu</h3>
+          <div>
+            <p>
+              El widget Menu permite crear un menú de navegación con opciones
+              que pueden ser seleccionadas por el usuario.
+            </p>
+          </div>
+          <h3>Select</h3>
+          <div>
+            <p>
+              El widget Select permite crear un menú desplegable para
+              seleccionar una opción de una lista predefinida.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="tabs-2">
+        <p>
+          <label for="spinner">Spinner:</label>
+          <input id="spinner" name="value" />
+        </p>
+      </div>
+      <div id="tabs-3">
+        <input id="boton" type="button" value="Mostrar cuadro de diálogo" />
+      </div>
+      <div id="tabs-4">
+        <ul id="menu">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Acerca de</a></li>
+          <li>
+            <a href="#" class="ui-state-disabled">Ayuda (deshabilitado)</a>
+          </li>
+        </ul>
+      </div>
+      <div id="tabs-5">
+        <select id="select" name="select">
+          <option value="opcion1">Opción 1</option>
+          <option value="opcion2">Opción 2</option>
+          <option value="opcion3">Opción 3</option>
+        </select>
+      </div>
+      <div id="dialogo" title="Nuevo usuario" style="display: none">
+        <form>
+          <label for="nombre">Nombre</label><br />
+          <input type="text" id="nombre" /><br />
+          <label for="correo">Correo</label><br />
+          <input type="email" id="correo" /><br />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
