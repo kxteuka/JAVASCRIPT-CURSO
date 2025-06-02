@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo jQuery-ui</title>
+	<link href="css/estilo1.css" rel="stylesheet">
+	<link href="css/redmond/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery-ui-1.10.4.custom.js"></script>
+	
+	
+	
+	<script>
+    
+              // Traducción al español
+$(function($){
+    $.datepicker.regional['es'] = {
+        closeText: 'Cerrar',
+        prevText: '<Ant',
+        nextText: 'Sig>',
+        currentText: 'Hoy',
+        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+        dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        weekHeader: 'Sm',
+        dateFormat: 'dd/mm/yy',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: ''
+    };
+    $.datepicker.setDefaults($.datepicker.regional['es']);
+});
+
+    
+    
+		 $(function() {
+			$( "#datepicker" ).datepicker({
+			 
+              onSelect: function () {
+            var dia = $("#datepicker").datepicker('getDate').getDate();                 
+            var mes = $("#datepicker").datepicker('getDate').getMonth() + 1;             
+            var any = $("#datepicker").datepicker('getDate').getFullYear();
+            var fullDate = "<label>Fecha</label><input type='text' name='fecha' value='" + dia + "-" + mes + "-" + any+ "' id='datepicker2'/>";
+            $('#fecha').html(fullDate);
+
+            }
+
+			});
+			
+		  });
+          
+
+$(function() {
+			$( "#datepicker2" ).datepicker();
+			
+		  });
+
+
+
+	</script>
+
+</head>
+<body>
+<header>
+
+<h1>Página de ejemplo construida con jQuery-ui</h1>
+<nav>
+<ul>
+<li><a href='index.html'>Inicio</a></li>
+<li><a href='info.html'>Información</a></li>
+<li><a href='reservas.html'>Reservas</a></li>
+<li><a href='contacto.html'>Contacto</a></li>
+</ul>
+</nav>
+
+</header>
+
+<section id='col1'>
+
+<h2>Selecciona una fecha para hacer tu reserva:</h2>
+<div id="datepicker"></div>
+ 
+ 
+ 
+</section>
+
+<section id='col2'>
+<form action='' method='post' />
+<div id="fecha">
+
+<label>Fecha</label>
+<input type="text" name="fecha" id='datepicker2'/>
+
+</div>
+
+<label>Cantidad de personas</label>
+<input type="text" name="cantidad" />
+<br />
+<label>Email</label>
+<input type="text" name="email" />
+<br />
+<input type="submit" value="Envia" />
+
+</form>
+ </section> 
+  
+<footer>
+    <p>Cipsa (2014)</p>
+    <p>Curso de programación web</p>
+</footer>
+
+
+</body>
+</html>
