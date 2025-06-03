@@ -1,24 +1,17 @@
 {
+  "version": "0.2.0",
 
-    "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "msedge",
 
-    "configurations": [
+      "request": "attach",
 
-      {
+      "name": "Attach to Edge",
 
-        "type": "msedge",
+      "port": 9222,
 
-        "request": "attach",
-
-        "name": "Attach to Edge",
-
-        "port": 9222,
-
-        "webRoot": "${workspaceFolder}"
-
-      }
-
-    ]
-
-  }
- 
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}
