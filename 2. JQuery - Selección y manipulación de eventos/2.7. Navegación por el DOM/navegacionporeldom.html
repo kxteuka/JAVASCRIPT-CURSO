@@ -18,14 +18,6 @@
       }
     </style>
     <title>Proyecto Web</title>
-    <script src="/.js/libs/jquery/jquery.js"></script>
-    <script>
-      $().ready(function () {
-        $('#padre').find('p').addClass('seleccionado3'); 
-        $("#hijo").parent().addClass("seleccionado");
-        $("#nieto").parentsUntil("#padre").addClass("seleccionado2");
-      });
-    </script>
   </head>
   <body>
     <div id="bisabuelo" class="capa">
@@ -42,5 +34,7 @@
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="navegacionporeldom.js"></script>
   </body>
 </html>

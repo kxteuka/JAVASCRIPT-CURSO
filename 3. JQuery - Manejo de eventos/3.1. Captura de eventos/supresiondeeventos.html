@@ -1,39 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
-    <title></title>
     <meta charset="utf-8" />
-    <script src="/.js/libs/jquery/jquery.js"></script>
-    <script>
-      $().ready(function () {
-        $("input:checkbox").change(function (event) {
-          if ($(this).prop("checked")) {
-            $("button").click(function (event) {
-              alert("BOTON PULSADO!");
-            });
-          } else {
-            $("button").off("click");
-          }
-        });
-        $("div").on({
-          mouseenter: function () {
-            alert("El puntero del ratón entra en la capa");
-          },
-          mouseleave: function () {
-            alert("El puntero del ratón sale de la capa");
-          },
-        });
-        $("body").on("click", function () {
-          alert("Registrado click en el cuerpo del documento");
-        });
-      });
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supresión de eventos</title>
   </head>
   <body>
     <div>
-      <input type="checkbox" />
-      EVENTO ACTIVO:
-      <button>ACCION</button>
+      <label>
+        <input type="checkbox" title="Activar evento" />
+        EVENTO ACTIVO:
+      </label>
+      <button type="button">ACCION</button>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="supresiondeeventos.js"></script>
   </body>
 </html>

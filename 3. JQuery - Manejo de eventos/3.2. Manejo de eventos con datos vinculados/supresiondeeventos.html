@@ -1,45 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
-    <title></title>
     <meta charset="utf-8" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $().ready(function () {
-        $("input:checkbox").change(function (event) {
-          if ($(this).prop("checked")) {
-            $("button").click(function (event) {
-              alert("BOTON PULSADO!");
-            });
-          } else {
-            $("button").off("click");
-          }
-        });
-        $("input:checkbox").eq(1).change(function (event) {
-          if ($(this).prop("checked")) {
-            $(document).mousemove(function (event) {
-              $("p#mouse-coordinates").text(
-                "Coordenadas del ratón: " + event.pageX + ", " + event.pageY
-              );
-            });
-          } else {
-            $(document).off("mousemove");
-            $("p#mouse-coordinates").text("");
-          }
-        });
-    });
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supresión de eventos con jQuery</title>
   </head>
   <body>
     <div>
-      <input type="checkbox" />
-      EVENTO ACTIVO:
-      <button>ACCION</button>
+      <label>
+        <input type="checkbox" title="Activar evento" />
+        EVENTO ACTIVO:
+      </label>
+      <button type="button">ACCION</button>
     </div>
     <div>
-      <input type="checkbox" />
-      ACTIVAR SEGUIMIENTO DEL RATÓN.
+      <label>
+        <input type="checkbox" title="Activar seguimiento del ratón" />
+        ACTIVAR SEGUIMIENTO DEL RATÓN.
+      </label>
     </div>
     <p id="mouse-coordinates"></p>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="supresiondeeventos.js"></script>
   </body>
 </html>

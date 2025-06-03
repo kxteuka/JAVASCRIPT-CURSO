@@ -1,91 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="utf-8">
-	<title>Ejemplo jQuery-ui</title>
-	<link href="css/estilo1.css" rel="stylesheet">
-	<link href="css/redmond/jquery-ui-1.10.4.custom.css" rel="stylesheet">
-	<script src="js/jquery-1.10.2.js"></script>
-	<script src="js/jquery-ui-1.10.4.custom.js"></script>
-	<script type="text/javascript" src="contactable-master/jquery.contactable.js"></script>
-	<link rel="stylesheet" href="contactable-master/contactable.css" type="text/css" />
-	
-	<script>
-	$(function(){
-		$('#my-contact-div').contactable(
-        {
-            subject: 'feedback URL:'+location.href,
-            header: 'Contacto',
-            url: 'mail.php',
-            name: 'Nombre',
-            email: 'Email',
-            dropdownTitle: 'Asunto',
-            dropdownOptions: ['General', 'Quiero recibir más información', 'Sugerencia'],
-            message : 'Mensaje',
-            submit : 'ENVIA',
-            recievedMsg : 'Gracias por tu mensaje',
-            notRecievedMsg : 'Lo siento pero tu mensaje no se ha podido enviar, vuelve a intentarlo',
-            footer: 'Ponte en contacto con nosotros, valoramos tu opinión',
-            hideOnSubmit: true
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejemplo jQuery-ui</title>
+    <link href="css/estilo1.css" rel="stylesheet" />
+    <link href="css/redmond/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.js"></script>
+    <script
+      type="text/javascript"
+      src="contactable-master/jquery.contactable.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="contactable-master/contactable.css"
+      type="text/css"
+    />
+
+    <script>
+      $(function () {
+        $("#my-contact-div").contactable({
+          subject: "feedback URL:" + location.href,
+          header: "Contacto",
+          url: "mail.php",
+          name: "Nombre",
+          email: "Email",
+          dropdownTitle: "Asunto",
+          dropdownOptions: [
+            "General",
+            "Quiero recibir más información",
+            "Sugerencia",
+          ],
+          message: "Mensaje",
+          submit: "ENVIA",
+          recievedMsg: "Gracias por tu mensaje",
+          notRecievedMsg:
+            "Lo siento pero tu mensaje no se ha podido enviar, vuelve a intentarlo",
+          footer: "Ponte en contacto con nosotros, valoramos tu opinión",
+          hideOnSubmit: true,
         });
-	});	
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Página de ejemplo construida con jQuery-ui</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="info.html">Información</a></li>
+          <li><a href="reservas.html">Reservas</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="my-contact-div"><!-- contactable html placeholder --></div>
+    <section id="col1">
+      <h2>Dónde estamos?</h2>
 
-	
-	</script>
-   
-    
-    
+      <iframe
+        width="425"
+        height="350"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.es/maps?f=q&amp;source=s_q&amp;hl=ca&amp;geocode=&amp;q=cipsa.net&amp;aq=&amp;sll=41.692248,1.745868&amp;sspn=2.27238,3.02124&amp;ie=UTF8&amp;hq=cipsa.net&amp;hnear=&amp;ll=41.383588,2.156884&amp;spn=0.008919,0.011802&amp;t=m&amp;z=14&amp;iwloc=A&amp;cid=11326271419755837507&amp;output=embed"
+      ></iframe
+      ><br /><small
+        ><a
+          href="https://maps.google.es/maps?f=q&amp;source=embed&amp;hl=ca&amp;geocode=&amp;q=cipsa.net&amp;aq=&amp;sll=41.692248,1.745868&amp;sspn=2.27238,3.02124&amp;ie=UTF8&amp;hq=cipsa.net&amp;hnear=&amp;ll=41.383588,2.156884&amp;spn=0.008919,0.011802&amp;t=m&amp;z=14&amp;iwloc=A&amp;cid=11326271419755837507"
+          style="color: #0000ff; text-align: left"
+          >Mostra un mapa més gran</a
+        ></small
+      >
+    </section>
 
-</head>
-<body>
-<header>
+    <section id="col2">
+      <h3>CIPSA - Centro Informàtica Profesional</h3>
+      <p>C/ Comte d'Urgell, 100</p>
+      <p>08011 Barcelona</p>
+      <p>934 26 50 87</p>
+    </section>
 
-<h1>Página de ejemplo construida con jQuery-ui</h1>
-<nav>
-<ul>
-<li><a href='index.html'>Inicio</a></li>
-<li><a href='info.html'>Información</a></li>
-<li><a href='reservas.html'>Reservas</a></li>
-<li><a href='contacto.html'>Contacto</a></li>
-</ul>
-</nav>
-
-</header>
-<div id="my-contact-div"><!-- contactable html placeholder --></div>
-<section id='col1'>
-<h2>Dónde estamos?</h2>
-
-
- 
- <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.es/maps?f=q&amp;source=s_q&amp;hl=ca&amp;geocode=&amp;q=cipsa.net&amp;aq=&amp;sll=41.692248,1.745868&amp;sspn=2.27238,3.02124&amp;ie=UTF8&amp;hq=cipsa.net&amp;hnear=&amp;ll=41.383588,2.156884&amp;spn=0.008919,0.011802&amp;t=m&amp;z=14&amp;iwloc=A&amp;cid=11326271419755837507&amp;output=embed"></iframe><br /><small><a href="https://maps.google.es/maps?f=q&amp;source=embed&amp;hl=ca&amp;geocode=&amp;q=cipsa.net&amp;aq=&amp;sll=41.692248,1.745868&amp;sspn=2.27238,3.02124&amp;ie=UTF8&amp;hq=cipsa.net&amp;hnear=&amp;ll=41.383588,2.156884&amp;spn=0.008919,0.011802&amp;t=m&amp;z=14&amp;iwloc=A&amp;cid=11326271419755837507" style="color:#0000FF;text-align:left">Mostra un mapa més gran</a></small>
- 
-</section>
-
-<section id='col2'>
-
-<h3>
-CIPSA - Centro Informàtica Profesional
-</h3>
-<p>
-C/ Comte d'Urgell, 100
-</p>
-<p>
-08011 Barcelona
-</p>
-<p>
-934 26 50 87
-</p>
-
-
-
- </section> 
-  
-<footer>
-    <p>Cipsa (2014)</p>
-    <p>Curso de programación web</p>
-    
-</footer>
-
-
-</body>
+    <footer>
+      <p>Cipsa (2014)</p>
+      <p>Curso de programación web</p>
+    </footer>
+  </body>
 </html>

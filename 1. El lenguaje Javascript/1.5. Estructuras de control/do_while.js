@@ -1,6 +1,6 @@
 var contraseña = "GHI";
-var clave; 
+var clave;
 do {
-	clave = prompt("Introduce la contraseña", ""); 
-    document.write("Constraseña correcta"); }
-while ( clave != contraseña)
+  clave = prompt("Introduce la contraseña", "");
+  document.write("Constraseña correcta");
+} while (clave != contraseña);

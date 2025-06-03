@@ -1,24 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
-    <title></title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $().ready(function () {
-        function manejadora(event) {
-          var color = event.data.color;
-          $("body").css({ "background-color": color });
-        }
-        $("#btn_azul").on("click", { color: "#0000ff" }, manejadora);
-        $("#btn_rojo").on("click", { color: "#ff0000" }, manejadora);
-        $("#btn_verde").on("click", { color: "#00ff00" }, manejadora);
-      });
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventos con Datos Vinculados</title>
   </head>
   <body>
-    <button id="btn_azul">AZUL</button>
-    <button id="btn_rojo">ROJO</button>
-    <button id="btn_verde">VERDE</button>
+    <button id="btn_azul" type="button">AZUL</button>
+    <button id="btn_rojo" type="button">ROJO</button>
+    <button id="btn_verde" type="button">VERDE</button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="eventoscondatosvinculados.js"></script>
   </body>
 </html>

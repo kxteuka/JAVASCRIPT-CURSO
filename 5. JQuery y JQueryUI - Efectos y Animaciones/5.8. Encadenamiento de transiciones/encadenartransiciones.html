@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
-    <title></title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encadenamiento de Transiciones</title>
     <style>
       #effect {
         width: 240px;
@@ -28,120 +29,29 @@
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
     />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-    <script>
-      $().ready(function () {
-        $("input:text")
-          .keydown(function (event) {
-            $(this).css({ "background-color": "yellow" });
-            $("#imagen").prop("src", "gato2.png");
-          })
-          .keyup(function (event) {
-            $(this).css({ "background-color": "white" });
-            $("#imagen").prop("src", "gato1.png");
-          })
-          .keypress(function (event) {
-            if (event.key == "Enter") {
-              var valor = document.getElementById("text").value;
-              $(this).css({ "background-color": "red" });
-              $("body").append("<p>" + valor + "</p>");
-              $("input:text").val("");
-            }
-          });
-        $("#imagen").mousedown(function (event) {
-          $("#imagen").parent().toggleClass("fondoimagen");
-          $("#coordenadas")
-            .text(event.pageX + ", " + event.pageY)
-            .animate(
-              {
-                width: "175px",
-                height: "100px",
-                backgroundColor: "#ff0000",
-                fontSize: "40px",
-              },
-              500,
-              function () {
-                $("#imagen").effect(
-                  "shake",
-                  {
-                    times: 3,
-                    distance: 20,
-                  },
-                  function () {
-                    alert("La imagen ha temblado");
-                  }
-                );
-              }
-            );
-        });
-        $("#imagen").mouseup(function (event) {
-          $("#coordenadas")
-            .text(event.pageX + ", " + event.pageY)
-            .animate(
-              {
-                width: "175px",
-                height: "150px",
-                backgroundColor: "#ffffff",
-                fontSize: "20px",
-              },
-              500,
-              function () {
-                $("#imagen").effect(
-                  "bounce",
-                  {
-                    times: 3,
-                    distance: 20,
-                  },
-                  function () {
-                    alert("La imagen ha rebotado");
-                  }
-                );
-              }
-            );
-        });
-        $("#ocultar").click(function (event) {
-          $("#imagen").hide("explode", { pieces: 50 }, 1000, function () {
-            alert("La imagen se ha ocultado");
-          });
-        });
-        $("#mostrar").click(function (event) {
-          $("#imagen").show("bounce", { times: 5 }, 1500, function () {
-            alert("La imagen se ha mostrado");
-          });
-        });
-        $("#pulsate").click(function (event) {
-          $("#imagen").effect("pulsate", { times: 3 }, 1000, function () {
-            alert("La imagen ha pulsado");
-            $("#coordenadas").effect(
-              "shake",
-              {
-                times: 3,
-                distance: 20,
-              },
-              function () {
-                alert("El texto ha temblado");
-              }
-            );
-          });
-        });
-        $("#añadirestilo").click(function (event) {
-          $("#imagen").addClass("newClass");
-        });
-        $("#eliminarestilo").click(function (event) {
-          $("#imagen").removeClass("newClass");
-        });
-      });
-    </script>
   </head>
   <body>
-    <img id="imagen" src="gato1.png" />
+    <img
+      id="imagen"
+      src="gato1.png"
+      alt="Imagen de un gato"
+      title="Imagen de un gato"
+    />
     <p id="coordenadas">0,0</p>
-    <input id="text" type="text" />
+    <label for="text">Texto:</label>
+    <input
+      id="text"
+      type="text"
+      placeholder="Introduce texto"
+      title="Introduce texto aquí"
+    />
     <input type="button" id="ocultar" value="Ocultar" />
     <input type="button" id="mostrar" value="Mostrar" />
     <input type="button" id="pulsate" value="Pulsar" />
     <input type="button" id="añadirestilo" value="Añadir estilo" />
     <input type="button" id="eliminarestilo" value="Eliminar estilo" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="encadenartransiciones.js"></script>
   </body>
 </html>

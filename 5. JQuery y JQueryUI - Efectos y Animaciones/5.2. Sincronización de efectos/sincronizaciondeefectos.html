@@ -1,49 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Sincronización de Efectos</title>
     <meta charset="utf-8" />
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $().ready(function () {
-        $("input:text")
-          .keydown(function (event) {
-            $(this).css({ "background-color": "yellow" });
-            $("#imagen").prop("src", "gato2.png");
-          })
-          .keyup(function (event) {
-            $(this).css({ "background-color": "white" });
-            $("#imagen").prop("src", "gato1.png");
-          })
-          .keypress(function (event) {
-            if (event.key == "Enter") {
-              var valor = document.getElementById("text").value;
-              $(this).css({ "background-color": "red" });
-              $("body").append("<p>" + valor + "</p>");
-              $("input:text").val("");
-            }
-          });
-        $("#imagen").mousedown(function (event) {
-          $("#coordenadas").text(event.pageX + ", " + event.pageY);
-        });
-        $("#ocultar").click(function (event) {
-          $("#imagen").fadeOut("slow", function () {
-            alert("La imagen se ha ocultado");
-          });
-        });
-        $("#mostrar").click(function (event) {
-          $("#imagen").show("slow", function () {
-            alert("La imagen se ha mostrado");
-          });
-        });
-      });
-    </script>
   </head>
   <body>
-    <img id="imagen" src="gato1.png" />
+    <img id="imagen" src="gato1.png" alt="Imagen de un gato" />
     <p id="coordenadas">0,0</p>
     <input id="text" type="text" />
     <input type="button" id="ocultar" value="Ocultar" />
     <input type="button" id="mostrar" value="Mostrar" />
+    <script src="sincronizaciondeefectos.js"></script>
   </body>
 </html>

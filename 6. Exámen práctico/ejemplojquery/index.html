@@ -1,120 +1,192 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="utf-8">
-	<title>Ejemplo jQuery-ui</title>
-	<link href="css/estilo1.css" rel="stylesheet">
-	<link href="css/redmond/jquery-ui-1.10.4.custom.css" rel="stylesheet">
-	<script src="js/jquery-1.10.2.js"></script>
-	<script src="js/jquery-ui-1.10.4.custom.js"></script>
-	
-	<!-- Enlaces nivoslider -->	
-    <link rel="stylesheet" href="nivo-slider/themes/default/default.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="nivo-slider/themes/light/light.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="nivo-slider/themes/dark/dark.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="nivo-slider/themes/bar/bar.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="nivo-slider/nivo-slider.css" type="text/css" media="screen" />
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejemplo jQuery-ui</title>
+    <link href="css/estilo1.css" rel="stylesheet" />
+    <link href="css/redmond/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.js"></script>
+
+    <!-- Enlaces nivoslider -->
+    <link
+      rel="stylesheet"
+      href="nivo-slider/themes/default/default.css"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="nivo-slider/themes/light/light.css"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="nivo-slider/themes/dark/dark.css"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="nivo-slider/themes/bar/bar.css"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="nivo-slider/nivo-slider.css"
+      type="text/css"
+      media="screen"
+    />
     <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-	<script type="text/javascript" src="nivo-slider/jquery.nivo.slider.js"></script>
- 	
-	
-	<script>
-	
-	 $(function() {
-		$( "#tabs" ).tabs();
-	  });
-	
-	$(function() {
-		$( "#accordion" ).accordion({
-		  collapsible: true
-		});
-	  });
-      
-     $(window).load(function() {
-       $('#slider').nivoSlider({
-            effect: 'fold',               // Specify sets like: 'fold,fade,sliceDown'
-            slices: 15,                     // For slice animations
-            boxCols: 8,                     // For box animations
-            boxRows: 4,                     // For box animations
-            animSpeed: 500,                 // Slide transition speed
-            pauseTime: 3000,                // How long each slide will show
-            startSlide: 0,                  // Set starting Slide (0 index)
-            directionNav: true,             // Next & Prev navigation
-            controlNav: true,               // 1,2,3... navigation
-            controlNavThumbs: false,        // Use thumbnails for Control Nav
-            pauseOnHover: true,             // Stop animation while hovering
-            manualAdvance: false,           // Force manual transitions
-            prevText: 'Prev',               // Prev directionNav text
-            nextText: 'Next',               // Next directionNav text
-            randomStart: false,             // Start on a random slide
-            beforeChange: function(){},     // Triggers before a slide transition
-            afterChange: function(){},      // Triggers after a slide transition
-            slideshowEnd: function(){},     // Triggers after all slides have been shown
-            lastSlide: function(){},        // Triggers when last slide is shown
-            afterLoad: function(){}         // Triggers when slider has loaded
+    <script
+      type="text/javascript"
+      src="nivo-slider/jquery.nivo.slider.js"
+    ></script>
+
+    <script>
+      $(function () {
+        $("#tabs").tabs();
+      });
+
+      $(function () {
+        $("#accordion").accordion({
+          collapsible: true,
         });
-    });  
+      });
 
-	
-	</script>
+      $(window).load(function () {
+        $("#slider").nivoSlider({
+          effect: "fold", // Specify sets like: 'fold,fade,sliceDown'
+          slices: 15, // For slice animations
+          boxCols: 8, // For box animations
+          boxRows: 4, // For box animations
+          animSpeed: 500, // Slide transition speed
+          pauseTime: 3000, // How long each slide will show
+          startSlide: 0, // Set starting Slide (0 index)
+          directionNav: true, // Next & Prev navigation
+          controlNav: true, // 1,2,3... navigation
+          controlNavThumbs: false, // Use thumbnails for Control Nav
+          pauseOnHover: true, // Stop animation while hovering
+          manualAdvance: false, // Force manual transitions
+          prevText: "Prev", // Prev directionNav text
+          nextText: "Next", // Next directionNav text
+          randomStart: false, // Start on a random slide
+          beforeChange: function () {}, // Triggers before a slide transition
+          afterChange: function () {}, // Triggers after a slide transition
+          slideshowEnd: function () {}, // Triggers after all slides have been shown
+          lastSlide: function () {}, // Triggers when last slide is shown
+          afterLoad: function () {}, // Triggers when slider has loaded
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Página de ejemplo construida con jQuery-ui</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="info.html">Información</a></li>
+          <li><a href="reservas.html">Reservas</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
 
-</head>
-<body>
-<header>
-
-<h1>Página de ejemplo construida con jQuery-ui</h1>
-<nav>
-<ul>
-<li><a href='index.html'>Inicio</a></li>
-<li><a href='info.html'>Información</a></li>
-<li><a href='reservas.html'>Reservas</a></li>
-<li><a href='contacto.html'>Contacto</a></li>
-</ul>
-</nav>
-
-</header>
-
-<div id="wrapper">
-       
-        <div class="slider-wrapper theme-default">
-            <div id="slider" class="nivoSlider">
-                <img src="images/toystory.jpg" data-thumb="images/toystory.jpg" alt="" title='primera imagen'/>
-                <img src="images/up.jpg" data-thumb="images/up.jpg" alt="" title="segunda imagen" />
-                <img src="images/walle.jpg" data-thumb="images/walle.jpg" alt="" data-transition="slideInLeft" title='tercera imagen' />
-                <img src="images/nemo.jpg" data-thumb="images/nemo.jpg" alt="" title="cuarta imagen" />
-            </div>
-            
+    <div id="wrapper">
+      <div class="slider-wrapper theme-default">
+        <div id="slider" class="nivoSlider">
+          <img
+            src="images/toystory.jpg"
+            data-thumb="images/toystory.jpg"
+            alt=""
+            title="primera imagen"
+          />
+          <img
+            src="images/up.jpg"
+            data-thumb="images/up.jpg"
+            alt=""
+            title="segunda imagen"
+          />
+          <img
+            src="images/walle.jpg"
+            data-thumb="images/walle.jpg"
+            alt=""
+            data-transition="slideInLeft"
+            title="tercera imagen"
+          />
+          <img
+            src="images/nemo.jpg"
+            data-thumb="images/nemo.jpg"
+            alt=""
+            title="cuarta imagen"
+          />
         </div>
-
+      </div>
     </div>
- 
 
-<div id="tabs">
-<ul>
-<li><a href="#tabs-1">Nunc tincidunt</a></li>
-<li><a href="#tabs-2">Proin dolor</a></li>
-<li><a href="#tabs-3">Aenean lacinia</a></li>
-</ul>
-<div id="tabs-1">
-<p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
-</div>
-<div id="tabs-2">
-<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
-</div>
-<div id="tabs-3">
-<p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-<p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
-</div>
-</div>
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1">Nunc tincidunt</a></li>
+        <li><a href="#tabs-2">Proin dolor</a></li>
+        <li><a href="#tabs-3">Aenean lacinia</a></li>
+      </ul>
+      <div id="tabs-1">
+        <p>
+          Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus.
+          Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam
+          elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris
+          dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed
+          magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales
+          tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et
+          mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt
+          interdum. Phasellus ipsum. Nunc tristique tempus lectus.
+        </p>
+      </div>
+      <div id="tabs-2">
+        <p>
+          Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida
+          ante, ut pharetra massa metus id nunc. Duis scelerisque molestie
+          turpis. Sed fringilla, massa eget luctus malesuada, metus eros
+          molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet
+          fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam.
+          Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis.
+          Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra
+          nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas
+          feugiat, tellus pellentesque pretium posuere, felis lorem euismod
+          felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et
+          purus.
+        </p>
+      </div>
+      <div id="tabs-3">
+        <p>
+          Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti.
+          Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat,
+          eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent
+          taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+          himenaeos. Fusce sodales. Quisque eu urna vel enim commodo
+          pellentesque. Praesent eu risus hendrerit ligula tempus pretium.
+          Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.
+        </p>
+        <p>
+          Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper
+          at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo
+          vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti.
+          Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros,
+          id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero
+          sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat
+          porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu
+          tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce
+          in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.
+        </p>
+      </div>
+    </div>
 
-    
-
-<footer>
-    <p>Cipsa (2014)</p>
-    <p>Curso de programación web</p>
-</footer>
-
-
-
-</body>
+    <footer>
+      <p>Cipsa (2014)</p>
+      <p>Curso de programación web</p>
+    </footer>
+  </body>
 </html>

@@ -1,28 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jQuery UI Example</title>
     <!-- Libreria JQuery comprimida -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+    </style>
     <!-- Tema 'base' para JQueryUI -->
     <link
       href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css"
       rel="stylesheet"
     />
     <!-- Libreria JQueryUI comprimida -->
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
-    <script>
-      $(function () {
-        var widget_spinner = $("#spinner").spinner();
-        $("#select").selectmenu({
-          width: 200,
-          icons: { button: "ui-icon-triangle-1-s" },
-        });
-      });
-    </script>
   </head>
-  <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+  <body>
     <p>
       <label for="spinner">Select a value:</label><br />
       <input id="spinner" name="value" />
@@ -37,5 +32,17 @@
         <option value="4">Option 4</option>
       </select>
     </p>
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery UI library -->
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <!-- Custom script to initialize widgets -->
+    <script src="jqueryui.js"></script>
+    <script>
+      $(function () {
+        $("#spinner").spinner();
+        $("#select").selectmenu();
+      });
+    </script>
   </body>
 </html>

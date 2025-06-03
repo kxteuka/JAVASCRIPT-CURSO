@@ -1,52 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ejemplo jQuery UI</title>
     <style>
       .ui-menu {
         width: 300px;
       }
+      #dialogo {
+        display: none;
+      }
     </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <link
       href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css"
       rel="stylesheet"
     />
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
-    <script>
-      $(function () {
-        $("#spinner").spinner({
-          min: 5,
-          max: 2500,
-          step: 25,
-        });
-        $("#accordion").accordion();
-        $("#tabs").tabs();
-        var cuadro_dialogo = $("#dialogo").dialog({
-          autoOpen: false,
-          height: "auto",
-          width: "auto",
-          modal: true,
-          buttons: {
-            Registrar: function () {
-              console.log("Nombre: " + $("#nombre").val());
-              console.log("Mail: " + $("#correo").val());
-              $(this).dialog("close");
-            },
-          },
-        });
-        $("#boton").click(function () {
-          cuadro_dialogo.dialog("open");
-        });
-        $("#menu").menu({
-          select: function (event, ui) {
-            console.log(ui.item.text());
-          },
-        });
-        $("#select").selectmenu();
-      });
-    </script>
   </head>
   <body>
     <div id="tabs">
@@ -119,13 +89,13 @@
         </ul>
       </div>
       <div id="tabs-5">
-        <select id="select" name="select">
+        <select id="select" name="select" title="Seleccione una opción">
           <option value="opcion1">Opción 1</option>
           <option value="opcion2">Opción 2</option>
           <option value="opcion3">Opción 3</option>
         </select>
       </div>
-      <div id="dialogo" title="Nuevo usuario" style="display: none">
+      <div id="dialogo" title="Nuevo usuario">
         <form>
           <label for="nombre">Nombre</label><br />
           <input type="text" id="nombre" /><br />
@@ -134,5 +104,8 @@
         </form>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <script src="widgets.js"></script>
   </body>
 </html>

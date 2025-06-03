@@ -1,61 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
-    <title></title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transiciones de Visibilidad</title>
     <link
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
     />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-    <script>
-      $().ready(function () {
-        $("input:text")
-          .keydown(function (event) {
-            $(this).css({ "background-color": "yellow" });
-            $("#imagen").prop("src", "gato2.png");
-          })
-          .keyup(function (event) {
-            $(this).css({ "background-color": "white" });
-            $("#imagen").prop("src", "gato1.png");
-          })
-          .keypress(function (event) {
-            if (event.key == "Enter") {
-              var valor = document.getElementById("text").value;
-              $(this).css({ "background-color": "red" });
-              $("body").append("<p>" + valor + "</p>");
-              $("input:text").val("");
-            }
-          });
-        $("#imagen").mousedown(function (event) {
-          $("#coordenadas").text(event.pageX + ", " + event.pageY);
-        });
-        $("#ocultar").click(function (event) {
-          $("#imagen")
-            .hide("explode", { pieces: 50 }, 1000, function () {
-              alert("La imagen se ha ocultado");
-            });
-        });
-        $("#mostrar").click(function (event) {
-          $("#imagen").show("bounce", { times: 5 }, 1500, function () {
-            alert("La imagen se ha mostrado");
-          });
-        });
-        $("#pulsate").click(function (event) {
-          $("#imagen").effect("pulsate", { times: 3 }, 5000, function () {
-            alert("La imagen ha pulsado");
-          });
-        });
-      });
-    </script>
   </head>
   <body>
-    <img id="imagen" src="gato1.png" />
+    <img id="imagen" src="gato1.png" alt="Un gato" />
     <p id="coordenadas">0,0</p>
-    <input id="text" type="text" />
+    <label for="text">Texto:</label>
+    <input
+      id="text"
+      type="text"
+      placeholder="Introduce texto"
+      title="Introduce texto aquí"
+    />
     <input type="button" id="ocultar" value="Ocultar" />
     <input type="button" id="mostrar" value="Mostrar" />
     <input type="button" id="pulsate" value="Pulsar" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="transicionesvisibilidad.js"></script>
   </body>
 </html>

@@ -3,27 +3,6 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Proyecto Web</title>
-    <script src="/.js/libs/jquery/jquery.js"></script>
-    <script>
-      $(function () {
-        $("ul li")
-          .filter(function (indice, elemento) {
-            return Number($(elemento).text()) % 2 == 0;
-          })
-          .css("background-color", "#ffff00");
-
-        $("input[type=radio]").click(function () {
-          if ($("#No").is(":checked")) {
-            alert("Se marcó No");
-            $("#No").prop("checked", false);
-          }
-          if ($("#Si").is(":checked")) {
-            alert("Se marcó Sí");
-            $("#Si").prop("checked", false);
-          }
-        });
-      });
-    </script>
   </head>
   <body>
     <ul>
@@ -39,5 +18,7 @@
       <input type="radio" id="Si" value="si" /> Sí
       <input type="radio" id="No" value="no" /> No
     </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="filtros.js"></script>
   </body>
 </html>
