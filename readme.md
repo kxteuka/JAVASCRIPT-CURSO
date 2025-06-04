@@ -106,7 +106,7 @@ Asegúrate de tener el proyecto descomprimido y accesible antes de comenzar la p
 
 **Iván López Cabanas**  
 [LinkedIn](https://linkedin.com/in/ivanlopezcabanas)  
-Proyecto en GitHub: [https://github.com/kxteuka/JAVASCRIPT-CURSO](https://github.com/kxteuka/JAVASCRIPT-CURSO)
+Proyecto en GitHub: [GitHub](https://github.com/kxteuka/JAVASCRIPT-CURSO)
 
 <p align="right">(<a href="#readme-top">Volver arriba</a>)</p>
 
