@@ -26,10 +26,6 @@
 
 <ol>
   <li><a href="#sobre-el-proyecto">Sobre el proyecto</a></li>
-  <li><a href="#objetivos-del-curso">Objetivos del curso</a></li>
-  <li><a href="#dirigido-a">Dirigido a</a></li>
-  <li><a href="#requisitos-previos">Requisitos previos</a></li>
-  <li><a href="#duración-estimada">Duración estimada</a></li>
   <li><a href="#prerrequisitos">Prerrequisitos</a></li>
   <li><a href="#hecho-con">Hecho con</a></li>
 </ol>
@@ -40,9 +36,6 @@
 
 Este curso está diseñado para quienes desean iniciarse en el mundo del desarrollo web aprendiendo dos herramientas fundamentales: **JavaScript** y **jQuery**. A lo largo del curso, adquirirás una comprensión sólida de la programación con JavaScript y aprenderás a utilizar jQuery para simplificar tareas comunes como la manipulación del DOM, gestión de eventos y animaciones.
 
-
----
-
 ## Objetivos del curso
 
 - Comprender los fundamentos de JavaScript: variables, tipos de datos, funciones, estructuras de control y eventos.
@@ -50,31 +43,22 @@ Este curso está diseñado para quienes desean iniciarse en el mundo del desarro
 - Aprender a utilizar jQuery para interactuar con elementos HTML de forma eficiente.
 - Aplicar jQuery para crear efectos dinámicos y mejorar la experiencia del usuario.
 
-
----
-
 ## Dirigido a
 
 - Principiantes en programación web.
 - Personas con conocimientos básicos de HTML y CSS que quieran dar el siguiente paso.
 - Estudiantes o profesionales que deseen reforzar sus habilidades en el frontend.
 
-<p align="right">(<a href="#readme-top">Volver arriba</a>)</p>
-
----
-
 ## Requisitos previos
 
 - Conocimientos básicos de HTML y CSS.
 - Ganas de aprender y practicar.
 
-
----
-
 ## Duración estimada
 
 20–25 horas (dependiendo del ritmo del estudiante).
 
+<p align="right">(<a href="#readme-top">Volver arriba</a>)</p>
 
 ---
 
