@@ -47,7 +47,6 @@
         <a href="#hecho con">Hecho con</a>
     </li>
     <li>
-      <a href="#getting-started">Inicio</a>
       <a href="#prerequisites">Prerequisitos</a>
     </li>
     <li><a href="#contact">Contact</a></li>
@@ -90,11 +89,6 @@
 - [![JQuery][JQuery.com]][JQuery-url]
 
 <!-- GETTING STARTED -->
-
-## Inicio
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
 
 ### Prerequisitos
 
