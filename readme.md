@@ -36,15 +36,6 @@
     Este curso está diseñado para quienes desean iniciarse en el mundo del desarrollo web aprendiendo dos herramientas fundamentales: JavaScript y jQuery. A lo largo del curso, adquirirás una comprensión sólida de la programación con JavaScript y aprenderás a utilizar jQuery para simplificar tareas comunes de desarrollo web, como la manipulación del DOM, gestión de eventos y animaciones.
 
 <br />
-<a href="https://github.com/kxteuka/JAVASCRIPT-CURSO"><strong>Explore the docs »</strong></a>
-<br />
-<br />
-<a href="https://github.com/kxteuka/JAVASCRIPT-CURSO">View Demo</a>
-&middot;
-<a href="https://github.com/kxteuka/JAVASCRIPT-CURSO/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-&middot;
-<a href="https://github.com/kxteuka/JAVASCRIPT-CURSO/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
-
   </p>
 </div>
 
@@ -76,7 +67,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project
+## Sobre el proyecto
 
 <h2>Objetivos del curso:</h2>
 <ul>
@@ -104,16 +95,14 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
+### Hecho con
 
 - [![Javascript][Javascript.com]][Javascript-url]
 - [![JQuery][JQuery.com]][JQuery-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- GETTING STARTED -->
 
-## Getting Started
+## Inicio
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
@@ -127,7 +116,7 @@ This is an example of how to list things you need to use the software and how to
   npm install npm@latest -g
   ```
 
-### Installation
+### Instalación
 
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
@@ -152,7 +141,7 @@ This is an example of how to list things you need to use the software and how to
 
 <!-- LICENSE -->
 
-## License
+## Licencia
 
 Distributed under the project_license. See `LICENSE.txt` for more information.
 
@@ -160,7 +149,7 @@ Distributed under the project_license. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 
-## Contact
+## Contacto
 
 Project Link: [https://github.com/kxteuka/JAVASCRIPT-CURSO](https://github.com/kxteuka/JAVASCRIPT-CURSO)
 
@@ -198,5 +187,5 @@ Project Link: [https://github.com/kxteuka/JAVASCRIPT-CURSO](https://github.com/k
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com
-[Javascript.com]: https://img.shields.io/badge/-JavaScript-333333?style=flat&logo=javascript
+[Javascript.com]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
 [Javascript-url]: https://developer.mozilla.org/es/docs/Web/JavaScript
