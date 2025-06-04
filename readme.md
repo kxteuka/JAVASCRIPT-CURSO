@@ -32,34 +32,9 @@
 
 <h3 align="center">CURSO BÁSICO DE JAVASCRIPT Y JQUERY</h3>
 
-  <p align="center">
+  <p align="left">
     Este curso está diseñado para quienes desean iniciarse en el mundo del desarrollo web aprendiendo dos herramientas fundamentales: JavaScript y jQuery. A lo largo del curso, adquirirás una comprensión sólida de la programación con JavaScript y aprenderás a utilizar jQuery para simplificar tareas comunes de desarrollo web, como la manipulación del DOM, gestión de eventos y animaciones.
 
-Objetivos del curso:
-
-Comprender los fundamentos de JavaScript: variables, tipos de datos, funciones, estructuras de control y eventos.
-
-Introducir conceptos clave de programación orientada a objetos en JavaScript.
-
-Aprender a utilizar jQuery para interactuar con elementos HTML de forma eficiente.
-
-Aplicar jQuery para crear efectos dinámicos y mejorar la experiencia del usuario.
-
-Dirigido a:
-
-Principiantes en programación web.
-
-Personas con conocimientos básicos de HTML y CSS que quieran dar el siguiente paso.
-
-Estudiantes o profesionales que deseen reforzar sus habilidades en el frontend.
-
-Requisitos previos:
-
-Conocimientos básicos de HTML y CSS.
-
-Ganas de aprender y practicar.
-
-Duración estimada: 20-25 horas (dependiendo del ritmo del estudiante)
 <br />
 <a href="https://github.com/kxteuka/JAVASCRIPT-CURSO"><strong>Explore the docs »</strong></a>
 <br />
@@ -103,47 +78,35 @@ Duración estimada: 20-25 horas (dependiendo del ritmo del estudiante)
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<h2>Objetivos del curso:</h2>
+<ul>
+  <li>Comprender los fundamentos de JavaScript: variables, tipos de datos, funciones, estructuras de control y eventos.</li>
+  <li>Introducir conceptos clave de programación orientada a objetos en JavaScript.</li>
+  <li>Aprender a utilizar jQuery para interactuar con elementos HTML de forma eficiente.</li>
+  <li>Aplicar jQuery para crear efectos dinámicos y mejorar la experiencia del usuario.</li>
+</ul>
 
-Here's a blank template to get started. To avoid retyping too much info, do a search and replace with your text editor for the following: `kxteuka`, `JAVASCRIPT-CURSO`, `twitter_handle`, `ivanlopezcabanas`, `email_client`, `email`, `CURSO BÁSICO DE JAVASCRIPT Y JQUERY`, `Este curso está diseñado para quienes desean iniciarse en el mundo del desarrollo web aprendiendo dos herramientas fundamentales: JavaScript y jQuery. A lo largo del curso, adquirirás una comprensión sólida de la programación con JavaScript y aprenderás a utilizar jQuery para simplificar tareas comunes de desarrollo web, como la manipulación del DOM, gestión de eventos y animaciones.
+<h2>Dirigido a:</h2>
+<ul>
+  <li>Principiantes en programación web.</li>
+  <li>Personas con conocimientos básicos de HTML y CSS que quieran dar el siguiente paso.</li>
+  <li>Estudiantes o profesionales que deseen reforzar sus habilidades en el frontend.</li>
+</ul>
 
-Objetivos del curso:
+<h2>Requisitos previos:</h2>
+<ul>
+  <li>Conocimientos básicos de HTML y CSS.</li>
+  <li>Ganas de aprender y practicar.</li>
+</ul>
 
-Comprender los fundamentos de JavaScript: variables, tipos de datos, funciones, estructuras de control y eventos.
-
-Introducir conceptos clave de programación orientada a objetos en JavaScript.
-
-Aprender a utilizar jQuery para interactuar con elementos HTML de forma eficiente.
-
-Aplicar jQuery para crear efectos dinámicos y mejorar la experiencia del usuario.
-
-Dirigido a:
-
-Principiantes en programación web.
-
-Personas con conocimientos básicos de HTML y CSS que quieran dar el siguiente paso.
-
-Estudiantes o profesionales que deseen reforzar sus habilidades en el frontend.
-
-Requisitos previos:
-
-Conocimientos básicos de HTML y CSS.
-
-Ganas de aprender y practicar.
-
-Duración estimada: 20-25 horas (dependiendo del ritmo del estudiante)`, `project_license`
+<h2>Duración estimada:</h2>
+<p>20-25 horas (dependiendo del ritmo del estudiante)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-- [![Next][Next.js]][Next-url]
-- [![React][React.js]][React-url]
-- [![Vue][Vue.js]][Vue-url]
-- [![Angular][Angular.io]][Angular-url]
-- [![Svelte][Svelte.dev]][Svelte-url]
-- [![Laravel][Laravel.com]][Laravel-url]
-- [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+- [![Javascript][Javascript.com]][Javascript-url]
 - [![JQuery][JQuery.com]][JQuery-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -187,52 +150,6 @@ This is an example of how to list things you need to use the software and how to
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- USAGE EXAMPLES -->
-
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ROADMAP -->
-
-## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-  - [ ] Nested Feature
-
-See the [open issues](https://github.com/kxteuka/JAVASCRIPT-CURSO/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Top contributors:
-
-<a href="https://github.com/kxteuka/JAVASCRIPT-CURSO/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=kxteuka/JAVASCRIPT-CURSO" alt="contrib.rocks image" />
-</a>
-
 <!-- LICENSE -->
 
 ## License
@@ -245,19 +162,7 @@ Distributed under the project_license. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
 Project Link: [https://github.com/kxteuka/JAVASCRIPT-CURSO](https://github.com/kxteuka/JAVASCRIPT-CURSO)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-- []()
-- []()
-- []()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -293,3 +198,5 @@ Project Link: [https://github.com/kxteuka/JAVASCRIPT-CURSO](https://github.com/k
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com
+[Javascript.com]: https://img.shields.io/badge/-JavaScript-333333?style=flat&logo=javascript
+[Javascript-url]: https://developer.mozilla.org/es/docs/Web/JavaScript
