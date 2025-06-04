@@ -32,7 +32,6 @@
   <li><a href="#duración-estimada">Duración estimada</a></li>
   <li><a href="#prerrequisitos">Prerrequisitos</a></li>
   <li><a href="#hecho-con">Hecho con</a></li>
-  <li><a href="#contacto">Contacto</a></li>
 </ol>
 
 ---
@@ -98,15 +97,6 @@ Asegúrate de tener el proyecto descomprimido y accesible antes de comenzar la p
 
 - [![JavaScript][Javascript.com]][Javascript-url]
 - [![jQuery][JQuery.com]][JQuery-url]
-
-
----
-
-## Contacto
-
-**Iván López Cabanas**  
-[LinkedIn](https://linkedin.com/in/ivanlopezcabanas)  
-Proyecto en GitHub: [GitHub](https://github.com/kxteuka/JAVASCRIPT-CURSO)
 
 <p align="right">(<a href="#readme-top">Volver arriba</a>)</p>
 
