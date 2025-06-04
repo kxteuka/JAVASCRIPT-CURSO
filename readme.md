@@ -43,16 +43,12 @@
   <summary>Índice de contenido</summary>
   <ol>
     <li>
-        <a href="#about-the-project">Sobre el proyecto</a>
-      <ul>
-        <li><a href="#built-with">Hecho con</a></li>
-      </ul>
+        <a href="#sobre el proyecto">Sobre el proyecto</a>
+        <a href="#hecho con">Hecho con</a>
     </li>
     <li>
       <a href="#getting-started">Inicio</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisitos</a></li>
-      </ul>
+      <a href="#prerequisites">Prerequisitos</a>
     </li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -115,8 +111,6 @@ To get a local copy up and running follow these simple example steps.
 <p>
   Asegúrate de tener el proyecto descomprimido y accesible antes de comenzar la primera clase, ya que trabajaremos directamente con esos archivos desde el inicio.
 </p>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
 
