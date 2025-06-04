@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/kxteuka/JAVASCRIPT-CURSO">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="/logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">CURSO BÁSICO DE JAVASCRIPT Y JQUERY</h3>
