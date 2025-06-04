@@ -8,7 +8,7 @@
 <!-- LOGO -->
 <div align="center">
   <a href="https://github.com/kxteuka/JAVASCRIPT-CURSO">
-    <img src="/logo.png" alt="Logo" width="80" height="80">
+    <img src="/.imagenes/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Curso Básico de JavaScript y jQuery</h3>
