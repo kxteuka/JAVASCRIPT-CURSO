@@ -41,7 +41,6 @@
 
 Este curso está diseñado para quienes desean iniciarse en el mundo del desarrollo web aprendiendo dos herramientas fundamentales: **JavaScript** y **jQuery**. A lo largo del curso, adquirirás una comprensión sólida de la programación con JavaScript y aprenderás a utilizar jQuery para simplificar tareas comunes como la manipulación del DOM, gestión de eventos y animaciones.
 
-<p align="right">(<a href="#readme-top">Volver arriba</a>)</p>
 
 ---
 
@@ -52,7 +51,6 @@ Este curso está diseñado para quienes desean iniciarse en el mundo del desarro
 - Aprender a utilizar jQuery para interactuar con elementos HTML de forma eficiente.
 - Aplicar jQuery para crear efectos dinámicos y mejorar la experiencia del usuario.
 
-<p align="right">(<a href="#readme-top">Volver arriba</a>)</p>
 
 ---
 
@@ -71,7 +69,6 @@ Este curso está diseñado para quienes desean iniciarse en el mundo del desarro
 - Conocimientos básicos de HTML y CSS.
 - Ganas de aprender y practicar.
 
-<p align="right">(<a href="#readme-top">Volver arriba</a>)</p>
 
 ---
 
@@ -79,7 +76,6 @@ Este curso está diseñado para quienes desean iniciarse en el mundo del desarro
 
 20–25 horas (dependiendo del ritmo del estudiante).
 
-<p align="right">(<a href="#readme-top">Volver arriba</a>)</p>
 
 ---
 
@@ -103,7 +99,6 @@ Asegúrate de tener el proyecto descomprimido y accesible antes de comenzar la p
 - [![JavaScript][Javascript.com]][Javascript-url]
 - [![jQuery][JQuery.com]][JQuery-url]
 
-<p align="right">(<a href="#readme-top">Volver arriba</a>)</p>
 
 ---
 
@@ -111,7 +106,7 @@ Asegúrate de tener el proyecto descomprimido y accesible antes de comenzar la p
 
 **Iván López Cabanas**  
 [LinkedIn](https://linkedin.com/in/ivanlopezcabanas)  
-Proyecto en GitHub: [https://github.com/kxteuka/JAVASCRIPT-CURSO](https://github.com/kxteuka/JAVASCRIPT-CURSO)
+Proyecto en GitHub: [GitHub](https://github.com/kxteuka/JAVASCRIPT-CURSO)
 
 <p align="right">(<a href="#readme-top">Volver arriba</a>)</p>
 
