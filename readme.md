@@ -53,7 +53,6 @@
       <a href="#getting-started">Inicio</a>
       <ul>
         <li><a href="#prerequisites">Prerequisitos</a></li>
-        <li><a href="#installation">Instalación</a></li>
       </ul>
     </li>
     <li><a href="#contact">Contact</a></li>
@@ -104,36 +103,21 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisitos
 
-This is an example of how to list things you need to use the software and how to install them.
-
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Instalación
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/kxteuka/JAVASCRIPT-CURSO.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = "ENTER YOUR API";
-   ```
-5. Change git remote url to avoid accidental pushes to base project
-   ```sh
-   git remote set-url origin kxteuka/JAVASCRIPT-CURSO
-   git remote -v # confirm the changes
-   ```
+<h2>Prerrequisitos</h2>
+<p>
+  Antes de comenzar el curso, necesitarás contar con el proyecto base que utilizaremos durante las prácticas. Para ello, sigue estos pasos:
+</p>
+<ol>
+  <li>Accede al repositorio del curso en GitHub (el enlace será proporcionado por el instructor o en la plataforma del curso).</li>
+  <li>Dentro del repositorio, haz clic en el botón verde <strong>"Code"</strong>.</li>
+  <li>Selecciona la opción <strong>"Download ZIP"</strong> para descargar el proyecto completo en formato comprimido.</li>
+  <li>Una vez descargado el archivo <code>.zip</code>, extráelo en una ubicación de tu preferencia en tu computadora, como por ejemplo tu escritorio o una carpeta de trabajo dedicada al curso.</li>
+</ol>
+<p>
+  Asegúrate de tener el proyecto descomprimido y accesible antes de comenzar la primera clase, ya que trabajaremos directamente con esos archivos desde el inicio.
+</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- CONTACT -->
 
