@@ -89,8 +89,6 @@ Antes de comenzar el curso, necesitarás contar con el proyecto base que utiliza
 
 Asegúrate de tener el proyecto descomprimido y accesible antes de comenzar la primera clase, ya que trabajaremos directamente con esos archivos desde el inicio.
 
-<p align="right">(<a href="#readme-top">Volver arriba</a>)</p>
-
 ---
 
 ## Hecho con
