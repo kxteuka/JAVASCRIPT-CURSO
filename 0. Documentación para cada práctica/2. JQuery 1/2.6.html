@@ -1,0 +1,1578 @@
+<h2>2.6. Manipulación del modelo de objeto de documento</h2>
+<h3>Creación y Agregado de Elementos.</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p>
+      Cuando una página web se carga cada etiqueta HTML se convierte en un
+      objeto parte de una estructura jerárquica encabezada por el objeto
+      <strong><em> </em></strong><em>Document </em>como raíz. Esta estructura es
+      el <strong><em>modelo de objetos de documento ( DOM ). </em></strong>
+    </p>
+
+    <p></p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/2.6.1.png"
+        alt=""
+        width="701"
+        height="329"
+        role="presentation"
+        style="font-size: 0.9375rem"
+        class="img-responsive atto_image_button_text-bottom"
+      />
+    </p>
+    <p></p>
+
+    <p>
+      JQuery no sólo facilita seleccionar y modificar el contenido, atributos y
+      estilos de los elementos presentes en el DOM. También dispone de
+      métodos&nbsp;para manipular la propia estructura del documento, creando e
+      insertando nuevos objetos, así como moviendo y eliminando los ya
+      existentes.&nbsp;
+    </p>
+
+    <h5>Creación de elementos.</h5>
+
+    <p>
+      JQuery permite crear nuevos elementos y añadirlos a la página para mostrar
+      contenidos no presentes inicialmente. Esto puede hacerse de dos maneras:
+    </p>
+    <p></p>
+    <ul>
+      <li>
+        <span style="font-size: 0.9375rem">Creando una selección&nbsp;</span
+        ><strong style="font-size: 0.9375rem"><em>$() </em></strong
+        ><span style="font-size: 0.9375rem"
+          >con el código HTML del elemento a crear:</span
+        >
+      </li>
+    </ul>
+    <p></p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#696969; ">// Crea un parrafo con un texto</span>
+<span style="color:#800000; font-weight:bold; ">var</span> $parrafo <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;p&gt;This is a new paragraph&lt;/p&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#696969; ">// Crea una opción de lista con estilo 'new'</span>
+<span style="color:#800000; font-weight:bold; ">var</span> $opcion <span style="color:#808030; ">=</span>  $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;li class=</span><span style="color:#0f69ff; ">\"</span><span style="color:#0000e6; ">new</span><span style="color:#0f69ff; ">\"</span><span style="color:#0000e6; ">&gt;new list item&lt;/li&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><span lang="EN-US">&nbsp;</span></p>
+
+    <p></p>
+    <ul>
+      <li>
+        <span
+          ><span>Creando una selección&nbsp;</span
+          ><em style="font-weight: bold">$()</em></span
+        >
+        indicando como primer argumento el elemento HTML que se desea crear,
+        seguido del valor de sus correspondientes atributos en formato
+        JSON:&nbsp;
+      </li>
+    </ul>
+    <p></p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#696969; ">// Nuevo hipervínculo a página 'foo.html'</span>
+<span style="color:#800000; font-weight:bold; ">var</span> $enlace <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;a/&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span>
+                          html<span style="color:#800080; ">:</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">This is a &lt;strong&gt;new&lt;/strong&gt; link</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span>
+                          <span style="color:#800000; ">"</span><span style="color:#0000e6; ">class</span><span style="color:#800000; ">"</span><span style="color:#800080; ">:</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">new</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> 
+                          href<span style="color:#800080; ">:</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">foo.html</span><span style="color:#800000; ">"</span>
+                        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+          </td>
+        </tr>
+        <tr>
+          <td width="576" valign="top">
+            <p>
+              <em
+                >(*) El propiedad ‘class’ va entrecomillada debido a que
+                coincide con la palabra clave <strong>class</strong> de
+                Javascript a diferencia de los atributos <strong>html</strong> y
+                <strong>href</strong>.</em
+              >
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      En ambos casos se obtiene una selección con el elemento recién creado.
+      Para que éstos formen parte de la página deben añadirse al DOM.&nbsp;
+    </p>
+
+    <h5><br /></h5>
+    <h5>Añadido de elementos.</h5>
+    <p>
+      <br />JQuery define diferentes funciones que permiten añadir nuevos
+      elementos al DOM de diferentes maneras:&nbsp;
+    </p>
+    <p>
+      <strong style="font-size: 0.9375rem"><em>Función $().append()</em></strong
+      ><br />
+    </p>
+
+    <p>
+      <em><u>Añade un elemento hijo al/los elementos seleccionados</u></em
+      >. El método se llama a partir de una selección al elemento o elementos en
+      los que se quiere añadir el nuevo elemento y recibe como argumento el
+      elemento que se desea añadir.&nbsp;
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <div class="editor-indent" style="margin-left: 30px">
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><strong><em>$<span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>elemento_al_que_se_añade<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>append<span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>elemento_que_se_añade<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">)</span></em></strong></pre>
+      </div>
+    </div>
+
+    <p>
+      <strong
+        ><em><u>Ejemplo</u>:</em></strong
+      >
+      El siguiente código agrega cada vez que se pulsa el botón "ACCION", un
+      elemento <em>&lt;li&gt;</em> con el texto <em>“Nueva Opcion”</em>&nbsp;a
+      la lista<em> &lt;li&gt;</em>:&nbsp;
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#800000; font-weight:bold; ">var</span> opcion <span style="color:#808030; ">=</span> <span style="color:#008c00; ">4</span><span style="color:#800080; ">;</span> 
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">button</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+  <span style="color:#696969; ">// Creacion y configuración del nuevo elemento &lt;li&gt;</span>
+                $nueva_opcion <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">&lt;li&gt;</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span>text<span style="color:#800080; ">:</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">opcion</span><span style="color:#800000; ">'</span> <span style="color:#808030; ">+</span> opcion<span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+<strong><em>  <span style="color:#696969; ">// Agregado del nuevo elemento el último de la lista &lt;ul&gt;</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">ul</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>append<span style="color:#808030; ">(</span>$nueva_opcion<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> </em></strong>
+                opcion<span style="color:#808030; ">++</span><span style="color:#800080; ">;</span> 
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion1<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion2<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion3<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span> 
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>ACCION<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>    
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><br />La página inicialmente tiene el siguiente aspecto:&nbsp;</p>
+    <p style="text-align: left">
+      <img
+        src="/imagenes/2.6.2.png"
+        alt=""
+        role="presentation"
+      /><br />
+    </p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >Si se pulsa el botón “<em>ACCION</em>” varias veces, los nuevos
+        elementos </span
+      ><em style="font-size: 0.9375rem">&lt;li&gt;</em
+      ><span style="font-size: 0.9375rem">
+        se van añadiendo al final de la lista <em>&lt;ul&gt;:</em></span
+      ><br />
+    </p>
+    <p style="text-align: center">
+      <span style="font-size: 0.9375rem"
+        ><em
+          ><img
+            src="/imagenes/2.6.3.png"
+            alt=""
+            role="presentation" /><br /></em
+      ></span>
+    </p>
+
+    <p>
+      <strong style="font-size: 0.9375rem"
+        ><em>Función $().appendTo()</em></strong
+      ><br />
+    </p>
+
+    <p>
+      Este método hace lo mismo que el anterior pero cambiando la sintaxis.
+      <em
+        ><u
+          >El método se llama a partir de la selección del elemento que se
+          quiere añadir, y recibe como argumento el elemento al que se añade.</u
+        ></em
+      >
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <div class="editor-indent" style="margin-left: 30px">
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><strong><em>$(<span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">elemento_que_se_añade</span><span style="color:#a65700; ">&gt;</span>).appendTo(<span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">elemento_al_que_se_añade</span><span style="color:#a65700; ">&gt;</span>)</em></strong></pre>
+      </div>
+    </div>
+
+    <p>
+      <strong
+        ><em><u>Ejemplo</u>:</em></strong
+      >
+      Esta es la misma página de ejemplos anteriores pero empleando<em>
+        appendTo()</em
+      >:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#800000; font-weight:bold; ">var</span> opcion <span style="color:#808030; ">=</span> <span style="color:#008c00; ">4</span><span style="color:#800080; ">;</span> 
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">button</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+  <span style="color:#696969; ">// Creacion y configuración del nuevo elemento &lt;li&gt;</span>
+                $nueva_opcion <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">&lt;li&gt;</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span>text<span style="color:#800080; ">:</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">opcion</span><span style="color:#800000; ">'</span> <span style="color:#808030; ">+</span> opcion<span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+<strong><em>  <span style="color:#696969; ">// Agregado del nuevo elemento el último de la lista &lt;ul&gt;</span>
+                $nueva_opcion<span style="color:#808030; ">.</span>appendTo<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">ul</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> </em></strong>
+                opcion<span style="color:#808030; ">++</span><span style="color:#800080; ">;</span> 
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion1<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion2<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion3<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span> 
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>ACCION<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>    
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <strong
+        ><em><br /></em
+      ></strong>
+    </p>
+    <p>
+      Ambas funciones desempeñan la misma tarea exactamente salvando la
+      diferencia de su sintaxis, por lo que el uso de una o la otra depende más
+      de la preferencia del programador.&nbsp;
+    </p>
+    <p></p>
+    <p>
+      <strong
+        ><em><br /></em
+      ></strong>
+    </p>
+    <p>
+      <strong><em>Función $().prepend()</em></strong>
+    </p>
+
+    <p>
+      Método equivalente a <strong><em>$().append()</em></strong> pero que
+      <em
+        ><u
+          >añade un elemento como primer hijo del elemento o elementos
+          seleccionados</u
+        ></em
+      >. Su sintaxis es la misma que <em>append();</em>&nbsp;se llama a partir
+      de la selección del elemento a los que se va añadir el elemento dado como
+      argumento.&nbsp;
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <pre
+        style="color: #000000; background: #ffffff"
+      ><strong><em>$<span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>elemento_al_que_se_añade<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>prepend<span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>elemento_a_añadir<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">)</span></em></strong></pre>
+    </div>
+
+    <p>
+      <strong style="font-size: 0.9375rem"><em>Ejemplo:</em></strong
+      ><span style="font-size: 0.9375rem">
+        La siguiente página añade elementos </span
+      ><em style="font-size: 0.9375rem">&lt;li&gt;</em
+      ><span style="font-size: 0.9375rem"> al principio de la lista </span>
+      <em style="font-size: 0.9375rem">&lt;ul&gt;</em
+      ><span style="font-size: 0.9375rem">
+        cada vez que se pulsa el botón “</span
+      ><em style="font-size: 0.9375rem">ACCION</em
+      ><span style="font-size: 0.9375rem">”:</span>
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#800000; font-weight:bold; ">var</span> opcion <span style="color:#808030; ">=</span> <span style="color:#008c00; ">4</span><span style="color:#800080; ">;</span> 
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">button</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+  <span style="color:#696969; ">// Creacion y configuración del nuevo elemento &lt;li&gt;</span>
+                $nueva_opcion <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">&lt;li&gt;</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span>text<span style="color:#800080; ">:</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">opcion</span><span style="color:#800000; ">'</span> <span style="color:#808030; ">+</span> opcion<span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+<strong><em>  <span style="color:#696969; ">// Agregado del nuevo elemento el primero de la lista &lt;ul&gt;</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">ul</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>prepend<span style="color:#808030; ">(</span>$nueva_opcion<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> </em></strong>
+                opcion<span style="color:#808030; ">++</span><span style="color:#800080; ">;</span> 
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion1<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion2<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion3<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span> 
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>ACCION<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>    
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      Si ejecutamos la página pulsando varias veces el botón “ACCION”, la página
+      quedaría del siguiente modo:
+    </p>
+
+    <p style="text-align: center">
+      <img
+        src="/imagenes/2.6.4.png"
+        alt=""
+        width="154"
+        height="221"
+        role="presentation"
+        style="font-size: 0.9375rem"
+        class="img-responsive atto_image_button_text-bottom"
+      />
+    </p>
+
+    <p>
+      <br />Es importante darse cuenta que al añadirse cada uno de los nuevos
+      elementos &lt;li&gt; como primer elemento de la lista por el uso del
+      método <strong><em>$().prepend()</em></strong
+      >, éstos quedan ordenados en orden inverso al inicio de la lista.&nbsp;
+    </p>
+
+    <p>
+      <strong><em>&nbsp;</em></strong>
+    </p>
+
+    <p>
+      <strong
+        ><em
+          ><strong><em>Función&nbsp;</em></strong
+          >$().prependTo()</em
+        >
+      </strong>
+    </p>
+
+    <p>
+      Método equivalente a <strong><em>$().appendTo()</em></strong
+      >&nbsp;pero que añade el nuevo elemento como primer hijo del elemento
+      seleccionado.&nbsp;
+      <em
+        ><u
+          >El método se llama a partir de la selección del elemento que se
+          quiere añadir, y recibe como argumento la selección del elemento al
+          que quiere añadirse.&nbsp;</u
+        ></em
+      >
+    </p>
+    <p>
+      <em><u></u></em>
+    </p>
+    <div class="editor-indent" style="margin-left: 30px">
+      <pre><strong><em>$(&lt;elemento_a_añadir&gt;).prependTo(&lt;elemento_al_que_se_añade&gt;)</em></strong></pre>
+    </div>
+    <p>
+      <strong><em>Ejemplo:</em></strong>
+      <span>La siguiente página añade elementos&nbsp;</span><em>&lt;li&gt;</em
+      ><span>&nbsp;al principio de la lista&nbsp;</span><em>&lt;ul&gt;</em
+      ><span>&nbsp;cada vez que se pulsa el botón “</span><em>ACCION</em
+      ><span
+        >” del mismo modo que el ejercicio anterior, pero empleando el método
+        <em><strong>$().prependTo()</strong></em
+        >:&nbsp;</span
+      >
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#800000; font-weight:bold; ">var</span> opcion <span style="color:#808030; ">=</span> <span style="color:#008c00; ">4</span><span style="color:#800080; ">;</span> 
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">button</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+ <span style="color:#696969; ">// Creacion y configuración del nuevo elemento &lt;li&gt;</span>
+                $nueva_opcion <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">&lt;li&gt;</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span>text<span style="color:#800080; ">:</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">opcion</span><span style="color:#800000; ">'</span> <span style="color:#808030; ">+</span> opcion<span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+<strong><em> <span style="color:#696969; ">// Agregado del nuevo elemento el primero de la lista &lt;ul&gt;</span>
+                $nueva_opcion<span style="color:#808030; ">.</span>prependTo<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">ul</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> </em></strong> 
+                opcion<span style="color:#808030; ">++</span><span style="color:#800080; ">;</span> 
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion1<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion2<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion3<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span> 
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>ACCION<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>    
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+
+    <p><br /></p>
+
+    <h5>Ejercicio Resuelto:</h5>
+
+    <p>
+      Se pide una página web que muestre un formulario provisto de una lista
+      <em>&lt;select&gt;</em> que muestre los días de la semana. Estos deben
+      añadirse empleando JQuery al cargarse la propia página:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+  <span style="color:#696969; ">// Matriz con todos los dias</span>
+            <span style="color:#800000; font-weight:bold; ">var</span> dias <span style="color:#808030; ">=</span> <span style="color:#808030; ">[</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">lunes</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">martes</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">miercoles</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> 
+                        <span style="color:#800000; ">"</span><span style="color:#0000e6; ">jueves</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">viernes</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">sabado</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">domingo</span><span style="color:#800000; ">"</span><span style="color:#808030; ">]</span><span style="color:#800080; ">;</span>
+  <span style="color:#696969; ">// Bucle de agregado de opciones a la lista con id=â€diasâ€.</span>
+            <span style="color:#800000; font-weight:bold; ">for</span> <span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">var</span> i <span style="color:#808030; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span> i <span style="color:#808030; ">&lt;</span> dias<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">length</span><span style="color:#800080; ">;</span> i<span style="color:#808030; ">++</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+  <span style="color:#696969; ">// Declaracion de la nueva opción.</span>
+                $nueva_opcion <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;option&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span> value<span style="color:#800080; ">:</span> i<span style="color:#808030; ">,</span> text<span style="color:#800080; ">:</span> dias<span style="color:#808030; ">[</span>i<span style="color:#808030; ">]</span> <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+  <span style="color:#696969; ">// Agregado a la lista de opciones. </span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#dias</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>append<span style="color:#808030; ">(</span>$nueva_opcion<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#800080; ">}</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">form</span><span style="color:#a65700; ">&gt;</span>
+    Seleccione un dia:
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"dias"</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">form</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <br />
+      El resultado sería el mismo que si añadiésemos el siguiente código HTML:
+      &nbsp;
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/2.6.5.png"
+        alt=""
+        role="presentation"
+      /><br />
+    </p>
+
+    La importancia de añadir los valores de este modo en vez de empleando HTML
+    radica en la capacidad de añadir valores que no son fijos y que dependen de
+    alguna selección por parte del usuario. Por ejemplo;
+    <em
+      ><u
+        >mostrar en una lista las provincias de la comunidad autónoma
+        seleccionada por el usuario en otra lista.&nbsp;</u
+      ></em
+    ><br /><br />
+    <p></p>
+  </div>
+</div>
+<h3>Traslado y Clonado de elementos.</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p>
+      El movimiento de elementos consiste en cambiar la posición de elementos ya
+      existentes en el modelo de documento ( DOM ) de la página.
+    </p>
+
+    <p>
+      Esto puede conseguirse empleando los métodos ya vistos anteriormente (
+      <span
+        ><span
+          ><em><strong>$().</strong></em></span
+        ></span
+      ><span
+        ><span
+          ><em
+            ><strong
+              >append(), $().appendTo(), $().prepend(), $().prependTo()</strong
+            ></em
+          ></span
+        > </span
+      >)
+      <span
+        ><span
+          >para añadir elementos ya existentes a otras ubicaciones de la página
+          en vez de elementos nuevos.
+          <em style="text-decoration-line: underline"
+            >Esto provoca su cambio de ubicación.</em
+          ></span
+        ></span
+      >
+    </p>
+
+    <p>
+      <strong><em>Ejemplo:</em></strong> La siguiente página muestra una lista
+      de opciones con los días de la semana y dos botones “<em>PONER PRIMERO</em
+      >” y “<em>PONER ULTIMO</em>” que desplazan el elemento seleccionado en la
+      lista a la primera o última posición en función del botón pulsado:&nbsp;
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#btn_primero</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>                <span style="color:#696969; ">// Desplaza la opción seleccionada a la primera posición </span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#dias</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>prepend<span style="color:#808030; ">(</span>$<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#dias option:selected</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> </em></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#btn_ultimo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>                <span style="color:#696969; ">// Desplaza la opcion seleccionad a la última posición </span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#dias</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>append<span style="color:#808030; ">(</span>$<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#dias option:selected</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> </em></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">form</span><span style="color:#a65700; ">&gt;</span>
+    Dias por prioridad
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"dias"</span><span style="color:#274796; "> </span><span style="color:#074726; ">size</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"7"</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"1"</span><span style="color:#a65700; ">&gt;</span>Lunes<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"2"</span><span style="color:#a65700; ">&gt;</span>Martes<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"3"</span><span style="color:#a65700; ">&gt;</span>Miercoles<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"4"</span><span style="color:#a65700; ">&gt;</span>Jueves<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"5"</span><span style="color:#a65700; ">&gt;</span>Viernes<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"6"</span><span style="color:#a65700; ">&gt;</span>Sabado<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"7"</span><span style="color:#a65700; ">&gt;</span>Domingo<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_primero'</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'button'</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'PONER PRIMERO'</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_ultimo'</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'button'</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'PONER ULTIMO'</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">form</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><br />El aspecto de la página es el siguiente:&nbsp;</p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/2.6.6.png"
+        alt=""
+        width="500"
+        height="144"
+        role="presentation"
+        class="img-responsive atto_image_button_text-bottom"
+      /><br />
+    </p>
+    <p>
+      En ambos casos, se tome el elemento seleccionado en la lista y se reubica
+      al principio o final de la misma empleando los métodos <em>$().</em
+      ><em>append()</em> y <em>$().</em><em>prepend().&nbsp;</em>
+    </p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >También es posible mover un elemento entre diferentes elementos, por
+        ejemplo; una opción entre dos listas de opciones distintas.</span
+      >
+    </p>
+
+    <p>
+      <strong><em>Ejemplo:</em></strong> La siguiente página muestra dos listas
+      de opciones, una con los días de la semana y otra inicialmente vacía. El
+      usuario puede ir añadiendo a la lista secundaria los días de la semana que
+      desea, seleccionándolos en la primera lista y pulsando el botón
+      “<em>&gt;&gt;&gt;</em>”:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">:button</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>                <span style="color:#696969; ">// Obtener opcion seleccionada en lista días_disponibles</span>
+                <span style="color: rgb(128, 0, 0);">var</span> $seleccion <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#dias_disponibles option:selected</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+                <span style="color:#696969; ">// Añadir opción a lista días_elegidos</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#dias_elegidos</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>append<span style="color:#808030; ">(</span>$seleccion<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> </em></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">form</span><span style="color:#a65700; ">&gt;</span>
+    Dias disponibles
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"dias_disponibles"</span><span style="color:#274796; "> </span><span style="color:#074726; ">size</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"7"</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"1"</span><span style="color:#a65700; ">&gt;</span>Lunes<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"2"</span><span style="color:#a65700; ">&gt;</span>Martes<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"3"</span><span style="color:#a65700; ">&gt;</span>Miercoles<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"4"</span><span style="color:#a65700; ">&gt;</span>Jueves<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"5"</span><span style="color:#a65700; ">&gt;</span>Viernes<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"6"</span><span style="color:#a65700; ">&gt;</span>Sabado<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"7"</span><span style="color:#a65700; ">&gt;</span>Domingo<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'button'</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'&gt;&gt;&gt;'</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"dias_elegidos"</span><span style="color:#274796; "> </span><span style="color:#074726; ">size</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"7"</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">form</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />El aspecto de la página tras seleccionar y añadir a la lista de
+      opciones los días "Sábado", "Martes" y "Jueves" es el siguiente:&nbsp;
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/2.6.7.png"
+        alt=""
+        width="501"
+        height="205"
+        role="presentation"
+        class="img-responsive atto_image_button_text-bottom"
+      /><br />
+    </p>
+    <p>
+      Según se van añadiendo las opciones seleccionadas a la lista ‘<em
+        >dias_elegidos’</em
+      >
+      desaparecen de la lista inicial ‘<em>dias_disponibles’</em>. Esto es
+      debido a que los elementos que representan esas opciones están moviéndose
+      de una lista a la otra.&nbsp;
+      <span style="font-size: 0.9375rem"
+        >Si deseásemos que los días seleccionados se mantengan en la lista
+        ‘</span
+      ><em style="font-size: 0.9375rem">dias_disponibles</em
+      ><span style="font-size: 0.9375rem">’, será necesario </span
+      ><em style="font-size: 0.9375rem"><u>clonarlos</u></em>
+      <span style="font-size: 0.9375rem"> antes.</span>
+    </p>
+
+    <p>&nbsp;</p>
+
+    <h5>Clonado de elementos</h5>
+
+    <p>
+      <br />Si se necesita duplicar un elemento en vez de reubicarlo en la
+      página, es preciso emplear antes el método
+      <strong><em>$().clone()</em></strong
+      >. Este método devuelve una selección con copias de los elementos
+      presentes en la selección a partir de la que se llama. Su sintaxis es la
+      siguiente:
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <pre
+        style="color: #000000; background: #ffffff"
+      ><strong><em>$<span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">selección_copia</span><span style="color:#a65700; ">&gt;</span> = $(<span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">selección_original</span><span style="color:#a65700; ">&gt;</span>).clone()</em></strong></pre>
+    </div>
+
+    <p>
+      <strong><em>Ejemplo:</em></strong> La siguiente página muestra una lista
+      de opciones con frutas vendidas donde el usuario puede ir seleccionando
+      cada fruta y añadirla a la lista de frutas adquiridos pulsando el botón
+      "ADQUIRIR".&nbsp;<span style="font-size: 0.9375rem"
+        >Las frutas adquiridas deben permanecer no obstante en la lista de
+        frutas vendidas, por lo que&nbsp;</span
+      >
+      <em style="font-size: 0.9375rem"
+        ><u
+          >debe clonarse cada opción seleccionada antes de agregarla a la lista
+          de artículos adquiridos</u
+        ></em
+      ><span style="font-size: 0.9375rem">:</span>
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#btn_adquirir</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>                <span style="color:#696969; ">// Obtencion de la opcion seleccionada en lista de frutas vendidas</span>
+                <span style="color: rgb(128, 0, 0);">var</span> $articulos_seleccionados <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#articulos option:selected</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#696969; ">// Agregado del clon de la fruta seleccionada a la lista de frutas adquiridas. </span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#compras</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>append<span style="color:#808030; ">(</span>$articulos_seleccionados<span style="color:#808030; ">.</span>clone<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></em></strong>  
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">form</span><span style="color:#a65700; ">&gt;</span>
+    Articulos
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"articulos"</span><span style="color:#274796; "> </span><span style="color:#074726; ">size</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"7"</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"1"</span><span style="color:#a65700; ">&gt;</span>Manzanas<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"2"</span><span style="color:#a65700; ">&gt;</span>Peras<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"3"</span><span style="color:#a65700; ">&gt;</span>Melocotones<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"4"</span><span style="color:#a65700; ">&gt;</span>Piñas<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <option value="5">Cerezas</option>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"6"</span><span style="color:#a65700; ">&gt;</span>Platanos<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"7"</span><span style="color:#a65700; ">&gt;</span>Uvas<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_adquirir'</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'button'</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'ADQUIRIR'</span><span style="color:#a65700; ">&gt;</span>
+    Compra
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'compras'</span><span style="color:#274796; "> </span><span style="color:#074726; ">size</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'7'</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">form</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      &nbsp;<br /><span style="font-size: 0.9375rem"
+        >El aspecto de la página tras seleccionar la adquisición de Melocotones,
+        Peras y Manzanas sería el siguiente:&nbsp;</span
+      >
+    </p>
+    <p>
+      <img
+        src="/imagenes/2.6.8.png"
+        alt=""
+        role="presentation"
+      />
+    </p>
+    <br />
+    <p></p>
+  </div>
+</div>
+<h3>Eliminación de elementos.</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p>
+      JQuery también dispone de funciones que permite eliminar objetos presentes
+      en el modelo de documento ( DOM ). Esto permite eliminar dichos elementos
+      tanto de la vista del usuario como su eliminación del propio modelo. Debe
+      subrayase no obstante,
+      <em
+        ><u
+          >que estos métodos sólo afectan a la página en el navegador del
+          usuario, no a su contenido en el servidor.&nbsp;</u
+        ></em
+      >
+    </p>
+    <h5>
+      <span>Función <em>$().remove()</em></span>
+    </h5>
+
+    <p>
+      Esta función permite eliminar uno o vatios elementos seleccionados&nbsp;
+      ocasionando que desaparezcan. El método admite dos formas de uso:
+    </p>
+
+    <p></p>
+    <ul>
+      <li>
+        <em><u>Sin argumentos</u></em
+        >&nbsp;: Elimina todos los elementos de la selección contra la que se
+        invoca la función:&nbsp;
+      </li>
+    </ul>
+    <p></p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <div class="editor-indent" style="margin-left: 30px">
+        <pre
+          style="color: #000000; background: #ffffff"
+        >$(<span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">selección_elementos_eliminar</span><span style="color:#a65700; ">&gt;</span>).remove()</pre>
+      </div>
+    </div>
+
+    <p></p>
+    <ul>
+      <li>
+        <em><u>Con argumentos</u></em
+        >&nbsp;: Elimina aquellos elementos contenidos en la selección contra la
+        que se invoca la función que cumplen la selección indicada como
+        argumento:&nbsp;
+      </li>
+    </ul>
+    <p></p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <div class="editor-indent" style="margin-left: 30px">
+        <pre
+          style="color: #000000; background: #ffffff"
+        >$(<span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">selección_elementos</span><span style="color:#a65700; ">&gt;</span>).remove(<span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">selección_elementos_contenidos_a_eliminar</span><span style="color:#a65700; ">&gt;</span>)</pre>
+      </div>
+    </div>
+
+    <p>
+      <strong><em>Ejemplo:</em></strong
+      >&nbsp;La siguiente página modifica el ejemplo de clonado de elementos
+      visto anteriormente añadiendo los botones "ELIMINAR" y "VACIAR":&nbsp;
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/2.6.9.png"
+        alt=""
+        width="601"
+        height="137"
+        role="presentation"
+        class="img-responsive atto_image_button_text-bottom"
+      /><br />
+    </p>
+
+    <p></p>
+
+    <p>
+      El botón “<em>ELIMINAR</em>” elimina la fruta seleccionada de la lista de
+      artículos adquiridos y el botón “<em>VACIAR</em>” elimina todas las frutas
+      dejando la lista vacía.
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#btn_adquirir</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Obtencion de la opcion seleccionada en lista de articulos</span>
+                <span style="color:#800000; font-weight:bold; ">var</span> $articulos_seleccionados <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#articulos option:selected</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#696969; ">// Agregado de clon de la opcion seleccionada a la lista de adquiridos</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#compras</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>append<span style="color:#808030; ">(</span>$articulos_seleccionados<span style="color:#808030; ">.</span>clone<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>  
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#btn_eliminar</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>                <span style="color:#696969; ">// Elimina opciones seleccionadas dentro de lista de opciones 'compras'</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#compras option:selected</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>remove<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></em></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#btn_vacias</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>                <span style="color:#696969; ">// Elimina todas las opciones de la lista de opciones 'compras'</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#compras option</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>remove<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></em></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">form</span><span style="color:#a65700; ">&gt;</span>
+    Articulos
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"articulos"</span><span style="color:#274796; "> </span><span style="color:#074726; ">size</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"7"</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"1"</span><span style="color:#a65700; ">&gt;</span>Manzanas<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"2"</span><span style="color:#a65700; ">&gt;</span>Peras<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"3"</span><span style="color:#a65700; ">&gt;</span>Melocotones<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"4"</span><span style="color:#a65700; ">&gt;</span>Piñas<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"5"</span><span style="color:#a65700; ">&gt;</span>Cerezas<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"6"</span><span style="color:#a65700; ">&gt;</span>Platanos<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"7"</span><span style="color:#a65700; ">&gt;</span>Uvas<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_adquirir'</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'button'</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'ADQUIRIR'</span><span style="color:#a65700; ">&gt;</span>
+    Compra
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'compras'</span><span style="color:#274796; "> </span><span style="color:#074726; ">size</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'7'</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_eliminar'</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'button'</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'ELIMINAR'</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_vacias'</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'button'</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'VACIAR'</span><span style="color:#a65700; ">&gt;</span>    
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">form</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      En el caso de querer eliminar no todos, sino únicamente algunos elementos
+      contenidos en una selección; puede emplearse la segunda sintaxis de la
+      función. Por ejemplo; el código siguiente eliminaría las opciones de la
+      lista con id=<em>’compra’</em> que estén seleccionadas:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            >            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#btn_eliminar</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>                <span style="color:#696969; ">// Elimina opciones seleccionadas dentro de lista de opciones 'compras'</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#compras option</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>remove<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">:selected</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></em></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <strong
+        ><em><br /> </em></strong
+      ><strong><em>Función $().detach()</em></strong>
+    </p>
+
+    <p>
+      Esta función alternativa elimina de la página los elementos seleccionados;
+      pero
+      <span
+        ><span
+          ><em style="text-decoration-line: underline"
+            >NO los elimina de la memoria. </em
+          ><span
+            >A diferencia de la función <em>$().remove()</em> ésta&nbsp;</span
+          ></span
+        > </span
+      ><span style="font-size: 0.9375rem"
+        >retorna los elementos eliminados para poder volverlos a añadir después
+        al modelo de documento (<em>DOM</em>) empleando funciones vistas con
+        anterioridad ( </span
+      ><strong style="font-size: 0.9375rem"
+        ><em
+          >$().append(), $().appendTo(), $().prepend(), $().prependTo()
+        </em></strong
+      >
+      <span style="font-size: 0.9375rem">).&nbsp;</span>
+    </p>
+    <p>
+      <span style="font-size: 0.9375rem">Su sintaxis es la siguiente:</span>
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <div class="editor-indent" style="margin-left: 30px">
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><strong><em><span style="color:#808030; ">&lt;</span>elementos_eliminados<span style="color:#808030; ">&gt;</span> <span style="color:#808030; ">=</span> <span style="color:#808030; ">&lt;</span>selección_elementos<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">.</span>detach<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span></em></strong></pre>
+      </div>
+    </div>
+
+    <p>
+      <strong><em>Ejemplo: </em></strong>La siguiente página muestra dos capas
+      con un párrafo y un botón “PULSAME”.&nbsp;
+    </p>
+    <p style="text-align: center">
+      <span style="font-size: 0.9375rem"
+        ><img
+          src="/imagenes/2.6.10.png"
+          alt=""
+          role="presentation" /><br
+      /></span>
+    </p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >Cuando se pulsa el botón el párrafo “MENSAJE” es eliminado de la capa
+        superior quedando vacía.&nbsp;</span
+      >
+    </p>
+    <p style="text-align: center">
+      <span style="font-size: 0.9375rem"
+        ><img
+          src="/imagenes/2.6.11.png"
+          alt=""
+          width="300"
+          height="180"
+          role="presentation"
+          class="img-responsive atto_image_button_text-bottom" /><br
+      /></span>
+    </p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >Al pulsar por segunda vez el botón “PULSAME”, el mismo párrafo es
+        añadido nuevamente a la página en el interior de la segunda capa:</span
+      >
+    </p>
+    <p style="text-align: center">
+      <span style="font-size: 0.9375rem"
+        ><img
+          src="/imagenes/2.6.12.png"
+          alt=""
+          width="300"
+          height="178"
+          role="presentation"
+          class="img-responsive atto_image_button_text-bottom" /><br
+      /></span>
+    </p>
+    <p style="text-align: justify">
+      <span style="font-size: 0.9375rem"
+        >Para eliminar el párrafo contenido en la primera capa se emplea el
+        método <strong><em>$().detach()</em></strong> guardándolo en una
+        variable para poderlo añadir nuevamente después a la segunda
+        capa:&nbsp;</span
+      >
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; "> type="text/css"&gt;</span>
+        <span style="color:#808030; ">.</span>azul <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">width</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">100</span><span style="color:#006600; ">%</span><span style="color:#800080; ">;</span> 
+            <span style="color:#bb7977; font-weight:bold; ">height</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">100</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span> 
+            <span style="color:#bb7977; font-weight:bold; ">background-color</span><span style="color:#808030; ">:</span> <span style="color:#797997; ">cyan</span><span style="color:#800080; ">;</span> 
+        <span style="color:#800080; ">}</span>
+        <span style="color:#808030; ">.</span>amarillo <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">width</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">100</span><span style="color:#006600; ">%</span><span style="color:#800080; ">;</span> 
+            <span style="color:#bb7977; font-weight:bold; ">height</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">100</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span> 
+            <span style="color:#bb7977; font-weight:bold; ">background-color</span><span style="color:#808030; ">:</span> <span style="color:#797997; ">yellow</span><span style="color:#800080; ">;</span> 
+        <span style="color:#800080; ">}</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#800000; font-weight:bold; ">var</span> $parrafo <span style="color:#808030; ">=</span> <span style="color:#0f4d75; ">null</span><span style="color:#800080; ">;</span> 
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">button</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>                <span style="color:#696969; ">// Esta el párrafo en memoria? </span>
+                <span style="color: rgb(128, 0, 0);">if</span> <span style="color:#808030; ">(</span> $parrafo <span style="color:#808030; ">==</span> <span style="color:#0f4d75; ">null</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    <span style="color:#696969; ">// Elimina el párrafo de la primera capa, pero guardándolo en la variable $parrafo.</span>
+                    $parrafo <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">div.azul p</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>detach<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+                <span style="color:#800080; ">}</span> <span style="color: rgb(128, 0, 0);">else</span> <span style="color:#800080; ">{</span>
+                    <span style="color:#696969; ">// Reinserta el parrafo en la segunda capa. </span>
+                    $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">div.amarillo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>append<span style="color:#808030; ">(</span>$parrafo<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+                <span style="color:#800080; ">}</span></em></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>PULSAME<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'azul'</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>MENSAJE<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'amarillo'</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <p></p>
+  </div>
+</div>
+<h3>Inserción de elementos.</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p>
+      Cuando se añade un elemento al modelo de documento (DOM) mediante las
+      funciones
+      <strong
+        ><em
+          >$().append(), $().appendTo(), $().prepend() y $().prependTo()</em
+        ></strong
+      >,&nbsp; éste se añade el primero o el último entre los elementos hijos
+      del seleccionado. Con la inserción sin embargo, un<em
+        ><u
+          >&nbsp;elemento puede agregarse antes o después del elemento
+          seleccionado en su mismo nivel</u
+        ></em
+      >.&nbsp;
+    </p>
+    <p>JQuery dispone para ello de las siguientes funciones:&nbsp;</p>
+
+    <h5><em>Función $().after() </em></h5>
+
+    <p>
+      Este método
+      <em
+        ><u
+          >inserta el elemento indicado como argumento
+          <strong>después</strong> del elemento seleccionado como referencia</u
+        ></em
+      >. Su sintaxis es la siguiente:
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <div class="editor-indent" style="margin-left: 30px">
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><strong><em><span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">elemento_referencia</span><span style="color:#a65700; ">&gt;</span>.after(<span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">elemento_que_se_inserta</span><span style="color:#a65700; ">&gt;</span>)</em></strong></pre>
+      </div>
+    </div>
+
+    <p>
+      <strong><em>Ejemplo</em></strong
+      >: La siguiente página muestra una lista <em>&lt;ol&gt;</em> de
+      elementos:&nbsp;
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/2.6.13.png"
+        alt=""
+        role="presentation"
+      /><br />
+    </p>
+    <p>
+      tal que al&nbsp;<span style="font-size: 0.9375rem"
+        >hacer clic sobre una opción queremos que se remarque en amarillo y se
+        añada otra opción “<em>---- nueva opción ----</em>“ justo a continuación
+        empleando para ello el método $().</span
+      ><em style="font-size: 0.9375rem">after().&nbsp;</em>
+      <span style="font-size: 0.9375rem"
+        >De modo que si hacemos clic en la opción número 3, el resultado es el
+        siguiente:</span
+      >
+    </p>
+    <p style="text-align: center">
+      <span style="font-size: 0.9375rem"
+        ><img
+          src="/imagenes/2.6.14.png"
+          alt=""
+          role="presentation" /><br
+      /></span>
+    </p>
+
+    <p></p>
+
+    <p>El código sería el siguiente:&nbsp;</p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; "> type="text/css"&gt;</span>
+        <span style="color:#800000; font-weight:bold; ">li</span> <span style="color:#800080; ">{</span> <span style="color:#bb7977; font-weight:bold; ">cursor</span><span style="color:#808030; ">:</span> <span style="color:#074726; ">pointer</span><span style="color:#800080; ">;</span> <span style="color:#800080; ">}</span>
+        <span style="color:#808030; ">.</span>seleccionado <span style="color:#800080; ">{</span> <span style="color:#bb7977; font-weight:bold; ">background-color</span><span style="color:#808030; ">:</span> <span style="color:#797997; ">yellow</span><span style="color:#800080; ">;</span> <span style="color:#800080; ">}</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">li</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>                <span style="color:#696969; ">// Marco el elemento seleccionado</span>
+                $<span style="color:#808030; ">(</span><span style="color: rgb(128, 0, 0);">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>addClass<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">seleccionado</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#696969; ">// Inserto el nuevo elemento a continuación del seleccionado. </span>
+                $<span style="color:#808030; ">(</span><span style="color: rgb(128, 0, 0);">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>after<span style="color:#808030; ">(</span>$<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">&lt;li&gt;</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span>text<span style="color:#800080; ">:</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">--- nueva opcion ---</span><span style="color:#800000; ">'</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> </em></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">ol</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>        
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">ol</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      <strong><em>$().insertAfter()</em></strong>
+    </p>
+
+    <p>
+      Este método es equivalente al anterior pero se invoca a partir del
+      elemento a insertar pasando como argumento la selección del elemento junto
+      al que se inserta:&nbsp;
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >    <strong><em>        <span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">elemento_que_se_inserta</span><span style="color:#a65700; ">&gt;</span>. insertAfter(<span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">elemento_referencia</span><span style="color:#a65700; ">&gt;</span>)</em></strong>
+</pre>
+
+    <p>
+      <strong><em>Ejemplo</em></strong
+      ><em><u>:</u></em> La siguiente página es equivalente a la del ejemplo
+      anterior pero empleando la función<span
+        ><strong
+          ><em> $().insertAfter()</em>
+        </strong>
+      </span>
+      en vez de<span
+        ><em><strong>&nbsp;</strong><strong>$().</strong></em></span
+      ><span
+        ><strong><em>after()</em>: &nbsp;</strong></span
+      >
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; "> type="text/css"&gt;</span>
+        <span style="color:#800000; font-weight:bold; ">li</span> <span style="color:#800080; ">{</span> <span style="color:#bb7977; font-weight:bold; ">cursor</span><span style="color:#808030; ">:</span> <span style="color:#074726; ">pointer</span><span style="color:#800080; ">;</span> <span style="color:#800080; ">}</span>
+        <span style="color:#808030; ">.</span>seleccionado <span style="color:#800080; ">{</span> <span style="color:#bb7977; font-weight:bold; ">background-color</span><span style="color:#808030; ">:</span> <span style="color:#797997; ">yellow</span><span style="color:#800080; ">;</span> <span style="color:#800080; ">}</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">li</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Marco el elemento seleccionado</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>addClass<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">seleccionado</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<strong><em>                <span style="color:#696969; ">// Inserta el nuevo elemento a continuación del seleccionado.</span>
+                <span style="color: rgb(128, 0, 0);">var</span> $nuevaOpcion <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">&lt;li&gt;</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span>text<span style="color:#800080; ">:</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">--- nueva opcion ---</span><span style="color:#800000; ">'</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                $nuevaOpcion<span style="color:#808030; ">.</span>insertAfter<span style="color:#808030; ">(</span>$<span style="color:#808030; ">(</span><span style="color: rgb(128, 0, 0);">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> </em></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">ol</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>        
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">ol</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><br /></p>
+
+    <h5>Función <em>$().before()</em></h5>
+
+    <p>
+      <br />Esta función equivale a <strong><em>$().after()</em></strong
+      >, pero&nbsp;<em
+        ><u
+          >inserta el elemento indicado&nbsp;<strong>antes</strong> del elemento
+          seleccionado como referencia</u
+        ></em
+      >. Su sintaxis es la siguiente:
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >   <strong><em>         <span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">elemento_referencia</span><span style="color:#a65700; ">&gt;</span>.before(<span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">elemento_que_se_inserta</span><span style="color:#a65700; ">&gt;</span>)</em></strong>
+</pre>
+
+    <p>
+      <em><strong>Ejemplo</strong>:</em> Este es el mismo código que el del
+      ejemplo del método
+      <span
+        ><strong
+          ><em>$().after()</em>
+        </strong> </span
+      >, pero empleando el método
+      <span
+        ><em><strong>$().</strong></em></span
+      ><em
+        ><span><strong>before()</strong></span
+        >.&nbsp;</em
+      >
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; "> type="text/css"&gt;</span>
+        <span style="color:#800000; font-weight:bold; ">li</span> <span style="color:#800080; ">{</span> <span style="color:#bb7977; font-weight:bold; ">cursor</span><span style="color:#808030; ">:</span> <span style="color:#074726; ">pointer</span><span style="color:#800080; ">;</span> 
+        <span style="color:#800080; ">}</span>
+        <span style="color:#808030; ">.</span>seleccionado <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">background-color</span><span style="color:#808030; ">:</span> <span style="color:#797997; ">yellow</span><span style="color:#800080; ">;</span> 
+        <span style="color:#800080; ">}</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">li</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>                <span style="color:#696969; ">// Marco el elemento seleccionado</span>
+                $<span style="color:#808030; ">(</span><span style="color: rgb(128, 0, 0);">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>addClass<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">seleccionado</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#696969; ">// Inserto el nuevo elemento antes</span>
+                $<span style="color:#808030; ">(</span><span style="color: rgb(128, 0, 0);">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>before<span style="color:#808030; ">(</span>$<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">&lt;li&gt;</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span>text<span style="color:#800080; ">:</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">--- nueva opcion ---</span><span style="color:#800000; ">'</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> </em></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">ol</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>        
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">ol</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      La página inicialmente se muestra de este modo:&nbsp;
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/2.6.15.png"
+        alt=""
+        width="350"
+        height="118"
+        role="presentation"
+        class="img-responsive atto_image_button_text-bottom"
+      /><br />
+    </p>
+    <p>
+      Sin embargo, al hacer clic sobre cada opción, el nuevo elemento
+      <em>"---nueva opción---"</em> es insertado justo antes debido al uso de
+      <strong><em>$().before()</em></strong
+      >:
+    </p>
+
+    <p></p>
+
+    <p style="text-align: center">
+      &nbsp;<img
+        src="/imagenes/2.6.16.png"
+        alt=""
+        width="350"
+        height="114"
+        role="presentation"
+        class="img-responsive atto_image_button_text-bottom"
+      />
+    </p>
+
+    <h5>Función <em>$().insertBefore()</em></h5>
+
+    <p>
+      <br />Esta función es equivalente a
+      <strong
+        ><em>$().<span>before()</span></em></strong
+      >
+      pero se invoca a partir del elemento a insertar pasando como argumento la
+      selección del elemento junto al que se inserta. La sintaxis es la
+      siguiente:&nbsp;
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <div class="editor-indent" style="margin-left: 30px">
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">elemento_que_se_inserta</span><span style="color:#a65700; ">&gt;</span>. insertBefore(<span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">elemento_referencia</span><span style="color:#274796; "> </span><span style="color:#a65700; ">&gt;</span>)</pre>
+      </div>
+    </div>
+
+    <p>
+      El mismo código del ejemplo anterior podría reescribirse del siguiente
+      modo:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; "> type="text/css"&gt;</span>
+        <span style="color:#800000; font-weight:bold; ">li</span> <span style="color:#800080; ">{</span> <span style="color:#bb7977; font-weight:bold; ">cursor</span><span style="color:#808030; ">:</span> <span style="color:#074726; ">pointer</span><span style="color:#800080; ">;</span> 
+        <span style="color:#800080; ">}</span>
+        <span style="color:#808030; ">.</span>seleccionado <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">background-color</span><span style="color:#808030; ">:</span> <span style="color:#797997; ">yellow</span><span style="color:#800080; ">;</span> 
+        <span style="color:#800080; ">}</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">li</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>                <span style="color:#696969; ">// Marco el elemento seleccionado</span>
+                $<span style="color:#808030; ">(</span><span style="color: rgb(128, 0, 0);">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>addClass<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">seleccionado</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#696969; ">// Inserto el nuevo elemento antes </span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">&lt;li&gt;</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span>text<span style="color:#800080; ">:</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">--- nueva opcion ---</span><span style="color:#800000; ">'</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>insertBefore<span style="color:#808030; ">(</span>$<span style="color:#808030; ">(</span><span style="color: rgb(128, 0, 0);">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></em></strong> 
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">ol</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>        
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">ol</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><br /></p>
+    <br />
+    <p></p>
+  </div>
+</div>

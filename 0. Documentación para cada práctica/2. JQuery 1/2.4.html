@@ -1,0 +1,585 @@
+<h2>2.4. Filtros</h2>
+<h3>Filtros</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >Los filtros son métodos que se llaman a partir de una selección para
+        filtrar aún más los elementos seleccionados. El método </span
+      ><em style="font-size: 0.9375rem">filter()</em
+      ><span style="font-size: 0.9375rem">
+        permite aplicar un segundo selector a los elementos devueltos por una
+        selección previa.</span
+      ><br />
+    </p>
+
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong
+        >: </em
+      >El siguiente código devuelve las opciones <em>&lt;li&gt;</em> con la
+      clase de estilo “<em>current</em>” presentes en las listas<em>
+        &lt;ul&gt;</em
+      >
+      de la página:&nbsp;
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            >        $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">ul li</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">filter</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">.current</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      La selección inicial devuelve los elementos<em> &lt;li&gt;</em> contenidos
+      en todos los elemento <em>&lt;ul&gt;</em> presentes en la página. A partir
+      de ahí, el método <em>filter()</em> filtra aquellos elementos con estilo
+      ‘<em>current’</em>.
+    </p>
+
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong></em
+      >: La siguiente página aplica un fondo rojo a todas las opciones
+      <span><em>&lt;li&gt;</em></span
+      >&nbsp;dentro de la lista
+      <em
+        >&lt;ul&gt;
+        <u>que contengan un guión bajo en su contenido:&nbsp;</u></em
+      >
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">ul li</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">filter</span><span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">:contains("_")</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#ff0000</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>A_<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>B<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>C<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>D<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>E_<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>F<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>G_<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      <!--[if !supportLineBreakNewLine]-->El resultado mostrado es el
+      siguiente:&nbsp;
+      <!--[endif]-->
+    </p>
+    <p style="text-align: center">
+      <img src="/imagenes/2.4.1.png" alt="" role="presentation" />
+    </p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >También es posible emplear el método </span
+      ><em style="font-size: 0.9375rem">$().filter()</em
+      ><span style="font-size: 0.9375rem"> <u>indicando una </u></span
+      ><em style="font-size: 0.9375rem"
+        ><u><span>función</span> </u></em
+      >
+      <span style="font-size: 0.9375rem"
+        ><u>que determine con código qué elementos son filtrados.</u
+        >&nbsp;</span
+      >
+    </p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >La función se ejecuta por cada elemento de la selección y recibe dos
+        parámetros (</span
+      ><em style="font-size: 0.9375rem">indice</em
+      ><span style="font-size: 0.9375rem"> y </span
+      ><em style="font-size: 0.9375rem">elemento</em>
+      <span style="font-size: 0.9375rem"
+        >) representando cada elemento. Esta debe retornar un valor lógico por
+        cada elemento indicando si pasa o no el filtro.&nbsp;</span
+      ><br />
+    </p>
+
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong></em
+      >: El siguiente código selecciona los mismos elementos que el ejemplo
+      anterior pero empleando una función en el método <em>filter()</em>:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            >   <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">ul li</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span>
+                <span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">filter</span><span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>indice<span style="color:#808030; ">,</span> elemento<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                        <span style="color:#696969; ">// retorna cierto si el texto del elemento contiene “_”</span>
+                        <span style="color:#800000; font-weight:bold; ">return</span> $<span style="color:#808030; ">(</span>elemento<span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>text<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">indexOf</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">_</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">&gt;</span> <span style="color:#808030; ">-</span><span style="color:#008c00; ">1</span><span style="color:#800080; ">;</span>  
+                 <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span>
+                 <span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#ff0000</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      Las funciones se emplean
+      <em
+        ><u
+          >cuando no hay selector que permita filtrar los elementos deseados.
+        </u></em
+      >
+    </p>
+
+    <p>
+      <em
+        ><u><strong>Ejemplo</strong></u
+        >:</em
+      >
+      El siguiente código selecciona las opciones <em>&lt;li&gt; </em>dentro de
+      la lista <em>&lt;ul&gt;</em> que contienen un valor numérico par:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">ul li</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span>
+                <span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">filter</span><span style="color:#808030; ">(</span><strong><em><span style="color: rgb(128, 0, 0);">function</span><span style="color:#808030; ">(</span>indice<span style="color:#808030; ">,</span> elemento<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span> 
+                        <span style="color:#696969; ">// retorna cierto si el contenido es un valor numérico par. </span>
+                        <span style="color: rgb(128, 0, 0);">return</span> <span style="color:#797997; ">Number</span><span style="color:#808030; ">(</span>$<span style="color:#808030; ">(</span>elemento<span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>text<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#808030; ">%</span><span style="color:#008c00; ">2</span><span style="color:#808030; ">==</span><span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span>  
+                 <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span></em></strong>
+                 <span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#ffff00</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">3</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">6</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">12</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">4</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">7</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">9</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">15</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />El resultado mostrado es el siguiente:&nbsp;<br /><br /><img
+      src="/imagenes/2.4.2.png"
+      alt=""
+      role="presentation"
+    /><br /><br /><span style="font-size: 0.9375rem"
+      >También puede emplearse el método de filtrado
+    </span>
+    <em style="font-size: 0.9375rem">not()</em
+    ><span style="font-size: 0.9375rem">
+      para descartar de la selección los elementos que pasan el filtro:<br /></span
+    ><br />
+
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong></em
+      >: En esta página se seleccionan todas las oopciones &lt;li&gt; de la
+      lista &lt;ul&gt; que NO contienen un guión bajo:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">ul li</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>not<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">:contains("_")</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#ff0000</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>A_<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>B<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>C<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>D<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>E_<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>F<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>G_<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>    
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />El resultado mostrado por pantalla es el siguiente:&nbsp;<br /><br /><img
+      src="/imagenes/2.4.3.png"
+      alt=""
+      role="presentation"
+    /><br /><br />
+
+    <p>
+      JQuery define métodos de filtrado adicionales que equivalen a algunos
+      selectores vistos anteriormente. Hay que destacar que aunque sean
+      equivalentes, los métodos de filtrado se ejecutan más rápido por lo que
+      son preferibles:&nbsp;
+    </p>
+
+    <p>Selectores VS métodos de filtrado equivalentes:</p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="288" valign="top">
+            <p>Selector de JQuery</p>
+          </td>
+          <td width="288" valign="top">
+            <p>Método de filtrado</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="288" valign="top">
+            <p>
+              <em
+                >:eq<img
+                  class="icon emoticon"
+                  alt="No"
+                  title="No"
+                  src="https://ecampus.cipsa.net/theme/image.php/fordson/core/1740047200/s/no"
+              /></em>
+            </p>
+          </td>
+          <td width="288" valign="top">
+            <p>
+              <em
+                >$().eq<img
+                  class="icon emoticon"
+                  alt="No"
+                  title="No"
+                  src="https://ecampus.cipsa.net/theme/image.php/fordson/core/1740047200/s/no"
+              /></em>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td width="288" valign="top">
+            <p><em>:first</em></p>
+          </td>
+          <td width="288" valign="top">
+            <p><em>$().first()</em></p>
+          </td>
+        </tr>
+        <tr>
+          <td width="288" valign="top">
+            <p><em>:last</em></p>
+          </td>
+          <td width="288" valign="top">
+            <p><em>$().last()</em></p>
+          </td>
+        </tr>
+        <tr>
+          <td width="288" valign="top">
+            <p><em>:has(selector)</em></p>
+          </td>
+          <td width="288" valign="top">
+            <p><em>$().has(selector)</em></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <p>
+              <em
+                >(*) En la web oficial de la API de JQuery pueden encontrarse un
+                glosario con los métodos de filtrado disponibles:</em
+              >
+            </p>
+            <p style="text-align: right">
+              <a href="https://api.jquery.com/category/traversing/filtering/"
+                ><em
+                  >https://api.jquery.com/category/traversing/filtering/</em
+                ></a
+              ><em></em>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+
+    <p>
+      <em
+        ><u><strong>Ejemplo</strong></u
+        >: </em
+      >La siguiente página muestra la selección del tercer párrafo
+      <em>&lt;p&gt;</em> de las capas <em>&lt;div&gt;</em> con
+      <em>id=”capa1”</em> y “capa2” tanto con el selector <em>:eq </em>como
+      con&nbsp;el método de filtrado <em>$().eq()</em> para comparar ambas
+      sintaxis<em>:&nbsp;</em>
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// fondo rojo al tercer párrafo de la capa id=’capa1’ con selector. </span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#capa1 p:eq(2)</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#ff0000</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#696969; ">// fondo rojo al tercer párrafo de la capa id=’capa2’ con métodos de filtrado. </span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#capa2 p</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>eq<span style="color:#808030; ">(</span><span style="color:#008c00; ">2</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#ff0000</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">h1</span><span style="color:#a65700; ">&gt;</span>CAPA1<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">h1</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'capa1'</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">0</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">1</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">2</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">3</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">4</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">h1</span><span style="color:#a65700; ">&gt;</span>CAPA2<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">h1</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'capa2'</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">0</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">1</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">2</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">3</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span><span style="color:#008c00; ">4</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><br />El resultado es en ambos casos el mismo:&nbsp;</p>
+    <p style="text-align: center">
+      <img src="/imagenes/2.4.4.png" alt="" role="presentation" />
+    </p>
+    <br />
+    <p></p>
+  </div>
+</div>
+<h3>Encadenamiento de métodos de filtrado.</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >Los métodos de filtrado se invocan a partir de una selección y
+        devuelven otra selección, por lo que pueden encadenarse para que cada
+        uno se aplique a la selección devuelta por el anterior. Esto permite
+        refinar la selección de elementos.</span
+      ><br />
+    </p>
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong
+        >:</em
+      >&nbsp;El siguiente código selecciona y asigna un contenido HTML al tercer
+      párrafo&nbsp;<em>&lt;h3&gt;</em>&nbsp;presente dentro de un elemento
+      con<em>&nbsp;id=’content’</em>&nbsp;(por ejemplo una capa).
+    </p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            >        $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#content</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span>
+            <span style="color:#808030; ">.</span>find<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">h3</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span>
+            <span style="color:#808030; ">.</span>eq<span style="color:#808030; ">(</span><span style="color:#008c00; ">2</span><span style="color:#808030; ">)</span>
+            <span style="color:#808030; ">.</span>html<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">nuevo contenido</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <br />También puede emplearse el encadenamiento para realizar múltiples
+      selecciones a partir de una misma selección inicial sin necesidad de tener
+      que hacer diferentes selecciones. Por tanto, se emplea el
+      método<em>&nbsp;$().end()&nbsp;</em>que retorna la selección anterior
+      permitiendo encadenar otros métodos de filtrado a partir de ella.
+    </p>
+    <p>
+      <strong
+        ><em><u>Ejemplo</u></em></strong
+      >: El siguiente código asigna un fondo distinto a cada una de las capas de
+      la página mediante una sola selección. Se emplea el método&nbsp;<span
+        ><em>$().end()</em></span
+      >&nbsp;para encadenar los diferentes métodos de filtrado.
+    </p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Las 4 lineas siguientes forman parte de una única sentencia de código.</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">div</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span>
+                <span style="color:#808030; ">.</span>eq<span style="color:#808030; ">(</span><span style="color:#008c00; ">0</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#800080; ">:</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#ff0000</span><span style="color:#800000; ">"</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>end<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span>  <span style="color:#696969; ">// fondo rojo a capa indx 0</span>
+                <span style="color:#808030; ">.</span>eq<span style="color:#808030; ">(</span><span style="color:#008c00; ">1</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#800080; ">:</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#00ff00</span><span style="color:#800000; ">"</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>end<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span>  <span style="color:#696969; ">// fondo verde a capa indx 1</span>
+                <span style="color:#808030; ">.</span>eq<span style="color:#808030; ">(</span><span style="color:#008c00; ">2</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#800080; ">:</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#0000ff</span><span style="color:#800000; ">"</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>end<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span>  <span style="color:#696969; ">// fondo azul a capa indx 2</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>Capa1<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>Capa2<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>Capa3<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <strong><br /></strong><strong><em>Explicación:&nbsp;</em></strong
+      >La selección&nbsp;<em>$(‘div’)</em>&nbsp;selecciona todas las
+      capas,&nbsp;<em>eq(0)</em>&nbsp;selecciona la primera a la que se le
+      asigna fondo rojo con <em>css().</em> El
+      método&nbsp;<em>end()</em>&nbsp;concatenado a continuación retorna
+      entonces a la selección inicial de las tres capas,
+      donde&nbsp;<em>eq(1)</em>&nbsp;selecciona la segunda cambiando su fondo a
+      verde. El método&nbsp;<em>end()</em>&nbsp;concatenado retorna otra vez a
+      la selección inicial de las tres capas
+      donde&nbsp;<em>eq(2)</em>&nbsp;termina por seleccionar la última capa y
+      cambiando su fondo a azul.<br clear="all" /><strong></strong>
+    </p>
+    <h5>Filtro de comprobación&nbsp;<em>$().is()</em></h5>
+    <p>
+      Este filtro devuelve un valor lógico (<em>cierto/falso</em>) indicando si
+      algún elemento de la selección cumple el selector dado como argumento. Se
+      emplea habitualmente en condicionales para validar si algún elemento de
+      los seleccionados posee cierto estado.
+    </p>
+    <p>
+      <em><u>Ejemplo</u>:</em>&nbsp;El siguiente código comprueba si alguno de
+      los botones de opción seleccionados está marcado:
+    </p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Hay algún botón radio marcado?</span>
+            <span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">:radio</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>is<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">:checked</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">==</span> <span style="color:#0f4d75; ">false</span><span style="color:#808030; ">)</span>
+                <span style="color:#696969; ">// Ningún botón de opción marcado.</span>
+                <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">No se marco</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>  
+            <span style="color:#800000; font-weight:bold; ">else</span> 
+                <span style="color:#696969; ">// SI. Se muestra el atributo 'value' del botón marcado</span>
+                <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Se marco: </span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">:radio:checked</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>val<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">form</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'radio'</span><span style="color:#274796; "> </span><span style="color:#074726; ">name</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'sexo'</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'HOMBRE'</span><span style="color:#a65700; ">/&gt;</span>Hombre
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'radio'</span><span style="color:#274796; "> </span><span style="color:#074726; ">name</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'sexo'</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'MUJER'</span><span style="color:#274796; "> </span><span style="color:#074726; ">checked</span><span style="color:#a65700; ">/&gt;</span>Mujer   
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">form</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <p></p>
+  </div>
+</div>

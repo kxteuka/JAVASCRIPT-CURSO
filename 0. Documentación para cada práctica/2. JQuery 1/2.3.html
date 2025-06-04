@@ -1,0 +1,1090 @@
+<h2 id="yui_3_17_2_1_1749019684646_22">2.3. Selectores y pseudoselectores</h2>
+<h3>Selectores básicos</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p style="text-align: center">
+      <span style="font-size: 0.9375rem"
+        >Ya hemos comentado que el uso más básico de JQuery consiste seleccionar
+        uno o varios elementos HTML del DOM y manipularlos obteniendo y
+        modificando sus propiedades. Por ejemplo; si se desea modificar la
+        imagen mostrada por un elemento </span
+      ><em style="font-size: 0.9375rem">&lt;img&gt;</em
+      ><span style="font-size: 0.9375rem">
+        primero
+        <em
+          ><u>debe obtenerse el elemento que la representa en el DOM.</u></em
+        ></span
+      ><br />
+    </p>
+
+    <p style="text-align: justify">
+      Para poder seleccionar un elemento de una página, primero debe esperarse a
+      que la página se haya cargado completamente.&nbsp;<em
+        style="font-size: 0.9375rem"
+        ><u
+          >Para ello se declara una función anónima asociadas al evento
+          <strong>ready</strong> del <strong>document</strong>, que se ejecuta
+          cuando la página ha terminado de cargarse:</u
+        ></em
+      >
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            >        $<span style="color:#808030; ">(</span>document<span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+              <span style="color:#696969; ">// Código a ejecutarse al completarse la carga de la página</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      También puede emplearse la forma abreviada:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            >        $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+              <span style="color:#696969; ">// Código a ejecutarse al completarse la carga de la página</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      La selección de elementos mediante JQuery emplea por defecto
+      <em>$() </em>que es una alias de la función <em>jquery()</em>. Como
+      argumento se indica una cadena con un selector como los selectores de
+      <em>CSS3</em> además de añadir algunos selectores propios:
+    </p>
+
+    <h5>Selectores y selecciones</h5>
+
+    <p>
+      Todo <em>selector</em> devuelve una <em>selección</em>, que puede contener
+      uno, ninguno, o varios elementos del DOM en función del contenido de la
+      página y el selector empleado:
+    </p>
+
+    <p>
+      &nbsp;
+      <!--[endif]-->Selector por ID : Esto selecciona aquel elemento cuyo
+      atributo id = “<em>identificador</em>”
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <div class="editor-indent" style="margin-left: 30px">
+              <pre
+                style="color: #000000; background: #ffffff"
+              >$<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#identificador</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span></pre>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+
+    <p>
+      &nbsp;Selector por estilo : Esto selecciona aquellos elementos que tengan
+      la clase de estilo <em>“.nombreClase”</em>.
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px"></div>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <div class="editor-indent" style="margin-left: 30px">
+              <pre
+                style="color: #000000; background: #ffffff"
+              >$<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">.nombreClase</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span></pre>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+
+    <p>
+      &nbsp; Selector por etiqueta ( tag ) : Esto selecciona todos los elementos
+      <em>&lt;a&gt;</em>
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <div class="editor-indent" style="margin-left: 30px">
+              <pre
+                style="color: #000000; background: #ffffff"
+              >$<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">a</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span></pre>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+
+    <p>
+      &nbsp;Selector por atributos : Esto selecciona todos los enlaces
+      <em>&lt;a&gt;</em> con el atributo <em>name = ‘enlaces’.</em>
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <div class="editor-indent" style="margin-left: 30px">
+              <pre
+                style="color: #000000; background: #ffffff"
+              >$<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">a[name='enlaces']</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span></pre>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br /><span style="font-size: 0.9375rem"
+        >En este tipo de selector pueden emplearse las siguientes
+        variaciones:</span
+      ><br />
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <pre
+        style="color: #000000; background: #ffffff"
+      >$<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">a[name|='pos']</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span></pre>
+    </div>
+
+    <p>
+      Devuelve todos los elementos cuyo atributo ‘<em>name’</em> tenga como
+      valor ‘<em>pos’</em>, o un valor que empieza por ‘<em>pos’</em>.
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <pre
+        style="color: #000000; background: #ffffff"
+      >$<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">a[name*='pos']</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span></pre>
+    </div>
+
+    <p>
+      Devuelve todos los elementos cuyo atributo ‘<em>name</em>’ tenga un valor
+      en el que aparezca ‘<em>pos’</em> al principio, final, o en medio.
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <pre
+        style="color: #000000; background: #ffffff"
+      >$<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">a[name~='pos']</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span></pre>
+    </div>
+
+    <p>
+      Devuelve todos los elementos cuyo atributo ‘<em>name’</em> contenga el
+      valor ‘<em>pos’</em> entre dos espacio en blanco, uno delante y otro
+      detrás.
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <pre
+        style="color: #000000; background: #ffffff"
+      >$<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">a[name$='pos']</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span></pre>
+    </div>
+
+    <p>
+      Devuelve todos los elementos con el atributo “<em>name</em>” cuyo valor
+      termine en “<em>pos</em>”.
+    </p>
+
+    <p style="text-align: right">
+      <em
+        ><strong><u>Referencia</u></strong
+        >:</em
+      ><em> </em
+      ><em
+        ><a
+          href="https://www.w3.org/TR/selectors-3/#attribute-selectors"
+          target="_blank"
+          >https://www.w3.org/TR/selectors-3/#attribute-selectors</a
+        ></em
+      ><em></em>
+    </p>
+
+    <p>
+      <em><strong>Ejemplo</strong></em
+      >: Sea la siguiente página HTML que muestra una serie de párrafos dentro
+      de una capa:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; "> type="text/css"&gt;</span>
+        <span style="color:#808030; ">.</span>estilo <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">font-style</span><span style="color:#808030; ">:</span> <span style="color:#074726; ">italic</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'parrafo'</span><span style="color:#a65700; ">&gt;</span>PARRAFO<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'estilo'</span><span style="color:#a65700; ">&gt;</span>PARRAFO <span style="color:#008c00; ">2</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">P</span><span style="color:#274796; "> </span><span style="color:#074726; ">name</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'parrafo'</span><span style="color:#a65700; ">&gt;</span>PARRAFO3<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="text-align: justify">
+      <span
+        ><br />El aspecto de la página es el siguiente en origen:&nbsp;</span
+      >
+    </p>
+    <p style="text-align: center">
+      <span
+        ><img src="/imagenes/2.3.1.png" alt="" role="presentation" /><br
+      /></span>
+    </p>
+    <p style="text-align: justify">
+      <span
+        >Con JQuery podemos modificar el contenido original de los párrafos
+        empleando los selectores y el método<span>&nbsp;</span></span
+      ><span
+        ><span
+          ><span
+            ><strong><em>text()&nbsp;</em></strong
+            >que permite tanto obtener como modificar sus contenidos. De igual
+            modo, t</span
+          ></span
+        > </span
+      ><span>ambién puede emplearse el método&nbsp;</span
+      ><strong><em>css()</em></strong
+      ><span
+        >&nbsp;para añadir una regla de estilo indicando la propiedad y el
+        valor:</span
+      ><br />
+    </p>
+
+    <p>
+      <strong
+        ><span><em>&nbsp;</em></span
+        ><em
+          >(*) El siguiente código asume el uso de la librería
+          “jquery-3.2.1.min.js” alojada localmente en una subcarpeta
+          “scripts”:</em
+        ></strong
+      ><strong> </strong>
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">!</span>DOCTYPE html<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>html<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>head<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>title<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>title<span style="color:#808030; ">&gt;</span>
+	<span style="color:#808030; ">&lt;</span>meta charset<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">utf-8</span><span style="color:#800000; ">"</span> <span style="color:#808030; ">/</span><span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>style type<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">text/css</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">.</span>estilo <span style="color:#800080; ">{</span>
+            font<span style="color:#808030; ">-</span>style<span style="color:#800080; ">:</span> <span style="color:#800000; font-weight:bold; ">italic</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span>
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>style<span style="color:#808030; ">&gt;</span>
+ <strong><em>   <span style="color:#808030; ">&lt;</span>script src<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">scripts/jquery-3.2.1.min.js</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span></em></strong>
+    <span style="color:#808030; ">&lt;</span>script<span style="color:#808030; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#parrafo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>text<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">Seleccion por ID</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">.estilo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>text<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">Seleccion por estilo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">[name="parrafo"]</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>text<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Seleccion por atributo</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">div</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">#ffff00</span><span style="color:#800000; ">'</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></em></strong>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span>
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>head<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>body<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>div<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>p id<span style="color:#808030; ">=</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">parrafo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">&gt;</span>PARRAFO<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>p<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>p <span style="color:#800000; font-weight:bold; ">class</span><span style="color:#808030; ">=</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">estilo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">&gt;</span>PARRAFO <span style="color:#008c00; ">2</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>p<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>P name<span style="color:#808030; ">=</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">parrafo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">&gt;</span>PARRAFO3<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>p<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>div<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>body<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>html<span style="color:#808030; ">&gt;</span>
+
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <strong><br /></strong>
+    </p>
+    <p style="text-align: justify">
+      <strong
+        ><span style="font-size: 0.9375rem; font-weight: 400"
+          >La página modificada por JQuery se muestra ahora del siguiente modo
+          independientemente del contenido HTML </span
+        ><em style="font-size: 0.9375rem; font-weight: 400"
+          ><u>que permanece sin cambios.&nbsp;</u></em
+        ></strong
+      >
+    </p>
+    <p></p>
+    <p style="text-align: center">
+      <img src="/imagenes/2.3.2.png" alt="" role="presentation" /><br />
+    </p>
+    <h5>Selección Múltiple</h5>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >Un selector puede seleccionar al mismo tiempo uno o más elementos que
+        cumplen con la condición indicada. En tal caso los cambios se aplican a
+        todos los elementos seleccionados.</span
+      ><br />
+    </p>
+    <p>
+      <em><strong>Ejemplo</strong></em
+      >: La siguiente página muestra la selección de los tres párrafos por el
+      valor de su etiqueta '<em>name</em>' y la manipulación de su contenido
+      mediante JQuery:&nbsp;
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">!</span>DOCTYPE html<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>html<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>head<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>title<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>title<span style="color:#808030; ">&gt;</span>
+	<span style="color:#808030; ">&lt;</span>meta charset<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">utf-8</span><span style="color:#800000; ">"</span> <span style="color:#808030; ">/</span><span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>script src<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">scripts/jquery-3.2.1.min.js</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>script<span style="color:#808030; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">[name="parrafo"]</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>text<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Seleccion por atributo</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span>
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>head<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>body<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>div<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>p name<span style="color:#808030; ">=</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">parrafo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">&gt;</span>PARRAFO<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>p<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>p name<span style="color:#808030; ">=</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">parrafo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">&gt;</span>PARRAFO2<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>p<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>P name<span style="color:#808030; ">=</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">parrafo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">&gt;</span>PARRAFO3<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>p<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>div<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>body<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>html<span style="color:#808030; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      Todos los párrafos son seleccionados y su contenido modificado, por lo que
+      la página muestra el siguiente aspecto a pesar del contenido indicado en
+      el código HTML:&nbsp;
+    </p>
+
+    <p style="text-align: center">
+      <img
+        src="/imagenes/2.3.3.png"
+        alt=""
+        role="presentation"
+        style="font-size: 0.9375rem"
+      />
+    </p>
+    <h5>Combinación de selectores</h5>
+
+    <p>
+      Los selectores pueden combinarse para seleccionar elementos de manera más
+      precisa siguiendo la jerarquía del DOM siguiendo las siguientes
+      reglas:&nbsp;
+    </p>
+    <p></p>
+    <ul>
+      <li>
+        Los selectores juntos se combinan para seleccionar aquellos elementos
+        que cumplen todos los criterios.&nbsp;
+      </li>
+      <li>
+        Los selectores separados por espacios en blanco se aplican al conjunto a
+        los contenidos en los seleccionados por los selectores anteriores.&nbsp;
+      </li>
+    </ul>
+    <p>
+      Por ejemplo: El siguiente selector obtiene aquellos elementos
+      <strong><em>&lt;div&gt;</em></strong> con el estilo
+      "<em>estilo</em>":&nbsp;
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >        $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">div.estilo</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+
+    <p>
+      El siguiente selector obtiene todos los elementos
+      <strong><em>&lt;li&gt;</em></strong> contenidos en listas
+      <strong><em>&lt;ul&gt;</em></strong> con el estilo "<em>personas</em>"
+      contenidas en un elemento con id "contenido":&nbsp;
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <div class="editor-indent" style="margin-left: 30px">
+        <pre
+          style="color: #000000; background: #ffffff"
+        >$<span style="color:#808030; ">(</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#contenido ul.personas li</span><span style="color:#800000; ">"</span> <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></pre>
+      </div>
+    </div>
+
+    <p>Esta selección funciona del siguiente modo:</p>
+
+    <p></p>
+    <ul>
+      <li>
+        Selecciona el elemento con <em>id=’contenido’</em>. &nbsp;( #contenido )
+      </li>
+      <li>
+        Selecciona todos los elementos <em><strong>&lt;ul&gt;</strong></em> con
+        estilo ‘<em>persona’</em>. ( ul.personas )
+      </li>
+      <li>
+        Selecciona todos los elementos <em><strong>&lt;li&gt;</strong>. </em>(
+        li )
+      </li>
+    </ul>
+    <br />
+    <p></p>
+  </div>
+</div>
+<h3>Pseudoselectores de JQuery</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p style="text-align: justify">
+      <span style="font-size: 0.9375rem">JQuery incluye&nbsp;</span
+      ><em style="font-size: 0.9375rem">pseudoselectores</em
+      ><span style="font-size: 0.9375rem"
+        >&nbsp;para seleccionar elementos de manera más precisa que con los
+        selectores básicos. Estos selectores&nbsp;</span
+      >
+      <span style="font-size: 0.9375rem"
+        >se caracterizan por tener el prefijo ":". Se distinguen&nbsp;</span
+      ><span style="font-size: 0.9375rem">los siguientes tipos:&nbsp;</span>
+    </p>
+    <h5>Selectores por tipo:</h5>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <p></p>
+            <ul>
+              <li>
+                <span lang="EN-US">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span
+                ><span lang="EN-US">:</span
+                ><em><span lang="EN-US">password -&gt;</span></em
+                ><em>&nbsp;</em
+                ><span lang="EN-US"
+                  >Elementos &lt;input type=’password’&gt;</span
+                >
+              </li>
+              <li>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:<em>reset -&gt;</em
+                ><em>&nbsp;</em>Elementos &lt;input type=’reset’&gt;
+              </li>
+              <li>
+                <span lang="EN-US">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span
+                ><span lang="EN-US">:</span
+                ><em><span lang="EN-US">radio -&gt;</span></em
+                ><em>&nbsp;</em
+                ><span lang="EN-US">Elementos &lt;input type=’radio’&gt;</span>
+              </li>
+              <li>
+                <span lang="EN-US">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span
+                ><span lang="EN-US">:</span
+                ><em><span lang="EN-US">text -&gt;</span></em
+                ><em><span lang="EN-US">&nbsp;</span></em
+                ><span lang="EN-US">Elementos &lt;input type=’text’&gt;</span>
+              </li>
+              <li>
+                <span lang="EN-US">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span
+                ><span lang="EN-US">:</span
+                ><em><span lang="EN-US">submit -&gt;</span></em
+                ><em><span lang="EN-US">&nbsp;</span></em
+                ><span lang="EN-US">Elementos &lt;input type=’submit’&gt;</span>
+              </li>
+              <li>
+                <span lang="EN-US">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span
+                ><span lang="EN-US">:</span
+                ><em><span lang="EN-US">checkbox -&gt;</span></em
+                ><em><span lang="EN-US">&nbsp;</span></em
+                ><span lang="EN-US"
+                  >Elementos &lt;input type=’checkbox’&gt;</span
+                >
+              </li>
+              <li>
+                <span lang="EN-US">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span
+                ><span lang="EN-US">:</span
+                ><em><span lang="EN-US">button -&gt;</span></em
+                ><em><span lang="EN-US">&nbsp;</span></em
+                ><span lang="EN-US">Elementos &lt;input type=’button’&gt;</span>
+              </li>
+              <li>
+                <span lang="EN-US">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span
+                ><span lang="EN-US">:</span
+                ><em><span lang="EN-US">image -&gt;</span></em
+                ><em><span lang="EN-US">&nbsp;</span></em
+                ><span lang="EN-US">Elementos &lt;input type=’image’&gt;</span>
+              </li>
+              <li>
+                <span lang="EN-US">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span
+                ><em><span lang="EN-US">:hidden -&gt;</span></em
+                ><span lang="EN-US"
+                  >&nbsp;Elementos &lt;input type=’hidden’&gt;</span
+                >
+              </li>
+              <li>
+                <span lang="EN-US">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span
+                ><span lang="EN-US">:</span
+                ><em><span lang="EN-US">file -&gt;</span></em
+                ><em><span lang="EN-US">&nbsp;</span></em
+                ><span lang="EN-US">Elementos &lt;input type=’file’&gt;</span>
+              </li>
+              <li>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:<em>input</em>&nbsp;-&gt;
+                Devuelve todos los elementos&nbsp;<em
+                  >&lt;input&gt;, &lt;textarea&gt;, &lt;select&gt;&nbsp;</em
+                >y&nbsp;<em>&lt;button&gt;</em>
+              </li>
+            </ul>
+            <p></p>
+          </td>
+        </tr>
+        <tr>
+          <td width="576" valign="top">
+            <p>
+              <em>(*) Esto selectores son equivalentes a&nbsp;</em
+              ><em>$(“input[type=’xxxx’]”)</em><em>.</em>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><br /></p>
+    <h5>Selectores por estado:</h5>
+    <p></p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <p></p>
+            <ul>
+              <li>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:<em>checked</em>&nbsp;-&gt;
+                Devuelve los elementos de tipo
+                ‘<em>checkbox’</em>&nbsp;marcados.
+              </li>
+              <li>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:<em>selected</em>&nbsp;-&gt;
+                Devuelve los elementos de un
+                elemento&nbsp;<em>&lt;select&gt;</em>&nbsp;seleccionados.
+              </li>
+              <li>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:<em>disabled</em>&nbsp;-&gt;
+                Devuelve elementos&nbsp;<em>&lt;input&gt;</em>&nbsp;con el
+                atributo “<em>disabled</em>” presente.
+              </li>
+              <li>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:<em>enabled</em>&nbsp;-&gt;
+                Devuelve los elementos sin el atributo “<em>disabled</em>”.
+              </li>
+              <li>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<em>:focus&nbsp;</em>-&gt;
+                Devuelve el elemento que tiene el foco en ese instante.&nbsp;<em
+                  >&nbsp;</em
+                >
+              </li>
+            </ul>
+            <p></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <br /><em><strong>Ejemplo</strong></em
+      >: El siguiente código devuelve todos los elementos&nbsp;<em
+        >&lt;input type=’radio’&gt;</em
+      >&nbsp;contenidos en otro elemento (p.ej: un formulario, o una capa)
+      con&nbsp;<em>id=’opciones’:</em>
+    </p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            >      $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#opciones :radio</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>               <span style="color:#696969; ">// Combinado con otro selector.</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <br />Ejemplo: El siguiente selector devuelve todas las casillas de
+      verificación marcadas contenidas en la capa con&nbsp;<em
+        >id = ‘intereses’.&nbsp;<u
+          >Los selectores “<em>:checkbox”</em>&nbsp;y
+          “<em>:checked”</em>&nbsp;<em
+            ><span
+              >van juntos para referirse al mismo conjunto de elementos.</span
+            ></em
+          ></u
+        >
+      </em>
+    </p>
+    <div class="editor-indent" style="margin-left: 30px">
+      <div class="editor-indent" style="margin-left: 30px">
+        <div class="editor-indent" style="margin-left: 30px"></div>
+      </div>
+    </div>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <div class="editor-indent" style="margin-left: 30px">
+              <pre
+                style="color: #000000; background: #ffffff"
+              >$<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#opciones :checkbox:checked</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></pre>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      &nbsp;<span lang="EN-US"><br /></span>
+    </p>
+    <h5>Selectores por visibilidad:</h5>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <p></p>
+            <ul>
+              <li>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<em>:visible</em>&nbsp;-&gt;
+                Devuelve los elementos visibles incluyendo aquellos con
+                estilos&nbsp;<em>visibility:hidden</em>&nbsp;o&nbsp;<em>opacity:0</em>&nbsp;pues
+                ocupan espacio en el HTML. &nbsp;
+              </li>
+              <li>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<em>:hidden</em>&nbsp;-&gt;
+                Devuelve los elementos no visibles y que no ocupan espacio tales
+                como aquellos con estilo&nbsp;<em>display:none</em>, elementos
+                de formulario&nbsp;<em>&lt;input type=’hidden’&gt;.</em>
+              </li>
+            </ul>
+            <p></p>
+            <p><em></em></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><span lang="EN-US">&nbsp;</span></p>
+    <h5>
+      Selectores por contenido (&nbsp;<em>contains(), empty()</em>&nbsp;) &nbsp;
+    </h5>
+    <p>
+      <em>:contains()</em>&nbsp;-&gt; Devuelve todos los elementos que contengan
+      el texto especificado como argumento.&nbsp;
+    </p>
+    <p>
+      <em><strong>Ejemplo:</strong></em> La siguiente selección devuelve todas
+      las capas&nbsp;<em>&lt;div&gt;</em>&nbsp;que contengan “Jhon” en su
+      contenido.
+    </p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <div class="editor-indent" style="margin-left: 30px">
+              <div class="editor-indent" style="margin-left: 30px">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >$<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">div:contains('John')</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span></pre>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <br /><em>:empty</em>&nbsp;-&gt;&nbsp;Devuelve todos los elementos sin
+      elementos anidados. La siguiente seleccion devuelve todos los
+      elementos&nbsp;<em>&lt;td&gt;</em>&nbsp;sin contenido.
+    </p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <div class="editor-indent" style="margin-left: 30px">
+              <div class="editor-indent" style="margin-left: 30px">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >$<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">td:empty</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span></pre>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <h5>
+      Selectores por posición&nbsp;
+      (&nbsp;<em>eq</em>(),&nbsp;<em>even</em>,&nbsp;<em>odd</em>,&nbsp;<em>lt</em>(),&nbsp;<em>gt</em>()
+      )
+    </h5>
+    <p>
+      Estos selectores permiten seleccionar elemento en base a la posición de
+      ocupan dentro de un elemento contenedor.&nbsp;
+    </p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <p></p>
+            <ul>
+              <li>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp;<em>:eq()</em>&nbsp;-&gt;&nbsp;Devuelve el elemento en la
+                posición indicada siendo 0 el primero.
+              </li>
+              <li>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp;<em>:even</em>&nbsp;-&gt;&nbsp;Devuelve los elementos
+                pares.
+              </li>
+              <li>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp;<em>:odd</em>&nbsp;-&gt;&nbsp;Devuelven los elementos
+                impares.
+              </li>
+              <li>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp;<em>:lt()</em>&nbsp;-&gt;&nbsp;Devuelve todos los
+                elementos anteriores a la posición indicada.
+              </li>
+              <li>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp;<em>:gt()</em>&nbsp;-&gt;&nbsp;Devuelve todos los
+                elementos posteriores a la posición indicada.
+              </li>
+            </ul>
+            <p></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <em><br /></em>Habitualmente estos pseudoselectores se emplean combinados
+      con otro selector para refinar aun más los elementos a seleccionar.&nbsp;
+    </p>
+    <p>
+      <em><strong>Ejemplo</strong></em
+      >: Sea el siguiente código selecciona por separado los elementos
+      &lt;tr&gt; contenidos en la tabla en posiciones pares e impares
+      añadiéndoles un color de fondo distinto en cada caso:
+    </p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">!</span>DOCTYPE html<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>html<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>head<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>title<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>title<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>meta charset<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">utf-8</span><span style="color:#800000; ">"</span> <span style="color:#808030; ">/</span><span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>script src<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">scripts/jquery-3.2.1.min.js</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>script<span style="color:#808030; ">&gt;</span>
+        $<span style="color:#808030; ">(</span>document<span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">tr:even</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#ff0000</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>  <span style="color:#696969; ">// fondo rojo para &lt;tr&gt; pares</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">tr:odd</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#00ffff</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>   <span style="color:#696969; ">// fondo azul para &lt;tr&gt; impares</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>head<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>body<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>table border<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">1</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>tr<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span>td<span style="color:#808030; ">&gt;</span>Row <span style="color:#800000; font-weight:bold; ">with</span> Index #<span style="color:#008c00; ">0</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>td<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>tr<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>tr<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span>td<span style="color:#808030; ">&gt;</span>Row <span style="color:#800000; font-weight:bold; ">with</span> Index #<span style="color:#008c00; ">1</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>td<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>tr<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>tr<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span>td<span style="color:#808030; ">&gt;</span>Row <span style="color:#800000; font-weight:bold; ">with</span> Index #<span style="color:#008c00; ">2</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>td<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>tr<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>tr<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span>td<span style="color:#808030; ">&gt;</span>Row <span style="color:#800000; font-weight:bold; ">with</span> Index #<span style="color:#008c00; ">3</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>td<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>tr<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>table<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>body<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>html<span style="color:#808030; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p></p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >El resultado pinta de rojo el fondo de las celdas pares y de azul las
+        impares:</span
+      ><br />
+    </p>
+    <p style="text-align: center">
+      <span style="font-size: 0.9375rem"
+        ><img src="/imagenes/2.3.4.png" alt="" role="presentation" /><br
+      /></span>
+    </p>
+    <p></p>
+    <p>Si añadimos el siguiente código:</p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            >    <span style="color:#808030; ">&lt;</span>script<span style="color:#808030; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">tr:even</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#ff0000</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">tr:odd</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#00ffff</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">tr:eq(1)</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#ffff00</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> <span style="color:#696969; ">// fondo Amarillo para &lt;tr&gt; en indx.1</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <br />El resultado es que se pinta de amarillo el fondo de la celda nº2 (
+      posición 1 ):
+    </p>
+    <p style="text-align: center">
+      <img src="/imagenes/2.3.5.png" alt="" role="presentation" /><br />
+    </p>
+    <p></p>
+    <p>
+      Los
+      selectores&nbsp;<em>:lt()</em>&nbsp;y&nbsp;<em>:gt()</em>&nbsp;devuelven
+      todos los elementos anteriores y posteriores respectivamente al elemento
+      en la posición indicada como valor.
+      <em
+        >Los indices toman como base el valor 0 para el primer elemento. Si se
+        indica un valor negativo, se comienza la cuenta a partir del último
+        elemento.</em
+      >.&nbsp;
+    </p>
+    <p>
+      <strong><em>Ejemplo</em></strong
+      >: El siguiente código muestra la selección de todos los elementos
+      <strong>&lt;tr&gt;</strong> dispuestos dentro de la tabla antes y después
+      del elemento &lt;tr&gt; en la posición 1.&nbsp;
+    </p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">!</span>DOCTYPE html<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>html<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>head<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>title<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>title<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>meta charset<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">utf-8</span><span style="color:#800000; ">"</span> <span style="color:#808030; ">/</span><span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>script src<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">scripts/jquery-3.2.1.min.js</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>script<span style="color:#808030; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">tr:gt(1)</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#ff0000</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>  <span style="color:#696969; ">// fondo rojo a &lt;tr&gt; posteriores a &lt;tr&gt; indx 1</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">tr:lt(1)</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#00ff00</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>  <span style="color:#696969; ">// fondo verde a &lt;tr&gt; anteriores a &lt;tr&gt; indx 1</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>head<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>body<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>table border<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">1</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>tr<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span>td<span style="color:#808030; ">&gt;</span>Row <span style="color:#800000; font-weight:bold; ">with</span> Index #<span style="color:#008c00; ">0</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>td<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>tr<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>tr<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span>td<span style="color:#808030; ">&gt;</span>Row <span style="color:#800000; font-weight:bold; ">with</span> Index #<span style="color:#008c00; ">1</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>td<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>tr<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>tr<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span>td<span style="color:#808030; ">&gt;</span>Row <span style="color:#800000; font-weight:bold; ">with</span> Index #<span style="color:#008c00; ">2</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>td<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>tr<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>tr<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span>td<span style="color:#808030; ">&gt;</span>Row <span style="color:#800000; font-weight:bold; ">with</span> Index #<span style="color:#008c00; ">3</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>td<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>tr<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>table<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>body<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>html<span style="color:#808030; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <br />El resultado muestra de color rojo todas las siguientes a partir de
+      las segunda “&nbsp;<em>:</em><em>gt(1)</em>”, y de verde todas las
+      anteriores “<em>:lt(1)</em>”.
+    </p>
+    <p style="text-align: center">
+      <img src="/imagenes/2.3.6.png" alt="" role="presentation" /><br />
+    </p>
+    <p></p>
+    <p>
+      Los
+      selectores&nbsp;<em>:first</em>&nbsp;y&nbsp;<em>:last</em>&nbsp;devuelven
+      el primer y último elemento de la selección:
+    </p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">!</span>DOCTYPE html<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>html<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>head<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>title<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>title<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>meta charset<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">utf-8</span><span style="color:#800000; ">"</span> <span style="color:#808030; ">/</span><span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>script src<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">scripts/jquery-3.2.1.min.js</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>script<span style="color:#808030; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">tr:first</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#ff0000</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>  <span style="color:#696969; ">// fondo rojo primer &lt;tr&gt;.</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">tr:last</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#00ff00</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>   <span style="color:#696969; ">// fondo verde ultimo &lt;tr&gt;.</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>head<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>body<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>table border<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">1</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>tr<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span>td<span style="color:#808030; ">&gt;</span>Row <span style="color:#800000; font-weight:bold; ">with</span> Index #<span style="color:#008c00; ">0</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>td<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>tr<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>tr<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span>td<span style="color:#808030; ">&gt;</span>Row <span style="color:#800000; font-weight:bold; ">with</span> Index #<span style="color:#008c00; ">1</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>td<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>tr<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>tr<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span>td<span style="color:#808030; ">&gt;</span>Row <span style="color:#800000; font-weight:bold; ">with</span> Index #<span style="color:#008c00; ">2</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>td<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>tr<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>tr<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span>td<span style="color:#808030; ">&gt;</span>Row <span style="color:#800000; font-weight:bold; ">with</span> Index #<span style="color:#008c00; ">3</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>td<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>tr<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>table<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>body<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>html<span style="color:#808030; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <br />El resultado mostrado es el fondo de color rojo en el primer
+      elemento fila, y el color verde de fondo en el último.
+    </p>
+    <p style="text-align: center">
+      <img src="/imagenes/2.3.7.png" alt="" role="presentation" /><br />
+    </p>
+    <p></p>
+    <h5>Selector condicional (&nbsp;<em>has()</em>&nbsp;)</h5>
+    <p>
+      El&nbsp;<span><span>selector</span>&nbsp;</span
+      ><span><em>:has()</em></span
+      >&nbsp;selecciona los elementos que contengan al menos un elemento con el
+      selector indicado como argumento:
+    </p>
+    <p>
+      <em>Ejemplo:</em>&nbsp;El siguiente código muestra la selección de todas
+      las capas&nbsp;<em><strong>&lt;div&gt;</strong></em
+      >&nbsp;que contienen algún párrafo:
+    </p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">!</span>DOCTYPE html<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>html<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>head<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>title<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>title<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>meta charset<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">utf-8</span><span style="color:#800000; ">"</span> <span style="color:#808030; ">/</span><span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>script src<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">scripts/jquery-3.2.1.min.js</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>script<span style="color:#808030; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">div:has(p)</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">#ff0000</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> <span style="color:#696969; ">// Fondo rojo a capas con algún párrafo</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>head<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>body<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>div<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span>p<span style="color:#808030; ">&gt;</span>Capa <span style="color:#008c00; ">1</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>p<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>div<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>div<span style="color:#808030; ">&gt;</span>Capa <span style="color:#008c00; ">2</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>div<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>div<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span>p<span style="color:#808030; ">&gt;</span>Capa <span style="color:#008c00; ">3</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>p<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>div<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>body<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>html<span style="color:#808030; ">&gt;</span>
+
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><br />El resultado mostrado es el siguiente:</p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/2.3.8.png"
+        alt=""
+        width="448"
+        height="88"
+        role="presentation"
+        class="img-responsive atto_image_button_text-bottom"
+      /><br />
+    </p>
+    <p></p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <p>
+              <strong
+                ><em
+                  >(*) En la web oficial de la API de JQuery se encuentran un
+                  glosario con los selectores definidos:</em
+                ></strong
+              >
+            </p>
+            <p>
+              <a href="https://api.jquery.com/category/selectors/"
+                ><strong
+                  ><em>https://api.jquery.com/category/selectors/</em></strong
+                ></a
+              ><strong><em></em></strong>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br /><br />
+    <p></p>
+  </div>
+</div>

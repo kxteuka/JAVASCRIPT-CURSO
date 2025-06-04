@@ -1,0 +1,417 @@
+<h2>5.6. Transiciones de visibilidad</h2>
+<h3>Transiciones de visibilidad: $().hide(), $().show() y $().effect()</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <h3>
+      <span>Transiciones de visibilidad:</span>
+      <em>$().hide() / $().show()</em>
+    </h3>
+
+    <p>
+      JQuery implementa efectos de transición de visibilidad que pueden
+      emplearse para personalizar el modo en que los elementos de la página se
+      muestran y ocultan mediante las funciones
+      <strong><em>$().hide()</em></strong> y <strong><em>$().show()</em></strong
+      >. No obstante, JQueryUI incluye versiones extendidas de estas funciones
+      que incluyen aún más efectos.&nbsp;
+    </p>
+
+    <p>Ambas funciones pueden reciben el mismo conjunto de parámetros:</p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >      $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>show<span style="color:#808030; ">(</span> <span style="color:#808030; ">&lt;</span>efecto<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>opciones<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>duracion_transicion<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>función_retrollamada<span style="color:#808030; ">&gt;</span> <span style="color:#808030; ">)</span>
+
+      $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>hide<span style="color:#808030; ">(</span> <span style="color:#808030; ">&lt;</span>efecto<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>opciones<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>duración_transicion<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>función_retrollamada<span style="color:#808030; ">&gt;</span> <span style="color:#808030; ">)</span>
+</pre>
+
+    <p>
+      <span
+        ><span>El parámetro&nbsp;</span><em><span>efecto</span></em></span
+      ><span>&nbsp;</span>se corresponde con una cadena que determina el efecto
+      a aplicar. Los posibles valores son los siguientes:&nbsp;
+    </p>
+
+    <p></p>
+    <ul>
+      <li>
+        <strong><em>blind</em></strong
+        >&nbsp;: Oculta el elemento como una cortinilla hacia arriba
+      </li>
+      <li>
+        <strong><em>bounce :</em></strong
+        >&nbsp;El elemento se sacude en el eje vertical
+      </li>
+      <li>
+        <strong><em>clip :</em></strong
+        >&nbsp;Oculta el elemento en efecto cortinilla hacia arriba y abajo.
+      </li>
+      <li>
+        <strong><em>drop :</em></strong
+        >&nbsp;El elemento desaparece ocultándose por el borde izquierdo.
+      </li>
+      <li>
+        <strong><em>explode :</em></strong
+        >&nbsp;El elemento desparece fragmentándose.
+      </li>
+      <li>
+        <strong><em>fade :</em></strong
+        >&nbsp;El elemento se oculta desvaneciéndose.
+      </li>
+      <li>
+        <strong style="font-size: 0.9375rem"><em>fold</em></strong
+        ><span style="font-size: 0.9375rem"
+          >&nbsp;: El elemento se oculta plegándose de abajo a arriba y hacia la
+          izquierda.</span
+        >
+      </li>
+      <li>
+        <strong><em>highlight :</em></strong
+        >&nbsp;El elemento se destaca modificando un instante su color de fondo
+      </li>
+      <li>
+        <strong><em>puff :</em></strong
+        >&nbsp;El elemento se desvanece creciendo de tamaño.
+      </li>
+      <li>
+        <strong><em>pulsate :</em></strong
+        >&nbsp;El elemento parpadea.
+      </li>
+      <li>
+        <strong><em>scale :</em></strong
+        >&nbsp;El elemento se escala de su tamaño actual a otro.
+      </li>
+      <li>
+        <strong><em>shake :</em></strong
+        >&nbsp;El elemento se sacude en el eje horizontal.
+      </li>
+      <li>
+        <span
+          ><strong><span>s</span><em>ize </em></strong
+          ><em style="font-weight: bold">:</em></span
+        >&nbsp;El elemento cambia de tamaño
+      </li>
+      <li>
+        <strong>s</strong><strong><em>lide :</em></strong
+        >&nbsp;El elemento reaparece saliendo del lado izquierdo.
+      </li>
+      <li>
+        <span
+          ><strong><em>t</em></strong></span
+        ><span
+          ><em><strong>ransfer </strong><strong>:</strong></em></span
+        >&nbsp;El elemento figura moverse a otra posición.
+      </li>
+    </ul>
+    <p></p>
+
+    <p>
+      El parámetro &lt;<em>opciones&gt; </em>recibe un objeto<span
+        style="font-size: 0.9375rem"
+        ><span>&nbsp;</span>de configuración para el efecto. </span
+      ><em style="font-size: 0.9375rem"
+        ><u
+          >Este parámetro es opcional pero algunos efectos lo requieren para su
+          configuración</u
+        ></em
+      >
+      <span style="font-size: 0.9375rem"> como “</span
+      ><em style="font-size: 0.9375rem">size</em
+      ><span style="font-size: 0.9375rem">” o “</span
+      ><em style="font-size: 0.9375rem">transfer</em
+      ><span style="font-size: 0.9375rem">”.</span>
+    </p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >El parámetro <em>&lt;duracion&gt;</em> indica la duración del efecto
+        expresado en milisegundos.&nbsp;</span
+      >
+    </p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >El parámetro<em> &lt;retrollamada&gt;</em> recibe como argumento una
+        función para&nbsp;</span
+      ><span style="font-size: 0.9375rem"
+        >ejecutarse al completarse la animación del efecto.</span
+      >
+    </p>
+    <p><span style="font-size: 0.9375rem"></span></p>
+    <p>
+      <strong
+        ><em
+          >(*) El efecto visual de cada uno de los efectos y sus parámetros
+          requeridos de configuración pueden probarse en la web oficial de
+          JQueryUI.</em
+        ></strong
+      >
+    </p>
+    <p style="text-align: right">
+      <a href="http://jqueryui.com/show/"
+        ><strong><em>http://jqueryui.com/show/</em></strong></a
+      ><strong><em></em></strong>
+    </p>
+    <p style="text-align: right">
+      <a href="http://jqueryui.com/hide/"
+        ><strong><em>http://jqueryui.com/hide/</em></strong></a
+      ><strong><em></em></strong>
+    </p>
+    <p>
+      <br />
+      <strong><em>Ejemplo:</em></strong> El siguiente código muestra una capa
+      con contenido y dos botones “<em>APARECER</em>” y “<em>DESAPARECER</em>”
+      que la muestran y ocultan empleando las funciones
+      <strong><em>$().show()</em></strong> y
+      <strong><em>$().hide()</em></strong> y el efecto
+      <strong><em>“explode”</em></strong> con una duración de 1 segundo tras lo
+      cual se muestra un mensaje “<em>TERMINADO</em>”.
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/5.6.1.gif"
+        alt="show_effect"
+        width="944"
+        height="133"
+        class="img-responsive atto_image_button_text-bottom"
+      /><br />
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td>
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#696969; ">&lt;!-- Libreria JQuery comprimida --&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"<a href="https://code.jquery.com/jquery-3.6.0.min.js" class="_blanktarget">https://code.jquery.com/jquery-3.6.0.min.js</a>"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#696969; ">&lt;!-- Tema 'base' para JQueryUI --&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">link</span><span style="color:#274796; "> </span><span style="color:#074726; ">href</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"<a href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css" class="_blanktarget">https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css</a>"</span><span style="color:#274796; "> </span><span style="color:#074726; ">rel</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"stylesheet"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#696969; ">&lt;!-- Libreria JQueryUI comprimida --&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"<a href="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" class="_blanktarget">https://code.jquery.com/ui/1.13.1/jquery-ui.min.js</a>"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#696969; ">// Función a ejecutarse al terminar el efecto show() y hide() </span>
+        <span style="color:#800000; font-weight:bold; ">function</span> terminado<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">TERMINADO</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+        <span style="color:#800080; ">}</span>
+        $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Pulsacion de boton de mostrado ( show ). </span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnAparece</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">click</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><u>                <span style="color:#696969; ">// Transicion de aparicion con efecto EXPLORE 1 segundo --&gt; llamada a funcion terminado()</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#contenido</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>show<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">explode</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span><span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">1000</span><span style="color:#808030; ">,</span> terminado<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></u></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#696969; ">// Pulsacion de boton de ocultado ( hide ). </span>
+<span><span >            $<span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(0, 0, 230);">#btnDesaparece</span><span style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(128, 128, 48);">)</span><span style="color: rgb(128, 128, 48);">.</span>on<span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(0, 0, 230);">click</span><span style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(128, 128, 48);">,</span> <span style="color: rgb(128, 0, 0);">function</span> <span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 128, 48);">)</span> <span style="color: rgb(128, 0, 128);">{</span><strong style="text-decoration-line: underline;">
+                </strong><span style="text-decoration-line: underline; font-weight: bold; color: rgb(105, 105, 105);">// Transicion de desaparicion con efecto EXPLORE 1 segundo --&gt; llamada a funcion terminado()</span><strong style="text-decoration-line: underline;">
+                $</strong><span style="text-decoration-line: underline; font-weight: bold; color: rgb(128, 128, 48);">(</span><span style="text-decoration-line: underline; font-weight: bold; color: rgb(128, 0, 0);">"</span><span style="text-decoration-line: underline; font-weight: bold; color: rgb(0, 0, 230);">#contenido</span><span style="text-decoration-line: underline; font-weight: bold; color: rgb(128, 0, 0);">"</span><span style="text-decoration-line: underline; font-weight: bold; color: rgb(128, 128, 48);">)</span><span style="text-decoration-line: underline; font-weight: bold; color: rgb(128, 128, 48);">.</span><strong style="text-decoration-line: underline;">hide</strong><span style="text-decoration-line: underline; font-weight: bold; color: rgb(128, 128, 48);">(</span><span style="text-decoration-line: underline; font-weight: bold; color: rgb(128, 0, 0);">"</span><span style="text-decoration-line: underline; font-weight: bold; color: rgb(0, 0, 230);">explode</span><span style="text-decoration-line: underline; font-weight: bold; color: rgb(128, 0, 0);">"</span><span style="text-decoration-line: underline; font-weight: bold; color: rgb(128, 128, 48);">,</span><strong style="text-decoration-line: underline;"> </strong><span style="text-decoration-line: underline; font-weight: bold; color: rgb(128, 0, 128);">{</span><span style="text-decoration-line: underline; font-weight: bold; color: rgb(128, 0, 128);">}</span><span style="text-decoration-line: underline; font-weight: bold; color: rgb(128, 128, 48);">,</span><strong style="text-decoration-line: underline;"> </strong><span style="text-decoration-line: underline; font-weight: bold; color: rgb(0, 140, 0);">1000</span><span style="text-decoration-line: underline; font-weight: bold; color: rgb(128, 128, 48);">,</span><strong style="text-decoration-line: underline;"> terminado</strong><span style="text-decoration-line: underline; font-weight: bold; color: rgb(128, 128, 48);">)</span><span style="text-decoration-line: underline; font-weight: bold; color: rgb(128, 0, 128);">;</span></span></span>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#696969; ">&lt;!-- CAPA con el contenido a ocultar y mostrar--&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"contenido"</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"ui-widget-content ui-corner-all"</span><span style="color:#a65700; ">&gt;</span>
+            <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">h3</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"ui-widget-header ui-corner-all"</span><span style="color:#a65700; ">&gt;</span>Effect<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">h3</span><span style="color:#a65700; ">&gt;</span>
+            <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+                Etiam libero neque, luctus a, eleifend nec, semper at, lorem<span style="color:#008c00; ">.</span> Sed pede<span style="color:#008c00; ">.</span> Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi<span style="color:#008c00; ">.</span>
+            <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"btnAparece"</span><span style="color:#a65700; ">&gt;</span>APARECER<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"btnDesaparece"</span><span style="color:#a65700; ">&gt;</span>DESAPARECER<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      &nbsp;<br />Para comprobar el resto de efectos sólo es necesario modificar
+      el parámetro "<strong><em>explode</em></strong
+      >" de las funciones $().show() y $().hide().
+    </p>
+    <p>
+      En el caso del efecto "<strong><em>scale</em></strong
+      >" es necesario indicar un objeto de configuración con el atributo
+      "<em>percent</em>" indicando la escala inicial/final de la animación.
+    </p>
+    <p>
+      Modificando el código de la función de inicio del ejemplo anterior,
+      obtenemos un efecto de transición modificando la escala de la capa al
+      50%:&nbsp;
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >        $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Pulsacion de boton de mostrado ( show ). </span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnAparece</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">click</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Transicion de aparicion con efecto EXPLORE 1 segundo --&gt; llamada a funcion terminado()</span>
+    <strong><u>            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#contenido</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>show<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">scale</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span> percent<span style="color:#800080; ">:</span> <span style="color:#008c00; ">50</span> <span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">1000</span><span style="color:#808030; ">,</span> terminado<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></u></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#696969; ">// Pulsacion de boton de ocultado ( hide ). </span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnDesaparece</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">click</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Transicion de desaparicion con efecto EXPLORE 1 segundo --&gt; llamada a funcion terminado()</span>
+   <u><strong>             $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#contenido</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>hide<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">scale</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span> percent<span style="color:#800080; ">:</span> <span style="color:#008c00; ">50</span> <span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">1000</span><span style="color:#808030; ">,</span> terminado<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></strong></u>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+
+    <p>La transición se muestra entonces de este modo:&nbsp;</p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/5.6.2.gif"
+        alt="show_scale"
+        width="702"
+        height="141"
+        class="img-responsive atto_image_button_text-bottom"
+      /><br />
+    </p>
+
+    En el caso del efecto "<strong><em>size</em></strong
+    >" es necesario indicar un objeto con el atributo "<em>to</em>" que incluya
+    las dimensiones inicial/final de la animación.&nbsp;<br /><br />Modificando
+    el código de la función de inicio del ejemplo anterior, obtenemos un efecto
+    de transición modificando el tamaño de la capa desde/hasta alcanzar un
+    ancho/alto de 10 píxeles:&nbsp;<br /><br />
+    <pre
+      style="color: #000000; background: #ffffff"
+    >        $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Pulsacion de boton de mostrado ( show ). </span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnAparece</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">click</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Transicion de aparicion con efecto EXPLORE 1 segundo --&gt; llamada a funcion terminado()</span>
+ <span><strong><u>               $<span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(0, 0, 230);">#contenido</span><span style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(128, 128, 48);">)</span><span style="color: rgb(128, 128, 48);">.</span>show<span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(0, 0, 230);">size</span><span style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(128, 128, 48);">,</span> <span style="color: rgb(128, 0, 128);">{</span> to<span style="color: rgb(128, 0, 128);">:</span> <span style="color: rgb(128, 0, 128);">{</span> width<span style="color: rgb(128, 0, 128);">:</span> <span style="color: rgb(0, 140, 0);">10</span><span style="color: rgb(128, 128, 48);">,</span> height<span style="color: rgb(128, 0, 128);">:</span> <span style="color: rgb(0, 140, 0);">10</span> <span style="color: rgb(128, 0, 128);">}</span> <span style="color: rgb(128, 0, 128);">}</span><span style="color: rgb(128, 128, 48);">,</span> <span style="color: rgb(0, 140, 0);">1000</span><span style="color: rgb(128, 128, 48);">,</span> terminado<span style="color: rgb(128, 128, 48);">)</span><span style="color: rgb(128, 0, 128);">;</span></u></strong></span>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#696969; ">// Pulsacion de boton de ocultado ( hide ). </span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnDesaparece</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">click</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Transicion de desaparicion con efecto EXPLORE 1 segundo --&gt; llamada a funcion terminado()</span>
+<strong><u>                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#contenido</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>hide<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">size</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span> to<span style="color:#800080; ">:</span> <span style="color:#800080; ">{</span> width<span style="color:#800080; ">:</span> <span style="color:#008c00; ">10</span><span style="color:#808030; ">,</span> height<span style="color:#800080; ">:</span> <span style="color:#008c00; ">10</span> <span style="color:#800080; ">}</span> <span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">1000</span><span style="color:#808030; ">,</span> terminado<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></u></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+    La transición se muestra entonces del siguiente modo:<br /><br
+      clear="all"
+    />
+
+    <p style="text-align: center">
+      &nbsp;<img
+        src="/imagenes/5.6.3.gif"
+        alt="show_size"
+        width="630"
+        height="141"
+        class="img-responsive atto_image_button_text-bottom"
+      />
+    </p>
+
+    <p>
+      <strong>&nbsp;</strong
+      ><span style="font-size: 1.40625rem; font-weight: 600">La función </span
+      ><em style="font-size: 1.40625rem; font-weight: 600">$().effect()</em>
+    </p>
+
+    <p>
+      JQueryUI incluye la función <strong><em>$().effect()</em></strong> que
+      realiza ciertos efectos que permiten
+      <em><u>destacar un elemento modificando su tamaño o posición</u></em
+      >. Esta función se invoca a partir de una selección con JQuery sobre el
+      elemento al que se quiere aplicar el efecto,
+      <em
+        ><u
+          >y acepta los mismos parámetros que las funciones
+          <strong>$().show() </strong>y <strong>$().hide(), </strong>pero
+          ejecuta la aparición/desaparición final del elemento, sólo la
+          animación.</u
+        >&nbsp;</em
+      >
+    </p>
+    <p>
+      <span
+        >La función <strong><em>$().effect()</em></strong> emplea la misma
+        sintaxis que las funciones <strong><em>$().show()</em></strong> y
+        <strong><em>$().hide()</em></strong
+        >.&nbsp;</span
+      >
+    </p>
+
+    <p>
+      <strong><em>Ejemplo</em></strong
+      >: La siguiente página muestra una capa con contenido que se sacude con
+      loe efectos “<em>bounce</em>” y “<em>shake</em>” durante un segundo al
+      pulsar los botones “BOUNCE” y “SHAKE” respectivamente. Tras completarse el
+      efecto se muestra en ambos casos un mensaje “TERMINADO":&nbsp;
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/5.6.4.gif"
+        alt="effect_shake_bounce"
+        width="668"
+        height="142"
+        class="img-responsive atto_image_button_text-bottom"
+      /><br />
+    </p>
+
+    <p style="text-align: center"></p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td>
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#696969; ">&lt;!-- Libreria JQuery comprimida --&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"<a href="https://code.jquery.com/jquery-3.6.0.min.js" class="_blanktarget">https://code.jquery.com/jquery-3.6.0.min.js</a>"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#696969; ">&lt;!-- Tema 'base' para JQueryUI --&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">link</span><span style="color:#274796; "> </span><span style="color:#074726; ">href</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"<a href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css" class="_blanktarget">https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css</a>"</span><span style="color:#274796; "> </span><span style="color:#074726; ">rel</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"stylesheet"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#696969; ">&lt;!-- Libreria JQueryUI comprimida --&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"<a href="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" class="_blanktarget">https://code.jquery.com/ui/1.13.1/jquery-ui.min.js</a>"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#696969; ">// Función que se ejecuta al terminar el efecto. </span>
+        <span style="color:#800000; font-weight:bold; ">function</span> terminado<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">TERMINADO</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+        <span style="color:#800080; ">}</span>
+        $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Evento click sobre boton "BOUNCE" durante 1 segundo y llama a terminado()</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnEfBounce</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">click</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<em><u>                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#contenido</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>effect<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">bounce</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span><span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">1000</span><span style="color:#808030; ">,</span> terminado<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></u></em>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#696969; ">// Evento click sobre boton "SHAKE" durante 1 segundo y llama a terminado()</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnShake</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">click</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><u>                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#contenido</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>effect<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">shake</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span><span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">1000</span><span style="color:#808030; ">,</span> terminado<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></u></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"contenido"</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"ui-widget-content ui-corner-all"</span><span style="color:#a65700; ">&gt;</span>
+            <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">h3</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"ui-widget-header ui-corner-all"</span><span style="color:#a65700; ">&gt;</span>Effect<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">h3</span><span style="color:#a65700; ">&gt;</span>
+            <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+                Etiam libero neque, luctus a, eleifend nec, semper at, lorem<span style="color:#008c00; ">.</span> Sed pede<span style="color:#008c00; ">.</span> Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi<span style="color:#008c00; ">.</span>
+            <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"btnEfBounce"</span><span style="color:#a65700; ">&gt;</span>BOUNCE<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"btnShake"</span><span style="color:#a65700; ">&gt;</span>SHAKE<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <p></p>
+  </div>
+</div>

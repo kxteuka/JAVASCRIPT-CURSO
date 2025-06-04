@@ -1,0 +1,564 @@
+<h2>3.3. Delegación de eventos</h2>
+<h3>Delegación de eventos.</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p>
+      La delegación de eventos consiste en registrar un evento a un elemento
+      para que sean sus elementos hijos los que lo disparen. Esto es necesario
+      cuando los elementos a los que se quiere registrar el evento NO EXISTEN
+      inicialmente en la web.
+    </p>
+
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong
+        >:</em
+      >&nbsp;Sea una página provista de una lista <em>&lt;ul&gt;</em> cuyos
+      elementos &lt;li&gt; muestran su texto en la consola de desarrollador al
+      hacer click sobre ellos, y un botón “ <em>AÑADIR</em>” que añade nuevos
+      elementos <em>&lt;li&gt;</em> cada vez que se pulsa:
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/3.3.1.png"
+        alt=""
+        role="presentation"
+      /><br />
+    </p>
+
+    <p style="text-align: center"></p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">!</span>DOCTYPE html<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>html<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>head<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>title<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>title<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>meta charset<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">utf-8</span><span style="color:#800000; ">"</span> <span style="color:#808030; ">/</span><span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>style<span style="color:#808030; ">&gt;</span>
+        li { cursor: pointer; }
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>style<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>script src<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">scripts/jquery-3.2.1.min.js</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>script<span style="color:#808030; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>            <span style="color:#696969; ">// Registro de evento de pulsación para cada elemento de la lista</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">ul li</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">click</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color: rgb(128, 0, 0);">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                console<span style="color:#808030; ">.</span><span style="color: rgb(128, 0, 0);">log</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">HAS PULSADO: </span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> $<span style="color:#808030; ">(</span><span style="color: rgb(128, 0, 0);">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>text<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span></em></strong>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">button</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Añadido de elemento &lt;li&gt; a la lista</span>
+                <span style="color:#800000; font-weight:bold; ">var</span> cantidad <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">ul li</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">length</span> <span style="color:#808030; ">+</span> <span style="color:#008c00; ">1</span><span style="color:#800080; ">;</span> 
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">ul</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>append<span style="color:#808030; ">(</span>$<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">&lt;li&gt;</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span>text<span style="color:#800080; ">:</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">opcion </span><span style="color:#800000; ">'</span> <span style="color:#808030; ">+</span> cantidad<span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>head<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span>body<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>ul id<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">lista</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>li<span style="color:#808030; ">&gt;</span>opcion <span style="color:#008c00; ">1</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>li<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>li<span style="color:#808030; ">&gt;</span>opcion <span style="color:#008c00; ">2</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>li<span style="color:#808030; ">&gt;</span>
+        <span style="color:#808030; ">&lt;</span>li<span style="color:#808030; ">&gt;</span>opcion <span style="color:#008c00; ">2</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>li<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>ul<span style="color:#808030; ">&gt;</span>
+    <span style="color:#808030; ">&lt;</span>button<span style="color:#808030; ">&gt;</span>REGISTRAR<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>button<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>body<span style="color:#808030; ">&gt;</span>
+<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>html<span style="color:#808030; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      El registro del evento <strong><em>click</em></strong> a los elementos
+      <em>&lt;li&gt;</em> se ejecuta al cargarse la página.&nbsp;
+    </p>
+    <p>
+      La lista cuenta con 3 elementos inicialmente, pero si pulsamos el botón
+      “ACCION” tres veces, se añaden tres nuevos elementos
+      <em>&lt;li&gt;, </em>quedando la lista del siguiente modo:&nbsp;
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/3.3.2.png"
+        alt=""
+        role="presentation"
+      /><br />
+    </p>
+
+    <p style="text-align: center"></p>
+
+    <p>
+      Si ahora pulsamos uno a uno todos los elementos de la lista observamos el
+      siguiente resultado en la consola de desarrollador del navegador:
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/3.3.3.png"
+        alt=""
+        role="presentation"
+      /><br />
+    </p>
+
+    <p></p>
+
+    <p>
+      Sólo los elementos &lt;li&gt; presentes inicialmente en el HTML de la
+      página responden al evento <em>click</em>, pero<em
+        ><u>
+          no los nuevos elementos añadidos dinámicamente al pulsar el botón
+          “<span>ACCION</span>”.&nbsp;</u
+        ></em
+      ><span style="font-size: 0.9375rem">Esto es debido a que&nbsp;</span>
+      <em style="font-size: 0.9375rem"
+        ><span>los eventos asignados a los elementos de una selección,</span
+        ><u> sólo se asignan a los elementos existentes en ese instante</u></em
+      ><span style="font-size: 0.9375rem"
+        >. Los elementos añadidos posteriormente no reciben el registro del
+        evento.</span
+      >
+    </p>
+
+    <p>
+      Para vincular funciones manejadoras a eventos de elementos hijos aún no
+      existentes puede emplearse la<span
+        >&nbsp;<em style="text-decoration-line: underline"
+          >delegación de eventos</em
+        ></span
+      >. Esto consiste en registrar un evento sobre un elemento para que
+      <em
+        ><u
+          >lo lancen sus elementos hijos tanto actuales como los que puedan ser
+          añadidos dinámicamente por código</u
+        ></em
+      >.&nbsp;
+    </p>
+    <p>
+      Esto requiere el uso de la función
+      <strong><em>$().on()</em></strong> vista anteriormente, pero con un
+      argumento más:&nbsp;
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <div class="editor-indent" style="margin-left: 30px">
+        <pre
+          style="color: #000000; background: #ffffff"
+        >$<span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>padre<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>evento<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span><span style="color:#808030; ">&lt;</span>hijos_delegacion<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span><span style="color:#808030; ">&lt;</span>manejadora<span style="color:#808030; ">&gt;</span> <span style="color:#808030; ">)</span></pre>
+      </div>
+    </div>
+
+    <p>
+      Por lo tanto, para resolver el ejemplo anterior debemos emplear la función
+      <strong><em>$().on()&nbsp;</em></strong
+      ><span style="font-size: 0.9375rem">para delegar el evento ‘</span
+      ><em style="font-size: 0.9375rem">click’</em
+      ><span style="font-size: 0.9375rem"> desde elemento padre </span>
+      <em style="font-size: 0.9375rem">&lt;ul&gt;</em
+      ><span style="font-size: 0.9375rem"> en sus elementos hijos </span
+      ><em style="font-size: 0.9375rem">&lt;li&gt;:</em>
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+        li { cursor: pointer; }
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em><span>            <span style="color: rgb(105, 105, 105);">// Delegacion de evento de pulsación para los elementos &lt;li&gt; de la lista &lt;ul&gt;</span>
+            $<span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(0, 0, 230);">ul</span><span style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(128, 128, 48);">)</span><span style="color: rgb(128, 128, 48);">.</span>on<span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(0, 0, 230);">click</span><span style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(128, 128, 48);">,</span> <span style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(0, 0, 230);">li</span><span style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(128, 128, 48);">,</span> <span style="color: rgb(128, 0, 0);">function</span> <span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 128, 48);">)</span> <span style="color: rgb(128, 0, 128);">{</span>
+                console<span style="color: rgb(128, 128, 48);">.</span><span style="color: rgb(128, 0, 0);">log</span><span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 0, 0);">"</span><span style="color: rgb(0, 0, 230);">HAS PULSADO: </span><span style="color: rgb(128, 0, 0);">"</span> <span style="color: rgb(128, 128, 48);">+</span> $<span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 0, 0);">this</span><span style="color: rgb(128, 128, 48);">)</span><span style="color: rgb(128, 128, 48);">.</span>text<span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 128, 48);">)</span><span style="color: rgb(128, 128, 48);">)</span><span style="color: rgb(128, 0, 128);">;</span> 
+            <span style="color: rgb(128, 0, 128);">}</span><span style="color: rgb(128, 128, 48);">)</span></span></em></strong>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">button</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Añadido de elemento &lt;li&gt; a la lista</span>
+                <span style="color:#800000; font-weight:bold; ">var</span> cantidad <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">ul li</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">length</span> <span style="color:#808030; ">+</span> <span style="color:#008c00; ">1</span><span style="color:#800080; ">;</span> 
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">ul</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>append<span style="color:#808030; ">(</span>$<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">&lt;li&gt;</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span>text<span style="color:#800080; ">:</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">opcion </span><span style="color:#800000; ">'</span> <span style="color:#808030; ">+</span> cantidad<span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"lista"</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion <span style="color:#008c00; ">1</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion <span style="color:#008c00; ">2</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>opcion <span style="color:#008c00; ">3</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">li</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>AÑADIR<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <em>&nbsp;<br /></em
+      ><span style="font-size: 0.9375rem"
+        >Si ahora cargamos la página y añadimos tres elementos </span
+      ><em style="font-size: 0.9375rem">&lt;li&gt; </em
+      ><span style="font-size: 0.9375rem"
+        >a la lista,&nbsp;veremos que al pulsarlos TODOS muestran sus valores en
+        la consola de desarrollador,&nbsp;</span
+      ><span style="font-size: 0.9375rem">tantos los elementos </span
+      ><em style="font-size: 0.9375rem">&lt;li&gt;</em
+      ><span style="font-size: 0.9375rem">
+        iniciales como los añadidos posteriormente mediante el empleo de la
+        delegación:</span
+      >
+    </p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        ><img
+          src="/imagenes/3.3.4.png"
+          alt=""
+          role="presentation" /><br
+      /></span>
+    </p>
+
+    <p></p>
+    <br />
+    <p></p>
+  </div>
+</div>
+<h3>Propagación de Eventos.</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >La propagación de eventos es una característica por la que
+        <em
+          ><u
+            >los eventos de los elementos hijos se propagan a los elementos
+            padre</u
+          ></em
+        >. Este fenómeno se aprecia cuando varios elementos contenidos unos
+        dentro de otros capturan los mismos eventos.</span
+      ><br />
+    </p>
+
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong
+        >:</em
+      >
+      Sea una página que consta de dos capas anidadas en las que se captura el
+      evento de ‘click’ de modo que cada una muestra un mensaje en la consola de
+      desarrollador al hacerse clic sobre ella:
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/3.3.5.png"
+        alt=""
+        role="presentation"
+      /><br />
+    </p>
+
+    <p style="text-align: center"></p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+        div { border: 1px solid #000; }
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Registro de evento 'click' en capa padre</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#padre</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">PADRE PULSADO</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#696969; ">// Registro de evneto 'click' en capa hija</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#hija</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">HIJA PULSADO</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'padre'</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#a65700; ">/&gt;</span>
+        CAPA PADRE
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#a65700; ">/&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'hija'</span><span style="color:#a65700; ">&gt;</span>
+            <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#a65700; ">/&gt;</span>
+            CAPA HIJA
+            <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#a65700; ">/&gt;</span>
+        <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      Si hacemos clic en el área de la capa padre donde se muestra el párrafo
+      “CAPA PADRE”, este elemento captura el evento de click y muestra el
+      siguiente mensaje en la consola de desarrollador:
+    </p>
+
+    <p>
+      <img
+        src="/imagenes/3.3.6.png"
+        alt=""
+        role="presentation"
+      /><br /><span style="font-size: 0.9375rem"
+        ><br />Sin embargo, si hacemos clic en el área de la capa hija con el
+        párrafo “CAPA HIJA”, la consola de desarrollador muestra los siguientes
+        mensajes:</span
+      ><br />
+    </p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        ><img
+          src="/imagenes/3.3.7.png"
+          alt=""
+          role="presentation" /><br
+      /></span>
+    </p>
+
+    <p></p>
+
+    <p>
+      Esto significa que se ha disparado el evento “click” primero en la capa
+      hija ( el elemento contenido ), y después también en la capa padre ( el
+      elemento contenedor ). Y ésto es debido a la
+      <em><u>propagación de eventos</u></em>
+    </p>
+
+    <h5><br />Cancelación de la propagación</h5>
+
+    <p>
+      <br />La propagación de los eventos es algo que sucede de manera
+      predeterminada. Sin embargo, puede que no deseemos este tipo de
+      comportamientos. En tal caso, podemos interrumpir la propagación de un
+      evento al elemento padre, se si en la función manejadora&nbsp; se invoca
+      el método <em>stopPropagation()</em> del objeto ‘<em>event</em>’ recibido
+      como argumento.&nbsp;
+    </p>
+    <p>
+      <strong
+        ><em><u>Ejemplo</u></em></strong
+      >: El siguiente código modifica la función vinculada al evento
+      <strong><em>click </em></strong>de la capa hija para evitar que el evento
+      se propague a la capa padre:&nbsp;
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#800000; font-weight:bold; ">div</span> <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">border</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">1</span><span style="color:#006600; ">px</span> <span style="color:#074726; ">solid</span> <span style="color:#008c00; ">#</span><span style="color:#008000; ">000</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Registro de evento 'click' en capa padre</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#padre</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">PADRE PULSADO</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#696969; ">// Registro de evneto 'click' en capa hija</span>
+<em>            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#hija</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">HIJA PULSADO</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+<strong>                <span style="color:#696969; ">// Cancelacion de propagación del evento a la capa padre. </span>
+                event<span style="color:#808030; ">.</span>stopPropagation<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></em>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'padre'</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#a65700; ">/&gt;</span>
+        CAPA PADRE
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#a65700; ">/&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'hija'</span><span style="color:#a65700; ">&gt;</span>
+            <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#a65700; ">/&gt;</span>
+            CAPA HIJA
+            <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#a65700; ">/&gt;</span>
+        <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      Si ahora pulsamos sobre el área de la capa hija con el párrafo "CAPA HIJA"
+      observamos que
+      <em
+        ><u
+          >sólo se ejecuta la función manejadora vinculada al evento clic de la
+          capa hija, pero no el de la capa padre:&nbsp;</u
+        ></em
+      >
+    </p>
+    <p>
+      <img
+        src="/imagenes/3.3.8.png"
+        alt=""
+        role="presentation"
+      /><br />
+    </p>
+
+    <p></p>
+
+    <h5><br />Cancelación de acción predeterminada.</h5>
+
+    <p>
+      <br />Algunos eventos tienen funcionalidades asociadas que se realiza al
+      margen de lo que hagan las funciones vinculadas. Por ejemplo:&nbsp;
+    </p>
+
+    <p></p>
+    <ul>
+      <li>
+        El evento de
+        <span
+          ><em><strong>submit </strong></em>de un formulario&nbsp;</span
+        >se lanza cuando el usuario hace clic sobre el botón de tipo
+        "<em>submit</em>", y después el formulario envíe los datos a la URL
+        indicada en el atributo action de la etiqueta
+        <strong><em>&lt;form&gt;</em></strong
+        >.&nbsp;
+      </li>
+    </ul>
+    <ul>
+      <li>
+        El evento <strong><em>keypress </em></strong>de una caja de texto se
+        lanza cuando el usuario pulsa una tecla estando el foco situado sobre
+        una caja de texto, y después la caja de texto muestra la tecla pulsada
+        por el usuario.
+      </li>
+    </ul>
+    <p></p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >En ciertas ocasiones resulta no obstante n<em
+          ><u>ecesario cancelar la acción predeterminada</u></em
+        >, como por ejemplo; enviar un formulario si no se cumplen ciertas
+        condiciones sobre los valores introducidos a pesar de que el usuario ha
+        pulsado el botón de envío.&nbsp;</span
+      >
+      <span style="font-size: 0.9375rem"
+        >Para cancelar la acción predeterminada de un evento debe llamarse al
+        método </span
+      ><strong style="font-size: 0.9375rem"><em>preventDefault()</em></strong
+      ><span style="font-size: 0.9375rem"> del parámetro </span
+      ><em style="font-size: 0.9375rem">event</em>
+      <span style="font-size: 0.9375rem">
+        recibido en la función manejadora.</span
+      >
+    </p>
+
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong
+        >:</em
+      >
+      Sea una página web provista de un formulario con una caja de texto y un
+      botón de envío. Se desea evitar que el formulario se envíe si el usuario
+      deja vacía la caja de texto, en cuyo caso debe mostrarse un mensaje de
+      error:
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/3.3.9.png"
+        alt=""
+        role="presentation"
+      /><br />
+    </p>
+    <p style="text-align: justify">
+      El envío del formulario se controla registrando el evento
+      “<em>submit</em>” del formulario. En la función manejadora se comprueba el
+      contenido de la caja de texto y se invoca la
+      función&nbsp;<em>preventDefault()</em>&nbsp;del parámetro
+      ‘<em>event’</em>&nbsp;si&nbsp; está vacía para evitar la acción
+      predeterminada de enviar el formulario:&nbsp;<br />
+    </p>
+
+    <p style="text-align: center"></p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Registro del evento de envío del formulario</span>
+<strong><em>            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#formulario</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>submit<span style="color:#808030; ">(</span><span style="color: rgb(128, 0, 0);">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Comprobacion de contenido de la caja de texto</span>
+                <span style="color: rgb(128, 0, 0);">if</span> <span style="color:#808030; ">(</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">input:text</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>val<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">==</span> <span style="color:#800000; ">"</span><span style="color:#800000; ">"</span> <span style="color:#808030; ">)</span>
+                    <span style="color: rgb(128, 0, 0);">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">No hay valor</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+                    <span style="color:#696969; ">// Cancelacion del comportamiento predeterminado</span>
+                    event<span style="color:#808030; ">.</span>preventDefault<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></em></strong>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">form</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'formulario'</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'text'</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'submit'</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">form</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><br /></p>
+    <br />
+    <p></p>
+  </div>
+</div>

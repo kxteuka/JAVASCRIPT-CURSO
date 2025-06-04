@@ -1,252 +1,338 @@
-<section id="region-main">
-  <span class="notifications" id="user-notifications"></span>
-  <div role="main" id="yui_3_17_2_1_1748954354677_20">
-    <span id="maincontent"></span>
-    <h2>1.1. Introducción</h2>
-    <h3>Introducción a Javascript</h3>
-    <div class="box py-3 contents" id="yui_3_17_2_1_1748954354677_23">
-      <div class="no-overflow" id="yui_3_17_2_1_1748954354677_22">
-        <p dir="ltr" style="text-align: left"></p>
-        <p></p>
-        <p>
-          En un principio las páginas Web disponían de un contenido estático,
-          tan sólo permitían que el usuario utilizase enlaces para moverse entre
-          las distintas partes de su contenido. Con el paso del tiempo se ha
-          visto la necesidad de desarrollar tecnologías que permitan dotar a las
-          páginas de internet de interactividad, es decir, dar la posibilidad al
-          usuario de interactuar con la información que se presenta en los
-          navegadores.
-        </p>
-
-        <p>
-          HTML es un lenguaje declarativo que define la maquetación y el
-          contenido de la página web. Este lenguaje permite mostrar diferentes
-          elementos como párrafos, imágenes, hipervínculos…, anidados en otros
-          elementos que hacen de contenedores como pueden ser las capas o las
-          tablas.
-        </p>
-
-        <p>
-          Las CSS son declaraciones que definen el estilo visual de la página
-          web estableciendo las características visuales de los diferentes
-          elementos HTML que la componen. Las CSS han evolucionado para permitir
-          que los elementos se adapten a las características del navegador (<em
-            >diseño responsive</em
-          >). Las CSS pueden definirse dentro de la propia página web o mediante
-          ficheros externos ( hojas de estilo ) con extensión .css.
-        </p>
-
-        <p>
-          Javascript es un lenguaje de programación procedural que define el
-          modo en que el usuario puede interactuar con la página web.
-        </p>
-
-        <p>
-          El concepto de interaccion consiste en definir comportamientos para
-          que se ejecuten antes ciertos eventos.
-        </p>
-        <p></p>
-        <ul>
-          <li>
-            <span style="font-size: 0.9375rem">Los </span
-            ><em style="font-size: 0.9375rem">eventos</em
-            ><span style="font-size: 0.9375rem">
-              son sucesos y acciones del usuario sobre los elementos de la
-              página que pueden emplearse para la ejecución de los
-              comportamientos. Por ejemplo: la carga de la propia página, la
-              pulsación de un botón…, etc.</span
-            >
-          </li>
-          <li>
-            Los <em>comportamientos</em> son modificaciones en la página
-            añadiendo, eliminando o alterando las características de los
-            elementos HTML, que tienen lugar como respuesta a los eventos.
-          </li>
-        </ul>
-        <p></p>
-
-        <p>
-          <strong>Ejemplo: </strong>Supóngase una página provista de un
-          formulario en el que al pulsar el botón de envío (<em>evento</em>), se
-          comprueba que los valores seleccionados e inscritos en el control del
-          formulario sean correctos (comportamiento). Si todos son correctos se
-          realiza el envío del formulario, y en caso contrario se muestra un
-          mensaje de error destacando el campo incorrecto.
-        </p>
-
-        <p>
-          El código <strong><em>JavaScript</em></strong> puede ser incorporado
-          directamente en la página web o ser inscrito en ficheros externos con
-          extensión .js.
-        </p>
-        <h3>
-          <span><br />Añadir Javascript a una página.</span>
-        </h3>
-
-        <p>
-          <span style="font-size: 0.9375rem"
-            ><br />El código Javascript puede integrarse dentro del código de
-            una página web o mediante un fichero aparte con extensión .js.</span
-          >
-        </p>
-
-        <p>
-          <u
-            >&nbsp;<span style="font-size: 0.9375rem"
-              >Javascript integrado en la propia página.</span
-            ></u
-          >
-        </p>
-
-        <p>
-          El código Javascript se integra dentro del código de una página Web
-          empleando la etiqueta de HTML: <strong><em>&lt;script&gt;</em></strong
-          >. Las secciones de código de Javascript también se denominan
-          “<em>scripts</em>”.&nbsp;
-        </p>
-
-        <pre
-          style="color: #000000; background: #ffffff"
-        ><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">!</span>DOCTYPE html<span style="color:#808030; ">&gt;</span>
-<span style="color:#808030; ">&lt;</span>html lang<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">en</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-	<span style="color:#808030; ">&lt;</span>head<span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>meta charset<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">utf-8</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>title<span style="color:#808030; ">&gt;</span>new_file<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>title<span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>meta name<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">description</span><span style="color:#800000; ">"</span> content<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>meta name<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">author</span><span style="color:#800000; ">"</span> content<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">CIPSA</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>meta name<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">viewport</span><span style="color:#800000; ">"</span> content<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">width=device-width; initial-scale=1.0</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-             <span style="color:#808030; ">&lt;</span>script<span style="color:#808030; ">&gt;</span>
-        	      <span style="color:#800000; font-weight:bold; ">var</span> i<span style="color:#800080; ">;</span> 
-        	      <span style="color:#800000; font-weight:bold; ">for</span><span style="color:#808030; ">(</span> i <span style="color:#808030; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span> i <span style="color:#808030; ">&lt;=</span> <span style="color:#008c00; ">10</span><span style="color:#800080; ">;</span> i<span style="color:#808030; ">++</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
-        	 	     document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">HOLA&lt;br /&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
-        	      <span style="color:#800080; ">}</span>
-             <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
-	<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>head<span style="color:#808030; ">&gt;</span>
-	<span style="color:#808030; ">&lt;</span>body<span style="color:#808030; ">&gt;</span>
-	<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>body<span style="color:#808030; ">&gt;</span>
-<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>html<span style="color:#808030; ">&gt;</span></pre>
-
-        <table border="1" cellspacing="0" cellpadding="0">
-          <tbody>
-            <tr>
-              <td width="576" valign="top">
-                <p>
-                  <strong
-                    ><em
-                      >(*) En HTML5 ya no es necesario incluir el atributo
-                      <span>type=”text/javascript”</span> de la
-                      etiqueta&nbsp;<span><span>&lt;script&gt;</span></span>
-                      propio de las versiones anteriores de HTML.</em
-                    ></strong
-                  >
-                </p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p>&nbsp;</p>
-
-        <p><u>Javascript referenciado en un archivo .js</u></p>
-
-        <p>
-          &nbsp;<span style="font-size: 0.9375rem">El código </span
-          ><em style="font-size: 0.9375rem">Javascript</em
-          ><span style="font-size: 0.9375rem">
-            se incluye en un fichero separado con extensión </span
-          ><strong style="font-size: 0.9375rem"><em>.js</em></strong>
-          <span style="font-size: 0.9375rem"
-            >, cuya ruta relativa debe incluirse en el atributo </span
-          ><strong style="font-size: 0.9375rem"><em>src</em></strong
-          ><span style="font-size: 0.9375rem"> de la etiqueta </span
-          ><strong style="font-size: 0.9375rem"><em>&lt;script&gt;</em></strong>
-          <span style="font-size: 0.9375rem">:</span>
-        </p>
-
-        <p>
-          &nbsp;<em style="font-size: 0.9375rem"><u>Archivo: codigo.js</u></em>
-        </p>
-
-        <pre
-          style="color: #000000; background: #ffffff"
-        ><span style="color:#800000; font-weight:bold; ">var</span> mensaje <span style="color:#808030; ">=</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">HOLA</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span> 
-<span style="color:#800000; font-weight:bold; ">var</span> i<span style="color:#800080; ">;</span> 
-<span style="color:#800000; font-weight:bold; ">for</span><span style="color:#808030; ">(</span> i <span style="color:#808030; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span> i <span style="color:#808030; ">&lt;=</span> <span style="color:#008c00; ">10</span><span style="color:#800080; ">;</span> i<span style="color:#808030; ">++</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
-	document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span> mensaje <span style="color:#808030; ">+</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;br /&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
-<span style="color:#800080; ">}</span>
-
-</pre>
-
-        <p>
-          <em
-            ><u><span lang="EN-US">Archivo: inicio.html</span></u></em
-          >
-        </p>
-
-        <pre
-          style="color: #000000; background: #ffffff"
-        ><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">!</span>DOCTYPE html<span style="color:#808030; ">&gt;</span>
-<span style="color:#808030; ">&lt;</span>html lang<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">en</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-	<span style="color:#808030; ">&lt;</span>head<span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>meta charset<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">utf-8</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>title<span style="color:#808030; ">&gt;</span>new_file<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>title<span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>meta name<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">description</span><span style="color:#800000; ">"</span> content<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>meta name<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">author</span><span style="color:#800000; ">"</span> content<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">CIPSA</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>meta name<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">viewport</span><span style="color:#800000; ">"</span> content<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">width=device-width; initial-scale=1.0</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-             <span style="color:#808030; ">&lt;</span>script src<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">codigo.js</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
-	<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>head<span style="color:#808030; ">&gt;</span>
-	<span style="color:#808030; ">&lt;</span>body<span style="color:#808030; ">&gt;</span>
-	<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>body<span style="color:#808030; ">&gt;</span>
-<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>html<span style="color:#808030; ">&gt;</span>
-
-</pre>
-
-        <p><span lang="EN-US">Resultado visualizado: </span></p>
-
-        <img
-          src="https://ecampus.cipsa.net/pluginfile.php/14282/mod_lesson/page_contents/8167/image%20%281%29.png"
-          alt=""
-          role="presentation"
-        /><br />
-
-        <p id="yui_3_17_2_1_1748954354677_21">&nbsp;</p>
-
-        <p>
-          Si examinamos el código HTML de la página web veremos los mensajes
-          “HOLA” que aparecen en pantalla NO aparecen en el código HTML. Esto es
-          debido a que los mensajes han sido generados y agregados
-          <em
-            ><u
-              >a la copia de la página presente en la memoria del navegador.</u
-            ></em
-          ><strong><u> </u></strong>
-        </p>
-
-        <p>
-          Por tanto, mediante Javascript podemos alterar una página web
-          agregando y modificando sus elementos HTML; pero NUNCA modificar su
-          código HTML original.
-        </p>
-        <br />
-        <p></p>
-      </div>
-    </div>
-    <div
-      class="box py-3 branchbuttoncontainer horizontal"
-      id="yui_3_17_2_1_1748954354677_24"
-    >
-      <div class="singlebutton">
-        <form
-          method="post"
-          action="https://ecampus.cipsa.net/mod/lesson/continue.php"
+<h2>5.1. Transiciones</h2>
+<h3>Transiciones.</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p>
+      JQuery dispone de funciones para generar ciertos efectos de manera gradual
+      en un intervalo de tiempo logrando así efectos de desgradado y
+      transiciones más vistosos. Para ello pueden emplearse las siguientes
+      funciones:&nbsp;
+    </p>
+    <p></p>
+    <ul>
+      <li>
+        Efectos de aparición y desaparición (
+        <strong><em>$().fadeIn()</em></strong> y<strong
+          ><em> $().fadeOut()</em></strong
         >
-          <input type="hidden" name="id" value="11584" />
-          <input type="hidden" name="pageid" value="8167" />
-          <input type="hidden" name="sesskey" value="EHorbbqrd2" />
-          <input type="hidden" name="jumpto" value="-9" />
-        </form>
-      </div>
-    </div>
-    <div class="box py-3 progress_bar"></div>
+        )&nbsp;
+      </li>
+      <li>
+        Efectos de cambio de tamaño ( <strong><em>$().slideUp()</em></strong> y
+        <strong><em>$().slideDown()</em></strong> )&nbsp;
+      </li>
+      <li>
+        Efectos de transición ( <strong><em>$().show()</em></strong
+        >, <strong><em>$().hide()</em></strong> )&nbsp;
+      </li>
+    </ul>
+    <p></p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >Todas ellas pueden invocarse de tres modos:</span
+      ><br />
+    </p>
+
+    <p></p>
+    <ul>
+      <li>
+        <u>&nbsp;Sin indicar ningún parámetro</u>&nbsp;: Provoca el efecto de
+        manera inmediata.
+      </li>
+      <li>
+        &nbsp;<u style="font-size: 0.9375rem">Con argumentos “<em>slow</em></u
+        ><u style="font-size: 0.9375rem">”, “<em>normal</em></u
+        ><u style="font-size: 0.9375rem">”, “<em>fast</em></u
+        ><u style="font-size: 0.9375rem">”</u
+        ><span style="font-size: 0.9375rem"
+          >&nbsp;: Provoca el efecto de manera lenta, normal, o rápida
+          respectivamente.</span
+        >
+      </li>
+      <li>
+        &nbsp;<u style="font-size: 0.9375rem">Con argumento numérico</u
+        ><span style="font-size: 0.9375rem"
+          >&nbsp;: Equivalente al anterior, pero el efecto se extiende el tiempo
+          indicado en milisegundos.</span
+        >
+      </li>
+    </ul>
+    <p></p>
+
+    <h5>
+      <br />
+      Efecto de desvanecimiento ( <em>$().fadeIn()</em>,
+      <em>$().fadeOut() </em>)
+    </h5>
+
+    <p>
+      <br />Estas funciones permiten mostrar u ocultar&nbsp;los elementos de la
+      selección modificando su opacidad. La velocidad el efecto depende del
+      argumento dado:
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/5.1.1.gif"
+        alt="gif"
+        width="243"
+        height="257"
+        class="img-responsive atto_image_button_text-bottom"
+      /><br />
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">http-equiv</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"Content-Type"</span><span style="color:#274796; "> </span><span style="color:#074726; ">content</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"text/html; charset=utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Pulsacion boton "OCULTAR"</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnOculto</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Ocultacion lenta. </span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">img</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>fadeOut<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">slow</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#696969; ">// Pulsacion boton "MOSTRAR"</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnVisible</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Mostrado rápido</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">img</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>fadeIn<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">fast</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">img</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"images/smiley.png"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"button"</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"btnOculto"</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"OCULTAR"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"button"</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"btnVisible"</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"MOSTRAR"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      <!--[if !supportLineBreakNewLine]--><br />
+      <!--[endif]-->
+    </p>
+
+    <h5>Efecto de escalado ( <em>$().slideUp(), $().slideDown()</em> )</h5>
+
+    <p>
+      <br />Estas funciones muestran u ocultan los elementos de la selección
+      modificando su tamaño. La velocidad depende del argumento indicado:
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/5.1.2.gif"
+        alt="gif"
+        width="243"
+        height="257"
+        class="img-responsive atto_image_button_text-bottom"
+      /><br />
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">http-equiv</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"Content-Type"</span><span style="color:#274796; "> </span><span style="color:#074726; ">content</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"text/html; charset=utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Pulsacion boton "OCULTAR"</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnOculto</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Ocultacion en 500 milisegundos</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">img</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>slideUp<span style="color:#808030; ">(</span><span style="color:#008c00; ">500</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#696969; ">// Pulsacion boton "MOSTRAR"</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnVisible</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Mostrado en 1000 segundos</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">img</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>slideDown<span style="color:#808030; ">(</span><span style="color:#008c00; ">1000</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">img</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"images/smiley.png"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"button"</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"btnOculto"</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"OCULTAR"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"button"</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"btnVisible"</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"MOSTRAR"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+        <tr>
+          <td width="576" valign="top">
+            <p>
+              (*) Para poder seleccionar los elementos ocultos y los visibles
+              pueden emplearse los selectores “<em>:hidden</em>” y
+              “<em>:visible</em>” respectivamente.
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+
+    <h5>Efecto de transición ( <em>$().show(), $().hide()</em> )</h5>
+
+    <p>
+      <br />Las funciones <em>$().show()</em> / <em>$().hide()</em> muestran y
+      ocultan respectivamente los elementos de la selección alterando su
+      opacidad y tamaño al mismo tiempo:
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/5.1.3.gif"
+        alt="gif
+"
+        width="243"
+        height="257"
+        class="img-responsive atto_image_button_text-bottom"
+      /><br />
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">http-equiv</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"Content-Type"</span><span style="color:#274796; "> </span><span style="color:#074726; ">content</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"text/html; charset=utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Pulsacion boton "OCULTAR"</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnOculto</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Ocultacion lenta. </span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">img</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>hide<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">slow</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#696969; ">// Pulsacion boton "MOSTRAR"</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnVisible</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Mostrado rápido</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">img</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>show<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">fast</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">img</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"images/smiley.png"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"button"</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"btnOculto"</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"OCULTAR"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"button"</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"btnVisible"</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"MOSTRAR"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+
+    <h5>
+      Cambio de estado (
+      <em>$().toggle(), $().fadeToggle(), $().slideToggle()</em> ).
+    </h5>
+
+    <p>
+      Estas funciones son semejantes a las anteriores, pero lo que hacen es
+      mostrar u ocultar alternativamente los elementos de la selección cada vez
+      que son invocadas, esto es; si el elemento es visible se oculta, y si está
+      oculto; se muestra:
+    </p>
+
+    <p></p>
+    <ul>
+      <li>
+        <strong><em>$().toggle()</em>&nbsp;:</strong> Oculta o muestra
+        alternativamente del mismo modo que las funciones <em>$().show</em> y
+        <em>$().hide</em>.
+      </li>
+      <li>
+        <em style="font-size: 0.9375rem"><strong>$().fadeToggle()</strong></em
+        ><span style="font-size: 0.9375rem"
+          ><strong>&nbsp;:</strong> Oculta o muestra alternativamente del mismo
+          modo que las funciones </span
+        ><em style="font-size: 0.9375rem">$().fadeOut()</em>
+        <span style="font-size: 0.9375rem"> y </span
+        ><em style="font-size: 0.9375rem">$().fadeIn()</em>
+      </li>
+      <li>
+        <em><strong>$().slideToggle()</strong></em
+        >&nbsp;: Oculta o muestra alternativamente del mismo modo que las
+        funciones <em>$().slideDown()</em> y <em>$().slideUp()</em>
+      </li>
+    </ul>
+    <p></p>
+
+    <p>
+      <em style="font-size: 0.9375rem"
+        ><strong><u>Ejemplo</u></strong
+        >:</em
+      ><span style="font-size: 0.9375rem">
+        El siguiente código muestra y oculta una imagen alternativamente cada
+        vez que se pulsa el botón “VER/OCULTAR” en una transición de 1 segundo
+        de duración empelando la función
+        <strong><em>$().fadeToggle()</em></strong
+        >:&nbsp;</span
+      >
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">http-equiv</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"Content-Type"</span><span style="color:#274796; "> </span><span style="color:#074726; ">content</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"text/html; charset=utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnAccion</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Si la imagen está oculta, la muestra. Si es visible, la oculta </span>
+                <span style="color:#696969; ">// en un lapso de 1 segundo. </span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">img</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>fadeToggle<span style="color:#808030; ">(</span><span style="color:#008c00; ">1000</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">img</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"images/smiley.png"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"button"</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"btnAccion"</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"VER/OCULTAR"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <p></p>
   </div>
-</section>
+</div>

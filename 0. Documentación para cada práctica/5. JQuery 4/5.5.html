@@ -1,0 +1,219 @@
+<h2>5.5. Componentes ( Widgets )</h2>
+<h3>Componentes de JQueryUI</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p>
+      <span style="font-size: 0.9375rem">Los componentes o</span
+      ><em style="font-size: 0.9375rem"> Widgets</em
+      ><span style="font-size: 0.9375rem">
+        son controles de JQueryUI que permiten organizar el contenido o
+        solicitar datos al usuario de manera más flexible y cómoda. La
+        apariencia de estos controles depende del tema seleccionado al descargar
+        la librería.</span
+      ><br />
+    </p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >El aspecto de estos no componentes depende en gran medida del tema
+        empleado. También es posible crear un estilo propio empleando la
+        herramienta web <em>ThemeRoller</em>: (&nbsp;<strong
+          ><em
+            ><a href="https://jqueryui.com/themeroller/"
+              >https://jqueryui.com/themeroller/</a
+            >
+          </em></strong
+        >)</span
+      >
+    </p>
+
+    <p><br /></p>
+
+    <h5>Uso de los Componentes de JQueryUI ( <em>Spinner</em> )&nbsp;</h5>
+
+    <p><br /></p>
+    <p style="text-align: justify">
+      <span style="font-size: 0.9375rem"
+        >La mayoría de los widgets se basan en elementos HTML simples. Para
+        convertirlos en componentes de JQueryUI ( <em>widgets </em>) deben
+        seleccionarse mediante JQuery e invocar a una función determinada que
+        los convierte en el componente correspondiente pudiendo además indicar
+        ciertas propiedades.</span
+      >
+    </p>
+    <p></p>
+
+    <p>
+      Por ejemplo:&nbsp;<span style="font-size: 0.9375rem"
+        >Un Spinner es un widgets que muestra una caja en la que el usuario
+        puede seleccionar un valor numérico mediante los botones + / - en el
+        extermo derecho:</span
+      >
+    </p>
+
+    <p style="text-align: center">
+      <strong><em> </em></strong
+      ><strong
+        ><em
+          ><img
+            src="/imagenes/5.5.1.png"
+            alt=""
+            role="presentation"
+          /><br />
+          Vista de un Spinner de JQueryUI</em
+        ></strong
+      >
+    </p>
+
+    <p>
+      <span style="font-size: 0.9375rem"
+        >Este componente se crea a partir de un elemento</span
+      ><span style="font-size: 0.9375rem"
+        >&nbsp;&lt;input&gt; de HTML. Este&nbsp;</span
+      ><span style="font-size: 0.9375rem"
+        >es seleccionado mediante JQuery y se invoca a la función
+      </span>
+      <strong style="font-size: 0.9375rem"><em>$().spinner()</em></strong
+      ><span style="font-size: 0.9375rem">
+        para convertirlo en un componente<em><span> Spinner</span></em
+        >:&nbsp;</span
+      ><br />
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#696969; ">&lt;!-- Libreria JQuery comprimida --&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"<a href="https://code.jquery.com/jquery-3.6.0.min.js" class="_blanktarget">https://code.jquery.com/jquery-3.6.0.min.js</a>"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#696969; ">&lt;!-- Tema 'base' para JQueryUI --&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">link</span><span style="color:#274796; "> </span><span style="color:#074726; ">href</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"<a href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css" class="_blanktarget">https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css</a>"</span><span style="color:#274796; "> </span><span style="color:#074726; ">rel</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"stylesheet"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#696969; ">&lt;!-- Libreria JQueryUI comprimida --&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"<a href="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" class="_blanktarget">https://code.jquery.com/ui/1.13.1/jquery-ui.min.js</a>"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>            <span style="color:#696969; ">// Declaración del spinner empleando el elemento HTML</span>
+            <span style="color: rgb(128, 0, 0);">var</span> widget_spinner <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#spinner</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>spinner<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></em></strong>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">label</span><span style="color:#274796; "> </span><span style="color:#074726; ">for</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"spinner"</span><span style="color:#a65700; ">&gt;</span>Select a value:<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">label</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#696969; ">&lt;!-- Elemento HTML que representa el Spinner --&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"spinner"</span><span style="color:#274796; "> </span><span style="color:#074726; ">name</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"value"</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      &nbsp;<br /><span style="font-size: 0.9375rem"
+        >Todos los componentes de JQueryUI pueden configurarse indicando un
+        objeto como argumento con los valores para sus correspondientes
+        propiedades.&nbsp;</span
+      >
+    </p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >Por ejemplo; en el caso de un control
+        <em><strong>Spinner </strong></em>pueden configurarse las siguientes
+        propiedades:&nbsp;&nbsp;</span
+      >
+    </p>
+    <p></p>
+    <ul>
+      <li>
+        <span style="font-size: 0.9375rem"
+          ><em>min </em>: Determina el valor mínimo permitido</span
+        >
+      </li>
+      <li>
+        <span style="font-size: 0.9375rem"
+          ><em>max</em>: Determina el valor máximo permitido</span
+        >
+      </li>
+      <li>
+        <span style="font-size: 0.9375rem"
+          ><em>step</em>: Determina el valor de paso al pulsar los botones de la
+          derecha para modificar el valor del componente</span
+        >
+      </li>
+    </ul>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#696969; ">&lt;!-- Libreria JQuery comprimida --&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"<a href="https://code.jquery.com/jquery-3.6.0.min.js" class="_blanktarget">https://code.jquery.com/jquery-3.6.0.min.js</a>"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#696969; ">&lt;!-- Tema 'base' para JQueryUI --&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">link</span><span style="color:#274796; "> </span><span style="color:#074726; ">href</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"<a href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css" class="_blanktarget">https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css</a>"</span><span style="color:#274796; "> </span><span style="color:#074726; ">rel</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"stylesheet"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#696969; ">&lt;!-- Libreria JQueryUI comprimida --&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"<a href="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" class="_blanktarget">https://code.jquery.com/ui/1.13.1/jquery-ui.min.js</a>"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Declaración del spinner empleando el elemento HTML</span>
+            <span style="color:#800000; font-weight:bold; ">var</span> widget_spinner <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#spinner</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>spinner<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span>
+<strong><em>                    <span style="color: rgb(128, 0, 0);">min</span><span style="color:#800080; ">:</span> <span style="color:#008c00; ">5</span><span style="color:#808030; ">,</span>                  	<span style="color:#696969; ">// Valor mínimo permitido.</span>
+                    <span style="color: rgb(128, 0, 0);">max</span><span style="color:#800080; ">:</span> <span style="color:#008c00; ">2500</span><span style="color:#808030; ">,</span>			<span style="color:#696969; ">// Valor máximo permitido.</span>
+                    step<span style="color:#800080; ">:</span> <span style="color:#008c00; ">25</span>			<span style="color:#696969; ">// Paso de 25 en 25.</span></em></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">label</span><span style="color:#274796; "> </span><span style="color:#074726; ">for</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"spinner"</span><span style="color:#a65700; ">&gt;</span>Select a value:<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">label</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#696969; ">&lt;!-- Elemento HTML que representa el Spinner --&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"spinner"</span><span style="color:#274796; "> </span><span style="color:#074726; ">name</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"value"</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'1000'</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      Los parámetros de configuración para de cada componente son diferentes y
+      dependen de sus características. Para consultarlos puede acceder a la web
+      oficial de documentación de JQueryUI:&nbsp;
+    </p>
+    <div class="editor-indent" style="margin-left: 30px">
+      <p>
+        <a
+          href="http://api.jqueryui.com/"
+          style="
+            text-align: right;
+            background-color: rgb(255, 255, 255);
+            font-size: 0.9375rem;
+          "
+          ><em><strong>http://api.jqueryui.com/</strong></em></a
+        >
+      </p>
+    </div>
+    <br />
+    <p></p>
+  </div>
+</div>

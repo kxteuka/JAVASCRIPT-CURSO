@@ -1,0 +1,98 @@
+<h2>5.2. Sincronización de efectos.</h2>
+<h3>Sincronización de acciones.</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p style="text-align: justify">
+      <span style="font-size: 0.9375rem"
+        >Existen ocasiones en las que es interesante que justo al terminar un
+        efecto/transición de los vistos anteriormente,
+        <em><u>se realice otra operación justo a continuación</u></em
+        >.&nbsp;</span
+      ><br />
+    </p>
+    <p style="text-align: justify">
+      La sintaxis que puede emplearse es la siguiente y es aplicable a funciones
+      como&nbsp;<span
+        ><strong><em>&nbsp;</em></strong></span
+      ><strong
+        ><em
+          >$().show(),&nbsp;$().hide(),&nbsp;$().fadeIn(),&nbsp;$().fadeOut(),&nbsp;$().slideUp(),&nbsp;$().slideDown()</em
+        ></strong
+      >&nbsp;cuando es necesario sincronizar una tarea para que se ejecute justo
+      tras termina la transición:
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <div class="editor-indent" style="margin-left: 30px">
+        <pre
+          style="color: #000000; background: #ffffff"
+        >$<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span><em>funcion</em><span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>duracion<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></pre>
+      </div>
+    </div>
+
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong
+        >:</em
+      >
+      Sea una página en la que se muestra una imagen y un botón
+      “<em>OCULTAR</em>” que al ser pulsado hace desaparecer la imagen
+      lentamente y que al desaparecer por completo se muestre el mensaje “<em
+        >La imagen ya no se ve</em
+      >”.
+    </p>
+    <p>
+      La función indicada como segundo argumento de
+      <strong><em>$().hide()</em></strong
+      >, se ejecuta justo después de terminarse el efecto/transición:
+    </p>
+    <p>
+      <img
+        src="/imagenes/5.2.1.gif"
+        alt="sincronizacion"
+        width="1307"
+        height="531"
+        class="img-responsive atto_image_button_text-bottom"
+      /><br />
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">http-equiv</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"Content-Type"</span><span style="color:#274796; "> </span><span style="color:#074726; ">content</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"text/html; charset=utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Pulsacion boton "OCULTAR"</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnOculto</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Ocultacion lenta. </span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">img</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>hide<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">slow</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <strong><em><span style="color: rgb(128, 0, 0);">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    <span style="color:#696969; ">// Visualizacion del mensaje</span>
+                    <span style="color: rgb(128, 0, 0);">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">La imagen ya no se ve</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>                     
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></em></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">img</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"images/smiley.png"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"button"</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"btnOculto"</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"OCULTAR"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <p></p>
+  </div>
+</div>

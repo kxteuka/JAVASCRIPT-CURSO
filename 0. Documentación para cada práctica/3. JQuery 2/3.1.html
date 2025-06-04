@@ -1,252 +1,642 @@
-<section id="region-main">
-  <span class="notifications" id="user-notifications"></span>
-  <div role="main" id="yui_3_17_2_1_1748954354677_20">
-    <span id="maincontent"></span>
-    <h2>1.1. Introducción</h2>
-    <h3>Introducción a Javascript</h3>
-    <div class="box py-3 contents" id="yui_3_17_2_1_1748954354677_23">
-      <div class="no-overflow" id="yui_3_17_2_1_1748954354677_22">
-        <p dir="ltr" style="text-align: left"></p>
-        <p></p>
-        <p>
-          En un principio las páginas Web disponían de un contenido estático,
-          tan sólo permitían que el usuario utilizase enlaces para moverse entre
-          las distintas partes de su contenido. Con el paso del tiempo se ha
-          visto la necesidad de desarrollar tecnologías que permitan dotar a las
-          páginas de internet de interactividad, es decir, dar la posibilidad al
-          usuario de interactuar con la información que se presenta en los
-          navegadores.
-        </p>
+<h2>3.1. Captura de eventos.</h2>
+<h3>Eventos y Funciones manejadoras</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p>
+      Javascript permite hacer las páginas web interactivas para que reaccionen
+      a las acciones del usuario sobre sus elementos, pero para ello; es
+      necesario&nbsp;<span style="font-size: 0.9375rem"
+        >manejar dos conceptos: </span
+      ><em style="font-size: 0.9375rem"><u>eventos</u></em>
+      <span style="font-size: 0.9375rem"> y </span
+      ><em style="font-size: 0.9375rem"><u>manejadores</u></em
+      ><span style="font-size: 0.9375rem">.</span>
+    </p>
 
-        <p>
-          HTML es un lenguaje declarativo que define la maquetación y el
-          contenido de la página web. Este lenguaje permite mostrar diferentes
-          elementos como párrafos, imágenes, hipervínculos…, anidados en otros
-          elementos que hacen de contenedores como pueden ser las capas o las
-          tablas.
-        </p>
+    <p></p>
+    <ul>
+      <li>
+        Un <strong><em>evento</em> </strong>es una acción sobre un elemento de
+        la página que puede ser detectada por Javascript ayudándose de
+        JQuery.&nbsp;
+      </li>
+      <li>
+        Un <strong><em>manejador</em> </strong>es una función que se asocia a un
+        evento <em><u>para que se ejecute cada vez que éste se produzca.</u></em
+        >&nbsp;
+      </li>
+    </ul>
+    <p></p>
 
-        <p>
-          Las CSS son declaraciones que definen el estilo visual de la página
-          web estableciendo las características visuales de los diferentes
-          elementos HTML que la componen. Las CSS han evolucionado para permitir
-          que los elementos se adapten a las características del navegador (<em
-            >diseño responsive</em
-          >). Las CSS pueden definirse dentro de la propia página web o mediante
-          ficheros externos ( hojas de estilo ) con extensión .css.
-        </p>
+    <p style="text-align: justify">
+      El manejo de eventos consiste en asociar funciones manejadoras a eventos
+      sobre ciertos elementos de una página web, de modo que al producirse estos
+      eventos, se ejecutan las funciones desempeñando el comportamiento de la
+      página. Esta operación se denomina también&nbsp;
+      <em><u>registro de eventos.&nbsp;</u></em>
+    </p>
 
-        <p>
-          Javascript es un lenguaje de programación procedural que define el
-          modo en que el usuario puede interactuar con la página web.
-        </p>
+    <h5>Registro de eventos</h5>
 
-        <p>
-          El concepto de interaccion consiste en definir comportamientos para
-          que se ejecuten antes ciertos eventos.
-        </p>
-        <p></p>
-        <ul>
-          <li>
-            <span style="font-size: 0.9375rem">Los </span
-            ><em style="font-size: 0.9375rem">eventos</em
-            ><span style="font-size: 0.9375rem">
-              son sucesos y acciones del usuario sobre los elementos de la
-              página que pueden emplearse para la ejecución de los
-              comportamientos. Por ejemplo: la carga de la propia página, la
-              pulsación de un botón…, etc.</span
-            >
-          </li>
-          <li>
-            Los <em>comportamientos</em> son modificaciones en la página
-            añadiendo, eliminando o alterando las características de los
-            elementos HTML, que tienen lugar como respuesta a los eventos.
-          </li>
-        </ul>
-        <p></p>
+    <p>
+      La siguiente tabla muestra los diferentes eventos y los elementos a los
+      que se aplican:
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/3.1.1.png"
+      /><br />
+    </p>
+    <p>
+      JQuery define una función para cada uno de estos eventos que permite
+      asignar a su vez una&nbsp;<em>función manejadora</em>&nbsp;que se ejecute
+      al producirse el evento. Todas estas funciones se llaman a partir de la
+      selección del elemento o elementos cuyo evento quiere manejarse indicando
+      como argumento la declaración de la función manejadora:&nbsp;
+    </p>
 
-        <p>
-          <strong>Ejemplo: </strong>Supóngase una página provista de un
-          formulario en el que al pulsar el botón de envío (<em>evento</em>), se
-          comprueba que los valores seleccionados e inscritos en el control del
-          formulario sean correctos (comportamiento). Si todos son correctos se
-          realiza el envío del formulario, y en caso contrario se muestra un
-          mensaje de error destacando el campo incorrecto.
-        </p>
-
-        <p>
-          El código <strong><em>JavaScript</em></strong> puede ser incorporado
-          directamente en la página web o ser inscrito en ficheros externos con
-          extensión .js.
-        </p>
-        <h3>
-          <span><br />Añadir Javascript a una página.</span>
-        </h3>
-
-        <p>
-          <span style="font-size: 0.9375rem"
-            ><br />El código Javascript puede integrarse dentro del código de
-            una página web o mediante un fichero aparte con extensión .js.</span
-          >
-        </p>
-
-        <p>
-          <u
-            >&nbsp;<span style="font-size: 0.9375rem"
-              >Javascript integrado en la propia página.</span
-            ></u
-          >
-        </p>
-
-        <p>
-          El código Javascript se integra dentro del código de una página Web
-          empleando la etiqueta de HTML: <strong><em>&lt;script&gt;</em></strong
-          >. Las secciones de código de Javascript también se denominan
-          “<em>scripts</em>”.&nbsp;
-        </p>
-
+    <div class="editor-indent" style="margin-left: 30px">
+      <div class="editor-indent" style="margin-left: 30px">
         <pre
           style="color: #000000; background: #ffffff"
-        ><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">!</span>DOCTYPE html<span style="color:#808030; ">&gt;</span>
-<span style="color:#808030; ">&lt;</span>html lang<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">en</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-	<span style="color:#808030; ">&lt;</span>head<span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>meta charset<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">utf-8</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>title<span style="color:#808030; ">&gt;</span>new_file<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>title<span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>meta name<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">description</span><span style="color:#800000; ">"</span> content<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>meta name<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">author</span><span style="color:#800000; ">"</span> content<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">CIPSA</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>meta name<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">viewport</span><span style="color:#800000; ">"</span> content<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">width=device-width; initial-scale=1.0</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-             <span style="color:#808030; ">&lt;</span>script<span style="color:#808030; ">&gt;</span>
-        	      <span style="color:#800000; font-weight:bold; ">var</span> i<span style="color:#800080; ">;</span> 
-        	      <span style="color:#800000; font-weight:bold; ">for</span><span style="color:#808030; ">(</span> i <span style="color:#808030; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span> i <span style="color:#808030; ">&lt;=</span> <span style="color:#008c00; ">10</span><span style="color:#800080; ">;</span> i<span style="color:#808030; ">++</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
-        	 	     document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">HOLA&lt;br /&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
-        	      <span style="color:#800080; ">}</span>
-             <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
-	<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>head<span style="color:#808030; ">&gt;</span>
-	<span style="color:#808030; ">&lt;</span>body<span style="color:#808030; ">&gt;</span>
-	<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>body<span style="color:#808030; ">&gt;</span>
-<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>html<span style="color:#808030; ">&gt;</span></pre>
-
-        <table border="1" cellspacing="0" cellpadding="0">
-          <tbody>
-            <tr>
-              <td width="576" valign="top">
-                <p>
-                  <strong
-                    ><em
-                      >(*) En HTML5 ya no es necesario incluir el atributo
-                      <span>type=”text/javascript”</span> de la
-                      etiqueta&nbsp;<span><span>&lt;script&gt;</span></span>
-                      propio de las versiones anteriores de HTML.</em
-                    ></strong
-                  >
-                </p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p>&nbsp;</p>
-
-        <p><u>Javascript referenciado en un archivo .js</u></p>
-
-        <p>
-          &nbsp;<span style="font-size: 0.9375rem">El código </span
-          ><em style="font-size: 0.9375rem">Javascript</em
-          ><span style="font-size: 0.9375rem">
-            se incluye en un fichero separado con extensión </span
-          ><strong style="font-size: 0.9375rem"><em>.js</em></strong>
-          <span style="font-size: 0.9375rem"
-            >, cuya ruta relativa debe incluirse en el atributo </span
-          ><strong style="font-size: 0.9375rem"><em>src</em></strong
-          ><span style="font-size: 0.9375rem"> de la etiqueta </span
-          ><strong style="font-size: 0.9375rem"><em>&lt;script&gt;</em></strong>
-          <span style="font-size: 0.9375rem">:</span>
-        </p>
-
-        <p>
-          &nbsp;<em style="font-size: 0.9375rem"><u>Archivo: codigo.js</u></em>
-        </p>
-
-        <pre
-          style="color: #000000; background: #ffffff"
-        ><span style="color:#800000; font-weight:bold; ">var</span> mensaje <span style="color:#808030; ">=</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">HOLA</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span> 
-<span style="color:#800000; font-weight:bold; ">var</span> i<span style="color:#800080; ">;</span> 
-<span style="color:#800000; font-weight:bold; ">for</span><span style="color:#808030; ">(</span> i <span style="color:#808030; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span> i <span style="color:#808030; ">&lt;=</span> <span style="color:#008c00; ">10</span><span style="color:#800080; ">;</span> i<span style="color:#808030; ">++</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
-	document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span> mensaje <span style="color:#808030; ">+</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;br /&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
-<span style="color:#800080; ">}</span>
-
-</pre>
-
-        <p>
-          <em
-            ><u><span lang="EN-US">Archivo: inicio.html</span></u></em
-          >
-        </p>
-
-        <pre
-          style="color: #000000; background: #ffffff"
-        ><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">!</span>DOCTYPE html<span style="color:#808030; ">&gt;</span>
-<span style="color:#808030; ">&lt;</span>html lang<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">en</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-	<span style="color:#808030; ">&lt;</span>head<span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>meta charset<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">utf-8</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>title<span style="color:#808030; ">&gt;</span>new_file<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>title<span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>meta name<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">description</span><span style="color:#800000; ">"</span> content<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>meta name<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">author</span><span style="color:#800000; ">"</span> content<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">CIPSA</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-		<span style="color:#808030; ">&lt;</span>meta name<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">viewport</span><span style="color:#800000; ">"</span> content<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">width=device-width; initial-scale=1.0</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span>
-             <span style="color:#808030; ">&lt;</span>script src<span style="color:#808030; ">=</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">codigo.js</span><span style="color:#800000; ">"</span><span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
-	<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>head<span style="color:#808030; ">&gt;</span>
-	<span style="color:#808030; ">&lt;</span>body<span style="color:#808030; ">&gt;</span>
-	<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>body<span style="color:#808030; ">&gt;</span>
-<span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>html<span style="color:#808030; ">&gt;</span>
-
-</pre>
-
-        <p><span lang="EN-US">Resultado visualizado: </span></p>
-
-        <img
-          src="https://ecampus.cipsa.net/pluginfile.php/14282/mod_lesson/page_contents/8167/image%20%281%29.png"
-          alt=""
-          role="presentation"
-        /><br />
-
-        <p id="yui_3_17_2_1_1748954354677_21">&nbsp;</p>
-
-        <p>
-          Si examinamos el código HTML de la página web veremos los mensajes
-          “HOLA” que aparecen en pantalla NO aparecen en el código HTML. Esto es
-          debido a que los mensajes han sido generados y agregados
-          <em
-            ><u
-              >a la copia de la página presente en la memoria del navegador.</u
-            ></em
-          ><strong><u> </u></strong>
-        </p>
-
-        <p>
-          Por tanto, mediante Javascript podemos alterar una página web
-          agregando y modificando sus elementos HTML; pero NUNCA modificar su
-          código HTML original.
-        </p>
-        <br />
-        <p></p>
+        ><strong>$<span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>selección_elemento<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>evento<span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>function_manejadora<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">)</span></strong></pre>
       </div>
     </div>
-    <div
-      class="box py-3 branchbuttoncontainer horizontal"
-      id="yui_3_17_2_1_1748954354677_24"
-    >
-      <div class="singlebutton">
-        <form
-          method="post"
-          action="https://ecampus.cipsa.net/mod/lesson/continue.php"
-        >
-          <input type="hidden" name="id" value="11584" />
-          <input type="hidden" name="pageid" value="8167" />
-          <input type="hidden" name="sesskey" value="EHorbbqrd2" />
-          <input type="hidden" name="jumpto" value="-9" />
-        </form>
-      </div>
-    </div>
-    <div class="box py-3 progress_bar"></div>
+
+    <p>
+      La función más común para registrar eventos es&nbsp;<span
+        ><span
+          ><em style="font-weight: bold">$().click(). </em>Esta
+          función&nbsp;</span
+        ></span
+      >registra el evento de pulsación del botón izquierdo del ratón sobre el
+      elemento o elementos seleccionados asignando como función manejadora la
+      indicada como argumento.&nbsp;
+    </p>
+
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong></em
+      >: El siguiente código muestra una web con un botón “<em>PULSAME</em>” que
+      al ser pulsado modifica el color de fondo de la página al completo. Para
+      ello <u>se declara primero la funcion ‘<em>manejadora’</em> </u>que se
+      encarga de cambiar color del fondo de la página, y
+      <u>se indica como argumento del método <em>click():</em></u>
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Funcion manejadora</span>
+            <span style="color:#800000; font-weight:bold; ">function</span> <strong><em><u>manejadora</u></em></strong><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">body</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">blue</span><span style="color:#800000; ">'</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>                
+            <span style="color:#800080; ">}</span>
+<strong><em>            <span style="color:#696969; ">// Registro del evento de pulsacion al boton id='btn_azul'</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#btn_azul</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><u>manejadora</u><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></em></strong>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+      <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+            <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_azul'</span><span style="color:#a65700; ">&gt;</span>AZUL<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+      <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      &nbsp;<br /><span style="font-size: 0.9375rem"
+        >Si la función manejadora sólo va a ser empleada en un único evento es
+        mejor emplear entonces una </span
+      ><em style="font-size: 0.9375rem"><u>funcion anónima</u></em
+      ><span style="font-size: 0.9375rem">
+        d<em
+          ><u
+            >eclarándola directamente sin nombre como argumento de la función</u
+          ></em
+        >:&nbsp;</span
+      >
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>            <span style="color:#696969; ">// Registro del evento de pulsacion al boton id='btn_azul'</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#btn_azul</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color: rgb(128, 0, 0);">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">body</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">blue</span><span style="color:#800000; ">'</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>                
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></em></strong>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+      <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+            <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_azul'</span><span style="color:#a65700; ">&gt;</span>AZUL<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+      <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+    <br />
+    <p></p>
   </div>
-</section>
+</div>
+<h3>Registro de eventos en elementos creados dinámicamente</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >JQuery no sólo permite registrar eventos asociados a elementos
+        presentes en modelo de documento (DOM) cuando se carga la página en el
+        navegador. También permite registrar eventos asociados a elementos
+        añadidos dinámicamente. La sintaxis es la misma, pero partiendo de
+        elemento recién creados.&nbsp;</span
+      ><br />
+    </p>
+
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong
+        >:</em
+      >
+      El siguiente código muestra dos botones “<em>OPCION</em> <em>AZUL</em>” y
+      “<em>OPCION</em> <em>ROJO</em>” que al ser pulsados añaden nuevos
+      elementos <em>&lt;li&gt;</em> a la lista <em>&lt;ul&gt; </em>registrando
+      en cada caso el evento de ‘<em>click’</em> con una función manejadora
+      distinta:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#800000; font-weight:bold; ">li</span> <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">cursor</span><span style="color:#808030; ">:</span> <span style="color:#074726; ">pointer</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span>
+        <span style="color:#808030; ">.</span>rojo <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">color</span><span style="color:#808030; ">:</span> <span style="color:#797997; ">red</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span>
+        <span style="color:#808030; ">.</span>azul <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">color</span><span style="color:#808030; ">:</span> <span style="color:#797997; ">blue</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#btn_opcion_rojo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span>
+                <span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">ul</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span>
+                    <span style="color:#808030; ">.</span>append<span style="color:#808030; ">(</span>
+<strong><em>                        <span style="color:#696969; ">// Creación y agregado de nuevo elemento &lt;li&gt; con evento click registrado.</span>
+                        $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">&lt;li&gt;</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800080; ">{</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">text</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">OPCION ROJO</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">class</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">rojo</span><span style="color:#800000; ">'</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span>
+                            <span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color: rgb(128, 0, 0);">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                                console<span style="color:#808030; ">.</span><span style="color: rgb(128, 0, 0);">log</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">ROJO</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+                            <span style="color:#800080; ">}</span>
+                        <span style="color:#808030; ">)</span></em></strong>
+                    <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#btn_opcion_azul</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span>
+                <span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">ul</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span>
+                    <span style="color:#808030; ">.</span>append<span style="color:#808030; ">(</span>
+<strong><em>                        <span style="color:#696969; ">// Creación y agregado de nuevo elemento &lt;li&gt; con evento click registrado.</span>
+                        $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">&lt;li&gt;</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">text</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">OPCION AZUL</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">class</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">azul</span><span style="color:#800000; ">'</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span>
+                            <span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">click</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color: rgb(128, 0, 0);">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                                console<span style="color:#808030; ">.</span><span style="color: rgb(128, 0, 0);">log</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">AZUL</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+                            <span style="color:#800080; ">}</span>
+                        <span style="color:#808030; ">)</span></em></strong>
+                    <span style="color:#808030; ">)</span>
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">ul</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_opcion_azul'</span><span style="color:#a65700; ">&gt;</span>OPCION AZUL<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_opcion_rojo'</span><span style="color:#a65700; ">&gt;</span>OPCION ROJO<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+
+    <p>
+      Al pulsar los botones “<em>OPCION ROJO</em>” y “<em>OPCION AZUL</em>” se
+      añaden las diferentes opciones:
+    </p>
+
+    <p></p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/3.1.2.png"
+        alt=""
+        role="presentation"
+        style="font-size: 0.9375rem"
+      />
+    </p>
+
+    <br />
+    Al hacer clic en cada una de las opciones se muestran mensajes distintos en
+    la consola de desarrollador del navegador.
+    <p></p>
+
+    <p style="text-align: center"></p>
+
+    <strong
+      ><img
+        src="/imagenes/3.1.3.png"
+        alt=""
+        role="presentation"
+      /><br clear="all" /> </strong
+    ><br />Si quisiéramos&nbsp; que todos los elementos<em> &lt;li&gt;</em> que
+    se añadan a la lista capturen el evento
+    <em><strong>click </strong></em>empleando la misma función manejadora;
+    podríamos emplearse la <em><u>delegación de eventos</u></em
+    >. Esto lo veremos en el apartado dedicado a la delegación de eventos.<br /><br />
+    <p></p>
+  </div>
+</div>
+<h3>Obtención del elemento origen del evento.</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p>
+      Las funciones manejadoras pueden obtener el elemento en el que se originó
+      el evento. Esto resulta útil cuando se emplea una misma función manejadora
+      en distintos elementos.&nbsp;<span style="font-size: 0.9375rem"
+        >Todas las funciones manejadoras obtienen una referencia al elemento
+        origen del evento mediante la variable predefinida </span
+      ><strong style="font-size: 0.9375rem"><em>this</em></strong
+      ><span style="font-size: 0.9375rem"
+        >. Para manejar este elemento mediante los métodos de JQuery debemos
+        tomarlo en una selección. </span
+      ><strong style="font-size: 0.9375rem"><em>$(this)</em></strong
+      ><span style="font-size: 0.9375rem">.&nbsp;</span>
+    </p>
+
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong
+        >: </em
+      >El siguiente código muestra tres botones “<em>ROJO</em>”,
+      “<em>VERDE</em>” y “<em>AZUL</em>” que al ser pulsados cada uno de ellos
+      llaman una misma función manejadora que muestra en la consola de
+      desarrollador el valor de su atributo <em>id</em>:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Captura del evento click de todos los botones. </span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">button</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>                <span style="color:#696969; ">// Visualización del atributo ID del botón pulsado en la consola de desarrollador </span>
+                console<span style="color:#808030; ">.</span><span style="color: rgb(128, 0, 0);">log</span><span style="color:#808030; ">(</span>$<span style="color:#808030; ">(</span><span style="color: rgb(128, 0, 0);">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>attr<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">id</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> </em></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_azul'</span><span style="color:#a65700; ">&gt;</span>AZUL<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_rojo'</span><span style="color:#a65700; ">&gt;</span>ROJO<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_verde'</span><span style="color:#a65700; ">&gt;</span>VERDE<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+
+    <p>
+      <em
+        ><strong><u>Ejemplo 2</u></strong
+        >:</em
+      >
+      El siguiente código <em><u>modifica el anterior </u></em>haciendo que el
+      color de fondo de la página cambie según el botón que sea
+      pulsado.&nbsp;<span style="font-size: 0.9375rem"
+        >Para ello, se asigna a cada botón un atributo personalizado ‘</span
+      >
+      <em style="font-size: 0.9375rem">data-color</em
+      ><span style="font-size: 0.9375rem"
+        >’ con el código hexadecimal correspondiente al color del botón.</span
+      >
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_azul'</span><span style="color:#274796; "> </span><span style="color:#074726; ">data</span><span style="color:#274796; ">-</span><span style="color:#074726; ">color</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'#0000ff'</span><span style="color:#a65700; ">&gt;</span>AZUL<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_rojo'</span><span style="color:#274796; "> </span><span style="color:#074726; ">data</span><span style="color:#274796; ">-</span><span style="color:#074726; ">color</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'#ff0000'</span><span style="color:#a65700; ">&gt;</span>ROJO<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_verde'</span><span style="color:#274796; "> </span><span style="color:#074726; ">data</span><span style="color:#274796; ">-</span><span style="color:#074726; ">color</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'#00ff00'</span><span style="color:#a65700; ">&gt;</span>VERDE<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+
+    <p>
+      Desde la función manejadora puede recuperarse el valor del atributo
+      ‘<em>data-color</em>’ del botón pulsado empleando el valor asociado para
+      cambiar&nbsp;el color de fondo de la página. Para ello se emplea la
+      selección $(this) y la función $().data() para obtener el valor del
+      atributo personalizado:&nbsp;
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">button</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+<strong><em>                <span style="color:#696969; ">// Obtencion del valor del atributo data-color del botón pulsado</span>
+                <span style="color: rgb(128, 0, 0);">var</span> color <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color: rgb(128, 0, 0);">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>data<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">color</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#696969; ">// Asignación del color al fondo de la página</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">body</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span>color<span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> </em></strong>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_azul'</span><span style="color:#274796; "> </span><span style="color:#074726; ">data</span><span style="color:#274796; ">-</span><span style="color:#074726; ">color</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'#0000ff'</span><span style="color:#a65700; ">&gt;</span>AZUL<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_rojo'</span><span style="color:#274796; "> </span><span style="color:#074726; ">data</span><span style="color:#274796; ">-</span><span style="color:#074726; ">color</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'#ff0000'</span><span style="color:#a65700; ">&gt;</span>ROJO<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'btn_verde'</span><span style="color:#274796; "> </span><span style="color:#074726; ">data</span><span style="color:#274796; ">-</span><span style="color:#074726; ">color</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'#00ff00'</span><span style="color:#a65700; ">&gt;</span>VERDE<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <p></p>
+  </div>
+</div>
+<h3>Supresión y Registro múltiple de eventos.</h3>
+<div class="box py-3 contents" id="yui_3_17_2_1_1749024164628_21">
+  <div class="no-overflow" id="yui_3_17_2_1_1749024164628_20">
+    <p dir="ltr" style="text-align: left"></p>
+    <h5>Supresión de Eventos<br /><br /></h5>
+    <p>
+      <span style="font-size: 0.9375rem">La función </span
+      ><em style="font-size: 0.9375rem"><strong>$().off()</strong></em
+      ><span style="font-size: 0.9375rem">
+        permite suprimir el evento indicado como argumento de los elementos
+        seleccionados. Su sintaxis es la siguiente:</span
+      ><br />
+    </p>
+
+    <div
+      class="editor-indent"
+      style="margin-left: 30px"
+      id="yui_3_17_2_1_1749024164628_25"
+    >
+      <pre
+        style="color: #000000; background: #ffffff"
+        id="yui_3_17_2_1_1749024164628_24"
+      >$<span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>selección<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>off<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; " id="yui_3_17_2_1_1749024164628_23">&lt;evento</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span></pre>
+    </div>
+
+    <p>
+      De este modo, se deshabilita la ejecución de las función manejadora que
+      estuviese vinculada al evento suprimido.
+    </p>
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong
+        >:</em
+      >
+      La siguiente página muestra una casilla de verificación y un botón
+      “<em>ACCION</em>”. Cuando la casilla es marcada se registra el evento ‘<em
+        >click’</em
+      >
+      al botón para que muestre un cuadro de diálogo al ser pulsado. El mismo
+      evento es suprimido al desmarcar la casilla de modo que el botón deja de
+      funcionar:
+    </p>
+    <p style="text-align: center" id="yui_3_17_2_1_1749024164628_27">
+      <img
+        src="/imagenes/3.1.4.png"
+        alt=""
+        role="presentation"
+        id="yui_3_17_2_1_1749024164628_26"
+      /><br />
+    </p>
+
+    <p style="text-align: center"></p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Evento de cambio de estado de la casilla de verificacion</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">input:checkbox</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>change<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span> $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>prop<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">checked</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    <span style="color:#696969; ">// Evento registrado</span>
+                    $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">button</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                        <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">BOTON PULSADO!</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                    <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+                <span style="color:#800080; ">}</span>
+                <span style="color:#800000; font-weight:bold; ">else</span>
+                <span style="color:#800080; ">{</span> 
+                    <span style="color:#696969; ">// Evento desregistrado</span>
+                    $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">button</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>off<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">click</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+                <span style="color:#800080; ">}</span>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"checkbox"</span><span style="color:#a65700; ">&gt;</span>
+    EVENTO ACTIVO: 
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>ACCION<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">button</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><br /></p>
+
+    <h5>Registro múltiple de eventos</h5>
+
+    <p>
+      <br />JQuery permite vincular una misma función manejadora a múltiples
+      eventos de los elementos de una selección empleando la función
+      <em>$().on()</em>. Para ello puede emplearse la siguiente sintaxis:&nbsp;
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <div class="editor-indent" style="margin-left: 30px">
+        <pre
+          style="color: #000000; background: #ffffff"
+        >$<span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>seleccion<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">evento1 evento2 ....</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> function() {...}<span style="color:#808030; ">)</span></pre>
+      </div>
+    </div>
+
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong></em
+      >: El siguiente código muestra la vinculación de una función manejadora a
+      los eventos <em>mouseenter </em>y <em>mouseleave </em>de todas las capas
+      presentes en la página web:&nbsp;
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            >            <span style="color:#696969; ">// Registro del evento mouseenter y mouseleave para todas las capas. </span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">div</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">mouseenter mouseleave</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                …
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br />
+      De igual modo, también puede emplearse la función<strong
+        ><em> $().on() </em></strong
+      >para vincular múltiples funciones manejadora a diferentes eventos de los
+      elementos de una selección empleando una única línea de código. Para ello
+      se emplea la siguiente sintaxis:&nbsp;
+    </p>
+
+    <div
+      class="editor-indent"
+      style="margin-left: 30px"
+      id="yui_3_17_2_1_1749024164628_28"
+    >
+      <pre
+        style="color: #000000; background: #ffffff"
+      >$<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">seleccion</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span></pre>
+      <pre
+        style="color: #000000; background: #ffffff"
+      >      evento1<span style="color:#800080; ">:</span> <span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> </pre>
+      <pre
+        style="color: #000000; background: #ffffff"
+      >      evento2<span style="color:#800080; ">:</span> <span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> </pre>
+      <pre
+        style="color: #000000; background: #ffffff"
+      >      <span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span></pre>
+      <pre
+        style="color: #000000; background: #ffffff"
+      >      <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span></pre>
+    </div>
+    <pre style="color: #000000; background: #ffffff"></pre>
+    <p>
+      <strong
+        ><em><u>Ejemplo</u></em></strong
+      >: El siguiente código muestra el vínculo de los eventos mouseenter,
+      mouseleave y click a diferentes funciones manejadoras para todas las capas
+      presentes en la página web:&nbsp;
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            >            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">div</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span>
+                mouseenter<span style="color:#800080; ">:</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">El puntero del ratón entra en la capa</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">,</span>
+                mouseleave<span style="color:#800080; ">:</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">El puntero del ratón sale de la capa</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">,</span>
+                click<span style="color:#800080; ">:</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">El puntero del ratón sale de la capa</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800080; ">}</span>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br clear="all" />
+
+    <p><strong>&nbsp;</strong></p>
+    <br />
+    <p></p>
+  </div>
+</div>

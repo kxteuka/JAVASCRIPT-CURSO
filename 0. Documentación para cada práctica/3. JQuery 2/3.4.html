@@ -1,0 +1,753 @@
+<h2>3.4. Manejo de EventObject.</h2>
+<h3>El objeto Event</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p>
+      En JQuery las funciones manejadoras de cualquier evento pueden reciben un
+      argumento opcional que es&nbsp; el&nbsp;<em
+        >objeto<strong> event.</strong></em
+      >&nbsp;Este objeto dispone de las propiedades necesarias para obtener
+      información sobre el evento según su tipo:
+    </p>
+    <div class="editor-indent" style="margin-left: 30px">
+      <p>
+        <span
+          style="
+            color: rgb(0, 0, 0);
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas,
+              'Liberation Mono', 'Courier New', monospace;
+            font-size: 13.125px;
+          "
+          >$</span
+        ><span
+          style="
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas,
+              'Liberation Mono', 'Courier New', monospace;
+            font-size: 13.125px;
+            color: rgb(128, 128, 48);
+          "
+          >(</span
+        >
+        <span
+          style="
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas,
+              'Liberation Mono', 'Courier New', monospace;
+            font-size: 13.125px;
+            color: rgb(128, 128, 48);
+          "
+          >&lt;</span
+        ><span
+          style="
+            color: rgb(0, 0, 0);
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas,
+              'Liberation Mono', 'Courier New', monospace;
+            font-size: 13.125px;
+          "
+          >seleccion</span
+        >
+        <span
+          style="
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas,
+              'Liberation Mono', 'Courier New', monospace;
+            font-size: 13.125px;
+            color: rgb(128, 128, 48);
+          "
+          >&gt;</span
+        >
+        <span
+          style="
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas,
+              'Liberation Mono', 'Courier New', monospace;
+            font-size: 13.125px;
+            color: rgb(128, 128, 48);
+          "
+          >)</span
+        ><span
+          style="
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas,
+              'Liberation Mono', 'Courier New', monospace;
+            font-size: 13.125px;
+            color: rgb(128, 128, 48);
+          "
+          >.</span
+        >
+        <span
+          style="
+            color: rgb(0, 0, 0);
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas,
+              'Liberation Mono', 'Courier New', monospace;
+            font-size: 13.125px;
+          "
+          >evento</span
+        >
+        <span
+          style="
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas,
+              'Liberation Mono', 'Courier New', monospace;
+            font-size: 13.125px;
+            color: rgb(128, 128, 48);
+          "
+          >(</span
+        ><span
+          style="
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas,
+              'Liberation Mono', 'Courier New', monospace;
+            font-size: 13.125px;
+            color: rgb(128, 0, 0);
+            font-weight: bold;
+          "
+          >function</span
+        >
+        <span
+          style="
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas,
+              'Liberation Mono', 'Courier New', monospace;
+            font-size: 13.125px;
+            color: rgb(128, 128, 48);
+          "
+          >(</span
+        >
+        <span
+          style="
+            color: rgb(0, 0, 0);
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas,
+              'Liberation Mono', 'Courier New', monospace;
+            font-size: 13.125px;
+          "
+        >
+          <strong
+            ><em
+              ><u
+                ><span class="" style="color: rgb(239, 69, 64)">event </span></u
+              >
+            </em>
+          </strong> </span
+        ><span
+          style="
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas,
+              'Liberation Mono', 'Courier New', monospace;
+            font-size: 13.125px;
+            color: rgb(128, 128, 48);
+          "
+          >)</span
+        >
+        <span
+          style="
+            color: rgb(0, 0, 0);
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas,
+              'Liberation Mono', 'Courier New', monospace;
+            font-size: 13.125px;
+          "
+        >
+        </span
+        ><span
+          style="
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas,
+              'Liberation Mono', 'Courier New', monospace;
+            font-size: 13.125px;
+            color: rgb(128, 0, 128);
+          "
+          >{</span
+        >
+      </p>
+      <pre
+        style="color: #000000; background: #ffffff"
+      >         <span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span></pre>
+      <pre
+        style="color: #000000; background: #ffffff"
+      ><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span></pre>
+    </div>
+
+    <h5>
+      <br />Información sobre el evento (
+      <span style="font-weight: normal"><em>type</em> </span>)
+    </h5>
+
+    <p>
+      <br />El objeto <strong><em>event</em></strong> dispone de una propiedad
+      <strong><em>type</em></strong> que devuelve una cadena con el
+      identificador del evento sucedido. Esta propiedad puede utilizarse para
+      manejar distintos eventos mediante una misma función manejadora
+      <em
+        ><u
+          >ya que permite identificar el evento que ejecutó la función.&nbsp;</u
+        ></em
+      >
+    </p>
+
+    <p>
+      <strong><em>Ejemplo: </em></strong>El siguiente código muestra una página
+      con una imagen que cambia cuando el puntero del ratón entra y sale de su
+      área registrando los eventos “<em>mouseenter</em>” y “<em>mouseleave</em>”
+      respectivamente y vinculándoles la misma función manejadora a ambos:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Registro de ambos eventos</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#imagen</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">mouseenter mouseleave</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> 
+                <span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    <span style="color:#696969; ">// Evento de puntero entrante. </span>
+   <strong><em>                 <span style="color: rgb(128, 0, 0);">if</span> <span style="color:#808030; ">(</span>event<span style="color:#808030; ">.</span>type <span style="color:#808030; ">==</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">mouseenter</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span></em></strong>
+                        $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>prop<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">src</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">images/green.png</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+                    <span style="color:#800080; ">}</span>
+                    <span style="color:#696969; ">// Evento de puntero saliente.</span>
+ <strong><em>                   <span style="color: rgb(128, 0, 0);">if</span> <span style="color:#808030; ">(</span>event<span style="color:#808030; ">.</span>type <span style="color:#808030; ">==</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">mouseleave</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span></em></strong>
+                        $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>prop<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">src</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">images/red.png</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                    <span style="color:#800080; ">}</span>                    
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">img</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"imagen"</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"images/red.png"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><br /></p>
+    <h5>
+      Información sobre tecla pulsada (
+      <span style="font-weight: normal"><em>which</em> </span>)
+    </h5>
+    <p></p>
+
+    <p>
+      El objeto <strong><em>event</em><em> </em></strong>dispone de una
+      propiedad <strong><em>which</em> </strong>que retorna un valor entero que
+      indica la tecla pulsada. Esta es una información asociada a los eventos de
+      teclado:
+    </p>
+
+    <p></p>
+    <ul>
+      <li>
+        <em>KeyDown</em>&nbsp;--&gt; Se dispara el primero cuando se pulsa una
+        tecla.
+      </li>
+      <li>
+        <em>KeyPress</em>&nbsp;--&gt; Se dispara tras KeyDown cuando se pulsa
+        una tecla asociada a un signo, dígito, &nbsp;carácter, tabulación
+        (<em>Tab</em>), o retorno (<em>Enter</em>). No se dispara con teclas
+        espaciales: <em>Control</em>, <em>Shift</em>, <em>Alt, Borrar</em>, o
+        las teclas de función (<em> F1 – F12</em> ).
+      </li>
+      <li>
+        <em>KeyUp --&gt;</em>&nbsp;Se dispara tras los anteriores cuando se
+        libera la tecla pulsada.
+      </li>
+    </ul>
+    <p></p>
+
+    <p>
+      &nbsp;<span style="font-size: 0.9375rem"
+        ><em
+          ><strong><u>Ejemplo</u></strong></em
+        >: La siguiente página que muestra una caja de texto que cambia de color
+        al pulsarse las teclas mientras tiene el foco.&nbsp;</span
+      >
+    </p>
+    <p><span style="font-size: 0.9375rem"></span></p>
+    <p>
+      Para que la caja de texto muestre un color de fondo amarillo al pulsarse
+      una tecla cualquiera se registra el evento&nbsp;<em>keyDown</em>: &nbsp;
+    </p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            >            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">input:text</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>keydown<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">yellow</span><span style="color:#800000; ">'</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <span style="font-size: 0.9375rem"
+        ><br />Para que la caja de texto recupere un color de fondo blanco
+        cuando se libera la tecla pulsada. Para ello empleamos el evento</span
+      ><em style="font-size: 0.9375rem">&nbsp;KeyUp</em
+      ><span style="font-size: 0.9375rem">:</span><br />
+    </p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            >            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">input:text</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>keyup<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">white</span><span style="color:#800000; ">'</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>                 
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p></p>
+    <p>
+      Para que la caja de texto muestre un color de fondo rojo si la tecla
+      pulsada es la barra espaciadora se registra el
+      evento&nbsp;<em>KeyPress</em>. Si el valor de la propiedad&nbsp;<strong
+        ><em>which</em>&nbsp;</strong
+      >es 32 significa que se ha pulsado la barra espaciadora. Se invoca
+      entonces el método&nbsp;<em>preventDefault()&nbsp;</em>para evitar que se
+      añada el espacio en blanco al contenido de la caja de texto:&nbsp;
+    </p>
+    <p>
+      <em
+        ><u
+          >(*) Esto puede emplearse para evitar que el usuario pueda introducir
+          ciertos caracteres en el valor de una caja de texto.</u
+        ></em
+      >
+    </p>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            >            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">input:text</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>keypress<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">KEYPRESS</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+                <span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span> event<span style="color:#808030; ">.</span>which <span style="color:#808030; ">==</span> <span style="color:#008c00; ">32</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">red</span><span style="color:#800000; ">'</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>   
+                    event<span style="color:#808030; ">.</span>preventDefault<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800080; ">}</span> 
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><br />El código del la página quedaría del siguiente modo:</p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">input:text</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span>
+                <span style="color:#808030; ">.</span>keydown<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">yellow</span><span style="color:#800000; ">'</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span>
+                <span style="color:#808030; ">.</span>keyup<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">white</span><span style="color:#800000; ">'</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>                 
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span>
+                <span style="color:#808030; ">.</span>keypress<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    <span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span> event<span style="color:#808030; ">.</span>which <span style="color:#808030; ">==</span> <span style="color:#008c00; ">32</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                        $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">red</span><span style="color:#800000; ">'</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>   
+                        event<span style="color:#808030; ">.</span>preventDefault<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                    <span style="color:#800080; ">}</span>
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"text"</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><br /></p>
+
+    <h5>
+      Información sobre posición del ratón (
+      <em style="font-weight: normal">pageX, pageY</em> )
+    </h5>
+    <p>
+      <span style="font-size: 0.9375rem"><br />El objeto </span
+      ><em style="font-size: 0.9375rem"><strong>Event</strong>&nbsp;</em
+      ><span style="font-size: 0.9375rem"
+        >dispone también de las propiedades </span
+      ><em style="font-size: 0.9375rem">pageX</em>
+      <span style="font-size: 0.9375rem"> y </span
+      ><em style="font-size: 0.9375rem">pageY</em
+      ><span style="font-size: 0.9375rem">
+        que informan de la posición del ratón en la página en el momento de
+        producirse un evento. Hay que tener presente que estas propiedades
+      </span>
+      <em style="font-size: 0.9375rem"
+        ><u
+          >sólo están disponibles en eventos de ratón tales como:
+          (<strong>mouseover</strong>, <strong>mouseenter</strong>,
+          <strong>mouseleave</strong>, <strong>mousedown</strong>,
+          <strong>mouseup</strong>, <strong>mousemove</strong>):</u
+        ></em
+      ><br />
+    </p>
+
+    <p></p>
+    <ul>
+      <li>
+        <em><strong>mousedown </strong>:&nbsp;</em>Evento que indica cuando el
+        usuario hace clic con el ratón sobre un elemento.
+      </li>
+      <li>
+        <strong><em>mouseup</em><em> </em></strong>: Evento que indica cuando el
+        usuario deja de pulsar el ratón estando situado encima del elemento.
+      </li>
+      <li>
+        <strong><em>mouseenter</em> </strong>: Evento que indica cuando el
+        puntero del ratón entra en el área ocupada por un elemento.
+      </li>
+      <li>
+        <strong><em>mouseleave</em> </strong>: Evento que indica cuando el
+        puntero del ratón abandona el área ocupada por un elemento.
+      </li>
+      <li>
+        <strong><em>mouseover</em> </strong>: Evento que indica cuando el
+        puntero del ratón entra en el área ocupada por un elemento, y por sus
+        elementos hijos.
+      </li>
+      <li>
+        <strong><em>mousemove</em> </strong>: Evento que indica cada vez que se
+        mueve el ratón dentro del área de un elemento.
+      </li>
+    </ul>
+    <p></p>
+
+    <p>
+      &nbsp;<span style="font-size: 0.9375rem"
+        >La principal diferencia entre los eventos </span
+      ><em style="font-size: 0.9375rem">mouseover</em
+      ><span style="font-size: 0.9375rem"> y </span
+      ><em style="font-size: 0.9375rem">mouseenter</em
+      ><span style="font-size: 0.9375rem"> es que </span>
+      <em style="font-size: 0.9375rem">mouseenter</em
+      ><span style="font-size: 0.9375rem">
+        se produce sólo cuando el ratón entra dentro del área del elemento,
+        mientras que </span
+      ><em style="font-size: 0.9375rem">mouseover</em
+      ><span style="font-size: 0.9375rem">
+        se produce además tanto al entrar como salir del área de elementos
+        hijos</span
+      >
+    </p>
+
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong
+        >:</em
+      >
+      Sea la siguiente página que muestra una capa “<em>padre</em>” (amarillo) y
+      una capa “<em>hijo</em>” (azul) anidada, ambas con los eventos “<em
+        ><strong>mouseenter</strong></em
+      >”, “<em><strong>mouseleave</strong></em
+      >” y “<em><strong>mouseover</strong></em
+      >” registrados para mostrar mensajes en la consola de desarrollo y ver
+      cuándo se disparan al mover el ratón por encima:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#808030; ">#</span>padre <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">background-color</span><span style="color:#808030; ">:</span> <span style="color:#797997; ">yellow</span><span style="color:#800080; ">;</span>
+            <span style="color:#bb7977; font-weight:bold; ">border</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">1</span><span style="color:#006600; ">px</span> <span style="color:#074726; ">solid</span> <span style="color:#008c00; ">#</span><span style="color:#008000; ">000</span><span style="color:#800080; ">;</span>
+            <span style="color:#bb7977; font-weight:bold; ">width</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">400</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span> 
+            <span style="color:#bb7977; font-weight:bold; ">height</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">400</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span>
+        <span style="color:#808030; ">#</span>hijo <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">background-color</span><span style="color:#808030; ">:</span> <span style="color:#797997; ">cyan</span><span style="color:#800080; ">;</span>
+            <span style="color:#bb7977; font-weight:bold; ">border</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">1</span><span style="color:#006600; ">px</span> <span style="color:#074726; ">solid</span> <span style="color:#008c00; ">#</span><span style="color:#008000; ">000</span><span style="color:#800080; ">;</span>
+            <span style="color:#bb7977; font-weight:bold; ">width</span><span style="color:#808030; ">:</span><span style="color:#008c00; ">200</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span>
+            <span style="color:#bb7977; font-weight:bold; ">height</span><span style="color:#808030; ">:</span><span style="color:#008c00; ">200</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+
+
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#padre</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span>  <span style="color:#696969; ">// Eventos de la capa padre</span>
+                <span style="color:#808030; ">.</span>mouseenter<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">PADRE MOUSE ENTER</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span>
+                <span style="color:#808030; ">.</span>mouseleave<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">PADRE MOUSE LEAVE</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span>
+                <span style="color:#808030; ">.</span>mouseover<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">PADRE MOUSE OVER</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#hijo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span>   <span style="color:#696969; ">// Eventos de la capa hija</span>
+                <span style="color:#808030; ">.</span>mouseenter<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">HIJO MOUSE ENTER</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span>
+                <span style="color:#808030; ">.</span>mouseleave<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">HIJO MOUSE LEAVE</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span>
+                <span style="color:#808030; ">.</span>mouseover<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">HIJO MOUSE OVER</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'padre'</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'hijo'</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+
+    <p>Si ejecutamos la página veremos la siguiente imagen:</p>
+
+    <p style="text-align: center">
+      &nbsp;<img
+        src="/imagenes/3.4.1.png"
+        alt=""
+        role="presentation"
+      />
+    </p>
+
+    <p style="text-align: center"></p>
+
+    <p>
+      <br />
+      Si desplazamos el puntero del ratón al interior de la capa amarilla
+      (padre) sin entrar en el área de la capa hija (azul) veremos los
+      siguientes eventos disparándose:
+    </p>
+
+    <p></p>
+
+    <p style="text-align: center">
+      <img
+        src="/imagenes/3.4.2.png"
+        alt=""
+        role="presentation"
+      />
+    </p>
+    <p>
+      Si a continuación seguimos y desplazamos el ratón al interior de la capa
+      azul, veremos los siguientes eventos:
+    </p>
+
+    <p></p>
+
+    <p style="text-align: center">
+      &nbsp;<img
+        src="/imagenes/3.4.3.png"
+        alt=""
+        role="presentation"
+      />
+    </p>
+
+    <p>
+      Mientras que los eventos <em>mouseenter</em> y <em>mouseover</em> se
+      disparan al mismo tiempo cuando el puntero entra en el área de una capa,
+      el evento mouseover se dispara también cuando el puntero entra dentro del
+      área de las capas hijas.
+    </p>
+
+    <p>
+      Cuando el puntero sale de la capa hija se disparan los siguientes eventos:
+    </p>
+
+    <p></p>
+
+    <p style="text-align: center">
+      <img
+        src="/imagenes/3.4.4.png"
+        alt=""
+        role="presentation"
+      /><br />
+    </p>
+    <p>
+      <br />
+      Finalmente, cuando el puntero sale de la capa padre se dispara el evento:
+    </p>
+
+    <p></p>
+
+    <p style="text-align: center">
+      &nbsp;<img
+        src="/imagenes/3.4.5.png"
+        alt=""
+        role="presentation"
+      />
+    </p>
+
+    <p>
+      Mientras que el evento <em>mouseleave</em> se dispara cuando el puntero
+      abandona el área de una capa, el evento <em>mouseover</em> se dispara
+      también cuando el puntero sale del área de las capas hijas.
+    </p>
+    <p><strong>Obtención de coordenadas del puntero del ratón</strong></p>
+
+    <p>
+      <span style="font-size: 0.9375rem"
+        >Para obtener las coordenadas del puntero del ratón en el momento del
+        evento pueden emplearse las propiedades </span
+      ><em style="font-size: 0.9375rem"><strong>pageX</strong></em
+      ><span style="font-size: 0.9375rem"><strong> </strong>y </span
+      ><strong><em style="font-size: 0.9375rem">pageY</em> </strong
+      ><span style="font-size: 0.9375rem"> del parámetro </span
+      ><em style="font-size: 0.9375rem">event</em
+      ><span style="font-size: 0.9375rem">
+        de la función manejadora.
+        <span
+          ><u
+            ><em
+              >Estas son coordenadas tienen como origen el extremo superior
+              izquierdo de la página.</em
+            ></u
+          ></span
+        ></span
+      >
+    </p>
+    <p></p>
+
+    <p>
+      <em
+        ><u><strong>Ejemplo</strong></u
+        >:</em
+      >
+      La siguiente página muestra una capa amarilla en la que al hacer clic con
+      el ratón se muestran las coordenadas del puntero en un párrafo.
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#808030; ">#</span>padre <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">background-color</span><span style="color:#808030; ">:</span> <span style="color:#797997; ">yellow</span><span style="color:#800080; ">;</span>
+            <span style="color:#bb7977; font-weight:bold; ">border</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">1</span><span style="color:#006600; ">px</span> <span style="color:#074726; ">solid</span> <span style="color:#008c00; ">#</span><span style="color:#008000; ">000</span><span style="color:#800080; ">;</span>
+            <span style="color:#bb7977; font-weight:bold; ">position</span><span style="color:#808030; ">:</span> <span style="color:#074726; ">absolute</span><span style="color:#800080; ">;</span>
+            <span style="color:#bb7977; font-weight:bold; ">top</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">100</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span>
+            <span style="color:#bb7977; font-weight:bold; ">left</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">100</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span>
+            <span style="color:#bb7977; font-weight:bold; ">width</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">400</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span> 
+            <span style="color:#bb7977; font-weight:bold; ">height</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">400</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#padre</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span>     
+                <span style="color:#808030; ">.</span>mousedown<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">p</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>text<span style="color:#808030; ">(</span> event<span style="color:#808030; ">.</span>pageX <span style="color:#808030; ">+</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">,</span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> event<span style="color:#808030; ">.</span>pageY <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">'padre'</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      &nbsp;<br /><span style="font-size: 0.9375rem"
+        >El resultado mostrado al hacer clic dentro de la capa es el
+        siguiente:</span
+      >
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/3.4.6.png"
+        alt=""
+        role="presentation"
+      /><br />
+    </p>
+
+    <p></p>
+
+    <p>
+      Las coordenadas ofrecidas por las propiedades
+      <strong><em>pageX</em> </strong>y <strong><em>pageY</em> </strong
+      ><em><u>son referidas al margen superior izquierdo de la página.</u></em>
+      Si se desea obtener las coordenadas con respecto a la esquina superior
+      izquierda de la propia capa debemos emplear la función&nbsp;<em
+        ><strong>offset()</strong></em
+      >:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            >        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#padre</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span>     
+                <span style="color:#808030; ">.</span>mousedown<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>event<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    <span style="color:#696969; ">// Obtencion de coordenadas relativas a la capa origen del evento.</span>
+                    <span style="color:#800000; font-weight:bold; ">var</span> x <span style="color:#808030; ">=</span> event<span style="color:#808030; ">.</span>pageX <span style="color:#808030; ">-</span> $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>offset<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>left<span style="color:#800080; ">;</span> 
+                    <span style="color:#800000; font-weight:bold; ">var</span> y <span style="color:#808030; ">=</span> event<span style="color:#808030; ">.</span>pageY <span style="color:#808030; ">-</span> $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>offset<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>top<span style="color:#800080; ">;</span> 
+                    $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">p</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>text<span style="color:#808030; ">(</span> x <span style="color:#808030; ">+</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">,</span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> y <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <p></p>
+  </div>
+</div>

@@ -1,0 +1,407 @@
+<h2>5.3. Animaciones</h2>
+<h3>Animaciones</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >JQuery permite definir animaciones sobre los atributos CSS para crear
+        transiciones entre su </span
+      ><em style="font-size: 0.9375rem">valor actual</em
+      ><span style="font-size: 0.9375rem"> yun </span
+      ><em style="font-size: 0.9375rem">valor final</em
+      ><span style="font-size: 0.9375rem"> a lo largo de un determinado </span
+      ><em style="font-size: 0.9375rem">lapso se tiempo</em
+      ><span style="font-size: 0.9375rem"
+        >. Para ello se emplea la función </span
+      ><strong
+        ><em style="font-size: 0.9375rem">$().animate().&nbsp;</em></strong
+      >
+    </p>
+
+    <div class="editor-indent" style="margin-left: 30px">
+      <div class="editor-indent" style="margin-left: 30px">
+        <pre
+          style="color: #000000; background: #ffffff"
+        >$<span style="color:#808030; ">(</span>selector<span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>animate<span style="color:#808030; ">(</span> estilos<span style="color:#808030; ">,</span> lapso <span style="color:#808030; ">)</span></pre>
+      </div>
+    </div>
+
+    <p>
+      El primer argumento (<em>estilos)</em> define uno o más estilos con los
+      valores que deben tener al completarse la animación. Estos valores pueden
+      ser absolutos (<em>opacity: 0.5</em>), o relativos (<em>top: “+=25”</em
+      >).&nbsp;
+    </p>
+    <p>
+      El segundo parámetro (<em>lapso)</em> indica el lapso de tiempo que dura
+      la transición. Puede expresarse en milisegundos o mediante las cadenas
+      “<em>fast</em>”, “ <em>normal</em>” y “<em>slow</em>” para indicar un
+      lapso de tiempo rápido, medio o lento respectivamente.
+    </p>
+
+    <p>
+      <em
+        ><strong><u>Ejemplo:</u></strong> </em
+      >El siguiente código muestra una página con una imagen y un botón
+      "ANIMAR". que al ser pulsado hace que la imagen se desplace 100 píxeles a
+      la derecha respecto de su posición ( <em>left: “+100px”</em> ), mientras
+      se vuelve transparente ( <em>opacity: 0.0</em> ); en el transcurso de 1
+      segundo:
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/5.3.1.gif"
+        alt="gif"
+        width="584"
+        height="330"
+        class="img-responsive atto_image_button_text-bottom"
+      /><br />
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">http-equiv</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"Content-Type"</span><span style="color:#274796; "> </span><span style="color:#074726; ">content</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"text/html; charset=utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#808030; ">.</span>imagen <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">position</span><span style="color:#808030; ">:</span><span style="color:#074726; ">absolute</span><span style="color:#800080; ">;</span> 
+            <span style="color:#bb7977; font-weight:bold; ">top</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">100</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Pulsacion boton "OCULTAR"</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnOculto</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// ANIMACION</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">.imagen</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>animate<span style="color:#808030; ">(</span>
+                <span style="color:#800080; ">{</span>
+                    left<span style="color:#800080; ">:</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">+=100px</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span>       <span style="color:#696969; ">// mueve +1000px a derecha. </span>
+                    opacity<span style="color:#800080; ">:</span> <span style="color:#008000; ">0.0</span>            <span style="color:#696969; ">// opacidad pasa al 0%</span>
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">,</span>
+                <span style="color:#008c00; ">1000</span> <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">img</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"imagen"</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"images/smiley.png"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"button"</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"btnOculto"</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"ANIMAR"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><br /></p>
+
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong
+        >:</em
+      >
+      El siguiente código muestra una página con una imagen que se sitúa
+      centrada sobre la posición del cursor del ratón cada vez que hace clic en
+      cualquier punto de la página.&nbsp;
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/5.3.2.gif"
+        alt="gif
+"
+        width="584"
+        height="330"
+        class="img-responsive atto_image_button_text-bottom"
+      /><br />
+    </p>
+    <p>
+      Se emplea para ello la función
+      <strong><em>$().animate()</em></strong> seleccionando la imagen para
+      asignar a sus atributos <em>top </em>y <em>left </em>&nbsp;las coordenadas
+      del cursor del ratón (propiedades&nbsp;<em>pageX </em>y<em>
+        pageY del objeto <strong>Event </strong>del evento
+        <strong>mousedown&nbsp;</strong></em
+      >) en el momento de hacer clic sobre la página. A estas coordenadas se les
+      resta la mitad del ancho y alto de la imagen para que aparezca centrada
+      sobre posición del cursor:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">http-equiv</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"Content-Type"</span><span style="color:#274796; "> </span><span style="color:#074726; ">content</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"text/html; charset=utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.6.0.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#808030; ">.</span>imagen <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">position</span><span style="color:#808030; ">:</span><span style="color:#074726; ">absolute</span><span style="color:#800080; ">;</span> 
+        <span style="color:#800080; ">}</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Obtencion tamaño de la imagen</span>
+            <span style="color:#800000; font-weight:bold; ">var</span> ancho_imagen <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">.imagen</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>width<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#800000; font-weight:bold; ">var</span> alto_imagen <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">.imagen</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>height<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#696969; ">// Cuando el usuario hace clic sobre la página</span>
+            $<span style="color:#808030; ">(</span>window<span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>mousedown<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span>e<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Obtencion de la posición del puntero del ratón</span>
+                <span style="color:#800000; font-weight:bold; ">var</span> x <span style="color:#808030; ">=</span> e<span style="color:#808030; ">.</span>pageX<span style="color:#800080; ">;</span>                
+                <span style="color:#800000; font-weight:bold; ">var</span> y <span style="color:#808030; ">=</span> e<span style="color:#808030; ">.</span>pageY<span style="color:#800080; ">;</span>
+                <span style="color:#696969; ">// Transicion a la posicion del puntero del ratón</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">.imagen</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>animate<span style="color:#808030; ">(</span>           
+                        <span style="color:#800080; ">{</span>
+                            <span style="color:#800000; ">"</span><span style="color:#0000e6; ">top</span><span style="color:#800000; ">"</span><span style="color:#800080; ">:</span> y <span style="color:#808030; ">-</span> <span style="color:#808030; ">(</span>alto_imagen<span style="color:#808030; ">/</span><span style="color:#008c00; ">2</span><span style="color:#808030; ">)</span><span style="color:#808030; ">,</span>  <span style="color:#696969; ">// Cambio posición horizontal </span>
+                            <span style="color:#800000; ">"</span><span style="color:#0000e6; ">left</span><span style="color:#800000; ">"</span><span style="color:#800080; ">:</span> x <span style="color:#808030; ">-</span> <span style="color:#808030; ">(</span>ancho_imagen<span style="color:#808030; ">/</span><span style="color:#008c00; ">2</span><span style="color:#808030; ">)</span> <span style="color:#696969; ">// Cambio posición vertical</span>
+                        <span style="color:#800080; ">}</span><span style="color:#808030; ">,</span>
+                    <span style="color:#008c00; ">1000</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>  <span style="color:#696969; ">// Lapso: 1 segundo</span>
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">img</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"imagen"</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"images/smiley.png"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><br /></p>
+    <h5>El parámetro <em>Easing</em></h5>
+    <p></p>
+
+    <p>
+      Este es un parámetro opcional que permite determinar e<em
+        ><u
+          >l modo en que se interpolan los valores a lo largo de la animación</u
+        ></em
+      >
+      en la función<span>
+        <strong style="font-style: italic">$().animate().</strong><em>&nbsp;</em
+        ><span
+          >Los posibles admitidos por el argumento son los
+          siguientes.&nbsp;</span
+        ></span
+      ><br />
+    </p>
+
+    <p>
+      “<em>lineal</em>” : Representa una interpolación lineal en la que los
+      valores varían de igual modo a lo largo de toda la transición. Esto genera
+      una animación continua.&nbsp;
+    </p>
+
+    <p>
+      “<em>swing</em>” : Representa una interpolación suavizada en la que los
+      valores varían más levemente al principio y fin de la transición. Esto
+      genera una animación más suave al principio y final.&nbsp;
+    </p>
+
+    <p style="text-align: center">
+      <img
+        src="/imagenes/5.3.3.png"
+        alt=""
+        role="presentation"
+      /><br />
+      Representación gráfica de la transición de valores “lineal” y “swing”
+    </p>
+    <p style="text-align: justify">
+      El parámetro puede indicarse para cada propiedad a animar para establecer
+      el modo en que se interpolan los valores. La sintaxis es la
+      siguiente:&nbsp;
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >$<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>animate<span style="color:#808030; ">(</span>
+<span style="color:#800080; ">{</span>
+     <span style="color:#800000; ">"</span><span style="color:#0000e6; ">propiedad_animar</span><span style="color:#800000; ">"</span><span style="color:#800080; ">:</span> <span style="color:#808030; ">[</span>valor_final <span style="color:#808030; ">,</span> interpolador  <span style="color:#808030; ">]</span><span style="color:#808030; ">,</span> 
+     <span style="color:#800000; ">"</span><span style="color:#0000e6; ">propiedad_animar</span><span style="color:#800000; ">"</span><span style="color:#800080; ">:</span> <span style="color:#808030; ">[</span>valor_final2<span style="color:#808030; ">,</span> interpolador2 <span style="color:#808030; ">]</span>
+<span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> duracion <span style="color:#808030; ">)</span>
+ 
+</pre>
+
+    <p>
+      <em
+        ><strong><u>Ejemplo</u></strong
+        >:</em
+      >
+      Sea una página que muestra dos imágenes a las que se les aplica una
+      animación de 1 segundo de duración en la que ambas se desplazan 500px del
+      margen izquierdo al mismo tiempo. Sin embargo, la imagen superior emplea
+      una interpolación líneal y la inferior una interpolación suavizada
+      (<em>swing</em>).
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/5.3.4.gif"
+        alt="gif"
+        width="584"
+        height="227"
+        class="img-responsive atto_image_button_text-bottom"
+      /><br />
+    </p>
+    <p style="text-align: justify">
+      El movimiento de la imagen superior animada mediante interpolación lineal,
+      mantiene la misma velocidad desde el principio hasta el final. El
+      movimiento de la imagen inferior con interpolación swing varía
+      desplazándose más suavemente al principio y final:
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">http-equiv</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"Content-Type"</span><span style="color:#274796; "> </span><span style="color:#074726; ">content</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"text/html; charset=utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.2.1.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#808030; ">.</span>imagen1 <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">position</span><span style="color:#808030; ">:</span><span style="color:#074726; ">absolute</span><span style="color:#800080; ">;</span>
+            <span style="color:#bb7977; font-weight:bold; ">top</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">50</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span> 
+            <span style="color:#bb7977; font-weight:bold; ">left</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">0</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span> 
+            <span style="color:#bb7977; font-weight:bold; ">width</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">50</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span> <span style="color:#bb7977; font-weight:bold; ">height</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">50</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span>
+        <span style="color:#808030; ">.</span>imagen2 <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">position</span><span style="color:#808030; ">:</span><span style="color:#074726; ">absolute</span><span style="color:#800080; ">;</span>
+            <span style="color:#bb7977; font-weight:bold; ">top</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">150</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span> 
+            <span style="color:#bb7977; font-weight:bold; ">left</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">0</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span> 
+            <span style="color:#bb7977; font-weight:bold; ">width</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">50</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span> <span style="color:#bb7977; font-weight:bold; ">height</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">50</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Cuando el usuario hace clic sobre la página</span>
+            $<span style="color:#808030; ">(</span>window<span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// Animacion imagen superior</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">.imagen1</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>animate<span style="color:#808030; ">(</span>           
+                        <span style="color:#800080; ">{</span>
+                            <span style="color:#800000; ">"</span><span style="color:#0000e6; ">left</span><span style="color:#800000; ">"</span><span style="color:#800080; ">:</span> <span style="color:#808030; ">[</span><span style="color:#008c00; ">500</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">linear</span><span style="color:#800000; ">"</span><span style="color:#808030; ">]</span>  <span style="color:#696969; ">// interpolación lineal</span>
+                        <span style="color:#800080; ">}</span><span style="color:#808030; ">,</span>
+                    <span style="color:#008c00; ">1000</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#696969; ">// Animacion imagen inferior</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">.imagen2</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>animate<span style="color:#808030; ">(</span>           
+                        <span style="color:#800080; ">{</span>
+                            <span style="color:#800000; ">"</span><span style="color:#0000e6; ">left</span><span style="color:#800000; ">"</span><span style="color:#800080; ">:</span> <span style="color:#808030; ">[</span><span style="color:#008c00; ">500</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">swing</span><span style="color:#800000; ">"</span><span style="color:#808030; ">]</span>  <span style="color:#696969; ">// interpolacion swing</span>
+                        <span style="color:#800080; ">}</span><span style="color:#808030; ">,</span>
+                    <span style="color:#008c00; ">1000</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                   <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+         <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>LINEAL<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#a65700; ">/&gt;</span><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#a65700; ">/&gt;</span><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>SWING<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">p</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">img</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"imagen1"</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"images/smiley.png"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">img</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"imagen2"</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"images/smiley.png"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">br</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <br /><span style="font-size: 0.9375rem">La función $().</span
+      ><em style="font-size: 0.9375rem">animate() </em
+      ><span style="font-size: 0.9375rem"
+        >también admite opcionalmente una<span><span> </span></span> </span
+      ><span style="font-size: 0.9375rem"><span>función&nbsp;</span></span
+      ><span style="font-size: 0.9375rem"
+        >como tercer argumento para que se ejecute al terminar la
+        animación.</span
+      ><br />
+    </p>
+
+    <p>
+      <strong><em>Ejemplo:</em></strong> El siguiente código muestra una
+      animación en la que se desplaza una imagen 300 píxeles a la derecha
+      durante 1 segundo y muestra&nbsp;al terminar el mensaje
+      <em>“Animación completada!” </em>cada vez que se pulsa el botón
+      "<em>ANIMAR</em>"<em>:&nbsp;</em>
+    </p>
+    <p style="text-align: center">
+      <em
+        ><img
+          src="/imagenes/5.3.5.gif"
+          alt="gif"
+          width="691"
+          height="282"
+          class="img-responsive atto_image_button_text-bottom" /><br
+      /></em>
+    </p>
+
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="576" valign="top">
+            <pre
+              style="color: #000000; background: #ffffff"
+            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">http-equiv</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"Content-Type"</span><span style="color:#274796; "> </span><span style="color:#074726; ">content</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"text/html; charset=utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"scripts/jquery-3.6.0.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>
+        <span style="color:#808030; ">.</span>imagen <span style="color:#800080; ">{</span>
+            <span style="color:#bb7977; font-weight:bold; ">position</span><span style="color:#808030; ">:</span><span style="color:#074726; ">absolute</span><span style="color:#800080; ">;</span> 
+            <span style="color:#bb7977; font-weight:bold; ">top</span><span style="color:#808030; ">:</span> <span style="color:#008c00; ">50</span><span style="color:#006600; ">px</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">style</span><span style="color:#a65700; ">&gt;</span>    
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#696969; ">// Pulsacion boton "OCULTAR"</span>
+            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#btnOculto</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>click<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                <span style="color:#696969; ">// ANIMACION</span>
+                $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">.imagen</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>animate<span style="color:#808030; ">(</span>
+                <span style="color:#800080; ">{</span>
+                    left<span style="color:#800080; ">:</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">+=300px</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span>       <span style="color:#696969; ">// mueve +1000px a derecha desde posición origen. </span>
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">,</span>
+                <span style="color:#008c00; ">1000</span><span style="color:#808030; ">,</span>                       <span style="color:#696969; ">// lapso de 1 segundo.</span>
+                <span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+                    <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Animacion completada!</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+            <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">img</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"imagen"</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"images/smiley.png"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">input</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"button"</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"btnOculto"</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"ANIMAR"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+    <br />
+    <p></p>
+  </div>
+</div>

@@ -1,0 +1,526 @@
+<h2>1.4. Variables, tipos y operadores</h2>
+<h3>Tipos y Operadores</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p></p>
+    <p dir="ltr" style="text-align: left"></p>
+    <h3>Variables</h3>
+
+    <p>
+      <span style="font-size: 0.9375rem"
+        >Las variables son elementos del lenguaje que permiten almacenar
+        distintos valores en cada momento. Se puede almacenar un </span
+      ><em style="font-size: 0.9375rem">valor</em
+      ><span style="font-size: 0.9375rem">
+        en una variable y consultar este valor posteriormente, también podemos
+        modificar su contenido siempre que queramos.</span
+      >
+    </p>
+
+    <p>
+      Las variables deben ser siempre declaradas antes de ser utilizadas
+      mediante la palabra clave
+      <span
+        ><span
+          ><strong style="font-style: italic">var </strong>o<strong
+            style="font-style: italic"
+          >
+            let</strong
+          ></span
+        ></span
+      >
+      y asignando un valor inicial:
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >	<span style="color:#800000; font-weight:bold; ">var</span> foo <span style="color:#808030; ">=</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">hola mundo</span><span style="color:#800000; ">'</span><span style="color:#800080; ">;</span>
+</pre>
+
+    <p>
+      Los identificadores de las variables deben cumplir ciertas reglas para ser
+      válidos:
+    </p>
+
+    <p>
+      <!--[if !supportLists]-->·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!--[endif]-->Deben empezar por una letra o un guión bajo, y el resto de
+      los caracteres siguientes pueden ser letras o números.
+    </p>
+
+    <p>
+      <!--[if !supportLists]-->·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!--[endif]-->Las variables no pueden llamarse igual que una palabra
+      reservada del lenguaje tales como por ejemplo:
+      <strong><em>var</em></strong
+      >, <strong><em>for</em></strong
+      >, <strong><em>while</em></strong
+      >, <strong><em>if….</em></strong>
+    </p>
+
+    <p>
+      <!--[if !supportLists]-->·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!--[endif]-->No se admiten espacios en blanco en el nombre de una
+      variable.
+    </p>
+
+    <p>
+      <!--[if !supportLists]-->·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!--[endif]-->No se permiten letras acentuadas ni otras que no pertenezcan
+      al alfabeto internacional como es el caso de ñ, ç.. etc.
+    </p>
+
+    <p>
+      <!--[if !supportLists]-->·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!--[endif]-->El nombre de las variables es sensible a las mayúsculas.
+      Esto quiere decir que Javascript considera distintas a variables cuyos
+      nombres se diferencian en el uso de las mayúsculas y minúsculas; p.ej:
+      “<em>Edad</em>” y “<em>edad</em>”.
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    ><span style="color:#696969; ">           // Variables correctas</span>
+<span style="color:#800000; font-weight:bold; ">           var</span> _Una_Variable<span style="color:#808030; ">,</span> P123robando<span style="color:#808030; ">,</span> _123<span style="color:#808030; ">,</span> mi_carrooo<span style="color:#800080; ">;</span>
+
+<span style="color:#696969; ">          // Variables no válidas</span>
+<span style="color:#800000; font-weight:bold; ">          var</span> Mi Variable<span style="color:#808030; ">,</span> 123Probando<span style="color:#808030; ">,</span> $Variable<span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">for</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">while</span><span style="color:#800080; ">;</span>
+</pre>
+
+    <p>
+      Una vez declarada una variable puede asignársele un valor tantas veces
+      como se quiera. Cada valor asignado elimina el anteriormente existente.
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >	foo <span style="color:#808030; ">=</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">hola mundo 2</span><span style="color:#800000; ">'</span><span style="color:#800080; ">;</span>
+
+</pre>
+
+    <h4>Tipos de valores</h4>
+
+    <p>&nbsp;</p>
+
+    <p>
+      Las variables en Javascript pueden ser de diferentes tipos según el valor
+      que se les asigne:
+    </p>
+    <p></p>
+    <ul>
+      <li>
+        <strong style="font-size: 0.9375rem"><em>Numéricas</em></strong
+        ><span style="font-size: 0.9375rem"
+          >:&nbsp; Son aquellas a las que se asignan números enteros o
+          decimales.&nbsp;</span
+        >
+      </li>
+      <li>
+        <strong><em>Alfanuméricas</em></strong
+        >: Son aquellas que reciben cadenas de texto entre comillas.&nbsp;
+      </li>
+      <li>
+        <strong style="font-size: 0.9375rem"><em>Lógicas</em></strong
+        ><span style="font-size: 0.9375rem"
+          >: Son un tipo especial de variables que contienen un valor lógico
+          cierto o falso. Para darles valor se emplean las palabras clave </span
+        ><strong style="font-size: 0.9375rem"><em>true</em></strong>
+        <span style="font-size: 0.9375rem"> y </span
+        ><strong style="font-size: 0.9375rem"><em>false</em></strong
+        ><span style="font-size: 0.9375rem">, o 0 y 1.</span>
+      </li>
+    </ul>
+    <p></p>
+
+    <p>
+      El tipo de dato de una variable depende del valor que se le asigne.
+      <strong></strong>
+    </p>
+
+    <div style="text-align: center">
+      <img
+        src="/imagenes/1.4.1.png"
+        alt=""
+        role="presentation"
+      /><br />
+    </div>
+
+    <p><strong>&nbsp;</strong></p>
+
+    <h4>Operadores</h4>
+
+    <p>
+      <br />
+      Los operadores permiten manipular el valor de las variables según sea su
+      tipo:
+    </p>
+
+    <p><strong>Operadores aritméticos:</strong></p>
+
+    <p>
+      Los operadores aritméticos permiten ejecutar diferentes tipos de
+      operaciones entre variables y valores de tipo numérico. Los operadores
+      aritméticos se emplean entre variables numéricas y el resultado es así
+      mismo un valor numérico:
+    </p>
+
+    <div style="text-align: center">
+      <img
+        src="/imagenes/1.4.2.png"
+        alt=""
+        role="presentation"
+      /><br />
+    </div>
+
+    <p>
+      <br />
+      Ejemplos de expresiones aritméticas:
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    ><span style="color:#800000; font-weight:bold; ">var</span> a <span style="color:#808030; ">=</span> <span style="color:#008c00; ">10</span><span style="color:#800080; ">;</span> 
+<span style="color:#800000; font-weight:bold; ">var</span> b <span style="color:#808030; ">=</span> <span style="color:#008c00; ">20</span><span style="color:#800080; ">;</span> 
+<span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span> a <span style="color:#808030; ">+</span> b <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>	         <span style="color:#696969; ">// Muestra  30</span>
+<span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span> a <span style="color:#808030; ">-</span> b <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>	         <span style="color:#696969; ">// Muestra -10</span>
+<span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span> a <span style="color:#808030; ">*</span> b <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>	         <span style="color:#696969; ">// Muestra 200</span>
+<span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span> a <span style="color:#808030; ">/</span> b <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>	         <span style="color:#696969; ">// Muestra 0.5</span>
+a<span style="color:#808030; ">++</span><span style="color:#800080; ">;</span>			 <span style="color:#696969; ">// Incrementa el valor de la variable en 1</span>
+<span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span> a <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>		 <span style="color:#696969; ">// Muestra 11</span>
+
+</pre>
+    <p>Los paréntesis representan prioridad en la evaluación de expresiones:</p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >        <span style="color:#800000; font-weight:bold; ">var</span> x <span style="color:#808030; ">=</span> <span style="color:#008c00; ">2</span> <span style="color:#808030; ">+</span> <span style="color:#008c00; ">3</span> <span style="color:#808030; ">*</span> <span style="color:#008c00; ">6</span><span style="color:#800080; ">;</span>      <span style="color:#696969; ">// x vale 20</span>
+        <span style="color:#800000; font-weight:bold; ">var</span> y <span style="color:#808030; ">=</span> <span style="color:#808030; ">(</span><span style="color:#008c00; ">2</span> <span style="color:#808030; ">+</span> <span style="color:#008c00; ">3</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">*</span> <span style="color:#008c00; ">6</span><span style="color:#800080; ">;</span>    <span style="color:#696969; ">// y vale 30</span>
+</pre>
+
+    <p>
+      <strong
+        ><em><u>Operador de concatenación</u></em></strong
+      >
+    </p>
+
+    <p>El operador de concatenación concatena dos cadenas de texto:</p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >        <span style="color:#800000; font-weight:bold; ">var</span> x <span style="color:#808030; ">=</span> <span style="color:#008c00; ">2</span> <span style="color:#808030; ">+</span> <span style="color:#008c00; ">3</span> <span style="color:#808030; ">*</span> <span style="color:#008c00; ">6</span><span style="color:#800080; ">;</span>      <span style="color:#696969; ">// x vale 20</span>
+        <span style="color:#800000; font-weight:bold; ">var</span> y <span style="color:#808030; ">=</span> <span style="color:#808030; ">(</span><span style="color:#008c00; ">2</span> <span style="color:#808030; ">+</span> <span style="color:#008c00; ">3</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">*</span> <span style="color:#008c00; ">6</span><span style="color:#800080; ">;</span>    <span style="color:#696969; ">// y vale 30</span>
+</pre>
+    <p>Hay que tener cuidado con las operaciones entre cadenas y números:</p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >        <span style="color:#800000; font-weight:bold; ">var</span> a <span style="color:#808030; ">=</span> <span style="color:#008c00; ">1</span><span style="color:#800080; ">;</span>
+        <span style="color:#800000; font-weight:bold; ">var</span> b <span style="color:#808030; ">=</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">1</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+        <span style="color:#696969; ">// numero + cadena --&gt; CONCATENACION</span>
+        <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span>a <span style="color:#808030; ">+</span> b<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>           <span style="color:#696969; ">// Muestra por pantalla 11</span>
+
+        <span style="color:#696969; ">// numero + numero --&gt; SUMA</span>
+        <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span> a <span style="color:#808030; ">+</span> <span style="color:#797997; ">Number</span><span style="color:#808030; ">(</span>b<span style="color:#808030; ">)</span><span style="color:#808030; ">)</span>   <span style="color:#696969; ">// Muestra por pantalla 2</span>
+
+</pre>
+
+    <p>
+      <strong
+        ><em
+          >(*) La función Number() retorna el valor numérico equivalente a un
+          valor cadena.&nbsp;</em
+        ></strong
+      >
+    </p>
+    <p>
+      <br />
+      <strong
+        ><em><u>&nbsp;Operadores de comparación</u></em></strong
+      >
+    </p>
+
+    <p>
+      Los operadores de comparación permiten comparar variables y valores
+      devolviendo &nbsp;valor <em>cierto</em> o <em>falso</em>. Estos operadores
+      se utilizan para condiciones que permiten tomar de decisiones en
+      Javascript:
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/1.4.3.png"
+        alt=""
+        role="presentation"
+      /><br />
+    </p>
+
+    <p>
+      <br />
+      Ejemplo de expresiones condicionales:
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    ><span style="color:#800000; font-weight:bold; ">var</span> a <span style="color:#808030; ">=</span> <span style="color:#008c00; ">10</span><span style="color:#800080; ">;</span> 
+<span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span> a <span style="color:#808030; ">==</span> <span style="color:#008c00; ">10</span> <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>	<span style="color:#696969; ">// Muestra “True”</span>
+<span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span> a <span style="color:#808030; ">&gt;</span> <span style="color:#008c00; ">10</span> <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>	        <span style="color:#696969; ">// Muestra “False”</span>
+
+</pre>
+
+    <p>
+      <strong
+        ><em><u>Operadores lógicos</u></em></strong
+      >
+    </p>
+
+    <p>
+      Los operadores lógicos se emplean para combinar condiciones. Existen tres
+      tipos de operadores lógicos:
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/1.4.4.png"
+        alt=""
+        role="presentation"
+      /><br />
+    </p>
+
+    <p>
+      <br />
+      <em>Ejemplo</em>: La siguiente expresión devuelve cierto si la variable
+      ‘num’ tiene un valor comprendido entre 20 y 30 ambos incluidos: &nbsp;
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >num <span style="color:#808030; ">&gt;=</span> <span style="color:#008c00; ">20</span> <span style="color:#808030; ">&amp;&amp;</span> num <span style="color:#808030; ">&lt;=</span> <span style="color:#008c00; ">30</span>
+</pre>
+    <p>
+      <em>Ejemplo</em>: La siguiente expresión se evalúa como cierta si la
+      variable ‘nombre’ tiene como valor “pedro” o “luis”:
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >nombre <span style="color:#808030; ">==</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">pedro</span><span style="color:#800000; ">"</span> <span style="color:#808030; ">||</span> nombre <span style="color:#808030; ">==</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">luis</span><span style="color:#800000; ">"</span>
+
+</pre>
+
+    <p></p>
+
+    <p>
+      <strong
+        ><em><u>Operadores de Asignación</u></em></strong
+      >
+    </p>
+
+    <p>
+      Los operadores de asignación se emplean para modificar el valor de una
+      variable mediante otro valor o variable:
+    </p>
+    <p style="text-align: center">
+      <img
+        src="/imagenes/1.4.5.png"
+        alt=""
+        role="presentation"
+      /><br />
+    </p>
+    <p>
+      <em>Ejemplo: </em>
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >valor <span style="color:#808030; ">+=</span> numero<span style="color:#800080; ">;</span> 	 <span style="color:#696969; ">// Equivale a: valor = valor + numero. </span>
+valor <span style="color:#808030; ">-</span><span style="color:#808030; ">=</span> numero<span style="color:#800080; ">;</span>	 <span style="color:#696969; ">// Equivale a: valor = valor - numero</span>
+</pre>
+    <p>
+      <strong><em>Ejercicio propuesto: </em></strong>
+    </p>
+
+    <p>
+      Haz que la página muestre una línea indicando la edad que tendrá el
+      usuario el año próximo.
+    </p>
+    <p><br /></p>
+
+    <h3>Cuadros de diálogo básicos</h3>
+
+    <p>
+      <br />
+      Javascript permite lanzar cuadros de diálogo desde una página con tres
+      finalidades según su tipo: notificarle un suceso, solicitarle una
+      confirmación, o requerir un valor:
+    </p>
+
+    <h5>
+      <span style="font-size: 1.17188rem">Función</span
+      ><em style="font-size: 1.17188rem"> alert()</em
+      ><span style="font-size: 1.17188rem">.</span><br />
+    </h5>
+
+    <p>
+      <br />Esta función muestra un cuadro de diálogo informativo con el mensaje
+      indicado como argumento:
+    </p>
+    <pre
+      style="color: #000000; background: #ffffff"
+    ><span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Este es un mensaje para el usuario</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">var</span> mensaje <span style="color:#808030; ">=</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">Este es un mensaje para el usuario</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span> 
+<span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span> mensaje <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+
+    <p style="text-align: center">
+      <img
+        src="/imagenes/1.4.6.png"
+        alt=""
+        role="presentation"
+      />&nbsp; &nbsp; &nbsp; &nbsp;<strong><em></em></strong>
+    </p>
+
+    <p style="text-align: center">
+      <strong
+        ><em
+          >Cuadro de diálogo de Alert() en Internet Explorer ( Izquierda ) y en
+          Firefox ( Derecha )</em
+        ></strong
+      >
+    </p>
+
+    <p>
+      <span><br /></span>
+    </p>
+    <h5>
+      <span> Función <em>confirm().</em></span>
+    </h5>
+    <p></p>
+
+    <p>
+      Esta función muestra un cuadro de diálogo con el mensaje indicado
+      solicitando una respuesta afirmativa o negativa mediante dos botones. Si
+      se pulsa el botón “Aceptar” la función devuelve un valor “true”, en caso
+      contrario devuelve “false”:
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    ><span style="color:#800000; font-weight:bold; ">var</span> respuesta <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">confirm</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Desea iniciar borrado?</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span> respuesta <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+    <pre
+      style="
+        text-align: center;
+        color: rgb(0, 0, 0);
+        background: rgb(255, 255, 255);
+      "
+    ><span style="color:#800080; "><img src="/imagenes/1.4.7.png" alt="" role="presentation"><br></span></pre>
+
+    <p style="text-align: center">
+      <strong><em></em></strong>
+    </p>
+
+    <p style="text-align: center">
+      <strong
+        ><em
+          >Cuadro de diálogo de Confirm() en Internet Explorer ( Izquierda ) y
+          en Firefox ( Derecha )</em
+        ></strong
+      >
+    </p>
+
+    <p>
+      <u><br /></u>
+    </p>
+    <h5>
+      <span> Función <em>prompt()</em></span>
+    </h5>
+    <p></p>
+
+    <p>
+      Esta función muestra un cuadro de diálogo con el mensaje indicado
+      solicitando al usuario un valor mediante una caja de texto. La función
+      devuelve el valor introducido:
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >      <span style="color:#800000; font-weight:bold; ">var</span> nombre <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">prompt</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Introduzca su nombre.</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+      <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span> nombre <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+
+<p style="text-align: center;"><img src="/imagenes/1.4.8.png" alt="" width="500" height="139" role="presentation" class="img-responsive atto_image_button_text-bottom"></p></pre>
+
+    <p style="text-align: center">
+      <strong><em></em></strong>
+    </p>
+
+    <p style="text-align: center">
+      <strong
+        ><em
+          >Cuadro de diálogo de petición de información en Internet Explorer</em
+        ></strong
+      >
+    </p>
+
+    <p>
+      &nbsp;<span style="font-size: 0.9375rem">La función </span
+      ><strong style="font-size: 0.9375rem"><em>prompt()</em></strong
+      ><span style="font-size: 0.9375rem">
+        devuelve siempre una cadena de caracteres incluso aunque el usuario
+        introduzca un valor numérico. Si se va a realizar alguna operación
+        numérica con el valor introducido
+      </span>
+      <em style="font-size: 0.9375rem"
+        ><u>es preciso convertirlo primero a un valor numérico.</u></em
+      >
+    </p>
+
+    <p>
+      <strong><em>Ejemplo:</em></strong> Supóngase el siguiente código de
+      Javascript:
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    ><span style="color:#800000; font-weight:bold; ">var</span> edad <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">prompt</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Dime cuanto años tienes</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+edad <span style="color:#808030; ">=</span> edad <span style="color:#808030; ">+</span> <span style="color:#008c00; ">1</span><span style="color:#800080; ">;</span> 
+document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">El año que viene tendrás: </span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> edad <span style="color:#808030; ">+</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; "> años</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+
+</pre>
+    <p>
+      SI el usuario introduce el valor “20”, la página mostrará el siguiente
+      mensaje:
+    </p>
+
+    <p>
+      <em
+        >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; El año que viene tendrás: 201 años</em
+      ><em></em>
+    </p>
+
+    <p>
+      Para resolverlo debe convertirse el valor de la variable <em>edad</em> en
+      número mediante la función<strong><em> Number()</em></strong> antes de
+      hacer la suma:
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    ><span style="color:#800000; font-weight:bold; ">var</span> edad <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">prompt</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Dime cuanto años tienes</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+edad <span style="color:#808030; ">=</span> <span style="color:#797997; ">Number</span><span style="color:#808030; ">(</span> edad <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+edad <span style="color:#808030; ">=</span> edad <span style="color:#808030; ">+</span> <span style="color:#008c00; ">1</span><span style="color:#800080; ">;</span> 
+document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">El año que viene tendrás: </span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> edad <span style="color:#808030; ">+</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; "> años</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+
+    <p>El resultado mostrado ahora es:</p>
+
+    <p>
+      <em
+        >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp;El año que viene tendrás: 21 años</em>
+      >
+    </p>
+    <br />
+    <p></p>
+  </div>
+</div>

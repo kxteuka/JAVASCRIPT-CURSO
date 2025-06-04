@@ -1,0 +1,308 @@
+<h2>1.5. Estructuras de control</h2>
+<h3>Condicionales</h3>
+<div class="box py-3 contents">
+  <div class="no-overflow">
+    <p dir="ltr" style="text-align: left"></p>
+    <p></p>
+    <p dir="ltr" style="text-align: left"></p>
+    <p>
+      <span style="font-size: 0.9375rem"
+        >El código Javascript se ejecute por defecto secuencialmente. Las
+        estructuras de control alteran el orden de ejecución por defecto
+        permitiendo que partes del código se ejecuten bajo ciertas condiciones o
+        varias veces.</span
+      ><br />
+    </p>
+
+    <h3>Estructuras condicionales</h3>
+
+    <p>
+      <span style="font-size: 1.40625rem; font-weight: 600"
+        >Estructura condicional de 1 o 2 ramas.</span
+      ><br />
+    </p>
+    <p></p>
+    <p>
+      Las estructuras condicionales permiten definir secciones de código que se
+      ejecutan si una determinada condición es cierta o falsa:
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >	<span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>condicion<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+		codigo que se ejecuta si la condición es cierta<span style="color:#808030; ">.</span>  
+	<span style="color:#800080; ">}</span> <span style="color:#800000; font-weight:bold; ">else</span> <span style="color:#800080; ">{</span>
+		código que se ejecuta si la condición es falsa<span style="color:#808030; ">.</span>  
+	<span style="color:#800080; ">}</span></pre>
+    <p>
+      La <strong><em>&lt;condición&gt;</em> </strong>puede ser una expresión
+      condicional:
+    </p>
+    <p></p>
+    <ul>
+      <li>
+        <strong style="font-size: 0.9375rem">if </strong
+        ><span style="font-size: 0.9375rem"
+          >( valor &gt; 18 )&nbsp; &nbsp; &nbsp;&nbsp;</span
+        >
+      </li>
+      <li>
+        <strong style="font-size: 0.9375rem">if </strong
+        ><span style="font-size: 0.9375rem"
+          >( valor &gt;= 18 &amp;&amp; valor &lt;= 32 )&nbsp; &nbsp;
+          &nbsp;&nbsp;</span
+        >
+      </li>
+      <li><strong>if </strong>( nombre == “pedro” || nombre == “luis” )</li>
+    </ul>
+    <p></p>
+
+    <p>
+      También puede utilizarse como condición una variable con un valor
+      <em>cierto</em> o <em>falso</em>.
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >	<span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span> ok <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+		<span style="color:#696969; ">// Código que se ejecuta si ok = true</span>
+	<span style="color:#800080; ">}</span> <span style="color:#800000; font-weight:bold; ">else</span> <span style="color:#800080; ">{</span>
+		<span style="color:#696969; ">// Código que se ejecuta si ok = false</span>
+	<span style="color:#800080; ">}</span>
+
+</pre>
+
+    <p>
+      <strong style="font-size: 0.9375rem"><em>Ejemplo:</em></strong
+      ><span style="font-size: 0.9375rem">
+        El siguiente código solicita al usuario que introduzca su edad y le
+        muestra un mensaje informativo en función de si es o no mayor de
+        edad.</span
+      ><br />
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    ><span style="color:#800000; font-weight:bold; ">var</span> edad<span style="color:#800080; ">;</span> 
+edad <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">prompt</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Qué edad tiene?</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+edad <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">parseInt</span><span style="color:#808030; ">(</span> edad <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span> edad <span style="color:#808030; ">&gt;</span> <span style="color:#008c00; ">18</span> <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+       <span style="color:#696969; ">// RAMA CIERTO -&gt; Sólo se ejecuta si la condición es cierta</span>
+	<span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Es usted mayor de edad.</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span> <span style="color:#800000; font-weight:bold; ">else</span> <span style="color:#800080; ">{</span>
+       <span style="color:#696969; ">// RAMA FALSO -&gt; Sólo se ejecuta si la condición es falsa</span>
+	<span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Es usted menor de edad.</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>	
+<span style="color:#800080; ">}</span>
+</pre>
+
+    <br /><strong
+      ><em
+        >* El sangrado del código contenido en cada una de las ramas no es
+        obligatorio pero facilita la comprensión del código.&nbsp;</em
+      ></strong
+    ><br />
+
+    <p>
+      <br />
+      El bloque <strong><em>else </em></strong>puede omitirse si no es necesario
+      ninguna sección de código para el caso en que la condición no sea cierta.
+    </p>
+
+    <h4><br />Operador condicional ternario ( <em>?</em> )</h4>
+
+    <p>
+      <br />Este operador permite asignar a una variable un valor u otro en
+      función de una condición:
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    > <span style="color:#808030; ">(</span> <span style="color:#808030; ">&lt;</span>condición<span style="color:#808030; ">&gt;</span> <span style="color:#808030; ">)</span> <span style="color:#800080; ">?</span>  <span style="color:#808030; ">&lt;</span>valor si cierto<span style="color:#808030; ">&gt;</span> <span style="color:#800080; ">:</span> <span style="color:#808030; ">&lt;</span>valor si falso <span style="color:#808030; ">&gt;</span> 
+</pre>
+
+    <p>
+      <strong><em>Ejemplo: </em></strong>&nbsp;El siguiente código asigna a la
+      variable mensaje un valor “Es mayor” o “Es menor” en función de si el
+      valor de la variable edad es superior a 18.&nbsp;
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    ><span style="color:#800000; font-weight:bold; ">var</span> edad <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">prompt</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Cual es su edad</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">var</span> mensaje<span style="color:#800080; ">;</span> 
+edad <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">parseInt</span><span style="color:#808030; ">(</span> edad<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+<span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span> edad <span style="color:#808030; ">&gt;=</span> <span style="color:#008c00; ">18</span> <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+	mensaje <span style="color:#808030; ">=</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">Es mayor</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span> 
+<span style="color:#800080; ">}</span> <span style="color:#800000; font-weight:bold; ">else</span> <span style="color:#800080; ">{</span>
+	mensaje <span style="color:#808030; ">=</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">Es menor</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span> 
+<span style="color:#800080; ">}</span>
+document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span>mensaje<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+</pre>
+
+    <p>
+      Puede simplificarse empleando el operador condicional ternario del
+      siguiente modo:
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    ><span style="color:#800000; font-weight:bold; ">var</span> edad <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">prompt</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Cual es su edad</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+edad <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">parseInt</span><span style="color:#808030; ">(</span>edad<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+<span style="color:#800000; font-weight:bold; ">var</span> mensaje <span style="color:#808030; ">=</span> <span style="color:#808030; ">(</span> edad <span style="color:#808030; ">&gt;</span> <span style="color:#008c00; ">18</span> <span style="color:#808030; ">)</span> <span style="color:#800080; ">?</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">Es mayor</span><span style="color:#800000; ">"</span> <span style="color:#800080; ">:</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">Es menor</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span> 
+document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span>mensaje<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> </pre>
+
+    <h4>Estructura condicional de múltiple rama ( <em>switch</em> )</h4>
+
+    <p>
+      <br />La estructura <strong><em>switch</em></strong> define múltiples
+      bloques de código (ramas) asociadas a un valor&nbsp; de tipo
+      <em>entero </em>o<em> cadena</em>. Sólo se ejecuta la rama cuyo valor
+      coindice con el de la variable de control. En caso contrario no se ejecuta
+      ninguna.
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >	<span style="color:#800000; font-weight:bold; ">switch</span> <span style="color:#808030; ">(</span> variable <span style="color:#808030; ">)</span> 	
+	<span style="color:#800080; ">{</span>
+		<span style="color:#800000; font-weight:bold; ">case</span> valor_1<span style="color:#800080; ">:</span>
+			<span style="color:#808030; ">&lt;</span>instrucciones<span style="color:#808030; ">&gt;</span>
+			<span style="color:#800000; font-weight:bold; ">break</span><span style="color:#800080; ">;</span> 
+		<span style="color:#800000; font-weight:bold; ">case</span> valor_2<span style="color:#800080; ">:</span>
+			<span style="color:#808030; ">&lt;</span>instrucciones<span style="color:#808030; ">&gt;</span>
+			<span style="color:#800000; font-weight:bold; ">break</span><span style="color:#800080; ">;</span> 
+		<span style="color:#800000; font-weight:bold; ">case</span> valor_3<span style="color:#800080; ">:</span>
+			<span style="color:#808030; ">&lt;</span>instrucciones<span style="color:#808030; ">&gt;</span>
+			<span style="color:#800000; font-weight:bold; ">break</span><span style="color:#800080; ">;</span> 
+		<span style="color:#800000; font-weight:bold; ">default</span><span style="color:#800080; ">:</span> 
+			<span style="color:#808030; ">&lt;</span>instrucciones<span style="color:#808030; ">&gt;</span>
+	<span style="color:#800080; ">}</span>
+</pre>
+    <p>
+      La rama <strong><em>default </em></strong>es opcional. En caso de
+      indicarse se ejecuta únicamente si el valor de la variable de control no
+      coincide con el de ninguna rama.
+    </p>
+
+    <p>
+      <strong><em>Ejemplo</em></strong
+      >: El siguiente código solicita al usuario el número del día de la semana
+      y muestra su nombre correspondiente:
+    </p>
+    <pre
+      style="color: #000000; background: #ffffff"
+    ><span style="color:#800000; font-weight:bold; ">var</span> dia<span style="color:#800080; ">;</span> 
+dia <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">prompt</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Indica numero del mes</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+dia <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">parseInt</span><span style="color:#808030; ">(</span> dia <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+<span style="color:#800000; font-weight:bold; ">switch</span> <span style="color:#808030; ">(</span> dia <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+	<span style="color:#800000; font-weight:bold; ">case</span> <span style="color:#008c00; ">1</span><span style="color:#800080; ">:</span> <span style="color:#800080; ">{</span>
+		document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Lunes</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+	<span style="color:#800080; ">}</span><span style="color:#800080; ">;</span> <span style="color:#800000; font-weight:bold; ">break</span><span style="color:#800080; ">;</span> 
+	<span style="color:#800000; font-weight:bold; ">case</span> <span style="color:#008c00; ">2</span><span style="color:#800080; ">:</span> <span style="color:#800080; ">{</span>
+		document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Martes</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+	<span style="color:#800080; ">}</span><span style="color:#800080; ">;</span> <span style="color:#800000; font-weight:bold; ">break</span><span style="color:#800080; ">;</span> 
+	<span style="color:#800000; font-weight:bold; ">case</span> <span style="color:#008c00; ">3</span><span style="color:#800080; ">:</span> <span style="color:#800080; ">{</span>
+		document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Miercoles</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+	<span style="color:#800080; ">}</span><span style="color:#800080; ">;</span> <span style="color:#800000; font-weight:bold; ">break</span><span style="color:#800080; ">;</span> 
+	<span style="color:#800000; font-weight:bold; ">case</span> <span style="color:#008c00; ">4</span><span style="color:#800080; ">:</span> <span style="color:#800080; ">{</span>
+		document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Jueves</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+	<span style="color:#800080; ">}</span><span style="color:#800080; ">;</span> <span style="color:#800000; font-weight:bold; ">break</span><span style="color:#800080; ">;</span> 
+	<span style="color:#800000; font-weight:bold; ">case</span> <span style="color:#008c00; ">5</span><span style="color:#800080; ">:</span> <span style="color:#800080; ">{</span>
+		document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Viernes</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+	<span style="color:#800080; ">}</span><span style="color:#800080; ">;</span> <span style="color:#800000; font-weight:bold; ">break</span><span style="color:#800080; ">;</span> 
+	<span style="color:#800000; font-weight:bold; ">case</span> <span style="color:#008c00; ">6</span><span style="color:#800080; ">:</span> <span style="color:#800080; ">{</span>
+		document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Sabado</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+	<span style="color:#800080; ">}</span><span style="color:#800080; ">;</span> <span style="color:#800000; font-weight:bold; ">break</span><span style="color:#800080; ">;</span> 
+	<span style="color:#800000; font-weight:bold; ">case</span> <span style="color:#008c00; ">7</span><span style="color:#800080; ">:</span> <span style="color:#800080; ">{</span>
+		document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Domingo</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+	<span style="color:#800080; ">}</span><span style="color:#800080; ">;</span> <span style="color:#800000; font-weight:bold; ">break</span><span style="color:#800080; ">;</span> 
+	<span style="color:#800000; font-weight:bold; ">default</span><span style="color:#800080; ">:</span> <span style="color:#800080; ">{</span>
+		document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Valor no válido</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+	<span style="color:#800080; ">}</span>
+<span style="color:#800080; ">}</span>
+</pre>
+
+    <p>
+      <strong><em>Ejemplo</em></strong
+      >: El siguiente código solicita al usuario un resultado de quiniela y
+      muestra el valor correspondiente:
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    >        <span style="color:#800000; font-weight:bold; ">var</span> opcion<span style="color:#800080; ">;</span>
+        opcion <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">prompt</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Indica el resultado.</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800000; font-weight:bold; ">switch</span> <span style="color:#808030; ">(</span>opcion<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+            <span style="color:#800000; font-weight:bold; ">case</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">1</span><span style="color:#800000; ">"</span> <span style="color:#800080; ">:</span>
+                <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">uno</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800000; font-weight:bold; ">break</span><span style="color:#800080; ">;</span>
+            <span style="color:#800000; font-weight:bold; ">case</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">2</span><span style="color:#800000; ">"</span><span style="color:#800080; ">:</span>
+                <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">dos</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800000; font-weight:bold; ">break</span><span style="color:#800080; ">;</span>
+            <span style="color:#800000; font-weight:bold; ">case</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">X</span><span style="color:#800000; ">"</span><span style="color:#800080; ">:</span>
+                <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">equis</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800000; font-weight:bold; ">break</span><span style="color:#800080; ">;</span>
+            <span style="color:#e34adc; ">default:</span>
+                <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">desconocido.</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+                <span style="color:#800000; font-weight:bold; ">break</span><span style="color:#800080; ">;</span> 
+        <span style="color:#800080; ">}</span>
+</pre>
+
+    <h4><br /></h4>
+    <h4>Condicionales anidadas</h4>
+
+    <p>
+      <span style="font-size: 0.9375rem"
+        ><br />Los bloques de una estructura condicional pueden contener
+        estructuras condicionales anidadas:</span
+      ><br />
+    </p>
+
+    <pre
+      style="
+        background-image: initial;
+        background-position: initial;
+        background-size: initial;
+        background-repeat: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+      "
+    ><span style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">If <span style="color:#808030; ">(</span> condición_1 <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+          Instrucciones si cumple condicion_1
+<span style="color:#800080; ">}</span> <span style="color:#800000; font-weight:bold; ">else</span> <span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span> condición_2 <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+          Instrucciones si cumple condicion_2
+<span style="color:#800080; ">}</span> <span style="color:#800000; font-weight:bold; ">else</span> <span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span> condición_3 )</span><span style="background-color: rgb(255, 255, 255);"> </span><span style="color: rgb(128, 0, 128); background-color: rgb(255, 255, 255);">{</span><span style="background-color: rgb(255, 255, 255);">
+          Instrucciones si cumple condicion_3
+</span><span style="color: rgb(128, 0, 128); background-color: rgb(255, 255, 255);">}</span><span style="background-color: rgb(255, 255, 255);"> </span><span style="color: rgb(128, 0, 0); background-color: rgb(255, 255, 255); font-weight: bold;">else</span><span style="background-color: rgb(255, 255, 255);"> </span><span style="color: rgb(128, 0, 128); background-color: rgb(255, 255, 255);">{</span><span style="background-color: rgb(255, 255, 255);">
+          Instrucciones si no cumple ninguna de las condiciones anteriores
+</span><span style="color: rgb(128, 0, 128); background-color: rgb(255, 255, 255);">}</span><span style="background-color: rgb(255, 255, 255);">
+</span></pre>
+    <p>
+      <strong><em> Ejemplo</em></strong
+      >: El siguiente código solicita al usuario la temperatura del agua e
+      indica a continuación su estado físico correspondiente:
+    </p>
+
+    <pre
+      style="color: #000000; background: #ffffff"
+    ><span style="color:#800000; font-weight:bold; ">var</span> temperatura<span style="color:#800080; ">;</span> 
+temperatura <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">prompt</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">¿Qué temperatura tiene el agua?</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+temperatura <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">parseFloat</span><span style="color:#808030; ">(</span> temperatura<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span> temperatura <span style="color:#808030; ">&lt;=</span> <span style="color:#008000; ">0.0</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+	<span style="color:#696969; ">// Si la temperatura es inferior o igual a 0. </span>
+	document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">HIELO</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+<span style="color:#800080; ">}</span> <span style="color:#800000; font-weight:bold; ">else</span> <span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span> temperatura <span style="color:#808030; ">&gt;</span> <span style="color:#008000; ">0.0</span> <span style="color:#808030; ">&amp;&amp;</span> temperatura <span style="color:#808030; ">&lt;</span> <span style="color:#008000; ">100.0</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+	<span style="color:#696969; ">// Si la temperatura es mayor que 0 a inferior a 100</span>
+	document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">LIQUIDO</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+<span style="color:#800080; ">}</span> <span style="color:#800000; font-weight:bold; ">else</span> <span style="color:#800080; ">{</span>
+	<span style="color:#696969; ">// Si la temperatura es igual o mayor que 100</span>
+	document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">VAPOR</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span>
+</pre>
+
+    <h3></h3>
+    <br />
+    <p></p>
+  </div>
+</div>
