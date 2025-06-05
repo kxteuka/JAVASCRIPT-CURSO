@@ -1,56 +1,90 @@
-<h2>5.8. Encadenamiento de transiciones</h2>
-<h3>Encadenamiento de transiciones.</h3>
-<div class="box py-3 contents">
-  <div class="no-overflow">
-    <p dir="ltr" style="text-align: left"></p>
-    <p>
-      <span style="font-size: 0.9375rem"
-        >Se denomina encadenamiento de transiciones </span
-      ><em style="font-size: 0.9375rem"
-        ><u
-          >a la aplicación de una sucesión de transiciones, efectos o
-          animaciones sobre uno o varios elementos</u
-        ></em
-      ><span style="font-size: 0.9375rem">.&nbsp;</span><br />
-    </p>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iván López" />
+    <title>Curso Básico de JavaScript y jQuery</title>
+    <style>
+      .center-align {
+        text-align: center;
+      }
+      .right-align {
+        text-align: right;
+      }
+      .margin-left {
+        margin-left: 20px;
+      }
+      .custom-link-button {
+        display: inline-block;
+        padding: 4px 12px;
+        font-size: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>5.8. Encadenamiento de transiciones</h2>
+    <h3>Encadenamiento de transiciones.</h3>
+    <div class="box py-3 contents">
+      <div class="no-overflow">
+        <p dir="ltr" style="text-align: left"></p>
+        <p>
+          <span style="font-size: 0.9375rem"
+            >Se denomina encadenamiento de transiciones </span
+          ><em style="font-size: 0.9375rem"
+            ><u
+              >a la aplicación de una sucesión de transiciones, efectos o
+              animaciones sobre uno o varios elementos</u
+            ></em
+          ><span style="font-size: 0.9375rem">.&nbsp;</span><br />
+        </p>
 
-    <p>
-      La siguiente línea de código ejecuta <em><u>consecutivamente </u></em>un
-      efecto de sacudida vertical “<em>bounce</em>” y otro de sacudida
-      horizontal “<em>shake</em>” de 1 segundo de duración cada uno sobre el
-      mismo elemento:
-    </p>
+        <p>
+          La siguiente línea de código ejecuta
+          <em><u>consecutivamente </u></em>un efecto de sacudida vertical
+          “<em>bounce</em>” y otro de sacudida horizontal “<em>shake</em>” de 1
+          segundo de duración cada uno sobre el mismo elemento:
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#696969; ">          // Sucesion de efectos. </span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#696969; ">          // Sucesion de efectos. </span>
           $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#elemento1</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>effect<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">bounce</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span><span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">1000</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>effect<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">shake</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span><span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">1000</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 
 </pre>
 
-    <p>
-      Al invocar varias funciones sobre un mismo elemento o elemento
-      seleccionados, éstas se ejecutan una detrás de otra en el orden en que se
-      invocan. Por ello, primero se ejecutará el efecto “<em>bounce</em>”
-      durante un segundo, y después el “<em>shake</em>” acto seguido:
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/5.8.1.gif"
-        alt="encadenamiento1"
-        width="476"
-        height="87"
-        class="img-responsive atto_image_button_text-bottom"
-      /><br />
-    </p>
+        <p>
+          Al invocar varias funciones sobre un mismo elemento o elemento
+          seleccionados, éstas se ejecutan una detrás de otra en el orden en que
+          se invocan. Por ello, primero se ejecutará el efecto “<em>bounce</em>”
+          durante un segundo, y después el “<em>shake</em>” acto seguido:
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/5.8.1.gif"
+            alt="encadenamiento1"
+            width="476"
+            height="87"
+            class="img-responsive atto_image_button_text-bottom"
+          /><br />
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td>
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td>
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -81,66 +115,66 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>
-      <span lang="EN-US"
-        ><span style="font-size: 0.9375rem"><br /></span
-      ></span>
-    </p>
-    <p>
-      <span lang="EN-US"
-        ><span style="font-size: 0.9375rem">Sin embargo,</span
-        ><em style="font-size: 0.9375rem"
-          ><u>
-            los efectos invocados sobre distintos elementos se ejecutan al mismo
-            tiempo.&nbsp;</u
-          ></em
-        ><span style="font-size: 0.9375rem"
-          >Las siguientes líneas de código ejecutan un efecto “bounce” de 1
-          segundo sobre un elemento con id = ‘elemento1’, y un efecto “shake” de
-          1 segundo sobre un elemento con id = ‘elemento2’:</span
-        ><br
-      /></span>
-    </p>
+        <p>
+          <span lang="EN-US"
+            ><span style="font-size: 0.9375rem"><br /></span
+          ></span>
+        </p>
+        <p>
+          <span lang="EN-US"
+            ><span style="font-size: 0.9375rem">Sin embargo,</span
+            ><em style="font-size: 0.9375rem"
+              ><u>
+                los efectos invocados sobre distintos elementos se ejecutan al
+                mismo tiempo.&nbsp;</u
+              ></em
+            ><span style="font-size: 0.9375rem"
+              >Las siguientes líneas de código ejecutan un efecto “bounce” de 1
+              segundo sobre un elemento con id = ‘elemento1’, y un efecto
+              “shake” de 1 segundo sobre un elemento con id = ‘elemento2’:</span
+            ><br
+          /></span>
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >                <span style="color:#696969; ">// Efectos simultaneos</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >                <span style="color:#696969; ">// Efectos simultaneos</span>
                 $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#elemento1</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>effect<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">bounce</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span><span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">1000</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
                 $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#elemento2</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>effect<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">shake</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span><span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">1000</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 </pre>
 
-    <p></p>
-    <p>
-      <span lang="EN-US"
-        ><span style="font-size: 0.9375rem"
-          >En este caso, al ser efectos invocados sobre distintos elementos;
-          ambos se ejecutarán al mismo tiempo aunque una línea de código se
-          ejecute antes que la otra:<br /></span
-      ></span>
-    </p>
-    <p style="text-align: center">
-      <span style="font-size: 0.9375rem"
-        ><img
-          src="../../.imagenes/5.8.2.gif"
-          alt="encadenamiento2"
-          width="476"
-          height="64"
-          class="img-responsive atto_image_button_text-bottom" /><br
-      /></span>
-    </p>
+        <p></p>
+        <p>
+          <span lang="EN-US"
+            ><span style="font-size: 0.9375rem"
+              >En este caso, al ser efectos invocados sobre distintos elementos;
+              ambos se ejecutarán al mismo tiempo aunque una línea de código se
+              ejecute antes que la otra:<br /></span
+          ></span>
+        </p>
+        <p style="text-align: center">
+          <span style="font-size: 0.9375rem"
+            ><img
+              src="../../.imagenes/5.8.2.gif"
+              alt="encadenamiento2"
+              width="476"
+              height="64"
+              class="img-responsive atto_image_button_text-bottom" /><br
+          /></span>
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td>
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td>
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -175,65 +209,67 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>
-      <br /><span style="font-size: 0.9375rem"
-        >Para ejecutar<em
-          ><u>
-            consecutivamente efectos aplicados sobre distintos elementos</u
-          ></em
-        >
-        es necesario incluirlos en funciones de retrollamada que se ejecutan al
-        término de cada efecto para invocar el siguiente:&nbsp;</span
-      ><br />
-    </p>
+        <p>
+          <br /><span style="font-size: 0.9375rem"
+            >Para ejecutar<em
+              ><u>
+                consecutivamente efectos aplicados sobre distintos elementos</u
+              ></em
+            >
+            es necesario incluirlos en funciones de retrollamada que se ejecutan
+            al término de cada efecto para invocar el siguiente:&nbsp;</span
+          ><br />
+        </p>
 
-    <p>
-      Las siguientes líneas de código ejecutan un efecto “bounce” de 1 segundo
-      sobre un elemento con id = ‘elemento1’, de modo que al completarse ejecuta
-      la función de retrollamada indicada como último parámetro, que lanza el
-      efecto “shake” sobre el elemento con id = ‘elemento2’:
-    </p>
+        <p>
+          Las siguientes líneas de código ejecutan un efecto “bounce” de 1
+          segundo sobre un elemento con id = ‘elemento1’, de modo que al
+          completarse ejecuta la función de retrollamada indicada como último
+          parámetro, que lanza el efecto “shake” sobre el elemento con id =
+          ‘elemento2’:
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >               $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#elemento1</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>effect<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">bounce</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span><span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">1000</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >               $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#elemento1</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>effect<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">bounce</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span><span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">1000</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
                     $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#elemento2</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>effect<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">shake</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span><span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">1000</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 <span style="color:#800080; ">               }</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 </pre>
 
-    <p>
-      En este caso, primero se ejecuta el efecto “bounce” sobre el primer
-      elemento, y al terminar, se ejecuta la función que lanza el efecto “shake”
-      sobre el segundo elemento:
-    </p>
+        <p>
+          En este caso, primero se ejecuta el efecto “bounce” sobre el primer
+          elemento, y al terminar, se ejecuta la función que lanza el efecto
+          “shake” sobre el segundo elemento:
+        </p>
 
-    <p style="text-align: center">
-      &nbsp;<img
-        src="../../.imagenes/5.8.3.gif"
-        alt="encadenamiento3"
-        width="476"
-        height="64"
-        class="img-responsive atto_image_button_text-bottom"
-      />
-    </p>
+        <p style="text-align: center">
+          &nbsp;<img
+            src="../../.imagenes/5.8.3.gif"
+            alt="encadenamiento3"
+            width="476"
+            height="64"
+            class="img-responsive atto_image_button_text-bottom"
+          />
+        </p>
 
-    <p>
-      <strong><em>Ejemplo: </em></strong>El siguiente código muestra una página
-      con dos capas y tres botones que muestran los tres casos anteriores:
-    </p>
+        <p>
+          <strong><em>Ejemplo: </em></strong>El siguiente código muestra una
+          página con dos capas y tres botones que muestran los tres casos
+          anteriores:
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td>
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td>
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -269,35 +305,57 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>&nbsp;</p>
-    <br />
-    <p></p>
-  </div>
-</div>
-<h2 style="text-align: center;">🎉 Fin del Curso 🎉</h2>
-<h2 style="text-align: center;">¡Felicidades!</h2>
-<a
-  href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.7. Transiciones de estilos.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Anterior lección
-</a>
+        <p>&nbsp;</p>
+        <br />
+        <p></p>
+      </div>
+    </div>
+    <h2 style="text-align: center">🎉 Fin del Curso 🎉</h2>
+    <h2 style="text-align: center">¡Felicidades!</h2>
+    <a
+      href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.7. Transiciones de estilos.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Anterior lección
+    </a>
+    <a
+      href="../../readme.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Inicio/Leeme
+    </a>
+  </body>
+</html>

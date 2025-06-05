@@ -1,69 +1,102 @@
-<h2>5.2. Sincronización de efectos.</h2>
-<h3>Sincronización de acciones.</h3>
-<div class="box py-3 contents">
-  <div class="no-overflow">
-    <p dir="ltr" style="text-align: left"></p>
-    <p style="text-align: justify">
-      <span style="font-size: 0.9375rem"
-        >Existen ocasiones en las que es interesante que justo al terminar un
-        efecto/transición de los vistos anteriormente,
-        <em><u>se realice otra operación justo a continuación</u></em
-        >.&nbsp;</span
-      ><br />
-    </p>
-    <p style="text-align: justify">
-      La sintaxis que puede emplearse es la siguiente y es aplicable a funciones
-      como&nbsp;<span
-        ><strong><em>&nbsp;</em></strong></span
-      ><strong
-        ><em
-          >$().show(),&nbsp;$().hide(),&nbsp;$().fadeIn(),&nbsp;$().fadeOut(),&nbsp;$().slideUp(),&nbsp;$().slideDown()</em
-        ></strong
-      >&nbsp;cuando es necesario sincronizar una tarea para que se ejecute justo
-      tras termina la transición:
-    </p>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iván López" />
+    <title>Curso Básico de JavaScript y jQuery</title>
+    <style>
+      .center-align {
+        text-align: center;
+      }
+      .right-align {
+        text-align: right;
+      }
+      .margin-left {
+        margin-left: 20px;
+      }
+      .custom-link-button {
+        display: inline-block;
+        padding: 4px 12px;
+        font-size: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>5.2. Sincronización de efectos.</h2>
+    <h3>Sincronización de acciones.</h3>
+    <div class="box py-3 contents">
+      <div class="no-overflow">
+        <p dir="ltr" style="text-align: left"></p>
+        <p style="text-align: justify">
+          <span style="font-size: 0.9375rem"
+            >Existen ocasiones en las que es interesante que justo al terminar
+            un efecto/transición de los vistos anteriormente,
+            <em><u>se realice otra operación justo a continuación</u></em
+            >.&nbsp;</span
+          ><br />
+        </p>
+        <p style="text-align: justify">
+          La sintaxis que puede emplearse es la siguiente y es aplicable a
+          funciones como&nbsp;<span
+            ><strong><em>&nbsp;</em></strong></span
+          ><strong
+            ><em
+              >$().show(),&nbsp;$().hide(),&nbsp;$().fadeIn(),&nbsp;$().fadeOut(),&nbsp;$().slideUp(),&nbsp;$().slideDown()</em
+            ></strong
+          >&nbsp;cuando es necesario sincronizar una tarea para que se ejecute
+          justo tras termina la transición:
+        </p>
 
-    <div class="editor-indent" style="margin-left: 30px">
-      <div class="editor-indent" style="margin-left: 30px">
-        <pre
-          style="color: #000000; background: #ffffff"
-        >$<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span><em>funcion</em><span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>duracion<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></pre>
-      </div>
-    </div>
-
-    <p>
-      <em
-        ><strong><u>Ejemplo</u></strong
-        >:</em
-      >
-      Sea una página en la que se muestra una imagen y un botón
-      “<em>OCULTAR</em>” que al ser pulsado hace desaparecer la imagen
-      lentamente y que al desaparecer por completo se muestre el mensaje “<em
-        >La imagen ya no se ve</em
-      >”.
-    </p>
-    <p>
-      La función indicada como segundo argumento de
-      <strong><em>$().hide()</em></strong
-      >, se ejecuta justo después de terminarse el efecto/transición:
-    </p>
-    <p>
-      <img
-        src="../../.imagenes/5.2.1.gif"
-        alt="sincronizacion"
-        width="1307"
-        height="531"
-        class="img-responsive atto_image_button_text-bottom"
-      /><br />
-    </p>
-
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
+        <div class="editor-indent" style="margin-left: 30px">
+          <div class="editor-indent" style="margin-left: 30px">
             <pre
               style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+            >$<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span><em>funcion</em><span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>duracion<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></pre>
+          </div>
+        </div>
+
+        <p>
+          <em
+            ><strong><u>Ejemplo</u></strong
+            >:</em
+          >
+          Sea una página en la que se muestra una imagen y un botón
+          “<em>OCULTAR</em>” que al ser pulsado hace desaparecer la imagen
+          lentamente y que al desaparecer por completo se muestre el mensaje
+          “<em>La imagen ya no se ve</em>”.
+        </p>
+        <p>
+          La función indicada como segundo argumento de
+          <strong><em>$().hide()</em></strong
+          >, se ejecuta justo después de terminarse el efecto/transición:
+        </p>
+        <p>
+          <img
+            src="../../.imagenes/5.2.1.gif"
+            alt="sincronizacion"
+            width="1307"
+            height="531"
+            class="img-responsive atto_image_button_text-bottom"
+          /><br />
+        </p>
+
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">http-equiv</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"Content-Type"</span><span style="color:#274796; "> </span><span style="color:#074726; ">content</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"text/html; charset=utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -88,51 +121,73 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br />
-    <p></p>
-  </div>
-</div>
-<a
-  href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.1. Transiciones.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Anterior lección
-</a>
-<a
-  href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.3. Animaciones.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Siguiente lección
-</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <p></p>
+      </div>
+    </div>
+    <a
+      href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.1. Transiciones.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Anterior lección
+    </a>
+    <a
+      href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.3. Animaciones.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Siguiente lección
+    </a>
+    <a
+      href="../../readme.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Inicio/Leeme
+    </a>
+  </body>
+</html>

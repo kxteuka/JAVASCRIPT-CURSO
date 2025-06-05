@@ -6,7 +6,7 @@ if (nombre == "Roger") {
   document.write("Usuario incorrecto.");
 }
 
-if (contrasena == "CIPSA") {
+if (contrasena == "IVAN") {
   document.write("Bienvenido.");
 } else {
   document.write("Constraseña incorrecta.");

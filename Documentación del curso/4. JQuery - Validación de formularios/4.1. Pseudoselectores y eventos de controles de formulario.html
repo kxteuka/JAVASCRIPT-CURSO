@@ -1,198 +1,236 @@
-<h2>4.1. Pseudoselectores y eventos de controles de formulario.</h2>
-<h3>Selectores y eventos básicos de formulario</h3>
-<div class="box py-3 contents">
-  <div class="no-overflow">
-    <p dir="ltr" style="text-align: left"></p>
-    <p>
-      Una de las tareas principales de Javascript es la validación de
-      formularios. Esta consiste básicamente en comprobar que los valores y
-      opciones marcadas en los diferentes elementos que componen un formulario
-      sean válidos.&nbsp;<span style="font-size: 0.9375rem"
-        >Un ejemplo clásico de validación consiste en comprobar que una caja de
-        texto en la que el usuario debe introducir su DNI no está vacía en el
-        momento de enviar los datos, en cuyo caso; debe cancelarse el envío de
-        éstos al servidor y mostrar un mensaje de advertencia.</span
-      >
-    </p>
-    <p>
-      <span style="font-size: 0.9375rem"
-        >Para poder validar cualquier elemento de un formulario, primeramente
-        debemos poder seleccionarlo. JQuery consta de unos selectores
-        específicos para elementos de formulario:&nbsp;</span
-      >
-    </p>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iván López" />
+    <title>Curso Básico de JavaScript y jQuery</title>
+    <style>
+      .center-align {
+        text-align: center;
+      }
+      .right-align {
+        text-align: right;
+      }
+      .margin-left {
+        margin-left: 20px;
+      }
+      .custom-link-button {
+        display: inline-block;
+        padding: 4px 12px;
+        font-size: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>4.1. Pseudoselectores y eventos de controles de formulario.</h2>
+    <h3>Selectores y eventos básicos de formulario</h3>
+    <div class="box py-3 contents">
+      <div class="no-overflow">
+        <p dir="ltr" style="text-align: left"></p>
+        <p>
+          Una de las tareas principales de Javascript es la validación de
+          formularios. Esta consiste básicamente en comprobar que los valores y
+          opciones marcadas en los diferentes elementos que componen un
+          formulario sean válidos.&nbsp;<span style="font-size: 0.9375rem"
+            >Un ejemplo clásico de validación consiste en comprobar que una caja
+            de texto en la que el usuario debe introducir su DNI no está vacía
+            en el momento de enviar los datos, en cuyo caso; debe cancelarse el
+            envío de éstos al servidor y mostrar un mensaje de
+            advertencia.</span
+          >
+        </p>
+        <p>
+          <span style="font-size: 0.9375rem"
+            >Para poder validar cualquier elemento de un formulario,
+            primeramente debemos poder seleccionarlo. JQuery consta de unos
+            selectores específicos para elementos de formulario:&nbsp;</span
+          >
+        </p>
 
-    <p></p>
-    <ul>
-      <li>
-        &nbsp;
-        <!--[endif]-->:<strong><em>button</em></strong> : Selecciona elementos
-        <em>&lt;button&gt;</em> y con el <em>atributo type=’button’</em>
-      </li>
-      <li>
-        &nbsp;&nbsp;
-        <!--[endif]-->:<strong><em>checkbox</em></strong
-        >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> con el atributo
-        <em>type='checkbox'</em>
-      </li>
-      <li>
-        &nbsp;&nbsp;
-        <!--[endif]-->:<strong><em>checked</em></strong
-        >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> del tipo checkbox
-        seleccionados
-      </li>
-      <li>
-        &nbsp;&nbsp;
-        <!--[endif]-->:<strong><em>disabled</em></strong
-        >&nbsp;: Selecciona elementos del formulario que están deshabitados
-      </li>
-      <li>
-        &nbsp;&nbsp;
-        <!--[endif]-->:<strong><em>enabled</em></strong
-        >&nbsp;: Selecciona elementos del formulario que están habilitados
-      </li>
-      <li>
-        &nbsp;&nbsp;
-        <!--[endif]-->:<strong><em>file</em></strong
-        >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> con el atributo
-        type=<em>'file'</em>
-      </li>
-      <li>
-        &nbsp;&nbsp;
-        <!--[endif]-->:<strong><em>image</em></strong
-        >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> con el atributo
-        type=<em>'image'</em>
-      </li>
-      <li>
-        &nbsp;&nbsp;
-        <!--[endif]-->:<strong><em>input</em></strong
-        >&nbsp;: Selecciona elementos &lt;<em>input</em>&gt;,
-        &lt;<em>textarea</em>&gt; y <em>&lt;select&gt;</em>
-      </li>
-      <li>
-        &nbsp;&nbsp;
-        <!--[endif]-->:<strong><em>password</em></strong
-        >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> con el atributo
-        <em>type='password'</em>
-      </li>
-      <li>
-        &nbsp;&nbsp;
-        <!--[endif]-->:<strong><em>radio</em></strong
-        >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> con el atributo
-        type=<em>'radio'</em>
-      </li>
-      <li>
-        &nbsp;&nbsp;
-        <!--[endif]-->:<strong><em>reset</em></strong
-        >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> con el atributo
-        type=<em>'reset'</em>
-      </li>
-      <li>
-        &nbsp;&nbsp;
-        <!--[endif]-->:<strong><em>selected</em></strong
-        >&nbsp;: Selecciona elementos <em>&lt;options&gt;</em> que están
-        seleccionados
-      </li>
-      <li>
-        &nbsp;&nbsp;
-        <!--[endif]-->:<strong><em>submit</em></strong
-        >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> con el atributo
-        type=<em>'submit'</em>
-      </li>
-      <li>
-        &nbsp;&nbsp;
-        <!--[endif]-->:<strong><em>text</em></strong
-        >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> con el atributo
-        type=<em>'text'</em>
-      </li>
-    </ul>
-    <p></p>
+        <p></p>
+        <ul>
+          <li>
+            &nbsp;
+            <!--[endif]-->:<strong><em>button</em></strong> : Selecciona
+            elementos <em>&lt;button&gt;</em> y con el
+            <em>atributo type=’button’</em>
+          </li>
+          <li>
+            &nbsp;&nbsp;
+            <!--[endif]-->:<strong><em>checkbox</em></strong
+            >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> con el atributo
+            <em>type='checkbox'</em>
+          </li>
+          <li>
+            &nbsp;&nbsp;
+            <!--[endif]-->:<strong><em>checked</em></strong
+            >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> del tipo
+            checkbox seleccionados
+          </li>
+          <li>
+            &nbsp;&nbsp;
+            <!--[endif]-->:<strong><em>disabled</em></strong
+            >&nbsp;: Selecciona elementos del formulario que están deshabitados
+          </li>
+          <li>
+            &nbsp;&nbsp;
+            <!--[endif]-->:<strong><em>enabled</em></strong
+            >&nbsp;: Selecciona elementos del formulario que están habilitados
+          </li>
+          <li>
+            &nbsp;&nbsp;
+            <!--[endif]-->:<strong><em>file</em></strong
+            >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> con el atributo
+            type=<em>'file'</em>
+          </li>
+          <li>
+            &nbsp;&nbsp;
+            <!--[endif]-->:<strong><em>image</em></strong
+            >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> con el atributo
+            type=<em>'image'</em>
+          </li>
+          <li>
+            &nbsp;&nbsp;
+            <!--[endif]-->:<strong><em>input</em></strong
+            >&nbsp;: Selecciona elementos &lt;<em>input</em>&gt;,
+            &lt;<em>textarea</em>&gt; y <em>&lt;select&gt;</em>
+          </li>
+          <li>
+            &nbsp;&nbsp;
+            <!--[endif]-->:<strong><em>password</em></strong
+            >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> con el atributo
+            <em>type='password'</em>
+          </li>
+          <li>
+            &nbsp;&nbsp;
+            <!--[endif]-->:<strong><em>radio</em></strong
+            >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> con el atributo
+            type=<em>'radio'</em>
+          </li>
+          <li>
+            &nbsp;&nbsp;
+            <!--[endif]-->:<strong><em>reset</em></strong
+            >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> con el atributo
+            type=<em>'reset'</em>
+          </li>
+          <li>
+            &nbsp;&nbsp;
+            <!--[endif]-->:<strong><em>selected</em></strong
+            >&nbsp;: Selecciona elementos <em>&lt;options&gt;</em> que están
+            seleccionados
+          </li>
+          <li>
+            &nbsp;&nbsp;
+            <!--[endif]-->:<strong><em>submit</em></strong
+            >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> con el atributo
+            type=<em>'submit'</em>
+          </li>
+          <li>
+            &nbsp;&nbsp;
+            <!--[endif]-->:<strong><em>text</em></strong
+            >&nbsp;: Selecciona elementos <em>&lt;input&gt;</em> con el atributo
+            type=<em>'text'</em>
+          </li>
+        </ul>
+        <p></p>
 
-    <p>
-      De igual modo, los eventos que suelen capturarse habitualmente en estos
-      elementos para validar los datos indicados o seleccionados por el usuario
-      son los siguientes:&nbsp;
-    </p>
+        <p>
+          De igual modo, los eventos que suelen capturarse habitualmente en
+          estos elementos para validar los datos indicados o seleccionados por
+          el usuario son los siguientes:&nbsp;
+        </p>
 
-    <p></p>
-    <ul>
-      <li>
-        <strong><em>click</em></strong
-        >: evento que se produce cuando se pincha con el ratón sobre un
-        elemento. Normalmente se utiliza con cualquiera de los tipos de botones
-        que permite definir HTML: <em>&lt;input type="button"&gt;</em>,&nbsp;<em
-          >&lt;input type="submit"&gt;</em
-        >
-        y&nbsp;<em>&lt;input type="image"&gt;</em>.
-      </li>
-      <li>
-        <strong><em>change</em></strong
-        >: evento asociado al cambio del valor de un elemento de texto:
-        <em>&lt;input type="text"&gt;</em
-        >&nbsp;o&nbsp;<em>&lt;textarea&gt;</em>, o la selección de una opción en
-        una lista desplegable <em>&lt;select&gt;</em>.
-        <em
-          ><u
-            >En las listas el evento se dispara en el momento de la selección de
-            una opción. En las cajas de texto se dispara al perder el foco si su
-            valor ha cambiado</u
-          ></em
-        >.
-      </li>
-      <li>
-        <strong><em>focus</em></strong
-        >: evento que se produce cuando el usuario selecciona un elemento del
-        formulario. Se dice entonces que el elemento tiene el “<em>foco</em>”.
-      </li>
-      <li>
-        <strong><em>blur</em></strong
-        >: evento complementario de&nbsp;<strong><em>onfocus</em></strong> que
-        se produce cuando el elemento pierde el “<em>foco</em>” al seleccionar
-        el usuario otro elemento.
-      </li>
-    </ul>
-    <p></p>
+        <p></p>
+        <ul>
+          <li>
+            <strong><em>click</em></strong
+            >: evento que se produce cuando se pincha con el ratón sobre un
+            elemento. Normalmente se utiliza con cualquiera de los tipos de
+            botones que permite definir HTML:
+            <em>&lt;input type="button"&gt;</em>,&nbsp;<em
+              >&lt;input type="submit"&gt;</em
+            >
+            y&nbsp;<em>&lt;input type="image"&gt;</em>.
+          </li>
+          <li>
+            <strong><em>change</em></strong
+            >: evento asociado al cambio del valor de un elemento de texto:
+            <em>&lt;input type="text"&gt;</em
+            >&nbsp;o&nbsp;<em>&lt;textarea&gt;</em>, o la selección de una
+            opción en una lista desplegable <em>&lt;select&gt;</em>.
+            <em
+              ><u
+                >En las listas el evento se dispara en el momento de la
+                selección de una opción. En las cajas de texto se dispara al
+                perder el foco si su valor ha cambiado</u
+              ></em
+            >.
+          </li>
+          <li>
+            <strong><em>focus</em></strong
+            >: evento que se produce cuando el usuario selecciona un elemento
+            del formulario. Se dice entonces que el elemento tiene el
+            “<em>foco</em>”.
+          </li>
+          <li>
+            <strong><em>blur</em></strong
+            >: evento complementario de&nbsp;<strong><em>onfocus</em></strong>
+            que se produce cuando el elemento pierde el “<em>foco</em>” al
+            seleccionar el usuario otro elemento.
+          </li>
+        </ul>
+        <p></p>
 
-    <p>
-      <strong
-        ><em><br /></em
-      ></strong>
-    </p>
-    <h5>Eventos de manejo de formularios mediante JQuery:</h5>
-    <p><br /></p>
-    <p>
-      <span>Evento <em style="font-weight: bold">click:</em></span>
-    </p>
+        <p>
+          <strong
+            ><em><br /></em
+          ></strong>
+        </p>
+        <h5>Eventos de manejo de formularios mediante JQuery:</h5>
+        <p><br /></p>
+        <p>
+          <span>Evento <em style="font-weight: bold">click:</em></span>
+        </p>
 
-    <p>
-      La siguiente página muestra un formulario provisto de tres cajas de texto
-      y un botón que al ser pulsado muestra el sumatorio de los valores
-      indicados en una cuarta caja de texto de solo lectura.
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/4.1.1.png"
-        alt=""
-        role="presentation"
-      /><br />
-    </p>
-    <p style="text-align: justify">
-      La función de cálculo del sumatorio se ejecuta al producirse el evento
-      “<em><strong>click</strong></em
-      >” sobre el botón con valor “<em>cálculo</em>”. Esta selecciona y recorre
-      las cajas de texto donde se encuentran los valores introducidos por el
-      usuario sumándolos a la variable “ <em>sumatorio</em>”. Su valor es
-      finalmente asignado al valor de la caja de texto
-      con&nbsp;<em>id=”resultado”</em>.<br />
-    </p>
+        <p>
+          La siguiente página muestra un formulario provisto de tres cajas de
+          texto y un botón que al ser pulsado muestra el sumatorio de los
+          valores indicados en una cuarta caja de texto de solo lectura.
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/4.1.1.png"
+            alt=""
+            role="presentation"
+          /><br />
+        </p>
+        <p style="text-align: justify">
+          La función de cálculo del sumatorio se ejecuta al producirse el evento
+          “<em><strong>click</strong></em
+          >” sobre el botón con valor “<em>cálculo</em>”. Esta selecciona y
+          recorre las cajas de texto donde se encuentran los valores
+          introducidos por el usuario sumándolos a la variable “
+          <em>sumatorio</em>”. Su valor es finalmente asignado al valor de la
+          caja de texto con&nbsp;<em>id=”resultado”</em>.<br />
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -226,46 +264,48 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>
-      <br /><span style="font-size: 0.9375rem"><br /></span>
-    </p>
-    <p>
-      <span style="font-size: 0.9375rem">Eventos&nbsp;</span
-      ><em style="font-size: 0.9375rem"
-        ><strong>focus </strong>y <strong>blur</strong>:</em
-      ><br />
-    </p>
+        <p>
+          <br /><span style="font-size: 0.9375rem"><br /></span>
+        </p>
+        <p>
+          <span style="font-size: 0.9375rem">Eventos&nbsp;</span
+          ><em style="font-size: 0.9375rem"
+            ><strong>focus </strong>y <strong>blur</strong>:</em
+          ><br />
+        </p>
 
-    <p><span style="font-size: 0.9375rem"></span></p>
-    <p>
-      Se modifica la página anterior de modo que la caja de texto que posea el
-      foco se muestre con el fondo azulado. Para ello se registran los eventos
-      <strong><i>focus</i> </strong>y <strong><i>blur</i> </strong>de todas
-      ellas exceptuando la de resultado.&nbsp;<span style="font-size: 0.9375rem"
-        >Cuando una caja gana el foco (</span
-      ><i style="font-size: 0.9375rem"><strong>focus</strong></i
-      ><span style="font-size: 0.9375rem"
-        >), se modifica el color de fondo a azulado. Cuando pierde el foco
-        (</span
-      ><i style="font-size: 0.9375rem"><strong>blur</strong></i
-      ><span style="font-size: 0.9375rem"
-        >) se le vuelve a asignar el color de fondo original.</span
-      >
-    </p>
-    <p></p>
+        <p><span style="font-size: 0.9375rem"></span></p>
+        <p>
+          Se modifica la página anterior de modo que la caja de texto que posea
+          el foco se muestre con el fondo azulado. Para ello se registran los
+          eventos
+          <strong><i>focus</i> </strong>y <strong><i>blur</i> </strong>de todas
+          ellas exceptuando la de resultado.&nbsp;<span
+            style="font-size: 0.9375rem"
+            >Cuando una caja gana el foco (</span
+          ><i style="font-size: 0.9375rem"><strong>focus</strong></i
+          ><span style="font-size: 0.9375rem"
+            >), se modifica el color de fondo a azulado. Cuando pierde el foco
+            (</span
+          ><i style="font-size: 0.9375rem"><strong>blur</strong></i
+          ><span style="font-size: 0.9375rem"
+            >) se le vuelve a asignar el color de fondo original.</span
+          >
+        </p>
+        <p></p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
@@ -302,46 +342,46 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br />
-    <p></p>
-  </div>
-</div>
-<h3>Manejo de elementos de formulario</h3>
-<div class="box py-3 contents">
-  <div class="no-overflow">
-    <p dir="ltr" style="text-align: left"></p>
-    <h5>Cajas de texto</h5>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <p></p>
+      </div>
+    </div>
+    <h3>Manejo de elementos de formulario</h3>
+    <div class="box py-3 contents">
+      <div class="no-overflow">
+        <p dir="ltr" style="text-align: left"></p>
+        <h5>Cajas de texto</h5>
 
-    <p>
-      Los elementos que representan cajas de texto poseen la propiedad
-      <strong><em>value</em></strong> que permite tanto obtener el valor
-      introducido por el usuario como modificarlo desde javascript. Empleando
-      JQuery puede obtener y modificarse el valor de una caja de texto mediante
-      la función <strong><em>$().</em></strong
-      ><strong><em>val()</em></strong
-      >.
-    </p>
+        <p>
+          Los elementos que representan cajas de texto poseen la propiedad
+          <strong><em>value</em></strong> que permite tanto obtener el valor
+          introducido por el usuario como modificarlo desde javascript.
+          Empleando JQuery puede obtener y modificarse el valor de una caja de
+          texto mediante la función <strong><em>$().</em></strong
+          ><strong><em>val()</em></strong
+          >.
+        </p>
 
-    <p>
-      <strong><em>Ejemplo:</em></strong> Se modifica el ejemplo anterior de modo
-      que al perder el foco cada una de las cajas de texto ( evento
-      <strong><em>blur </em></strong>) se valida si el valor contenido es un
-      número válido o no. En caso de ser correcto el fondo de la caja de texto
-      se torna blanca, de lo contrario roja indicando la presencia de un valor
-      no numérico.&nbsp;
-    </p>
+        <p>
+          <strong><em>Ejemplo:</em></strong> Se modifica el ejemplo anterior de
+          modo que al perder el foco cada una de las cajas de texto ( evento
+          <strong><em>blur </em></strong>) se valida si el valor contenido es un
+          número válido o no. En caso de ser correcto el fondo de la caja de
+          texto se torna blanca, de lo contrario roja indicando la presencia de
+          un valor no numérico.&nbsp;
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
@@ -387,57 +427,58 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p><br /></p>
-    <h5>Botones de opción</h5>
+        <p><br /></p>
+        <h5>Botones de opción</h5>
 
-    <p>
-      Los botones de opción permiten seleccionar una opción entre varias de modo
-      que una y sólo una puede ser activa al mismo tiempo. Para ello se asigna
-      el mismo valor al atributo <span><em>name </em></span>de todos
-      los elementos.&nbsp;<span style="font-size: 0.9375rem"
-        >Con JQuery podemos obtener la opción seleccionada mediante el valor del
-        atributo
-      </span>
-      <em style="font-size: 0.9375rem">name</em
-      ><span style="font-size: 0.9375rem"> común y el selector&nbsp;</span
-      ><span style="font-size: 0.9375rem"
-        ><span 
-          ><strong style="font-style: italic">:checked. </strong>Para obtener el
-          valor asociado al atributo <em>value </em>del elemento puede emplearse
-          la función de JQuery&nbsp;<strong><em>$().val()</em></strong
-          >.&nbsp;</span
-        ></span
-      >
-    </p>
+        <p>
+          Los botones de opción permiten seleccionar una opción entre varias de
+          modo que una y sólo una puede ser activa al mismo tiempo. Para ello se
+          asigna el mismo valor al atributo <span><em>name </em></span>de todos
+          los elementos.&nbsp;<span style="font-size: 0.9375rem"
+            >Con JQuery podemos obtener la opción seleccionada mediante el valor
+            del atributo
+          </span>
+          <em style="font-size: 0.9375rem">name</em
+          ><span style="font-size: 0.9375rem"> común y el selector&nbsp;</span
+          ><span style="font-size: 0.9375rem"
+            ><span
+              ><strong style="font-style: italic">:checked. </strong>Para
+              obtener el valor asociado al atributo <em>value </em>del elemento
+              puede emplearse la función de JQuery&nbsp;<strong
+                ><em>$().val()</em></strong
+              >.&nbsp;</span
+            ></span
+          >
+        </p>
 
-    <p>
-      <strong><em>Ejemplo: </em></strong>El siguiente código muestra un
-      formulario en el que el usuario puede seleccionar una fruta mediante tres
-      botones de opción. Cuando el usuario pulsa el botón “<em>OK</em>” la
-      página indica si se ha marcado alguna fruta y su valor:&nbsp;
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/4.1.2.png"
-        alt=""
-        role="presentation"
-      /><br />
-    </p>
+        <p>
+          <strong><em>Ejemplo: </em></strong>El siguiente código muestra un
+          formulario en el que el usuario puede seleccionar una fruta mediante
+          tres botones de opción. Cuando el usuario pulsa el botón “<em>OK</em>”
+          la página indica si se ha marcado alguna fruta y su valor:&nbsp;
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/4.1.2.png"
+            alt=""
+            role="presentation"
+          /><br />
+        </p>
 
-    <p style="text-align: center"></p>
+        <p style="text-align: center"></p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
@@ -471,56 +512,58 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p><br /></p>
+        <p><br /></p>
 
-    <h5>Casillas de verificación</h5>
+        <h5>Casillas de verificación</h5>
 
-    <p>
-      Las casillas de verificación son equivalentes a los botones de opción pero
-      <em
-        ><u><span>no</span> son mutuamente excluyentes </u></em
-      >y pueden marcarse unas independientemente de otras. Al margen de esta
-      diferencia poseen las mismas propiedades que los botones de opción para
-      seleccionar las que están marcadas mediante el selector
-      "<em>checked</em>:" y obtener el valor de su atributo value mediante la
-      función de <strong><em>$().val()</em></strong> de JQuery.&nbsp;
-    </p>
+        <p>
+          Las casillas de verificación son equivalentes a los botones de opción
+          pero
+          <em
+            ><u><span>no</span> son mutuamente excluyentes </u></em
+          >y pueden marcarse unas independientemente de otras. Al margen de esta
+          diferencia poseen las mismas propiedades que los botones de opción
+          para seleccionar las que están marcadas mediante el selector
+          "<em>checked</em>:" y obtener el valor de su atributo value mediante
+          la función de <strong><em>$().val()</em></strong> de JQuery.&nbsp;
+        </p>
 
-    <p>
-      También puede comprobarse si la casilla de verificación está marcada
-      empleando la función <em><strong>$().is()</strong></em> indicando como
-      argumento el selector<em>&nbsp;":checked"</em>. Esta función devuelve un
-      valor lógico cierto si la casilla está marcada o falso en caso
-      contrario.&nbsp;
-    </p>
+        <p>
+          También puede comprobarse si la casilla de verificación está marcada
+          empleando la función <em><strong>$().is()</strong></em> indicando como
+          argumento el selector<em>&nbsp;":checked"</em>. Esta función devuelve
+          un valor lógico cierto si la casilla está marcada o falso en caso
+          contrario.&nbsp;
+        </p>
 
-    <p>
-      <strong><em>Ejemplo:</em></strong> El siguiente código muestra un
-      formulario con una casilla de verificación. Cuando el usuario pulsa el
-      botón “<em>OK</em>” se muestra un mensaje indicando si está marcada o no:
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/4.1.3.png"
-        alt=""
-        role="presentation"
-      /><br />
-    </p>
+        <p>
+          <strong><em>Ejemplo:</em></strong> El siguiente código muestra un
+          formulario con una casilla de verificación. Cuando el usuario pulsa el
+          botón “<em>OK</em>” se muestra un mensaje indicando si está marcada o
+          no:
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/4.1.3.png"
+            alt=""
+            role="presentation"
+          /><br />
+        </p>
 
-    <p style="text-align: center"></p>
+        <p style="text-align: center"></p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
@@ -549,87 +592,89 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p><br /></p>
+        <p><br /></p>
 
-    <h5>Listas de selección</h5>
+        <h5>Listas de selección</h5>
 
-    <p>
-      Las listas de selección muestran una lista de valores entre los que se
-      puede seleccionar uno o varios. Cada una de las opciones mostradas se
-      declara como elementos
-      <span
-        ><span ><em >&lt;option&gt;</em></span
-        >.
-      </span>
-    </p>
+        <p>
+          Las listas de selección muestran una lista de valores entre los que se
+          puede seleccionar uno o varios. Cada una de las opciones mostradas se
+          declara como elementos
+          <span
+            ><span><em>&lt;option&gt;</em></span
+            >.
+          </span>
+        </p>
 
-    <p>
-      <strong><em>Ejemplo</em></strong
-      >: Sea la siguiente lista:
-    </p>
+        <p>
+          <strong><em>Ejemplo</em></strong
+          >: Sea la siguiente lista:
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            >    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"frutas"</span><span style="color:#274796; "> </span><span style="color:#074726; ">size</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"3"</span><span style="color:#a65700; ">&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"frutas"</span><span style="color:#274796; "> </span><span style="color:#074726; ">size</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"3"</span><span style="color:#a65700; ">&gt;</span>
         <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"1.00"</span><span style="color:#a65700; ">&gt;</span>Manzana<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
         <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"1.30"</span><span style="color:#a65700; ">&gt;</span>Platano<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
         <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#274796; "> </span><span style="color:#074726; ">value</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"0.95"</span><span style="color:#a65700; ">&gt;</span>Naranja<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">option</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">select</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>
-      <br />
-      Para obtener una matriz con todos los elementos de la lista empleamos el
-      selector:
-    </p>
+        <p>
+          <br />
+          Para obtener una matriz con todos los elementos de la lista empleamos
+          el selector:
+        </p>
 
-    <div class="editor-indent" style="margin-left: 30px">
-      <div class="editor-indent" style="margin-left: 30px">
-        <pre style="color: #000000; background: #ffffff">#frutas option</pre>
-      </div>
-    </div>
+        <div class="editor-indent" style="margin-left: 30px">
+          <div class="editor-indent" style="margin-left: 30px">
+            <pre style="color: #000000; background: #ffffff">
+#frutas option</pre
+            >
+          </div>
+        </div>
 
-    <p>
-      Para obtener los elementos seleccionados añadimos el selector “<span
-        ><em >:selected</em></span
-      >”:
-    </p>
+        <p>
+          Para obtener los elementos seleccionados añadimos el selector “<span
+            ><em>:selected</em></span
+          >”:
+        </p>
 
-    <div class="editor-indent" style="margin-left: 30px">
-      <div class="editor-indent" style="margin-left: 30px">
-        <pre style="color: #000000; background: #ffffff">
+        <div class="editor-indent" style="margin-left: 30px">
+          <div class="editor-indent" style="margin-left: 30px">
+            <pre style="color: #000000; background: #ffffff">
 #frutas option :selected</pre
-        >
-      </div>
-    </div>
+            >
+          </div>
+        </div>
 
-    <p>
-      Para comprobar si se ha seleccionado alguna opción se mira que la cantidad
-      de elementos seleccionados sea superior a 0 mediante
-      <strong><em>length</em></strong
-      >:
-    </p>
+        <p>
+          Para comprobar si se ha seleccionado alguna opción se mira que la
+          cantidad de elementos seleccionados sea superior a 0 mediante
+          <strong><em>length</em></strong
+          >:
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            >                <span style="color:#800000; font-weight:bold; ">var</span> $seleccion <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#frutas option:selected</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >                <span style="color:#800000; font-weight:bold; ">var</span> $seleccion <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#frutas option:selected</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
                 <span style="color:#696969; ">// Comprobacion de elemento seleccionado.</span>
                 <span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span>$seleccion<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">length</span> <span style="color:#808030; ">&gt;</span> <span style="color:#008c00; ">0</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
                     <span style="color:#696969; ">// Se ha seleccionado un elemento</span>
@@ -640,35 +685,35 @@
                     <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">No se ha seleccionado ninguna fruta</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
                 <span style="color:#800080; ">}</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>
-      <br />
-      De cada elemento de la lista puede obtenerse el valor mostrado al usuario
-      con la función <strong><em>$().html()</em></strong
-      >, y el valor de su propiedad <em>value</em> mediante la función
-      <strong><em>$().val()</em></strong
-      >.
-    </p>
+        <p>
+          <br />
+          De cada elemento de la lista puede obtenerse el valor mostrado al
+          usuario con la función <strong><em>$().html()</em></strong
+          >, y el valor de su propiedad <em>value</em> mediante la función
+          <strong><em>$().val()</em></strong
+          >.
+        </p>
 
-    <p>
-      <strong><em>Ejemplo: </em></strong>El siguiente código muestra una lista
-      de selección simple con tres posibles frutas a elegir. Cuando se pulsa el
-      botón “ <em>OK</em>” (evento <em><strong>click</strong></em
-      >) &nbsp;se indica si se ha seleccionado alguna fruta mostrando cuál ha
-      sido y el valor del coste en su atributo ‘<em>value</em>’:
-    </p>
+        <p>
+          <strong><em>Ejemplo: </em></strong>El siguiente código muestra una
+          lista de selección simple con tres posibles frutas a elegir. Cuando se
+          pulsa el botón “ <em>OK</em>” (evento <em><strong>click</strong></em
+          >) &nbsp;se indica si se ha seleccionado alguna fruta mostrando cuál
+          ha sido y el valor del coste en su atributo ‘<em>value</em>’:
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -701,76 +746,74 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
-    <h5>Lista de selección múltiple</h5>
+        <h5>Lista de selección múltiple</h5>
 
-    <p>
-      Una lista de selección múltiple añade un atributo
-      <span
-        ><span ><em >multiple</em></span> </span
-      >que permite la selección de varias opciones al mismo tiempo. En este
-      caso, la selección con&nbsp;<em>:selected</em>&nbsp;<em
-        ><u
-          >devuelve todas las opciones seleccionadas que pueden ser varias</u
-        ></em
-      >. La propiedad <strong><em>length</em></strong> indica el total de
-      opciones seleccionadas. Para obtener el valor del atributo&nbsp;<em
-        >value</em
-      >
-      de todas ellas puede recorrerse la selección empleando la
-      función&nbsp;<strong><em>$().each()</em></strong
-      >:
-    </p>
+        <p>
+          Una lista de selección múltiple añade un atributo
+          <span
+            ><span><em>multiple</em></span> </span
+          >que permite la selección de varias opciones al mismo tiempo. En este
+          caso, la selección con&nbsp;<em>:selected</em>&nbsp;<em
+            ><u
+              >devuelve todas las opciones seleccionadas que pueden ser
+              varias</u
+            ></em
+          >. La propiedad <strong><em>length</em></strong> indica el total de
+          opciones seleccionadas. Para obtener el valor del atributo&nbsp;<em
+            >value</em
+          >
+          de todas ellas puede recorrerse la selección empleando la
+          función&nbsp;<strong><em>$().each()</em></strong
+          >:
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            >                <span style="color:#800000; font-weight:bold; ">var</span> $seleccion <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#frutas option:selected</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >                <span style="color:#800000; font-weight:bold; ">var</span> $seleccion <span style="color:#808030; ">=</span> $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">#frutas option:selected</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
                 $seleccion<span style="color:#808030; ">.</span>each<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
                         <span style="color:#696969; ">// Mostrar datos de cada opción seleccionada en la lista</span>
                         <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">El elemento seleccionado es: </span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>html<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
                         <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">El valor del producto seleccionado es: </span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>val<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
                 <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
-    <p>
-      <strong><em>Ejemplo:</em></strong> El siguiente código muestra la misma
-      página del ejemplo anterior permitiendo la selección de varias frutas al
-      mismo tiempo. Cuando el usuario pulsa el botón “OK” se indica el nº de
-      opciones seleccionadas y sus correspondientes valores: &nbsp;
-    </p>
+        <p>
+          <strong><em>Ejemplo:</em></strong> El siguiente código muestra la
+          misma página del ejemplo anterior permitiendo la selección de varias
+          frutas al mismo tiempo. Cuando el usuario pulsa el botón “OK” se
+          indica el nº de opciones seleccionadas y sus correspondientes valores:
+          &nbsp;
+        </p>
 
-    <p style="text-align: center">
-      <strong><em> </em></strong
-      ><img
-        src="../../.imagenes/4.1.4.png"
-        alt=""
-        role="presentation"
-      />
-    </p>
+        <p style="text-align: center">
+          <strong><em> </em></strong
+          ><img src="../../.imagenes/4.1.4.png" alt="" role="presentation" />
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
@@ -807,107 +850,109 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <em
-      ><u><br clear="all" /> </u
-    ></em>
+        <em
+          ><u><br clear="all" /> </u
+        ></em>
 
-    <p><br /></p>
+        <p><br /></p>
 
-    <h5>Agregar&nbsp; opciones a una lista</h5>
+        <h5>Agregar&nbsp; opciones a una lista</h5>
 
-    <p>
-      <br />JQuery permite eliminar y añadir opciones de una lista de formulario
-      durante la ejecución. Esto puede resultar útil en aquellos casos en los
-      que las opciones a mostrar dependen de una selección previa.
-    </p>
+        <p>
+          <br />JQuery permite eliminar y añadir opciones de una lista de
+          formulario durante la ejecución. Esto puede resultar útil en aquellos
+          casos en los que las opciones a mostrar dependen de una selección
+          previa.
+        </p>
 
-    <p>
-      Para añadir opciones a una lista desde JQuery pueden seleccionarse el
-      elemento <em>&lt;select&gt;</em> y agregar nuevos elementos
-      <em>&lt;option&gt;</em> mediante la función
-      <strong><em>$().append(</em></strong
-      >) ya vista anteriormente:&nbsp;
-    </p>
+        <p>
+          Para añadir opciones a una lista desde JQuery pueden seleccionarse el
+          elemento <em>&lt;select&gt;</em> y agregar nuevos elementos
+          <em>&lt;option&gt;</em> mediante la función
+          <strong><em>$().append(</em></strong
+          >) ya vista anteriormente:&nbsp;
+        </p>
 
-    <p>
-      Sea por ejemplo una lista <em>&lt;select&gt;</em> con
-      <em>id = "dias",</em> para añadir las opciones "Lunes", "Martes" y
-      "Miércoles" con JQuery emplearíamos el siguiente código:&nbsp;
-    </p>
+        <p>
+          Sea por ejemplo una lista <em>&lt;select&gt;</em> con
+          <em>id = "dias",</em> para añadir las opciones "Lunes", "Martes" y
+          "Miércoles" con JQuery emplearíamos el siguiente código:&nbsp;
+        </p>
 
-    <p>
-      2.- Añadir nuevos elementos <em>&lt;option&gt;&lt;/option&gt;</em> a la
-      lista mediante la función <strong><em>append():</em></strong>
-    </p>
+        <p>
+          2.- Añadir nuevos elementos <em>&lt;option&gt;&lt;/option&gt;</em> a
+          la lista mediante la función <strong><em>append():</em></strong>
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            >	<span style="color:#696969; ">// Agregado a la lista de dias, cada dia en el idioma seleccionado</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >	<span style="color:#696969; ">// Agregado a la lista de dias, cada dia en el idioma seleccionado</span>
 	$<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#dias</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>append<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">&lt;option&gt;Lunes&lt;/option&gt;</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 	$<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#dias</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>append<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">&lt;option&gt;Martes&lt;/option&gt;</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 	$<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#dias</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>append<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">&lt;option&gt;Miercoles&lt;/option&gt;</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
-    <p>
-      <strong><em>Ejemplo:</em></strong> Sea una web en la que el usuario puede
-      seleccionar un día de la semana en su correspondiente idioma. Para ello la
-      web consta de una lista con 4 idiomas ( castellano, inglés, euskera, y
-      francés ), y una segunda lista donde deben mostrarse los días de la semana
-      en el idioma seleccionado. La idea es emplear JQuery para detectar la
-      selección de un idioma en la lista de idiomas, y agregar los días de la
-      semana en el idioma seleccionada a la segunda lista eliminando los
-      existentes. &nbsp;
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/4.1.5.png"
-        alt=""
-        role="presentation"
-      /><br />
-    </p>
+        <p>
+          <strong><em>Ejemplo:</em></strong> Sea una web en la que el usuario
+          puede seleccionar un día de la semana en su correspondiente idioma.
+          Para ello la web consta de una lista con 4 idiomas ( castellano,
+          inglés, euskera, y francés ), y una segunda lista donde deben
+          mostrarse los días de la semana en el idioma seleccionado. La idea es
+          emplear JQuery para detectar la selección de un idioma en la lista de
+          idiomas, y agregar los días de la semana en el idioma seleccionada a
+          la segunda lista eliminando los existentes. &nbsp;
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/4.1.5.png"
+            alt=""
+            role="presentation"
+          /><br />
+        </p>
 
-    <p>
-      Para obtener el idioma seleccionado por el usuario se captura el evento
-      <strong><em>change </em></strong>de la lista de idiomas. Este evento se
-      produce cada vez que cambia la opción seleccionada. Se&nbsp;<span
-        style="font-size: 0.9375rem"
-        >obtiene el índice del idioma seleccionado mediante la función
-        <strong><em>$().val()&nbsp;</em></strong></span
-      >
-      <span style="font-size: 0.9375rem"
-        >del elemento seleccionado mediante&nbsp; “</span
-      ><em style="font-size: 0.9375rem">#idiomas option:selected</em
-      ><span style="font-size: 0.9375rem">”</span>
-    </p>
+        <p>
+          Para obtener el idioma seleccionado por el usuario se captura el
+          evento
+          <strong><em>change </em></strong>de la lista de idiomas. Este evento
+          se produce cada vez que cambia la opción seleccionada. Se&nbsp;<span
+            style="font-size: 0.9375rem"
+            >obtiene el índice del idioma seleccionado mediante la función
+            <strong><em>$().val()&nbsp;</em></strong></span
+          >
+          <span style="font-size: 0.9375rem"
+            >del elemento seleccionado mediante&nbsp; “</span
+          ><em style="font-size: 0.9375rem">#idiomas option:selected</em
+          ><span style="font-size: 0.9375rem">”</span>
+        </p>
 
-    <p>
-      La función <span><em>RefrescarListaDias() </em></span>recibe el
-      índice del idioma seleccionado y rellena la lista de días con los nombres
-      de los días recogidos en la matriz de matrices "<em>dias</em>":&nbsp;
-    </p>
+        <p>
+          La función <span><em>RefrescarListaDias() </em></span>recibe el índice
+          del idioma seleccionado y rellena la lista de días con los nombres de
+          los días recogidos en la matriz de matrices "<em>dias</em>":&nbsp;
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            >	<span style="color:#696969; ">// Matriz de matrices con los dias por idioma. </span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >	<span style="color:#696969; ">// Matriz de matrices con los dias por idioma. </span>
 	<span style="color:#800000; font-weight:bold; ">var</span> dias <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">new</span> <span style="color:#797997; ">Array</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 	dias<span style="color:#808030; ">[</span><span style="color:#008c00; ">0</span><span style="color:#808030; ">]</span> <span style="color:#808030; ">=</span> <span style="color:#808030; ">[</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">lunes</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">martes</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">miercoles</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">jueves</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">viernes</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">sabado</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">domingo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">]</span><span style="color:#800080; ">;</span>
 	dias<span style="color:#808030; ">[</span><span style="color:#008c00; ">1</span><span style="color:#808030; ">]</span> <span style="color:#808030; ">=</span> <span style="color:#808030; ">[</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">monday</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">tuesday</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">wednesday</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">thursday</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">friday</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">satuday</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">sunday</span><span style="color:#800000; ">'</span><span style="color:#808030; ">]</span><span style="color:#800080; ">;</span>
@@ -925,22 +970,24 @@
 		<span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 	<span style="color:#800080; ">}</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <br clear="all" />
+        <br clear="all" />
 
-    <p>&nbsp;El código completo de la página queda del siguiente modo:&nbsp;</p>
+        <p>
+          &nbsp;El código completo de la página queda del siguiente modo:&nbsp;
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -989,61 +1036,86 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
-    <p>
-      <strong><em>Nota:</em></strong> Para recorrer los valores de la matriz de
-      días estamos empleando la función&nbsp;<strong><em>$.each()</em></strong>
-      de JQuery. Esta función permite obtener uno a uno todos los valores
-      contenidos en la matriz indicada como argumento, y no debe confundirse con
-      la función <strong><em>$().each() </em></strong>que se invoca contra una
-      seleccion para obtener uno a uno todos los elementos contenidos.<br />
-    </p>
-    <p></p>
-  </div>
-</div>
-<a
-  href="../3. JQuery - Manejo de eventos/3.4. Manejo de EventObject.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Anterior lección
-</a>
-<a
-  href="../4. JQuery - Validación de formularios/4.2. Niveles de validación.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Siguiente lección
-</a>
+        <p>
+          <strong><em>Nota:</em></strong> Para recorrer los valores de la matriz
+          de días estamos empleando la función&nbsp;<strong
+            ><em>$.each()</em></strong
+          >
+          de JQuery. Esta función permite obtener uno a uno todos los valores
+          contenidos en la matriz indicada como argumento, y no debe confundirse
+          con la función <strong><em>$().each() </em></strong>que se invoca
+          contra una seleccion para obtener uno a uno todos los elementos
+          contenidos.<br />
+        </p>
+        <p></p>
+      </div>
+    </div>
+    <a
+      href="../3. JQuery - Manejo de eventos/3.4. Manejo de EventObject.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Anterior lección
+    </a>
+    <a
+      href="../4. JQuery - Validación de formularios/4.2. Niveles de validación.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Siguiente lección
+    </a>
+    <a
+      href="../../readme.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Inicio/Leeme
+    </a>
+  </body>
+</html>

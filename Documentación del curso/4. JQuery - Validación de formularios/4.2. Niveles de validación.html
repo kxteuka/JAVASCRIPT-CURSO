@@ -1,81 +1,117 @@
-<h2>4.2. Niveles de validación</h2>
-<h3>Niveles de validación</h3>
-<div class="box py-3 contents">
-  <div class="no-overflow">
-    <p dir="ltr" style="text-align: left"></p>
-    <p>Existen dos modos de validar los formularios.&nbsp;</p>
-    <p></p>
-    <ul>
-      <li>
-        <em><u>La validación a nivel de control </u></em>--&gt; Valida el valor
-        dado o seleccionado por el usuario por cada control en el momento en que
-        éste se introduce advirtiéndole del error.&nbsp;
-      </li>
-      <li>
-        <em><u>La validación a nivel de formulario</u></em> --&gt; Valida los
-        valores del formulario en conjunto para verificar si pueden enviarse
-        (<em>submit</em>).&nbsp;
-      </li>
-    </ul>
-    <p>
-      Ambas técnicas no son excluyentes sino complementarias, de modo que pueden
-      combinarse para mejorar la experiencia del usuario al validarse los
-      valores.&nbsp;
-    </p>
-    <p>
-      <span style="font-size: 1.17188rem; font-weight: 600"
-        >Validación a nivel del control</span
-      ><br />
-    </p>
-    <p></p>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iván López" />
+    <title>Curso Básico de JavaScript y jQuery</title>
+    <style>
+      .center-align {
+        text-align: center;
+      }
+      .right-align {
+        text-align: right;
+      }
+      .margin-left {
+        margin-left: 20px;
+      }
+      .custom-link-button {
+        display: inline-block;
+        padding: 4px 12px;
+        font-size: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>4.2. Niveles de validación</h2>
+    <h3>Niveles de validación</h3>
+    <div class="box py-3 contents">
+      <div class="no-overflow">
+        <p dir="ltr" style="text-align: left"></p>
+        <p>Existen dos modos de validar los formularios.&nbsp;</p>
+        <p></p>
+        <ul>
+          <li>
+            <em><u>La validación a nivel de control </u></em>--&gt; Valida el
+            valor dado o seleccionado por el usuario por cada control en el
+            momento en que éste se introduce advirtiéndole del error.&nbsp;
+          </li>
+          <li>
+            <em><u>La validación a nivel de formulario</u></em> --&gt; Valida
+            los valores del formulario en conjunto para verificar si pueden
+            enviarse (<em>submit</em>).&nbsp;
+          </li>
+        </ul>
+        <p>
+          Ambas técnicas no son excluyentes sino complementarias, de modo que
+          pueden combinarse para mejorar la experiencia del usuario al validarse
+          los valores.&nbsp;
+        </p>
+        <p>
+          <span style="font-size: 1.17188rem; font-weight: 600"
+            >Validación a nivel del control</span
+          ><br />
+        </p>
+        <p></p>
 
-    <p style="text-align: justify">
-      La validación a nivel de control comprueba cada control según el usuario
-      va introduciendo valores ( evento <strong><em>change</em></strong> ), o al
-      perder el foco ( evento <strong><em>blur</em></strong> ). En caso de no
-      ser válido el valor dado por el usuario se muestra un indicador de error y
-      se impide el cambio del foco obligando al usuario a corregir el error.
-    </p>
+        <p style="text-align: justify">
+          La validación a nivel de control comprueba cada control según el
+          usuario va introduciendo valores ( evento
+          <strong><em>change</em></strong> ), o al perder el foco ( evento
+          <strong><em>blur</em></strong> ). En caso de no ser válido el valor
+          dado por el usuario se muestra un indicador de error y se impide el
+          cambio del foco obligando al usuario a corregir el error.
+        </p>
 
-    <p>
-      <strong style="font-size: 0.9375rem"
-        ><em><u>Ejemplo</u>: </em></strong
-      ><span style="font-size: 0.9375rem"
-        >Sea un formulario provisto de dos cajas de texto donde validamos que el
-        usuario introduzca un valor en la caja de texto nombre, y un número
-        válido en la caja de texto correspondiente a la edad:</span
-      >
-    </p>
-    <p style="text-align: center">
-      <span style="font-size: 0.9375rem"
-        ><img
-          src="../../.imagenes/4.2.1.png"
-          alt=""
-          role="presentation" /><br
-      /></span>
-    </p>
+        <p>
+          <strong style="font-size: 0.9375rem"
+            ><em><u>Ejemplo</u>: </em></strong
+          ><span style="font-size: 0.9375rem"
+            >Sea un formulario provisto de dos cajas de texto donde validamos
+            que el usuario introduzca un valor en la caja de texto nombre, y un
+            número válido en la caja de texto correspondiente a la edad:</span
+          >
+        </p>
+        <p style="text-align: center">
+          <span style="font-size: 0.9375rem"
+            ><img
+              src="../../.imagenes/4.2.1.png"
+              alt=""
+              role="presentation" /><br
+          /></span>
+        </p>
 
-    <p>
-      &nbsp;En ambos casos, se comprueba que el valor introducido es válido en
-      el momento que la cajas de texto pierden el foco. Si el valor no es válido
-      se muestra un indicador de error y la caja de texto retiene el foco:&nbsp;
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/4.2.2.png"
-        alt=""
-        role="presentation"
-      /><br />
-    </p>
-    <p style="text-align: justify">El código sería el siguiente:&nbsp;</p>
+        <p>
+          &nbsp;En ambos casos, se comprueba que el valor introducido es válido
+          en el momento que la cajas de texto pierden el foco. Si el valor no es
+          válido se muestra un indicador de error y la caja de texto retiene el
+          foco:&nbsp;
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/4.2.2.png"
+            alt=""
+            role="presentation"
+          /><br />
+        </p>
+        <p style="text-align: justify">El código sería el siguiente:&nbsp;</p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -120,76 +156,78 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
-    <h5><span>Validación a nivel de formulario</span></h5>
+        <h5><span>Validación a nivel de formulario</span></h5>
 
-    <p>
-      La validación a nivel de formulario se realiza normalmente al pulsar el
-      botón de envío ( evento <em>submit </em>). Se comprueba entonces el valor
-      de todos los controles a la vez, de modo que si alguno no es correcto; se
-      cancela el envío mostrando un mensaje de error al usuario.
-    </p>
+        <p>
+          La validación a nivel de formulario se realiza normalmente al pulsar
+          el botón de envío ( evento <em>submit </em>). Se comprueba entonces el
+          valor de todos los controles a la vez, de modo que si alguno no es
+          correcto; se cancela el envío mostrando un mensaje de error al
+          usuario.
+        </p>
 
-    <p>
-      <span style="font-size: 0.9375rem"
-        >En este caso se recomienda crear una </span
-      ><em style="font-size: 0.9375rem"><u>función de validación</u></em
-      ><span style="font-size: 0.9375rem">
-        que compruebe todos los campos mediante funciones de validación
-        auxiliares y retorne valor lógico indicando si todos los valores son
-        correctos o no</span
-      ><span style="font-size: 0.9375rem"
-        >. Esta función debe llamarse al producirse el evento</span
-      ><strong style="font-size: 0.9375rem"><em> submit</em></strong
-      ><span style="font-size: 0.9375rem">
-        del formulario, y en caso de retornar un valor falso</span
-      ><strong style="font-size: 0.9375rem"><em>&nbsp;</em></strong
-      ><span style="font-size: 0.9375rem"
-        >debe cancelarse la acción predeterminada del evento llamando a la
-        función<em> preventDefault() </em>del objeto
-        <strong><em>Event:&nbsp;</em></strong></span
-      >
-    </p>
+        <p>
+          <span style="font-size: 0.9375rem"
+            >En este caso se recomienda crear una </span
+          ><em style="font-size: 0.9375rem"><u>función de validación</u></em
+          ><span style="font-size: 0.9375rem">
+            que compruebe todos los campos mediante funciones de validación
+            auxiliares y retorne valor lógico indicando si todos los valores son
+            correctos o no</span
+          ><span style="font-size: 0.9375rem"
+            >. Esta función debe llamarse al producirse el evento</span
+          ><strong style="font-size: 0.9375rem"><em> submit</em></strong
+          ><span style="font-size: 0.9375rem">
+            del formulario, y en caso de retornar un valor falso</span
+          ><strong style="font-size: 0.9375rem"><em>&nbsp;</em></strong
+          ><span style="font-size: 0.9375rem"
+            >debe cancelarse la acción predeterminada del evento llamando a la
+            función<em> preventDefault() </em>del objeto
+            <strong><em>Event:&nbsp;</em></strong></span
+          >
+        </p>
 
-    <p>
-      <span
-        ><span
-          ><strong style="font-style: italic">Ejemplo: </strong>Sea la siguiente
-          página con el mismo formulario del ejemplo anterior pero con
-          validación a nivel de formulario que se realiza al momento de pulsar
-          el botón "<em>ENVIAR</em>".&nbsp;</span
-        ></span
-      >
-    </p>
-    <p style="text-align: center">
-      <span
-        ><span
-          ><img
-            src="../../.imagenes/4.2.3.png"
-            alt=""
-            role="presentation" /><br /></span
-      ></span>
-    </p>
-    <p>
-      Para ayudar en la validación de los valores introducidos se define la
-      función <em>valido() </em>que comprueba el valor de ambas cajas de texto
-      mostrando los mensajes de advertencia correspondientes en caso de error, y
-      retorna un valor lógico indicando si todos los valores son válidos.&nbsp;
-    </p>
+        <p>
+          <span
+            ><span
+              ><strong style="font-style: italic">Ejemplo: </strong>Sea la
+              siguiente página con el mismo formulario del ejemplo anterior pero
+              con validación a nivel de formulario que se realiza al momento de
+              pulsar el botón "<em>ENVIAR</em>".&nbsp;</span
+            ></span
+          >
+        </p>
+        <p style="text-align: center">
+          <span
+            ><span
+              ><img
+                src="../../.imagenes/4.2.3.png"
+                alt=""
+                role="presentation" /><br /></span
+          ></span>
+        </p>
+        <p>
+          Para ayudar en la validación de los valores introducidos se define la
+          función <em>valido() </em>que comprueba el valor de ambas cajas de
+          texto mostrando los mensajes de advertencia correspondientes en caso
+          de error, y retorna un valor lógico indicando si todos los valores son
+          válidos.&nbsp;
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -235,82 +273,82 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
-    <h5>Funciones de validación</h5>
-    <p>
-      <br />Las siguientes funciones se muestran de ejemplo para la validación
-      de diferentes tipos de valores en cajas de texto:&nbsp;
-    </p>
+        <h5>Funciones de validación</h5>
+        <p>
+          <br />Las siguientes funciones se muestran de ejemplo para la
+          validación de diferentes tipos de valores en cajas de texto:&nbsp;
+        </p>
 
-    <p>
-      <em><u>Validación de texto obligatorio</u></em
-      >&nbsp;--&gt; Retorna un valor lógico ‘cierto’ si el valor es dado está
-      vacío o es nulo.
-    </p>
+        <p>
+          <em><u>Validación de texto obligatorio</u></em
+          >&nbsp;--&gt; Retorna un valor lógico ‘cierto’ si el valor es dado
+          está vacío o es nulo.
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >            <span style="color:#800000; font-weight:bold; ">function</span> esVacio<span style="color:#808030; ">(</span>valor<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >            <span style="color:#800000; font-weight:bold; ">function</span> esVacio<span style="color:#808030; ">(</span>valor<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
                 <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#808030; ">(</span> valor <span style="color:#808030; ">==</span> <span style="color:#0f4d75; ">null</span> <span style="color:#808030; ">||</span> valor<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">length</span> <span style="color:#808030; ">==</span> <span style="color:#008c00; ">0</span> <span style="color:#808030; ">||</span><span style="color:#0000e6; "> </span><span style="color:#800000; ">/</span><span style="color:#808030; ">^</span><span style="color:#797997; ">\s</span><span style="color:#808030; ">+</span><span style="color:#808030; ">$</span><span style="color:#800000; ">/</span><span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">test</span><span style="color:#808030; ">(</span>valor<span style="color:#808030; ">)</span> <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
             <span style="color:#800080; ">}</span> 
 </pre>
 
-    <p>
-      <em><u>Validación de valor numérico</u></em
-      >&nbsp;--&gt; Retorna un valor lógico ‘cierto’ si el valor dado es un
-      valor numérico válido.
-    </p>
+        <p>
+          <em><u>Validación de valor numérico</u></em
+          >&nbsp;--&gt; Retorna un valor lógico ‘cierto’ si el valor dado es un
+          valor numérico válido.
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >            <span style="color:#800000; font-weight:bold; ">function</span> esNumero<span style="color:#808030; ">(</span> valor <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >            <span style="color:#800000; font-weight:bold; ">function</span> esNumero<span style="color:#808030; ">(</span> valor <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
                 <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#808030; ">!</span><span style="color:#800000; font-weight:bold; ">isNaN</span><span style="color:#808030; ">(</span>valor<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
             <span style="color:#800080; ">}</span>
 </pre>
 
-    <p>
-      <em><u>Validación de dirección de correo electrónico</u></em
-      >&nbsp;--&gt; Retorna un valor lógico ‘cierto’ si el argumento dado es una
-      dirección de e-mail correctamente formateada.&nbsp;<span
-        style="font-size: 0.9375rem"
-        >La función </span
-      ><strong style="font-size: 0.9375rem"><em>test()</em></strong>
-      <span style="font-size: 0.9375rem">
-        de Javascript se llama a partir de una expresión regular y devuelve un
-        valor lógico cierto&nbsp;</span
-      ><span style="font-size: 0.9375rem"
-        >si el valor indicado como argumento cumple con la expresión regular, o
-        falso</span
-      ><span style="font-size: 0.9375rem">&nbsp;en caso contrario:</span>
-    </p>
+        <p>
+          <em><u>Validación de dirección de correo electrónico</u></em
+          >&nbsp;--&gt; Retorna un valor lógico ‘cierto’ si el argumento dado es
+          una dirección de e-mail correctamente formateada.&nbsp;<span
+            style="font-size: 0.9375rem"
+            >La función </span
+          ><strong style="font-size: 0.9375rem"><em>test()</em></strong>
+          <span style="font-size: 0.9375rem">
+            de Javascript se llama a partir de una expresión regular y devuelve
+            un valor lógico cierto&nbsp;</span
+          ><span style="font-size: 0.9375rem"
+            >si el valor indicado como argumento cumple con la expresión
+            regular, o falso</span
+          ><span style="font-size: 0.9375rem">&nbsp;en caso contrario:</span>
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >            <span style="color:#800000; font-weight:bold; ">function</span> esMail<span style="color:#808030; ">(</span> valor <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >            <span style="color:#800000; font-weight:bold; ">function</span> esMail<span style="color:#808030; ">(</span> valor <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
                 <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#808030; ">(</span><span style="color:#800000; ">/</span><span style="color:#797997; ">\w</span><span style="color:#808030; ">+</span><span style="color:#808030; ">(</span><span style="color:#808030; ">[</span><span style="color:#808030; ">-</span><span style="color:#0000e6; ">+.'</span><span style="color:#808030; ">]</span><span style="color:#797997; ">\w</span><span style="color:#808030; ">+</span><span style="color:#808030; ">)</span><span style="color:#808030; ">*</span><span style="color:#0000e6; ">@</span><span style="color:#797997; ">\w</span><span style="color:#808030; ">+</span><span style="color:#808030; ">(</span><span style="color:#808030; ">[</span><span style="color:#808030; ">-</span><span style="color:#0000e6; ">.</span><span style="color:#808030; ">]</span><span style="color:#797997; ">\w</span><span style="color:#808030; ">+</span><span style="color:#808030; ">)</span><span style="color:#808030; ">*</span><span style="color:#0f69ff; ">\.</span><span style="color:#797997; ">\w</span><span style="color:#808030; ">+</span><span style="color:#808030; ">(</span><span style="color:#808030; ">[</span><span style="color:#808030; ">-</span><span style="color:#0000e6; ">.</span><span style="color:#808030; ">]</span><span style="color:#797997; ">\w</span><span style="color:#808030; ">+</span><span style="color:#808030; ">)</span><span style="color:#800000; ">/</span><span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">test</span><span style="color:#808030; ">(</span>valor<span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
             <span style="color:#800080; ">}</span> 
 </pre>
-    (*) Es importante destacar que esta función verifica si el valor dado como
-    argumento tiene la forma correcta de una dirección de e-mail,
-    <em><u>pero no garantiza que la cuenta realmente exista.&nbsp;</u></em
-    ><br />
+        (*) Es importante destacar que esta función verifica si el valor dado
+        como argumento tiene la forma correcta de una dirección de e-mail,
+        <em><u>pero no garantiza que la cuenta realmente exista.&nbsp;</u></em
+        ><br />
 
-    <p>
-      <br />
-      <em><u>Validación de número de DNI</u></em
-      >&nbsp;--&gt; Retorna un valor lógico ‘cierto’ si el argumento dado es un
-      DNI correctamente formateado. Se comprueba el formato y la letra:
-    </p>
+        <p>
+          <br />
+          <em><u>Validación de número de DNI</u></em
+          >&nbsp;--&gt; Retorna un valor lógico ‘cierto’ si el argumento dado es
+          un DNI correctamente formateado. Se comprueba el formato y la letra:
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >            <span style="color:#800000; font-weight:bold; ">function</span> esDNI<span style="color:#808030; ">(</span> valor <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >            <span style="color:#800000; font-weight:bold; ">function</span> esDNI<span style="color:#808030; ">(</span> valor <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
                 <span style="color:#800000; font-weight:bold; ">var</span> ok <span style="color:#808030; ">=</span> <span style="color:#0f4d75; ">true</span><span style="color:#800080; ">;</span> 
                 <span style="color:#800000; font-weight:bold; ">var</span> letras <span style="color:#808030; ">=</span> <span style="color:#808030; ">[</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">T</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">R</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">W</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">A</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">G</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">M</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">Y</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">F</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">P</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">D</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">X</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">B</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">N</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">J</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">Z</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">S</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">Q</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">V</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">H</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">L</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">C</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">K</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">E</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">T</span><span style="color:#800000; ">'</span><span style="color:#808030; ">]</span><span style="color:#800080; ">;</span>
                 <span style="color:#800000; font-weight:bold; ">if</span><span style="color:#808030; ">(</span> <span style="color:#808030; ">!</span><span style="color:#808030; ">(</span><span style="color:#800000; ">/</span><span style="color:#808030; ">^</span><span style="color:#797997; ">\d</span><span style="color:#808030; ">{</span><span style="color:#008c00; ">8</span><span style="color:#808030; ">}</span><span style="color:#808030; ">[</span><span style="color:#0000e6; ">A</span><span style="color:#808030; ">-</span><span style="color:#0000e6; ">Z</span><span style="color:#808030; ">]</span><span style="color:#808030; ">$</span><span style="color:#800000; ">/</span><span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">test</span><span style="color:#808030; ">(</span>valor<span style="color:#808030; ">)</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
@@ -322,155 +360,159 @@
             <span style="color:#800080; ">}</span>
 </pre>
 
-    <p>
-      <em><u>Validación de número de teléfono</u></em> à Retorna un valor lógico
-      ‘cierto’ si el argumento indicado es un número de teléfono compuesto por 9
-      cifras numéricas.
-    </p>
+        <p>
+          <em><u>Validación de número de teléfono</u></em> à Retorna un valor
+          lógico ‘cierto’ si el argumento indicado es un número de teléfono
+          compuesto por 9 cifras numéricas.
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >            <span style="color:#800000; font-weight:bold; ">function</span> esTelefono<span style="color:#808030; ">(</span> valor <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >            <span style="color:#800000; font-weight:bold; ">function</span> esTelefono<span style="color:#808030; ">(</span> valor <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
                 <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#808030; ">(</span><span style="color:#800000; ">/</span><span style="color:#808030; ">^</span><span style="color:#797997; ">\d</span><span style="color:#808030; ">{</span><span style="color:#008c00; ">9</span><span style="color:#808030; ">}</span><span style="color:#808030; ">$</span><span style="color:#800000; ">/</span><span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">test</span><span style="color:#808030; ">(</span>valor<span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
             <span style="color:#800080; ">}</span></pre>
-    <br />
-    <p></p>
-  </div>
-</div>
-<h3>Validación de formularios en HTML5</h3>
-<div class="box py-3 contents">
-  <div class="no-overflow">
-    <p dir="ltr" style="text-align: left"></p>
-    <p>
-      HTML5 introduce múltiples mecanismos que permiten ciertas validaciones
-      triviales sin necesidad de tener que emplear Javascript:&nbsp;
-    </p>
-    <p></p>
-    <ul>
-      <li>
-        <span style="font-size: 0.9375rem"
-          >Validación de datos de un determinado tipo en función del valor del
-          atributo <em>type </em>del elemento &lt;input&gt; ( </span
-        ><em style="font-size: 0.9375rem">type=”mail/url/number…”</em
-        ><span style="font-size: 0.9375rem"> )</span>
-      </li>
-      <li>
-        Validación de valores requeridos mediante el uso del atributo
-        <em>required</em>.&nbsp;
-      </li>
-      <li>
-        Validación de valores con un determinado mediante el uso del atributo
-        <em>pattern</em>.
-      </li>
-    </ul>
-    <p></p>
+        <br />
+        <p></p>
+      </div>
+    </div>
+    <h3>Validación de formularios en HTML5</h3>
+    <div class="box py-3 contents">
+      <div class="no-overflow">
+        <p dir="ltr" style="text-align: left"></p>
+        <p>
+          HTML5 introduce múltiples mecanismos que permiten ciertas validaciones
+          triviales sin necesidad de tener que emplear Javascript:&nbsp;
+        </p>
+        <p></p>
+        <ul>
+          <li>
+            <span style="font-size: 0.9375rem"
+              >Validación de datos de un determinado tipo en función del valor
+              del atributo <em>type </em>del elemento &lt;input&gt; ( </span
+            ><em style="font-size: 0.9375rem">type=”mail/url/number…”</em
+            ><span style="font-size: 0.9375rem"> )</span>
+          </li>
+          <li>
+            Validación de valores requeridos mediante el uso del atributo
+            <em>required</em>.&nbsp;
+          </li>
+          <li>
+            Validación de valores con un determinado mediante el uso del
+            atributo
+            <em>pattern</em>.
+          </li>
+        </ul>
+        <p></p>
 
-    <p>
-      Todos estos mecanismos permiten la validación de los elementos en el
-      momento de realizarse el envío del formulario. Si alguno falla se detiene
-      el envío de datos mostrando un mensaje de advertencia
-      predeterminado.&nbsp;
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/4.2.4.png"
-        alt=""
-        role="presentation"
-      /><br />
-    </p>
-    <p>
-      Sin embargo, cuando se tratan de validaciones más complejas como comprobar
-      varios elementos a la vez o verificar el resultado de un cálculo es
-      necesario nuevamente emplear javascript.&nbsp;
-    </p>
-    <p>
-      HTML5 define una serie métodos y eventos que permiten gestionar la
-      validación de los campos desde Javascript:&nbsp;
-    </p>
+        <p>
+          Todos estos mecanismos permiten la validación de los elementos en el
+          momento de realizarse el envío del formulario. Si alguno falla se
+          detiene el envío de datos mostrando un mensaje de advertencia
+          predeterminado.&nbsp;
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/4.2.4.png"
+            alt=""
+            role="presentation"
+          /><br />
+        </p>
+        <p>
+          Sin embargo, cuando se tratan de validaciones más complejas como
+          comprobar varios elementos a la vez o verificar el resultado de un
+          cálculo es necesario nuevamente emplear javascript.&nbsp;
+        </p>
+        <p>
+          HTML5 define una serie métodos y eventos que permiten gestionar la
+          validación de los campos desde Javascript:&nbsp;
+        </p>
 
-    <p></p>
-    <ul>
-      <li>
-        Evento <strong><em>invalid </em></strong>--&gt; Se activa si algún
-        elemento no es válido en el momento de pulsarse el botón "submit".&nbsp;
-      </li>
-      <li>
-        <span style="font-size: 0.9375rem"
-          >Propiedad <strong><em>validity </em></strong>--&gt; Devuelve un valor
-          lógico indicando si el valor actual del elemento es válido o
-          no.&nbsp;</span
-        >
-      </li>
-    </ul>
-    <p></p>
+        <p></p>
+        <ul>
+          <li>
+            Evento <strong><em>invalid </em></strong>--&gt; Se activa si algún
+            elemento no es válido en el momento de pulsarse el botón
+            "submit".&nbsp;
+          </li>
+          <li>
+            <span style="font-size: 0.9375rem"
+              >Propiedad <strong><em>validity </em></strong>--&gt; Devuelve un
+              valor lógico indicando si el valor actual del elemento es válido o
+              no.&nbsp;</span
+            >
+          </li>
+        </ul>
+        <p></p>
 
-    <h5><br /></h5>
-    <h5>
-      Manejo del evento de fallo (
-      <span style="font-size: 0.9375rem">invalid</span> )
-    </h5>
+        <h5><br /></h5>
+        <h5>
+          Manejo del evento de fallo (
+          <span style="font-size: 0.9375rem">invalid</span> )
+        </h5>
 
-    <p>
-      <br />HTML5 permite detectar desde Javascript si algún elemento del
-      formulario no es válido en el momento de enviar los datos mediante el
-      evento invalid. Este evento puede registrarse mediante JQuery empleando la
-      función <strong><em>$().on()</em></strong
-      >.&nbsp;
-      <span style="font-size: 0.9375rem"
-        >Este evento se dispara por cada elemento que no válido en el momento de
-        enviar el formulario ( <em>submit </em>) permitiendo detectar que
-        elementos no están correctos.&nbsp;</span
-      >
-    </p>
+        <p>
+          <br />HTML5 permite detectar desde Javascript si algún elemento del
+          formulario no es válido en el momento de enviar los datos mediante el
+          evento invalid. Este evento puede registrarse mediante JQuery
+          empleando la función <strong><em>$().on()</em></strong
+          >.&nbsp;
+          <span style="font-size: 0.9375rem"
+            >Este evento se dispara por cada elemento que no válido en el
+            momento de enviar el formulario ( <em>submit </em>) permitiendo
+            detectar que elementos no están correctos.&nbsp;</span
+          >
+        </p>
 
-    <p>
-      <strong><em>Ejemplo: </em></strong>Sea un formulario en el son campos
-      requeridos las cajas de texto nombre y edad, y donde la edad debe ser
-      además un valor numérico valido,&nbsp;
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/4.2.5.png"
-        alt=""
-        role="presentation"
-      /><br />
-    </p>
-    <p>
-      Queremos&nbsp;<span style="font-size: 0.9375rem"
-        >que cuando se pulse el botón de envío, si algún campo no es válido,
-        <span
-          ><u style="font-style: italic"
-            >se muestre un cuadro de diálogo indicando el nombre campo
-            incorrecto y se tiña de rojo su color de fondo como indicación para
-            el usuario. </u
-          >Para conseguirlo se captura el evento&nbsp;<strong
-            ><span>invalid</span></strong
-          >&nbsp;de todos los controles &lt;input&gt; de formulario salvo el
-          botón de envió (<strong><span>&nbsp;not(:submit)&nbsp;</span></strong
-          >). Este evento se ejecuta si alguna de las cajas de texto no es
-          válida en el momento en el que el usuario pulsa el botón
-          "<em>ENVIAR</em>".<br />
-        </span>
-      </span>
-    </p>
-    <p>
-      <span style="font-size: 0.9375rem"
-        ><span
-          >Es importante destacar que empleando los mecanismos de validación de
-          HTML5, no es necesario cancelar la acción predeterminada de envío del
-          formulario mediante Javascript, ya que ésta es abortada
-          automáticamente. El evento <strong><em>invalid </em></strong>nos
-          permite tan sólo detectar qué elementos no son válidos:&nbsp;</span
-        ></span
-      >
-    </p>
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+        <p>
+          <strong><em>Ejemplo: </em></strong>Sea un formulario en el son campos
+          requeridos las cajas de texto nombre y edad, y donde la edad debe ser
+          además un valor numérico valido,&nbsp;
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/4.2.5.png"
+            alt=""
+            role="presentation"
+          /><br />
+        </p>
+        <p>
+          Queremos&nbsp;<span style="font-size: 0.9375rem"
+            >que cuando se pulse el botón de envío, si algún campo no es válido,
+            <span
+              ><u style="font-style: italic"
+                >se muestre un cuadro de diálogo indicando el nombre campo
+                incorrecto y se tiña de rojo su color de fondo como indicación
+                para el usuario. </u
+              >Para conseguirlo se captura el evento&nbsp;<strong
+                ><span>invalid</span></strong
+              >&nbsp;de todos los controles &lt;input&gt; de formulario salvo el
+              botón de envió (<strong
+                ><span>&nbsp;not(:submit)&nbsp;</span></strong
+              >). Este evento se ejecuta si alguna de las cajas de texto no es
+              válida en el momento en el que el usuario pulsa el botón
+              "<em>ENVIAR</em>".<br />
+            </span>
+          </span>
+        </p>
+        <p>
+          <span style="font-size: 0.9375rem"
+            ><span
+              >Es importante destacar que empleando los mecanismos de validación
+              de HTML5, no es necesario cancelar la acción predeterminada de
+              envío del formulario mediante Javascript, ya que ésta es abortada
+              automáticamente. El evento <strong><em>invalid </em></strong>nos
+              permite tan sólo detectar qué elementos no son
+              válidos:&nbsp;</span
+            ></span
+          >
+        </p>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -494,126 +536,133 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <span
-      ><u style="font-style: italic"> </u
-      ><span
-        ><p>
-          <br />El evento <strong><em>invalid </em></strong>es útil para
-          detectar valores no válidos en el momento del envío del formulario
-          (<em>validación a nivel de formulario</em>) y poder mostrar al usuario
-          mensajes de error, advertencias, o posibles correcciones.&nbsp;
-        </p>
-      </span></span
-    >
-    <h5>Manejo del estado de validación mediante <em>validity</em></h5>
-
-    <p>
-      <br />HTML5 permite mediante Javascript c<em
-        ><u
-          >onocer el estado de validez de un elemento en cualquier momento</u
-        ></em
-      >
-      a través de propiedad <em><strong>validity </strong></em>del elemento.
-      Esta devuelve un objeto con las siguientes propiedades:&nbsp;
-    </p>
-    <p></p>
-    <ul>
-      <li>
-        <span style="font-size: 0.9375rem"
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <span
+          ><u style="font-style: italic"> </u
           ><span
-            ><span><em>valid</em></span></span
-          > </span
-        ><span style="font-size: 0.9375rem"
-          ><span
-            ><span><em>&nbsp;</em></span></span
-          >: Devuelve cierto si el valor del campo es válido. En caso contrario
-          devuelve falso.</span
+            ><p>
+              <br />El evento <strong><em>invalid </em></strong>es útil para
+              detectar valores no válidos en el momento del envío del formulario
+              (<em>validación a nivel de formulario</em>) y poder mostrar al
+              usuario mensajes de error, advertencias, o posibles
+              correcciones.&nbsp;
+            </p>
+          </span></span
         >
-      </li>
-      <li>
-        <span
-          ><span><em>valueMissing </em></span></span
-        >: Devuelve cierto si el campo posee el atributo <em>required </em>y no
-        se ha introducido ningún valor.&nbsp;
-      </li>
-      <li>
-        <span
-          ><span><em>patternMismatch </em></span></span
-        >: Devuelve cierto si el elemento posee el atributo <em>pattern </em>y
-        el valor presente no cumple con la expresión regular especificada.
-      </li>
-      <li>
-        <em>tooLong </em>: Devuelve cierto si el valor introducido en el campo
-        es más largo que el valor especificado en el atributo
-        <em>maxlength</em>.
-      </li>
-      <li>
-        <em>rangeUnderflow </em>: Devuelve cierto si el valor introducido en el
-        campo de tipo numérico (<em>type=”number”</em>) es inferior al
-        especificado en el atributo min.
-      </li>
-      <li>
-        <em>rangeOverflow </em>: Devuelve cierto si el valor introducido en el
-        campo de tipo numérico (<em>type=”number”</em>)&nbsp; es superior al
-        especificado en el atributo max.
-      </li>
-      <li>
-        <em>stepMismatch </em>: Devuelve cierto si el valor introducido en el
-        campo de tipo numérico (<em>type=”number”</em>) no se corresponde con
-        los valores de los atributos<em> max, min, step.</em>
-      </li>
-    </ul>
-    <p></p>
+        <h5>Manejo del estado de validación mediante <em>validity</em></h5>
 
-    <p>
-      Estas propiedades pueden invocarse en cualquier momento para indicar al
-      usuario los errores mientras va rellenando los campos de un formulario
-      (<em>validación a nivel de controles</em>) en vez de hacerlo al pulsar el
-      botón de envío (<em>validación a nivel de formulario</em>).
-    </p>
+        <p>
+          <br />HTML5 permite mediante Javascript c<em
+            ><u
+              >onocer el estado de validez de un elemento en cualquier
+              momento</u
+            ></em
+          >
+          a través de propiedad <em><strong>validity </strong></em>del elemento.
+          Esta devuelve un objeto con las siguientes propiedades:&nbsp;
+        </p>
+        <p></p>
+        <ul>
+          <li>
+            <span style="font-size: 0.9375rem"
+              ><span
+                ><span><em>valid</em></span></span
+              > </span
+            ><span style="font-size: 0.9375rem"
+              ><span
+                ><span><em>&nbsp;</em></span></span
+              >: Devuelve cierto si el valor del campo es válido. En caso
+              contrario devuelve falso.</span
+            >
+          </li>
+          <li>
+            <span
+              ><span><em>valueMissing </em></span></span
+            >: Devuelve cierto si el campo posee el atributo <em>required </em>y
+            no se ha introducido ningún valor.&nbsp;
+          </li>
+          <li>
+            <span
+              ><span><em>patternMismatch </em></span></span
+            >: Devuelve cierto si el elemento posee el atributo
+            <em>pattern </em>y el valor presente no cumple con la expresión
+            regular especificada.
+          </li>
+          <li>
+            <em>tooLong </em>: Devuelve cierto si el valor introducido en el
+            campo es más largo que el valor especificado en el atributo
+            <em>maxlength</em>.
+          </li>
+          <li>
+            <em>rangeUnderflow </em>: Devuelve cierto si el valor introducido en
+            el campo de tipo numérico (<em>type=”number”</em>) es inferior al
+            especificado en el atributo min.
+          </li>
+          <li>
+            <em>rangeOverflow </em>: Devuelve cierto si el valor introducido en
+            el campo de tipo numérico (<em>type=”number”</em>)&nbsp; es superior
+            al especificado en el atributo max.
+          </li>
+          <li>
+            <em>stepMismatch </em>: Devuelve cierto si el valor introducido en
+            el campo de tipo numérico (<em>type=”number”</em>) no se corresponde
+            con los valores de los atributos<em> max, min, step.</em>
+          </li>
+        </ul>
+        <p></p>
 
-    <p>
-      <em
-        ><strong><u>Ejemplo</u></strong></em
-      >: Sea una página provista de un formulario donde el usuario debe
-      introducir su nombre y edad, donde la edad además debe ser un valor
-      numérico comprendido entre 18 y 65.&nbsp;
-    </p>
-    <p style="text-align: center">
-      <span style="font-size: 0.9375rem"
-        ><img
-          src="../../.imagenes/4.2.6.png"
-          alt=""
-          role="presentation" /><br
-      /></span>
-    </p>
-    <p style="text-align: justify">
-      <span style="font-size: 0.9375rem"
-        >Para ello empleamos los atributos de validación de HTML5, pero s<span
-          >e desea que cuando cambie el foco entre los campos de texto, se
-          validen sus respectivos estados y se muestren notificaciones de error
-          en caso de no ser válidos.&nbsp;Cuando cada una las cajas de texto
-          pierden el foco ( evento&nbsp;<strong><em>blur&nbsp;</em></strong
-          >), se comprueban las propiedades de su estado de validación a través
-          del objeto retornado por la propiedad&nbsp;<strong
-            ><em>validity</em></strong
-          >, y se muestra el mensaje de error respectivo en el campo
-          <em>&lt;output&gt;</em> correspondiente:</span
-        ><br
-      /></span>
-    </p>
+        <p>
+          Estas propiedades pueden invocarse en cualquier momento para indicar
+          al usuario los errores mientras va rellenando los campos de un
+          formulario (<em>validación a nivel de controles</em>) en vez de
+          hacerlo al pulsar el botón de envío (<em
+            >validación a nivel de formulario</em
+          >).
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <p>
+          <em
+            ><strong><u>Ejemplo</u></strong></em
+          >: Sea una página provista de un formulario donde el usuario debe
+          introducir su nombre y edad, donde la edad además debe ser un valor
+          numérico comprendido entre 18 y 65.&nbsp;
+        </p>
+        <p style="text-align: center">
+          <span style="font-size: 0.9375rem"
+            ><img
+              src="../../.imagenes/4.2.6.png"
+              alt=""
+              role="presentation" /><br
+          /></span>
+        </p>
+        <p style="text-align: justify">
+          <span style="font-size: 0.9375rem"
+            >Para ello empleamos los atributos de validación de HTML5, pero
+            s<span
+              >e desea que cuando cambie el foco entre los campos de texto, se
+              validen sus respectivos estados y se muestren notificaciones de
+              error en caso de no ser válidos.&nbsp;Cuando cada una las cajas de
+              texto pierden el foco ( evento&nbsp;<strong
+                ><em>blur&nbsp;</em></strong
+              >), se comprueban las propiedades de su estado de validación a
+              través del objeto retornado por la propiedad&nbsp;<strong
+                ><em>validity</em></strong
+              >, y se muestra el mensaje de error respectivo en el campo
+              <em>&lt;output&gt;</em> correspondiente:</span
+            ><br
+          /></span>
+        </p>
+
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
@@ -661,55 +710,56 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p><br /></p>
+        <p><br /></p>
 
-    <h5>Definición de error personalizado</h5>
+        <h5>Definición de error personalizado</h5>
 
-    <p>
-      <br />HTML5 también permite incluir en su mecanismo automático de
-      validación otras comprobaciones no contempladas por los atributos vistos
-      anteriormente. Estas validaciones pueden realizarse desde Javascript
-      llamando a la función <em>setCustomValidity() </em>para determinar el
-      estado de validación del elemento en función de ellas.&nbsp;
-    </p>
-    <p>
-      La función <em>setCustomValidity()</em> requiere un argumento de tipo
-      cadena. Esta debe llevar un mensaje de error descriptivo en el caso de que
-      el control no se considere válido, o una cadena vacía si es
-      válido.&nbsp;<span style="font-size: 0.9375rem"
-        >Los mensajes de error se muestran al pulsar el botón de envío
-        cancelando automáticamente el envío del formulario.&nbsp;</span
-      >
-    </p>
+        <p>
+          <br />HTML5 también permite incluir en su mecanismo automático de
+          validación otras comprobaciones no contempladas por los atributos
+          vistos anteriormente. Estas validaciones pueden realizarse desde
+          Javascript llamando a la función <em>setCustomValidity() </em>para
+          determinar el estado de validación del elemento en función de
+          ellas.&nbsp;
+        </p>
+        <p>
+          La función <em>setCustomValidity()</em> requiere un argumento de tipo
+          cadena. Esta debe llevar un mensaje de error descriptivo en el caso de
+          que el control no se considere válido, o una cadena vacía si es
+          válido.&nbsp;<span style="font-size: 0.9375rem"
+            >Los mensajes de error se muestran al pulsar el botón de envío
+            cancelando automáticamente el envío del formulario.&nbsp;</span
+          >
+        </p>
 
-    <p>
-      <strong
-        ><em><u>Ejemplo</u></em></strong
-      >: Sea una página con el siguiente formulario con un campo de texto cuyo
-      valor no puede exceder los 8 caracteres de longitud. De ser así debe
-      mostrarse el mensaje de error “Introduzca valor de 8 caracteres”
-      cancelando el envío:
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/4.2.7.png"
-        alt=""
-        role="presentation"
-      /><br />
-    </p>
+        <p>
+          <strong
+            ><em><u>Ejemplo</u></em></strong
+          >: Sea una página con el siguiente formulario con un campo de texto
+          cuyo valor no puede exceder los 8 caracteres de longitud. De ser así
+          debe mostrarse el mensaje de error “Introduzca valor de 8 caracteres”
+          cancelando el envío:
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/4.2.7.png"
+            alt=""
+            role="presentation"
+          /><br />
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
@@ -739,82 +789,104 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>
-      <br />
-      Cada vez que el usuario introduce un valor ( evento change ) en la caja de
-      texto se comprueba la longitud del valor insertado y si es superior a 8
-      caracteres se le asigna el mensaje de error “Introduzca valor de 8
-      caracteres”.
-    </p>
+        <p>
+          <br />
+          Cada vez que el usuario introduce un valor ( evento change ) en la
+          caja de texto se comprueba la longitud del valor insertado y si es
+          superior a 8 caracteres se le asigna el mensaje de error “Introduzca
+          valor de 8 caracteres”.
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >campo<span style="color:#808030; ">.</span>setCustomValidity<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Introduzca valor de 8 caracteres</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+        <pre
+          style="color: #000000; background: #ffffff"
+        >campo<span style="color:#808030; ">.</span>setCustomValidity<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Introduzca valor de 8 caracteres</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
 </pre>
 
-    <p>
-      Hecho esto, cuando el usuario pulse el botón de envío se mostrará el
-      mensaje de error indicado y se cancela automáticamente el envío de los
-      datos del formulario:
-    </p>
+        <p>
+          Hecho esto, cuando el usuario pulse el botón de envío se mostrará el
+          mensaje de error indicado y se cancela automáticamente el envío de los
+          datos del formulario:
+        </p>
 
-    <p style="text-align: center"></p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/4.2.8.png"
-        alt=""
-        role="presentation"
-        style="font-size: 0.9375rem"
-      />
-    </p>
-    <p style="text-align: center"><br /></p>
-    <em
-      ><u> <p></p> </u></em
-    ><em> </em>
-  </div>
-</div>
-<a
-  href="../4. JQuery - Validación de formularios/4.1. Pseudoselectores y eventos de controles de formulario.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Anterior lección
-</a>
-<a
-  href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.1. Transiciones.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Siguiente lección
-</a>
+        <p style="text-align: center"></p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/4.2.8.png"
+            alt=""
+            role="presentation"
+            style="font-size: 0.9375rem"
+          />
+        </p>
+        <p style="text-align: center"><br /></p>
+        <em
+          ><u> <p></p> </u></em
+        ><em> </em>
+      </div>
+    </div>
+    <a
+      href="../4. JQuery - Validación de formularios/4.1. Pseudoselectores y eventos de controles de formulario.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Anterior lección
+    </a>
+    <a
+      href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.1. Transiciones.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Siguiente lección
+    </a>
+    <a
+      href="../../readme.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Inicio/Leeme
+    </a>
+  </body>
+</html>

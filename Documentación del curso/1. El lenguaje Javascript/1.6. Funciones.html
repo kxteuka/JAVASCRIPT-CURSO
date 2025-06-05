@@ -1,104 +1,140 @@
-<h2>1.6. Funciones</h2>
-<h3>Funciones</h3>
-<div class="box py-3 contents">
-  <div class="no-overflow">
-    <p dir="ltr" style="text-align: left"></p>
-    <p></p>
-    <p dir="ltr" style="text-align: left"></p>
-    <p>
-      <span style="font-size: 0.9375rem"
-        >Una función es una sección de código que realiza una determinada tarea
-        necesaria en diferentes momentos. Pueden recibir una serie de argumentos
-        para realizar su tarea y opcionalmente devolver un resultado.</span
-      >
-    </p>
-    <h3><span>Declaración de una función</span></h3>
-    <p>
-      <span style="font-size: 0.9375rem"
-        ><br />Existen dos sintaxis distintas para declarar una función.</span
-      >
-    </p>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iván López" />
+    <title>Curso Básico de JavaScript y jQuery</title>
+    <style>
+      .center-align {
+        text-align: center;
+      }
+      .right-align {
+        text-align: right;
+      }
+      .margin-left {
+        margin-left: 20px;
+      }
+      .custom-link-button {
+        display: inline-block;
+        padding: 4px 12px;
+        font-size: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>1.6. Funciones</h2>
+    <h3>Funciones</h3>
+    <div class="box py-3 contents">
+      <div class="no-overflow">
+        <p dir="ltr" style="text-align: left"></p>
+        <p></p>
+        <p dir="ltr" style="text-align: left"></p>
+        <p>
+          <span style="font-size: 0.9375rem"
+            >Una función es una sección de código que realiza una determinada
+            tarea necesaria en diferentes momentos. Pueden recibir una serie de
+            argumentos para realizar su tarea y opcionalmente devolver un
+            resultado.</span
+          >
+        </p>
+        <h3><span>Declaración de una función</span></h3>
+        <p>
+          <span style="font-size: 0.9375rem"
+            ><br />Existen dos sintaxis distintas para declarar una
+            función.</span
+          >
+        </p>
 
-    <p>
-      <span style="font-size: 0.9375rem"
-        ><strong><u>Declaración tradicional:</u></strong></span
-      ><br />
-    </p>
+        <p>
+          <span style="font-size: 0.9375rem"
+            ><strong><u>Declaración tradicional:</u></strong></span
+          ><br />
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">&lt;</span>identificador<span style="color:#808030; ">&gt;</span> <span style="color:#808030; ">(</span> <span style="color:#808030; ">&lt;</span>parametro1<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>parametro2<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> …<span style="color:#808030; ">.</span> <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">&lt;</span>identificador<span style="color:#808030; ">&gt;</span> <span style="color:#808030; ">(</span> <span style="color:#808030; ">&lt;</span>parametro1<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>parametro2<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> …<span style="color:#808030; ">.</span> <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
         sentencias
 <span style="color:#800000; font-weight:bold; ">         return</span> <span style="color:#808030; ">&lt;</span>valor_retorno<span style="color:#808030; ">&gt;</span>		// <span style="color:#808030; ">*</span>opcional<span style="color:#808030; ">*</span> <span style="color:#808030; ">&gt;</span>
 <span style="color:#800080; ">}</span> 
 </pre>
 
-    <p>
-      <br /><strong><u> Declaración nominada:</u></strong>
-    </p>
-    <p>
-      En este caso la función se declara como el valor de una variable mediante
-      una asignación.&nbsp; &nbsp;
-    </p>
+        <p>
+          <br /><strong><u> Declaración nominada:</u></strong>
+        </p>
+        <p>
+          En este caso la función se declara como el valor de una variable
+          mediante una asignación.&nbsp; &nbsp;
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#800000; font-weight:bold; ">var</span>  <span style="color:#808030; ">&lt;</span>identificador<span style="color:#808030; ">&gt;</span>  <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span> <span style="color:#808030; ">&lt;</span>parametro1<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>parametro2<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> …<span style="color:#808030; ">.</span> <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#800000; font-weight:bold; ">var</span>  <span style="color:#808030; ">&lt;</span>identificador<span style="color:#808030; ">&gt;</span>  <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span> <span style="color:#808030; ">&lt;</span>parametro1<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>parametro2<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> …<span style="color:#808030; ">.</span> <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
        sentencias
 <span style="color:#800000; font-weight:bold; ">       return</span> <span style="color:#808030; ">&lt;</span>valor_retorno<span style="color:#808030; ">&gt;</span>		// <span style="color:#808030; ">*</span>opcional<span style="color:#808030; ">*</span> <span style="color:#808030; ">&gt;</span>
 <span style="color:#800080; ">}</span> 
 </pre>
 
-    <p>
-      <br />
-      En ambos casos, tenemos los siguientes elementos:&nbsp;
-    </p>
+        <p>
+          <br />
+          En ambos casos, tenemos los siguientes elementos:&nbsp;
+        </p>
 
-    <p></p>
-    <ul>
-      <li>
-        <strong><em>&lt;identificador&gt;</em></strong> à Es el nombre de la
-        función que se emplea para llamarla.
-      </li>
-      <li>
-        <strong><em>&lt;parámetros&gt;</em></strong> à Son variables para los
-        valores que la función debe recibir cuando es llamada para realizar su
-        tarea.
-      </li>
-      <li>
-        <strong style="font-size: 0.9375rem"
-          ><em>&lt;valor_retorno&gt;</em></strong
-        ><span style="font-size: 0.9375rem">
-          à Es el valor que retorna como función resultado. Debe indicarse a la
-          derecha de la sentencia </span
-        ><strong style="font-size: 0.9375rem"><em>return</em></strong>
-        <span style="font-size: 0.9375rem">. Es opcional.</span>
-      </li>
-    </ul>
-    <p></p>
+        <p></p>
+        <ul>
+          <li>
+            <strong><em>&lt;identificador&gt;</em></strong> à Es el nombre de la
+            función que se emplea para llamarla.
+          </li>
+          <li>
+            <strong><em>&lt;parámetros&gt;</em></strong> à Son variables para
+            los valores que la función debe recibir cuando es llamada para
+            realizar su tarea.
+          </li>
+          <li>
+            <strong style="font-size: 0.9375rem"
+              ><em>&lt;valor_retorno&gt;</em></strong
+            ><span style="font-size: 0.9375rem">
+              à Es el valor que retorna como función resultado. Debe indicarse a
+              la derecha de la sentencia </span
+            ><strong style="font-size: 0.9375rem"><em>return</em></strong>
+            <span style="font-size: 0.9375rem">. Es opcional.</span>
+          </li>
+        </ul>
+        <p></p>
 
-    <h4>Llamada a una función.</h4>
+        <h4>Llamada a una función.</h4>
 
-    <p>
-      <br />Toda función se llama por su identificador indicando un valor o
-      variable (argumentos) para cada parámetro. Si la función no tiene
-      parámetros no se indica nada entre los paréntesis:
-    </p>
+        <p>
+          <br />Toda función se llama por su identificador indicando un valor o
+          variable (argumentos) para cada parámetro. Si la función no tiene
+          parámetros no se indica nada entre los paréntesis:
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#808030; ">     <strong><em>   &lt;</em></strong></span><strong><em>identificador<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">(</span> <span style="color:#808030; ">&lt;</span>argumento1<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>argumento2<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> … <span style="color:#808030; ">)</span> </em></strong>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#808030; ">     <strong><em>   &lt;</em></strong></span><strong><em>identificador<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">(</span> <span style="color:#808030; ">&lt;</span>argumento1<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>argumento2<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> … <span style="color:#808030; ">)</span> </em></strong>
 </pre>
 
-    <p>
-      <em>Ejemplo</em>: La siguiente función <em>ahora()</em> muestra un cuadro
-      de diálogo indicando la fecha actual del sistema. La función no requiere
-      ningún parámetro:
-    </p>
+        <p>
+          <em>Ejemplo</em>: La siguiente función <em>ahora()</em> muestra un
+          cuadro de diálogo indicando la fecha actual del sistema. La función no
+          requiere ningún parámetro:
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >        <span style="color:#696969; ">// Declaración de la función</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >        <span style="color:#696969; ">// Declaración de la función</span>
         <span style="color:#800000; font-weight:bold; ">var</span> ahora <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
             <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">new</span> <span style="color:#797997; ">Date</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
         <span style="color:#800080; ">}</span>
@@ -107,15 +143,16 @@
         ahora<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 </pre>
 
-    <p>
-      <em>Ejemplo<strong>:</strong></em> Sea la función <em>saludar()</em> que
-      muestra un cuadro de diálogo mostrando un mensaje de saludo al usuario con
-      el nombre y origen requeridos como parámetros:&nbsp;
-    </p>
+        <p>
+          <em>Ejemplo<strong>:</strong></em> Sea la función
+          <em>saludar()</em> que muestra un cuadro de diálogo mostrando un
+          mensaje de saludo al usuario con el nombre y origen requeridos como
+          parámetros:&nbsp;
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >        <span style="color:#696969; ">// Declaración de la función</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >        <span style="color:#696969; ">// Declaración de la función</span>
         <span style="color:#800000; font-weight:bold; ">var</span> saludar <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span>nombre<span style="color:#808030; ">,</span> lugar<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
             <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Te saludo </span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> nombre <span style="color:#808030; ">+</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; "> procedente de </span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> lugar<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
         <span style="color:#800080; ">}</span>
@@ -127,25 +164,25 @@
         saludar<span style="color:#808030; ">(</span>name<span style="color:#808030; ">,</span> origen<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 </pre>
 
-    <p>
-      <em><br /> </em>Si la función devuelve un valor se la llama de manera
-      idéntica pero a la derecha de una asignación donde la variable a la
-      izquierda recoge el valor devuelto por la función:
-    </p>
+        <p>
+          <em><br /> </em>Si la función devuelve un valor se la llama de manera
+          idéntica pero a la derecha de una asignación donde la variable a la
+          izquierda recoge el valor devuelto por la función:
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><strong><em>	<span style="color:#808030; ">&lt;</span>variable<span style="color:#808030; ">&gt;</span> <span style="color:#808030; ">=</span> <span style="color:#808030; ">&lt;</span>identificador<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">(</span> <span style="color:#808030; ">&lt;</span>argumento1<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>argumento2<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> … <span style="color:#808030; ">)</span></em></strong>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><strong><em>	<span style="color:#808030; ">&lt;</span>variable<span style="color:#808030; ">&gt;</span> <span style="color:#808030; ">=</span> <span style="color:#808030; ">&lt;</span>identificador<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">(</span> <span style="color:#808030; ">&lt;</span>argumento1<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>argumento2<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> … <span style="color:#808030; ">)</span></em></strong>
 </pre>
 
-    <p>
-      <em>Ejemplo</em>: La función <em>media()</em> devuelve la media aritmética
-      de los dados a la función.
-    </p>
+        <p>
+          <em>Ejemplo</em>: La función <em>media()</em> devuelve la media
+          aritmética de los dados a la función.
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >        <span style="color:#696969; ">// Funcion media</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >        <span style="color:#696969; ">// Funcion media</span>
         <span style="color:#800000; font-weight:bold; ">var</span> media <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>a<span style="color:#808030; ">,</span> b<span style="color:#808030; ">,</span> c<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
             <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#808030; ">(</span>a <span style="color:#808030; ">+</span> b <span style="color:#808030; ">+</span> c<span style="color:#808030; ">)</span> <span style="color:#808030; ">/</span> <span style="color:#008c00; ">3</span><span style="color:#800080; ">;</span>
         <span style="color:#800080; ">}</span>
@@ -158,25 +195,25 @@
         document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span>resultado<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span><u>
 </u></pre>
 
-    <h4>
-      <span><br />Funciones como argumentos</span>
-    </h4>
+        <h4>
+          <span><br />Funciones como argumentos</span>
+        </h4>
 
-    <p>
-      <br />Una función puede recibir como parámetro otra función para que le
-      ayude a hacer parte de su tarea.
-    </p>
+        <p>
+          <br />Una función puede recibir como parámetro otra función para que
+          le ayude a hacer parte de su tarea.
+        </p>
 
-    <p>
-      <em>Ejemplo</em>: En el siguiente código la función
-      <em>ahora()</em> devuelve la hora actual. La función
-      <em>mostrar()</em> recibe una función como parámetro y muestra por
-      pantalla lo que devuelva.
-    </p>
+        <p>
+          <em>Ejemplo</em>: En el siguiente código la función
+          <em>ahora()</em> devuelve la hora actual. La función
+          <em>mostrar()</em> recibe una función como parámetro y muestra por
+          pantalla lo que devuelva.
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >        <span style="color:#696969; ">// Funcion que devuelve el momento actual</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >        <span style="color:#696969; ">// Funcion que devuelve el momento actual</span>
         <span style="color:#800000; font-weight:bold; ">var</span> ahora <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
             <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#797997; ">Date</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
         <span style="color:#800080; ">}</span>
@@ -188,64 +225,87 @@
         mostrar<span style="color:#808030; ">(</span>ahora<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 </pre>
 
-    <p>
-      <em><br /> </em>Al indicar la función <em>ahora()</em> como argumento para
-      la función <em>mostrar()</em>, ésta muestra por pantalla la fecha actual.
-    </p>
-    <p>
-      También es posible declarar la función que se pasa como argumento en la
-      propia llamada a la función como una función <em>anónima</em>:
-    </p>
+        <p>
+          <em><br /> </em>Al indicar la función <em>ahora()</em> como argumento
+          para la función <em>mostrar()</em>, ésta muestra por pantalla la fecha
+          actual.
+        </p>
+        <p>
+          También es posible declarar la función que se pasa como argumento en
+          la propia llamada a la función como una función <em>anónima</em>:
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >        <span style="color:#696969; ">// llamada a la funcion mostrar indicando una funcion anónima como argumento</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >        <span style="color:#696969; ">// llamada a la funcion mostrar indicando una funcion anónima como argumento</span>
         mostrar<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
             <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#797997; ">Date</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
         <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></pre>
 
-    <p></p>
-    <br />
-    <p></p>
-  </div>
-</div>
-<a
-  href="../1. El lenguaje Javascript/1.5. Estructuras de control.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Anterior lección
-</a>
-<a
-  href="../1. El lenguaje Javascript/1.7. Matrices.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Siguiente lección
-</a>
+        <p></p>
+        <br />
+        <p></p>
+      </div>
+    </div>
+    <a
+      href="../1. El lenguaje Javascript/1.5. Estructuras de control.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Anterior lección
+    </a>
+    <a
+      href="../1. El lenguaje Javascript/1.7. Matrices.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Siguiente lección
+    </a>
+    <a
+      href="../../readme.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Inicio/Leeme
+    </a>
+  </body>
+</html>

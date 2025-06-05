@@ -1,89 +1,125 @@
-<h2>1.8. Objetos</h2>
-<h3>Declaración y manejo de Objetos</h3>
-<div class="box py-3 contents">
-  <div class="no-overflow">
-    <p dir="ltr" style="text-align: left"></p>
-    <p></p>
-    <p dir="ltr" style="text-align: left"></p>
-    <p>
-      Un objeto es una agrupación de <u>propiedades</u> y <u>métodos</u> que
-      representan una información compleja, como los datos de una persona, una
-      cuenta bancaria…, etc.
-    </p>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iván López" />
+    <title>Curso Básico de JavaScript y jQuery</title>
+    <style>
+      .center-align {
+        text-align: center;
+      }
+      .right-align {
+        text-align: right;
+      }
+      .margin-left {
+        margin-left: 20px;
+      }
+      .custom-link-button {
+        display: inline-block;
+        padding: 4px 12px;
+        font-size: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>1.8. Objetos</h2>
+    <h3>Declaración y manejo de Objetos</h3>
+    <div class="box py-3 contents">
+      <div class="no-overflow">
+        <p dir="ltr" style="text-align: left"></p>
+        <p></p>
+        <p dir="ltr" style="text-align: left"></p>
+        <p>
+          Un objeto es una agrupación de <u>propiedades</u> y <u>métodos</u> que
+          representan una información compleja, como los datos de una persona,
+          una cuenta bancaria…, etc.
+        </p>
 
-    <p></p>
-    <ul>
-      <li>
-        Las <i><u>propiedades</u></i> son variables que representan
-        características del elemento representado. Ej: Sea un objeto cuenta
-        bancaria à <i>nº cuenta</i>, <i>titular</i>, <i>saldo</i>,
-        <i>interés</i>…
-      </li>
-      <li>
-        Los <i><u>métodos</u></i> son funciones que representan las operaciones
-        que admite el elemento. Ej: Sea un objeto cuenta bancaria à
-        <i>ingresar()</i>, <i>retirar()</i>, <i>calcularBeneficios()</i>…
-      </li>
-    </ul>
-    <p></p>
+        <p></p>
+        <ul>
+          <li>
+            Las <i><u>propiedades</u></i> son variables que representan
+            características del elemento representado. Ej: Sea un objeto cuenta
+            bancaria à <i>nº cuenta</i>, <i>titular</i>, <i>saldo</i>,
+            <i>interés</i>…
+          </li>
+          <li>
+            Los <i><u>métodos</u></i> son funciones que representan las
+            operaciones que admite el elemento. Ej: Sea un objeto cuenta
+            bancaria à <i>ingresar()</i>, <i>retirar()</i>,
+            <i>calcularBeneficios()</i>…
+          </li>
+        </ul>
+        <p></p>
 
-    <h4>
-      <span style="font-size: 1.40625rem">Declaración de objetos con JSON</span
-      ><br />
-    </h4>
+        <h4>
+          <span style="font-size: 1.40625rem"
+            >Declaración de objetos con JSON</span
+          ><br />
+        </h4>
 
-    <p>
-      Un objeto puede declararse rápidamente indicando sus atributos y métodos
-      mediante una expresión en <b><i>JSON</i></b
-      >. Esta es una notación que permite la descripción de estructuras de datos
-      de manera sencilla:
-    </p>
+        <p>
+          Un objeto puede declararse rápidamente indicando sus atributos y
+          métodos mediante una expresión en <b><i>JSON</i></b
+          >. Esta es una notación que permite la descripción de estructuras de
+          datos de manera sencilla:
+        </p>
 
-    <p>Para los objetos se emplea la siguiente sintaxis:</p>
+        <p>Para los objetos se emplea la siguiente sintaxis:</p>
 
-    <p>
-      &nbsp;<img
-        src="../../.imagenes/1.8.1.png"
-        alt=""
-        width="901"
-        height="178"
-        role="presentation"
-        class="img-responsive atto_image_button_text-bottom"
-      />
-    </p>
+        <p>
+          &nbsp;<img
+            src="../../.imagenes/1.8.1.png"
+            alt=""
+            width="901"
+            height="178"
+            role="presentation"
+            class="img-responsive atto_image_button_text-bottom"
+          />
+        </p>
 
-    <p></p>
-    <ul>
-      <li>
-        Cada atributo se declara indicando el nombre de la propiedad, seguida de
-        dos puntos, y el valor correspondiente.
-      </li>
-      <li>
-        Cada método se declara indicando el nombre del método, seguido de dos
-        puntos, y la declaración de la función correspondiente.
-      </li>
-      <li>
-        Toda la declaración va comprendida entre llaves {}, separando cada
-        elemento (atributo, método) por comas.
-      </li>
-    </ul>
-    <p></p>
+        <p></p>
+        <ul>
+          <li>
+            Cada atributo se declara indicando el nombre de la propiedad,
+            seguida de dos puntos, y el valor correspondiente.
+          </li>
+          <li>
+            Cada método se declara indicando el nombre del método, seguido de
+            dos puntos, y la declaración de la función correspondiente.
+          </li>
+          <li>
+            Toda la declaración va comprendida entre llaves {}, separando cada
+            elemento (atributo, método) por comas.
+          </li>
+        </ul>
+        <p></p>
 
-    <p>
-      <b><i>Ejemplo: </i></b>El siguiente objeto define una cuenta bancaria:
-    </p>
+        <p>
+          <b><i>Ejemplo: </i></b>El siguiente objeto define una cuenta bancaria:
+        </p>
 
-    <pre
-      style="
-        background-image: initial;
-        background-position: initial;
-        background-size: initial;
-        background-repeat: initial;
-        background-attachment: initial;
-        background-origin: initial;
-        background-clip: initial;
-      "
-    ><span style="background-color: rgb(255, 255, 255);">        </span><span style="color: rgb(128, 0, 0); background-color: rgb(255, 255, 255); font-weight: bold;">var</span><span style="background-color: rgb(255, 255, 255);"> objCuenta </span><span style="color: rgb(128, 128, 48); background-color: rgb(255, 255, 255);">=</span><span style="background-color: rgb(255, 255, 255);"> </span><span style="color: rgb(128, 0, 128); background-color: rgb(255, 255, 255);">{</span><span style="background-color: rgb(255, 255, 255);">
+        <pre
+          style="
+            background-image: initial;
+            background-position: initial;
+            background-size: initial;
+            background-repeat: initial;
+            background-attachment: initial;
+            background-origin: initial;
+            background-clip: initial;
+          "
+        ><span style="background-color: rgb(255, 255, 255);">        </span><span style="color: rgb(128, 0, 0); background-color: rgb(255, 255, 255); font-weight: bold;">var</span><span style="background-color: rgb(255, 255, 255);"> objCuenta </span><span style="color: rgb(128, 128, 48); background-color: rgb(255, 255, 255);">=</span><span style="background-color: rgb(255, 255, 255);"> </span><span style="color: rgb(128, 0, 128); background-color: rgb(255, 255, 255);">{</span><span style="background-color: rgb(255, 255, 255);">
             </span><span style="color: rgb(105, 105, 105); background-color: rgb(255, 255, 255);">// Propiedades</span><span style="background-color: rgb(255, 255, 255);">
             ncuenta</span><span style="color: rgb(128, 0, 128); background-color: rgb(255, 255, 255);">:</span><span style="background-color: rgb(255, 255, 255);"> </span><span style="color: rgb(128, 0, 0); background-color: rgb(255, 255, 255);">"</span><span style="color: rgb(0, 0, 230); background-color: rgb(255, 255, 255);">4345-4526-67-4354359043</span><span style="color: rgb(128, 0, 0); background-color: rgb(255, 255, 255);">"</span><span style="color: rgb(128, 128, 48); background-color: rgb(255, 255, 255);">,</span><span style="background-color: rgb(255, 255, 255);">
             titular</span><span style="color: rgb(128, 0, 128); background-color: rgb(255, 255, 255);">:</span><span style="background-color: rgb(255, 255, 255);"> </span><span style="color: rgb(128, 0, 0); background-color: rgb(255, 255, 255);">"</span><span style="color: rgb(0, 0, 230); background-color: rgb(255, 255, 255);">Roger Dawson</span><span style="color: rgb(128, 0, 0); background-color: rgb(255, 255, 255);">"</span><span style="color: rgb(128, 128, 48); background-color: rgb(255, 255, 255);">,</span><span style="background-color: rgb(255, 255, 255);">
@@ -99,52 +135,52 @@
         </span><span style="color: rgb(128, 0, 128); background-color: rgb(255, 255, 255);">}</span>
 </pre>
 
-    <h4>
-      <span>Declaración de objetos con función constructora</span>
-    </h4>
+        <h4>
+          <span>Declaración de objetos con función constructora</span>
+        </h4>
 
-    <p>
-      Esta es otra forma de crear objetos empleando una función que genera el
-      objeto, en vez de declararlo con una expresión JSON. Se emplea para crear
-      múltiples objetos con las mismas propiedades y métodos sin tener que
-      declararlos uno por uno:
-    </p>
+        <p>
+          Esta es otra forma de crear objetos empleando una función que genera
+          el objeto, en vez de declararlo con una expresión JSON. Se emplea para
+          crear múltiples objetos con las mismas propiedades y métodos sin tener
+          que declararlos uno por uno:
+        </p>
 
-    <p>
-      Todas las propiedades y métodos se declaran dentro de la función
-      constructora:
-    </p>
+        <p>
+          Todas las propiedades y métodos se declaran dentro de la función
+          constructora:
+        </p>
 
-    <p></p>
-    <ul>
-      <li>
-        La función debe recibir
-        <i><u>tantos argumentos como propiedades tenga el objeto</u></i
-        >.
-      </li>
-      <li>
-        Cada propiedad se declara empezando con <b><i>this</i></b
-        >, seguida de un punto, y el nombre de la propiedad asignándole el
-        argumento correspondiente de la función constructora.
-      </li>
-      <li>
-        Cada método se declara empezando con <b><i>this</i></b
-        >, seguida de un punto, y el nombre del método al que se asigna la
-        declaración de la función.
-      </li>
-    </ul>
-    <p></p>
+        <p></p>
+        <ul>
+          <li>
+            La función debe recibir
+            <i><u>tantos argumentos como propiedades tenga el objeto</u></i
+            >.
+          </li>
+          <li>
+            Cada propiedad se declara empezando con <b><i>this</i></b
+            >, seguida de un punto, y el nombre de la propiedad asignándole el
+            argumento correspondiente de la función constructora.
+          </li>
+          <li>
+            Cada método se declara empezando con <b><i>this</i></b
+            >, seguida de un punto, y el nombre del método al que se asigna la
+            declaración de la función.
+          </li>
+        </ul>
+        <p></p>
 
-    <p>
-      <b><i>Ejemplo</i></b
-      >: El siguiente código define un tipo de objeto llamado
-      <i>CuentaBancaria</i> que representa los datos y operaciones de una cuenta
-      bancaria:&nbsp;
-    </p>
+        <p>
+          <b><i>Ejemplo</i></b
+          >: El siguiente código define un tipo de objeto llamado
+          <i>CuentaBancaria</i> que representa los datos y operaciones de una
+          cuenta bancaria:&nbsp;
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#800000; font-weight:bold; ">function</span> CuentaBancaria<span style="color:#808030; ">(</span> _titular<span style="color:#808030; ">,</span> _saldo<span style="color:#808030; ">,</span> _interes<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#800000; font-weight:bold; ">function</span> CuentaBancaria<span style="color:#808030; ">(</span> _titular<span style="color:#808030; ">,</span> _saldo<span style="color:#808030; ">,</span> _interes<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
        <span style="color:#696969; ">// Propiedades	</span>
        <span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">.</span>titular <span style="color:#808030; ">=</span> _titular<span style="color:#800080; ">;</span> 
        <span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">.</span>saldo <span style="color:#808030; ">=</span> _saldo<span style="color:#800080; ">;</span> 
@@ -162,49 +198,48 @@
 <span style="color:#800080; ">}</span>
 </pre>
 
-    <h4>Instanciación de objetos a partir de la función constructora.</h4>
+        <h4>Instanciación de objetos a partir de la función constructora.</h4>
 
-    <p>
-      Para crear un objeto a partir de una función constructora sólo es
-      necesario llamar a la función constructora anteponiendo la palabra clave<b
-        ><i> new </i></b
-      >e indicando los argumentos correspondientes, y almacenar en una variable
-      el objeto retornado como resultado:
-    </p>
+        <p>
+          Para crear un objeto a partir de una función constructora sólo es
+          necesario llamar a la función constructora anteponiendo la palabra
+          clave<b><i> new </i></b>e indicando los argumentos correspondientes, y
+          almacenar en una variable el objeto retornado como resultado:
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#696969; ">       // Creacion del objeto cuenta’. </span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#696969; ">       // Creacion del objeto cuenta’. </span>
 <span style="color:#800000; font-weight:bold; ">       var</span> cuenta <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">new</span> CuentaBancaria<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Roger</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#008000; ">1200.0</span><span style="color:#808030; ">,</span> <span style="color:#008000; ">0.45</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> </pre>
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#696969; ">      // Obtencion valores de propiedades del objeto. </span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#696969; ">      // Obtencion valores de propiedades del objeto. </span>
       Console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Nombre del titular: </span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> cuenta<span style="color:#808030; ">.</span>titular<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></pre>
-    <pre
-      style="background: rgb(255, 255, 255)"
-    ><span style="color: rgb(105, 105, 105);">      // Modificacion valores de propiedades</span>
+        <pre
+          style="background: rgb(255, 255, 255)"
+        ><span style="color: rgb(105, 105, 105);">      // Modificacion valores de propiedades</span>
       cuenta<span style="color: rgb(128, 128, 48);">.</span>interes <span style="color: rgb(128, 128, 48);">=</span> <span style="color: rgb(0, 128, 0);">0.5</span><span style="color: rgb(128, 0, 128);">;</span> 
 <span style="color: rgb(105, 105, 105);">      // Ingreso de 100.</span>
       cuenta<span style="color: rgb(128, 128, 48);">.</span>ingresar<span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(0, 140, 0);">100</span><span style="color: rgb(128, 128, 48);">)</span><span style="color: rgb(128, 0, 128);">;</span> 
 <span style="color: rgb(105, 105, 105);">      // Retirada de 50</span>
       cuenta<span style="color: rgb(128, 128, 48);">.</span>retirar<span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(0, 140, 0);">50</span><span style="color: rgb(128, 128, 48);">)</span><span style="color: rgb(128, 0, 128);">;</span> </pre>
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#800000; font-weight:bold; ">      var</span> rendimiento <span style="color:#808030; ">=</span> cuenta<span style="color:#808030; ">.</span>calcularRendimiento<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#800000; font-weight:bold; ">      var</span> rendimiento <span style="color:#808030; ">=</span> cuenta<span style="color:#808030; ">.</span>calcularRendimiento<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
       console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">El rendimiento anual de la cuenta es de: </span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> rendimiento<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 </pre>
 
-    <h4><br />La referencia <i>this</i></h4>
+        <h4><br />La referencia <i>this</i></h4>
 
-    <p>
-      Esta es una palabra clave del lenguaje que hace referencia automática al
-      propio objeto permitiendo obtener el valor de sus propiedades y llamar a
-      sus métodos:
-    </p>
+        <p>
+          Esta es una palabra clave del lenguaje que hace referencia automática
+          al propio objeto permitiendo obtener el valor de sus propiedades y
+          llamar a sus métodos:
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >        <span style="color:#800000; font-weight:bold; ">var</span> obj1 <span style="color:#808030; ">=</span> <span style="color:#800080; ">{</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >        <span style="color:#800000; font-weight:bold; ">var</span> obj1 <span style="color:#808030; ">=</span> <span style="color:#800080; ">{</span>
             a<span style="color:#800080; ">:</span> <span style="color:#008c00; ">10</span><span style="color:#808030; ">,</span>
             b<span style="color:#800080; ">:</span> <span style="color:#008c00; ">20</span><span style="color:#808030; ">,</span>
             producto<span style="color:#800080; ">:</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
@@ -222,93 +257,94 @@
         console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span>obj2<span style="color:#808030; ">.</span>producto<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>   <span style="color:#696969; ">// Ejecuta producto() en obj2.</span>
 </pre>
 
-    <p>
-      El resultado mostrado en la consola de desarrollo del navegador es el
-      siguiente:&nbsp;
-    </p>
-    <p>
-      <img
-        src="../../.imagenes/1.8.2.png"
-        alt=""
-        width="904"
-        height="51"
-        role="presentation"
-        class="img-responsive atto_image_button_text-bottom"
-      /><br />
-    </p>
+        <p>
+          El resultado mostrado en la consola de desarrollo del navegador es el
+          siguiente:&nbsp;
+        </p>
+        <p>
+          <img
+            src="../../.imagenes/1.8.2.png"
+            alt=""
+            width="904"
+            height="51"
+            role="presentation"
+            class="img-responsive atto_image_button_text-bottom"
+          /><br />
+        </p>
 
-    <p>
-      En la a llamada al método<i> producto() </i>de <i>obj1</i>, la referencia
-      <i>this</i> permite obtener el valor de las propiedades <i>a</i> y
-      <i>b</i> de <i>obj1</i> (a=10, b=20).
-    </p>
+        <p>
+          En la a llamada al método<i> producto() </i>de <i>obj1</i>, la
+          referencia <i>this</i> permite obtener el valor de las propiedades
+          <i>a</i> y <i>b</i> de <i>obj1</i> (a=10, b=20).
+        </p>
 
-    <p>
-      En la llamada al mismo método de <i>obj2</i>, la referencia
-      <i>this</i> permite obtener los valores de las propiedades <i>a</i> y
-      <i>b</i> de <i>obj2</i>. (a=5 y vb=4)
-    </p>
+        <p>
+          En la llamada al mismo método de <i>obj2</i>, la referencia
+          <i>this</i> permite obtener los valores de las propiedades <i>a</i> y
+          <i>b</i> de <i>obj2</i>. (a=5 y vb=4)
+        </p>
 
-    <p>
-      &nbsp;<span style="font-size: 1.40625rem; font-weight: 600"
-        >Manejo de objetos.</span
-      >
-    </p>
-    <p>
-      Para acceder a una propiedad de un objeto se emplea la siguiente sintaxis:
-    </p>
-    <p>
-      <b
-        ><i
-          >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          &lt;objeto&gt;.&lt;propiedad&gt; = &lt;valor&gt;</i
-        ></b
-      >
-    </p>
-    <p>
-      Para invocar a un método de un objeto se emplea la misma sintaxis que para
-      llamar a una función pero incluyendo el objeto delante del identificador
-      de la función:
-    </p>
-    <p>
-      <b
-        ><i
-          >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          &lt;objeto&gt;.&lt;identificador_funcion&gt;( &lt;argumento1&gt;,
-          &lt;argumento2&gt;… )</i
-        ></b
-      >
-    </p>
-    <p><i>Ejemplo:&nbsp;</i>&nbsp;<i></i></p>
+        <p>
+          &nbsp;<span style="font-size: 1.40625rem; font-weight: 600"
+            >Manejo de objetos.</span
+          >
+        </p>
+        <p>
+          Para acceder a una propiedad de un objeto se emplea la siguiente
+          sintaxis:
+        </p>
+        <p>
+          <b
+            ><i
+              >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              &nbsp; &lt;objeto&gt;.&lt;propiedad&gt; = &lt;valor&gt;</i
+            ></b
+          >
+        </p>
+        <p>
+          Para invocar a un método de un objeto se emplea la misma sintaxis que
+          para llamar a una función pero incluyendo el objeto delante del
+          identificador de la función:
+        </p>
+        <p>
+          <b
+            ><i
+              >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              &nbsp; &lt;objeto&gt;.&lt;identificador_funcion&gt;(
+              &lt;argumento1&gt;, &lt;argumento2&gt;… )</i
+            ></b
+          >
+        </p>
+        <p><i>Ejemplo:&nbsp;</i>&nbsp;<i></i></p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >         <span style="color:#696969; ">// Obtiene valor propiedad saldo del objeto</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >         <span style="color:#696969; ">// Obtiene valor propiedad saldo del objeto</span>
         console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span>objCuenta<span style="color:#808030; ">.</span>saldo<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
         <span style="color:#696969; ">// Modifica el valor propiedad interes del objeto</span>
         objCuenta<span style="color:#808030; ">.</span>interes <span style="color:#808030; ">=</span> <span style="color:#008000; ">0.05</span><span style="color:#800080; ">;</span>
         <span style="color:#696969; ">// Llama al metodo ingresar()</span>
         objCuenta<span style="color:#808030; ">.</span>ingresar<span style="color:#808030; ">(</span><span style="color:#008000; ">100.50</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></pre>
 
-    <p>
-      <b><i>Ejercicio resuelto: </i></b>
-    </p>
+        <p>
+          <b><i>Ejercicio resuelto: </i></b>
+        </p>
 
-    <p>
-      Crea una página web que define un tipo de objeto <i>Cuadrado</i>, solicite
-      la base y la altura de tres cuadrados y a continuación muestre en una
-      tabla sus áreas.
-    </p>
+        <p>
+          Crea una página web que define un tipo de objeto <i>Cuadrado</i>,
+          solicite la base y la altura de tres cuadrados y a continuación
+          muestre en una tabla sus áreas.
+        </p>
 
-    <p>
-      <b><i>Solución: </i></b>
-    </p>
+        <p>
+          <b><i>Solución: </i></b>
+        </p>
 
-    <p>Lo primero es definir el tipo de objeto <i>Cuadrado</i>:</p>
+        <p>Lo primero es definir el tipo de objeto <i>Cuadrado</i>:</p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#800000; font-weight:bold; ">function</span> Cuadrado<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#800000; font-weight:bold; ">function</span> Cuadrado<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
 	<span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">.</span>base <span style="color:#808030; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span> 
 	<span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">.</span>altura <span style="color:#808030; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span> 
 	
@@ -318,15 +354,15 @@
 <span style="color:#800080; ">}</span>
 </pre>
 
-    <p>
-      Una vez definido el tipo de objeto, ya pueden crearse objetos cuadrados
-      indicando a cada uno su correspondiente base y altura mediante sus
-      propiedades:
-    </p>
+        <p>
+          Una vez definido el tipo de objeto, ya pueden crearse objetos
+          cuadrados indicando a cada uno su correspondiente base y altura
+          mediante sus propiedades:
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#800000; font-weight:bold; ">var</span> cuadrado1 <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">new</span> Cuadrado<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#800000; font-weight:bold; ">var</span> cuadrado1 <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">new</span> Cuadrado<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 cuadrado1<span style="color:#808030; ">.</span>base <span style="color:#808030; ">=</span> <span style="color:#797997; ">Number</span><span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">prompt</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Introduce base cuadrado 1</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
 cuadrado1<span style="color:#808030; ">.</span>altura <span style="color:#808030; ">=</span> <span style="color:#797997; ">Number</span> <span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">prompt</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Introduce la altura de cuadrado 1</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 
@@ -339,62 +375,85 @@ cuadrado3<span style="color:#808030; ">.</span>base <span style="color:#808030; 
 cuadrado3<span style="color:#808030; ">.</span>altura <span style="color:#808030; ">=</span> <span style="color:#797997; ">Number</span> <span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">prompt</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Introduce la altura de cuadrado 3</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 </pre>
 
-    <p>
-      <span style="font-size: 0.9375rem"
-        >Para mostrar al área de cada cuadrado sólo es necesario llamar al
-        método </span
-      ><i style="font-size: 0.9375rem">calcularArea()</i
-      ><span style="font-size: 0.9375rem"> de cada uno de ellos:</span><br />
-    </p>
+        <p>
+          <span style="font-size: 0.9375rem"
+            >Para mostrar al área de cada cuadrado sólo es necesario llamar al
+            método </span
+          ><i style="font-size: 0.9375rem">calcularArea()</i
+          ><span style="font-size: 0.9375rem"> de cada uno de ellos:</span
+          ><br />
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;table&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;table&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;tr&gt;&lt;td&gt;Area del cuadrado 1: </span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> cuadrado1<span style="color:#808030; ">.</span>calcularArea<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">+</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;/td&gt;&lt;/tr&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
 document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;tr&gt;&lt;td&gt;Area del cuadrado 2: </span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> cuadrado2<span style="color:#808030; ">.</span>calcularArea<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">+</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;/td&gt;&lt;/tr&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;tr&gt;&lt;td&gt;Area del cuadrado 3: </span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> cuadrado3<span style="color:#808030; ">.</span>calcularArea<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">+</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;/td&gt;&lt;/tr&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;/table&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></pre>
-    <br />
-    <p></p>
-  </div>
-</div>
-<a
-  href="../1. El lenguaje Javascript/1.7. Matrices.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Anterior lección
-</a>
-<a
-  href="../2. JQuery - Selección y manipulación de eventos/2.1. Integración de la librería JQuery.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Siguiente lección
-</a>
+        <br />
+        <p></p>
+      </div>
+    </div>
+    <a
+      href="../1. El lenguaje Javascript/1.7. Matrices.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Anterior lección
+    </a>
+    <a
+      href="../2. JQuery - Selección y manipulación de eventos/2.1. Integración de la librería JQuery.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Siguiente lección
+    </a>
+    <a
+      href="../../readme.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Inicio/Leeme
+    </a>
+  </body>
+</html>

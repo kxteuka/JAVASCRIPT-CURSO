@@ -1,40 +1,75 @@
-<h2>2.2. El Modelo de objetos del documento ( DOM )</h2>
-<h3>Jerarquía de Objetos de una Página Web</h3>
-<div class="box py-3 contents">
-  <div class="no-overflow">
-    <p dir="ltr" style="text-align: left"></p>
-    <p style="text-align: justify">
-      <span style="font-size: 0.9375rem; text-align: left"
-        >JQuery se emplea básicamente para la manipulación de los elementos que
-        componen las páginas (capas, tablas, elementos de formularios, imágenes,
-        enlaces..., etc ).</span
-      ><span style="font-size: 0.9375rem"
-        >&nbsp;Estos se organizan y son accesibles a través del </span
-      ><em style="font-size: 0.9375rem"
-        ><strong>modelo de objetos de documento&nbsp;</strong></em
-      >
-    </p>
-    <p style="text-align: justify">
-      <span style="font-size: 0.9375rem"
-        >El <em>modelo de objetos de documento (<strong>DOM</strong>)</em> es
-        una estructura jerárquica que contiene un objeto por cada una de las
-        etiquetas presentes en el código HTML.&nbsp;</span
-      >
-    </p>
-    <p style="text-align: justify">
-      <span style="font-size: 0.9375rem"
-        ><strong>Ejemplo:</strong> Sea por tanto la siguiente página web de
-        ejemplo:&nbsp;&nbsp;</span
-      >
-    </p>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iván López" />
+    <title>Curso Básico de JavaScript y jQuery</title>
+    <style>
+      .center-align {
+        text-align: center;
+      }
+      .right-align {
+        text-align: right;
+      }
+      .margin-left {
+        margin-left: 20px;
+      }
+      .custom-link-button {
+        display: inline-block;
+        padding: 4px 12px;
+        font-size: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>2.2. El Modelo de objetos del documento ( DOM )</h2>
+    <h3>Jerarquía de Objetos de una Página Web</h3>
+    <div class="box py-3 contents">
+      <div class="no-overflow">
+        <p dir="ltr" style="text-align: left"></p>
+        <p style="text-align: justify">
+          <span style="font-size: 0.9375rem; text-align: left"
+            >JQuery se emplea básicamente para la manipulación de los elementos
+            que componen las páginas (capas, tablas, elementos de formularios,
+            imágenes, enlaces..., etc ).</span
+          ><span style="font-size: 0.9375rem"
+            >&nbsp;Estos se organizan y son accesibles a través del </span
+          ><em style="font-size: 0.9375rem"
+            ><strong>modelo de objetos de documento&nbsp;</strong></em
+          >
+        </p>
+        <p style="text-align: justify">
+          <span style="font-size: 0.9375rem"
+            >El
+            <em>modelo de objetos de documento (<strong>DOM</strong>)</em> es
+            una estructura jerárquica que contiene un objeto por cada una de las
+            etiquetas presentes en el código HTML.&nbsp;</span
+          >
+        </p>
+        <p style="text-align: justify">
+          <span style="font-size: 0.9375rem"
+            ><strong>Ejemplo:</strong> Sea por tanto la siguiente página web de
+            ejemplo:&nbsp;&nbsp;</span
+          >
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#274796; "> </span><span style="color:#074726; ">xmlns</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"<a href="http://www.w3.org/1999/xhtml" class="_blanktarget">http://www.w3.org/1999/xhtml</a>"</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
         <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">http-equiv</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"Content-Type"</span><span style="color:#274796; "> </span><span style="color:#074726; ">content</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"text/html; charset=utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -47,110 +82,134 @@
 	<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>
-      &nbsp;<br /><span style="font-size: 0.9375rem"
-        >El modelo de objetos del documento correspondiente a la página tendrá
-        los siguientes objetos organizados tal como se representa:&nbsp;</span
-      >
-    </p>
+        <p>
+          &nbsp;<br /><span style="font-size: 0.9375rem"
+            >El modelo de objetos del documento correspondiente a la página
+            tendrá los siguientes objetos organizados tal como se
+            representa:&nbsp;</span
+          >
+        </p>
 
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/2.2.1.png"
-        alt=""
-        width="599"
-        height="320"
-        role="presentation"
-        class="img-responsive atto_image_button_text-bottom"
-      /><br />
-    </p>
-    <p>
-      <br /><span style="font-size: 0.9375rem"
-        >El <em>DOM </em>de una página web permite mediante Javascript/JQuery
-        obtener y modificar el contenido y características de los elementos de
-        la página web tal como se muestran al usuario en su navegador. Algunas
-        de las operaciones posibles son las siguientes:&nbsp;</span
-      ><br />
-    </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/2.2.1.png"
+            alt=""
+            width="599"
+            height="320"
+            role="presentation"
+            class="img-responsive atto_image_button_text-bottom"
+          /><br />
+        </p>
+        <p>
+          <br /><span style="font-size: 0.9375rem"
+            >El <em>DOM </em>de una página web permite mediante
+            Javascript/JQuery obtener y modificar el contenido y características
+            de los elementos de la página web tal como se muestran al usuario en
+            su navegador. Algunas de las operaciones posibles son las
+            siguientes:&nbsp;</span
+          ><br />
+        </p>
 
-    <p></p>
-    <ul>
-      <ul>
-        <li>
-          Modificar la imagen mostrada por un elemento
-          <strong><em>&lt;img&gt;</em></strong>
-        </li>
-        <li>
-          Modificar el contenido de un elemento como un párrafo, o una capa
-          añadiendo, modificando o eliminando otros elementos HTML.
-        </li>
-        <li>
-          Modificar el estilo asignado, o asignar una clase de estilo diferente
-          a un elemento para modificar su aspecto.
-        </li>
-        <li>
-          Obtener el valor introducido en una caja de texto
-          <strong><em>&lt;input type=’text’&gt;</em></strong>
-        </li>
-      </ul>
-    </ul>
-    <p></p>
+        <p></p>
+        <ul>
+          <ul>
+            <li>
+              Modificar la imagen mostrada por un elemento
+              <strong><em>&lt;img&gt;</em></strong>
+            </li>
+            <li>
+              Modificar el contenido de un elemento como un párrafo, o una capa
+              añadiendo, modificando o eliminando otros elementos HTML.
+            </li>
+            <li>
+              Modificar el estilo asignado, o asignar una clase de estilo
+              diferente a un elemento para modificar su aspecto.
+            </li>
+            <li>
+              Obtener el valor introducido en una caja de texto
+              <strong><em>&lt;input type=’text’&gt;</em></strong>
+            </li>
+          </ul>
+        </ul>
+        <p></p>
 
-    <em
-      >Es importante tener claro que estas operaciones
-      <strong
-        ><u
-          >no tienen ningún efecto sobre el diseño o contenido de la página
-          almacenada en el servidor</u
-        ></strong
-      >. Sólo afectan a la representación de la misma en el navegador del
-      usuario.</em
-    ><br /><br />
-    <p></p>
-  </div>
-</div>
-<a
-  href="../2. JQuery - Selección y manipulación de eventos/2.1. Integración de la librería JQuery.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Anterior lección
-</a>
-<a
-  href="../2. JQuery - Selección y manipulación de eventos/2.3. Selectores y pseudoselectores.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Siguiente lección
-</a>
+        <em
+          >Es importante tener claro que estas operaciones
+          <strong
+            ><u
+              >no tienen ningún efecto sobre el diseño o contenido de la página
+              almacenada en el servidor</u
+            ></strong
+          >. Sólo afectan a la representación de la misma en el navegador del
+          usuario.</em
+        ><br /><br />
+        <p></p>
+      </div>
+    </div>
+    <a
+      href="../2. JQuery - Selección y manipulación de eventos/2.1. Integración de la librería JQuery.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Anterior lección
+    </a>
+    <a
+      href="../2. JQuery - Selección y manipulación de eventos/2.3. Selectores y pseudoselectores.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Siguiente lección
+    </a>
+    <a
+      href="../../readme.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Inicio/Leeme
+    </a>
+  </body>
+</html>

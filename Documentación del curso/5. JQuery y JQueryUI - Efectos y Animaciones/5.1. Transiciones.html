@@ -1,93 +1,129 @@
-<h2>5.1. Transiciones</h2>
-<h3>Transiciones.</h3>
-<div class="box py-3 contents">
-  <div class="no-overflow">
-    <p dir="ltr" style="text-align: left"></p>
-    <p>
-      JQuery dispone de funciones para generar ciertos efectos de manera gradual
-      en un intervalo de tiempo logrando así efectos de desgradado y
-      transiciones más vistosos. Para ello pueden emplearse las siguientes
-      funciones:&nbsp;
-    </p>
-    <p></p>
-    <ul>
-      <li>
-        Efectos de aparición y desaparición (
-        <strong><em>$().fadeIn()</em></strong> y<strong
-          ><em> $().fadeOut()</em></strong
-        >
-        )&nbsp;
-      </li>
-      <li>
-        Efectos de cambio de tamaño ( <strong><em>$().slideUp()</em></strong> y
-        <strong><em>$().slideDown()</em></strong> )&nbsp;
-      </li>
-      <li>
-        Efectos de transición ( <strong><em>$().show()</em></strong
-        >, <strong><em>$().hide()</em></strong> )&nbsp;
-      </li>
-    </ul>
-    <p></p>
-    <p>
-      <span style="font-size: 0.9375rem"
-        >Todas ellas pueden invocarse de tres modos:</span
-      ><br />
-    </p>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iván López" />
+    <title>Curso Básico de JavaScript y jQuery</title>
+    <style>
+      .center-align {
+        text-align: center;
+      }
+      .right-align {
+        text-align: right;
+      }
+      .margin-left {
+        margin-left: 20px;
+      }
+      .custom-link-button {
+        display: inline-block;
+        padding: 4px 12px;
+        font-size: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>5.1. Transiciones</h2>
+    <h3>Transiciones.</h3>
+    <div class="box py-3 contents">
+      <div class="no-overflow">
+        <p dir="ltr" style="text-align: left"></p>
+        <p>
+          JQuery dispone de funciones para generar ciertos efectos de manera
+          gradual en un intervalo de tiempo logrando así efectos de desgradado y
+          transiciones más vistosos. Para ello pueden emplearse las siguientes
+          funciones:&nbsp;
+        </p>
+        <p></p>
+        <ul>
+          <li>
+            Efectos de aparición y desaparición (
+            <strong><em>$().fadeIn()</em></strong> y<strong
+              ><em> $().fadeOut()</em></strong
+            >
+            )&nbsp;
+          </li>
+          <li>
+            Efectos de cambio de tamaño (
+            <strong><em>$().slideUp()</em></strong> y
+            <strong><em>$().slideDown()</em></strong> )&nbsp;
+          </li>
+          <li>
+            Efectos de transición ( <strong><em>$().show()</em></strong
+            >, <strong><em>$().hide()</em></strong> )&nbsp;
+          </li>
+        </ul>
+        <p></p>
+        <p>
+          <span style="font-size: 0.9375rem"
+            >Todas ellas pueden invocarse de tres modos:</span
+          ><br />
+        </p>
 
-    <p></p>
-    <ul>
-      <li>
-        <u>&nbsp;Sin indicar ningún parámetro</u>&nbsp;: Provoca el efecto de
-        manera inmediata.
-      </li>
-      <li>
-        &nbsp;<u style="font-size: 0.9375rem">Con argumentos “<em>slow</em></u
-        ><u style="font-size: 0.9375rem">”, “<em>normal</em></u
-        ><u style="font-size: 0.9375rem">”, “<em>fast</em></u
-        ><u style="font-size: 0.9375rem">”</u
-        ><span style="font-size: 0.9375rem"
-          >&nbsp;: Provoca el efecto de manera lenta, normal, o rápida
-          respectivamente.</span
-        >
-      </li>
-      <li>
-        &nbsp;<u style="font-size: 0.9375rem">Con argumento numérico</u
-        ><span style="font-size: 0.9375rem"
-          >&nbsp;: Equivalente al anterior, pero el efecto se extiende el tiempo
-          indicado en milisegundos.</span
-        >
-      </li>
-    </ul>
-    <p></p>
+        <p></p>
+        <ul>
+          <li>
+            <u>&nbsp;Sin indicar ningún parámetro</u>&nbsp;: Provoca el efecto
+            de manera inmediata.
+          </li>
+          <li>
+            &nbsp;<u style="font-size: 0.9375rem"
+              >Con argumentos “<em>slow</em></u
+            ><u style="font-size: 0.9375rem">”, “<em>normal</em></u
+            ><u style="font-size: 0.9375rem">”, “<em>fast</em></u
+            ><u style="font-size: 0.9375rem">”</u
+            ><span style="font-size: 0.9375rem"
+              >&nbsp;: Provoca el efecto de manera lenta, normal, o rápida
+              respectivamente.</span
+            >
+          </li>
+          <li>
+            &nbsp;<u style="font-size: 0.9375rem">Con argumento numérico</u
+            ><span style="font-size: 0.9375rem"
+              >&nbsp;: Equivalente al anterior, pero el efecto se extiende el
+              tiempo indicado en milisegundos.</span
+            >
+          </li>
+        </ul>
+        <p></p>
 
-    <h5>
-      <br />
-      Efecto de desvanecimiento ( <em>$().fadeIn()</em>,
-      <em>$().fadeOut() </em>)
-    </h5>
+        <h5>
+          <br />
+          Efecto de desvanecimiento ( <em>$().fadeIn()</em>,
+          <em>$().fadeOut() </em>)
+        </h5>
 
-    <p>
-      <br />Estas funciones permiten mostrar u ocultar&nbsp;los elementos de la
-      selección modificando su opacidad. La velocidad el efecto depende del
-      argumento dado:
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/5.1.1.gif"
-        alt="gif"
-        width="243"
-        height="257"
-        class="img-responsive atto_image_button_text-bottom"
-      /><br />
-    </p>
+        <p>
+          <br />Estas funciones permiten mostrar u ocultar&nbsp;los elementos de
+          la selección modificando su opacidad. La velocidad el efecto depende
+          del argumento dado:
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/5.1.1.gif"
+            alt="gif"
+            width="243"
+            height="257"
+            class="img-responsive atto_image_button_text-bottom"
+          /><br />
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">http-equiv</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"Content-Type"</span><span style="color:#274796; "> </span><span style="color:#074726; ">content</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"text/html; charset=utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -115,40 +151,40 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>
-      <br />
-      <!--[if !supportLineBreakNewLine]--><br />
-      <!--[endif]-->
-    </p>
+        <p>
+          <br />
+          <!--[if !supportLineBreakNewLine]--><br />
+          <!--[endif]-->
+        </p>
 
-    <h5>Efecto de escalado ( <em>$().slideUp(), $().slideDown()</em> )</h5>
+        <h5>Efecto de escalado ( <em>$().slideUp(), $().slideDown()</em> )</h5>
 
-    <p>
-      <br />Estas funciones muestran u ocultan los elementos de la selección
-      modificando su tamaño. La velocidad depende del argumento indicado:
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/5.1.2.gif"
-        alt="gif"
-        width="243"
-        height="257"
-        class="img-responsive atto_image_button_text-bottom"
-      /><br />
-    </p>
+        <p>
+          <br />Estas funciones muestran u ocultan los elementos de la selección
+          modificando su tamaño. La velocidad depende del argumento indicado:
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/5.1.2.gif"
+            alt="gif"
+            width="243"
+            height="257"
+            class="img-responsive atto_image_button_text-bottom"
+          /><br />
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">http-equiv</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"Content-Type"</span><span style="color:#274796; "> </span><span style="color:#074726; ">content</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"text/html; charset=utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -176,47 +212,47 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-        <tr>
-          <td width="576" valign="top">
-            <p>
-              (*) Para poder seleccionar los elementos ocultos y los visibles
-              pueden emplearse los selectores “<em>:hidden</em>” y
-              “<em>:visible</em>” respectivamente.
-            </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+            <tr>
+              <td width="576" valign="top">
+                <p>
+                  (*) Para poder seleccionar los elementos ocultos y los
+                  visibles pueden emplearse los selectores “<em>:hidden</em>” y
+                  “<em>:visible</em>” respectivamente.
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
-    <h5>Efecto de transición ( <em>$().show(), $().hide()</em> )</h5>
+        <h5>Efecto de transición ( <em>$().show(), $().hide()</em> )</h5>
 
-    <p>
-      <br />Las funciones <em>$().show()</em> / <em>$().hide()</em> muestran y
-      ocultan respectivamente los elementos de la selección alterando su
-      opacidad y tamaño al mismo tiempo:
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/5.1.3.gif"
-        alt="gif
+        <p>
+          <br />Las funciones <em>$().show()</em> / <em>$().hide()</em> muestran
+          y ocultan respectivamente los elementos de la selección alterando su
+          opacidad y tamaño al mismo tiempo:
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/5.1.3.gif"
+            alt="gif
 "
-        width="243"
-        height="257"
-        class="img-responsive atto_image_button_text-bottom"
-      /><br />
-    </p>
+            width="243"
+            height="257"
+            class="img-responsive atto_image_button_text-bottom"
+          /><br />
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">http-equiv</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"Content-Type"</span><span style="color:#274796; "> </span><span style="color:#074726; ">content</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"text/html; charset=utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -244,69 +280,70 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
-    <h5>
-      Cambio de estado (
-      <em>$().toggle(), $().fadeToggle(), $().slideToggle()</em> ).
-    </h5>
+        <h5>
+          Cambio de estado (
+          <em>$().toggle(), $().fadeToggle(), $().slideToggle()</em> ).
+        </h5>
 
-    <p>
-      Estas funciones son semejantes a las anteriores, pero lo que hacen es
-      mostrar u ocultar alternativamente los elementos de la selección cada vez
-      que son invocadas, esto es; si el elemento es visible se oculta, y si está
-      oculto; se muestra:
-    </p>
+        <p>
+          Estas funciones son semejantes a las anteriores, pero lo que hacen es
+          mostrar u ocultar alternativamente los elementos de la selección cada
+          vez que son invocadas, esto es; si el elemento es visible se oculta, y
+          si está oculto; se muestra:
+        </p>
 
-    <p></p>
-    <ul>
-      <li>
-        <strong><em>$().toggle()</em>&nbsp;:</strong> Oculta o muestra
-        alternativamente del mismo modo que las funciones <em>$().show</em> y
-        <em>$().hide</em>.
-      </li>
-      <li>
-        <em style="font-size: 0.9375rem"><strong>$().fadeToggle()</strong></em
-        ><span style="font-size: 0.9375rem"
-          ><strong>&nbsp;:</strong> Oculta o muestra alternativamente del mismo
-          modo que las funciones </span
-        ><em style="font-size: 0.9375rem">$().fadeOut()</em>
-        <span style="font-size: 0.9375rem"> y </span
-        ><em style="font-size: 0.9375rem">$().fadeIn()</em>
-      </li>
-      <li>
-        <em><strong>$().slideToggle()</strong></em
-        >&nbsp;: Oculta o muestra alternativamente del mismo modo que las
-        funciones <em>$().slideDown()</em> y <em>$().slideUp()</em>
-      </li>
-    </ul>
-    <p></p>
+        <p></p>
+        <ul>
+          <li>
+            <strong><em>$().toggle()</em>&nbsp;:</strong> Oculta o muestra
+            alternativamente del mismo modo que las funciones
+            <em>$().show</em> y <em>$().hide</em>.
+          </li>
+          <li>
+            <em style="font-size: 0.9375rem"
+              ><strong>$().fadeToggle()</strong></em
+            ><span style="font-size: 0.9375rem"
+              ><strong>&nbsp;:</strong> Oculta o muestra alternativamente del
+              mismo modo que las funciones </span
+            ><em style="font-size: 0.9375rem">$().fadeOut()</em>
+            <span style="font-size: 0.9375rem"> y </span
+            ><em style="font-size: 0.9375rem">$().fadeIn()</em>
+          </li>
+          <li>
+            <em><strong>$().slideToggle()</strong></em
+            >&nbsp;: Oculta o muestra alternativamente del mismo modo que las
+            funciones <em>$().slideDown()</em> y <em>$().slideUp()</em>
+          </li>
+        </ul>
+        <p></p>
 
-    <p>
-      <em style="font-size: 0.9375rem"
-        ><strong><u>Ejemplo</u></strong
-        >:</em
-      ><span style="font-size: 0.9375rem">
-        El siguiente código muestra y oculta una imagen alternativamente cada
-        vez que se pulsa el botón “VER/OCULTAR” en una transición de 1 segundo
-        de duración empelando la función
-        <strong><em>$().fadeToggle()</em></strong
-        >:&nbsp;</span
-      >
-    </p>
+        <p>
+          <em style="font-size: 0.9375rem"
+            ><strong><u>Ejemplo</u></strong
+            >:</em
+          ><span style="font-size: 0.9375rem">
+            El siguiente código muestra y oculta una imagen alternativamente
+            cada vez que se pulsa el botón “VER/OCULTAR” en una transición de 1
+            segundo de duración empelando la función
+            <strong><em>$().fadeToggle()</em></strong
+            >:&nbsp;</span
+          >
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">http-equiv</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"Content-Type"</span><span style="color:#274796; "> </span><span style="color:#074726; ">content</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"text/html; charset=utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -328,51 +365,73 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br />
-    <p></p>
-  </div>
-</div>
-<a
-  href="../4. JQuery - Validación de formularios/4.2. Niveles de validación.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Anterior lección
-</a>
-<a
-  href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.2. Sincronización de efectos.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Siguiente lección
-</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <p></p>
+      </div>
+    </div>
+    <a
+      href="../4. JQuery - Validación de formularios/4.2. Niveles de validación.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Anterior lección
+    </a>
+    <a
+      href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.2. Sincronización de efectos.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Siguiente lección
+    </a>
+    <a
+      href="../../readme.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Inicio/Leeme
+    </a>
+  </body>
+</html>

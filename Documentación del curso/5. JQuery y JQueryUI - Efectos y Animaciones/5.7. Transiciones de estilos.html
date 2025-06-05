@@ -1,114 +1,150 @@
-<h2>5.7. Transiciones de estilos</h2>
-<h3>
-  Transiciones de éstilos $().addClass(), $().removeClass(), $().toggleClass() y
-  $().animate()
-</h3>
-<div class="no-overflow">
-  <p dir="ltr" style="text-align: left"></p>
-  <p>
-    <span style="font-size: 0.9375rem"
-      >JQuery posee funciones que permiten añadir, eliminar y alternar el estilo
-      de los elementos de la página, tales como
-      <strong><em>$().addClass()</em></strong
-      >, <strong><em>$().removeClass()</em></strong> y
-      <strong><em>$().toggleClass()</em></strong
-      >. Sin embargo, los cambios provocados por estas funciones en el aspecto
-      de los elementos es inmediato.&nbsp;</span
-    >
-  </p>
-  <p>
-    <span style="font-size: 0.9375rem"
-      >JQueryUI añade versiones extendidas de dichas funciones que
-      permiten</span
-    ><span style="font-size: 0.9375rem"
-      >&nbsp;crear animaciones al cambiar los estilos de un elemento.</span
-    ><span style="font-size: 0.9375rem"
-      >. La sintaxis de las tres funciones es la misma:&nbsp;</span
-    >
-  </p>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iván López" />
+    <title>Curso Básico de JavaScript y jQuery</title>
+    <style>
+      .center-align {
+        text-align: center;
+      }
+      .right-align {
+        text-align: right;
+      }
+      .margin-left {
+        margin-left: 20px;
+      }
+      .custom-link-button {
+        display: inline-block;
+        padding: 4px 12px;
+        font-size: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>5.7. Transiciones de estilos</h2>
+    <h3>
+      Transiciones de éstilos $().addClass(), $().removeClass(),
+      $().toggleClass() y $().animate()
+    </h3>
+    <div class="no-overflow">
+      <p dir="ltr" style="text-align: left"></p>
+      <p>
+        <span style="font-size: 0.9375rem"
+          >JQuery posee funciones que permiten añadir, eliminar y alternar el
+          estilo de los elementos de la página, tales como
+          <strong><em>$().addClass()</em></strong
+          >, <strong><em>$().removeClass()</em></strong> y
+          <strong><em>$().toggleClass()</em></strong
+          >. Sin embargo, los cambios provocados por estas funciones en el
+          aspecto de los elementos es inmediato.&nbsp;</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 0.9375rem"
+          >JQueryUI añade versiones extendidas de dichas funciones que
+          permiten</span
+        ><span style="font-size: 0.9375rem"
+          >&nbsp;crear animaciones al cambiar los estilos de un elemento.</span
+        ><span style="font-size: 0.9375rem"
+          >. La sintaxis de las tres funciones es la misma:&nbsp;</span
+        >
+      </p>
 
-  <pre
-    style="color: #000000; background: #ffffff"
-  >$<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>addClass<span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>clase_estilo<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>duración_transicion<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>función_terminacion<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+      <pre
+        style="color: #000000; background: #ffffff"
+      >$<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>addClass<span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>clase_estilo<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>duración_transicion<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>función_terminacion<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 
 $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>removeClass<span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>clase_estilo<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>duración_transicion<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>función_terminacion<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 
 $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>toggleClass<span style="color:#808030; ">(</span><span style="color:#808030; ">&lt;</span>clase_estilo<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>duración_transicion<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">,</span> <span style="color:#808030; ">&lt;</span>función_terminacion<span style="color:#808030; ">&gt;</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 </pre>
 
-  <p></p>
-  <ul>
-    <li>
-      La función <strong><em>$().addClass()</em></strong>
-      <em
-        ><u
-          >añade la clase de estilo indicada en el parámetro
-          &lt;clave_estilo&gt; generando una transición entre el aspecto actual
-          y el aspecto final.</u
-        ></em
-      >&nbsp;La duración de la transición viene expresada en milisegundos en el
-      parámetro <em>&lt;duracion&gt;, </em>y puede indicarse opcionalmente una
-      función de retrollamada como parámetro <em>&lt;función&gt;</em> para ser
-      ejecutada al completarse la transición.
-    </li>
-    <li>
-      La función <strong><em>$().removeClass()</em></strong
-      >&nbsp;<em
-        ><u
-          >genera una transición entre el aspecto actual y el resultante al
-          eliminar la clase de estilo indicada en el parámetro
-          &lt;clase_estilo&gt;</u
-        ></em
-      >. Los parámetros aceptados son los mismos.
-    </li>
-    <li>
-      La función <strong><em>$().toggleClass()</em></strong>
-      <em
-        ><u
-          >añade y retira alternativamente con cada llamada el estilo indicado
-          en el parámetro &lt;clase_estilo&gt; generando una transición
-        </u></em
-      >con la duración especificada.
-    </li>
-  </ul>
-  <p></p>
+      <p></p>
+      <ul>
+        <li>
+          La función <strong><em>$().addClass()</em></strong>
+          <em
+            ><u
+              >añade la clase de estilo indicada en el parámetro
+              &lt;clave_estilo&gt; generando una transición entre el aspecto
+              actual y el aspecto final.</u
+            ></em
+          >&nbsp;La duración de la transición viene expresada en milisegundos en
+          el parámetro <em>&lt;duracion&gt;, </em>y puede indicarse
+          opcionalmente una función de retrollamada como parámetro
+          <em>&lt;función&gt;</em> para ser ejecutada al completarse la
+          transición.
+        </li>
+        <li>
+          La función <strong><em>$().removeClass()</em></strong
+          >&nbsp;<em
+            ><u
+              >genera una transición entre el aspecto actual y el resultante al
+              eliminar la clase de estilo indicada en el parámetro
+              &lt;clase_estilo&gt;</u
+            ></em
+          >. Los parámetros aceptados son los mismos.
+        </li>
+        <li>
+          La función <strong><em>$().toggleClass()</em></strong>
+          <em
+            ><u
+              >añade y retira alternativamente con cada llamada el estilo
+              indicado en el parámetro &lt;clase_estilo&gt; generando una
+              transición
+            </u></em
+          >con la duración especificada.
+        </li>
+      </ul>
+      <p></p>
 
-  En los tres casos, las funciones se invocan a partir de una selección de
-  el/los elementos sobre los que aplicar las transiciones.&nbsp;<br /><br />
-  <p>
-    <strong><em> Ejemplo:</em></strong> La siguiente página muestra una capa a
-    la que se le añade y elimina la clase de estilo ( <em>newClass</em> ) cuando
-    se pulsan dos botones “<em>addClass</em>” y “<em>removeClass</em>” empleando
-    las transiciones generadas por las funciones
-    <strong><em>$().addClass()</em></strong> y
-    <strong><em>$().removeClass()</em></strong
-    >.
-  </p>
+      En los tres casos, las funciones se invocan a partir de una selección de
+      el/los elementos sobre los que aplicar las transiciones.&nbsp;<br /><br />
+      <p>
+        <strong><em> Ejemplo:</em></strong> La siguiente página muestra una capa
+        a la que se le añade y elimina la clase de estilo ( <em>newClass</em> )
+        cuando se pulsan dos botones “<em>addClass</em>” y
+        “<em>removeClass</em>” empleando las transiciones generadas por las
+        funciones <strong><em>$().addClass()</em></strong> y
+        <strong><em>$().removeClass()</em></strong
+        >.
+      </p>
 
-  <p>
-    <span style="font-size: 0.9375rem"
-      >Al pulsarse los botones, se produce una transición entre ambos aspectos
-      de un segundo de duración:</span
-    ><br />
-  </p>
-  <p style="text-align: center">
-    <span style="font-size: 0.9375rem"
-      ><img
-        src="../../.imagenes/5.7.1.gif"
-        alt="transicion_estilos"
-        width="289"
-        height="195"
-        class="img-responsive atto_image_button_text-bottom" /><br
-    /></span>
-  </p>
+      <p>
+        <span style="font-size: 0.9375rem"
+          >Al pulsarse los botones, se produce una transición entre ambos
+          aspectos de un segundo de duración:</span
+        ><br />
+      </p>
+      <p style="text-align: center">
+        <span style="font-size: 0.9375rem"
+          ><img
+            src="../../.imagenes/5.7.1.gif"
+            alt="transicion_estilos"
+            width="289"
+            height="195"
+            class="img-responsive atto_image_button_text-bottom" /><br
+        /></span>
+      </p>
 
-  <table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-      <tr>
-        <td>
-          <pre
-            style="color: #000000; background: #ffffff"
-          ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+      <table border="1" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td>
+              <pre
+                style="color: #000000; background: #ffffff"
+              ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -167,59 +203,60 @@ $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><sp
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-  <p>&nbsp;</p>
-  <h4>La función <em>$().animate()</em></h4>
-  <p>
-    La función <strong><em>$().animate()</em></strong> de JQueryUI permite
-    generar transiciones al modificar los estilos asociados a un elemento.&nbsp;
-  </p>
+      <p>&nbsp;</p>
+      <h4>La función <em>$().animate()</em></h4>
+      <p>
+        La función <strong><em>$().animate()</em></strong> de JQueryUI permite
+        generar transiciones al modificar los estilos asociados a un
+        elemento.&nbsp;
+      </p>
 
-  <p>
-    La función admite un objeto con los estilos a aplicar<em>
-      &lt;estilos&gt;</em
-    >
-    expresados entre llaves y separados por comas, seguido del tiempo de
-    transición en milisegundos &lt;duración&gt;, y una función opcional para que
-    se ejecute al terminar la transición.
-  </p>
-  <pre
-    style="color: #000000; background: #ffffff"
-  >$().animate(<span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">estilos</span><span style="color:#a65700; ">&gt;</span>, <span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">duración</span><span style="color:#a65700; ">&gt;</span>, <span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">función_retrollamada</span><span style="color:#a65700; ">&gt;</span> )
+      <p>
+        La función admite un objeto con los estilos a aplicar<em>
+          &lt;estilos&gt;</em
+        >
+        expresados entre llaves y separados por comas, seguido del tiempo de
+        transición en milisegundos &lt;duración&gt;, y una función opcional para
+        que se ejecute al terminar la transición.
+      </p>
+      <pre
+        style="color: #000000; background: #ffffff"
+      >$().animate(<span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">estilos</span><span style="color:#a65700; ">&gt;</span>, <span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">duración</span><span style="color:#a65700; ">&gt;</span>, <span style="color:#a65700; ">&lt;</span><span style="color:#5f5035; ">función_retrollamada</span><span style="color:#a65700; ">&gt;</span> )
 </pre>
 
-  <p>
-    <strong
-      ><em><u>Ejemplo</u></em></strong
-    >: El siguiente código muestra un formulario con cuatro cajas de texto que
-    al obtener el foco modifican su fondo a un color azulado mediante una
-    transición de color de un cuarto de segundo de duración ( 250 milisegundos
-    ). Cuando pierden el foco recuperan el colo de fondo blanco mediante una
-    transición de la misma duración:
-  </p>
-  <p style="text-align: center">
-    <img
-      src="../../.imagenes/5.7.2.gif"
-      alt="animate"
-      width="241"
-      height="87"
-      class="img-responsive atto_image_button_text-bottom"
-    /><br />
-  </p>
+      <p>
+        <strong
+          ><em><u>Ejemplo</u></em></strong
+        >: El siguiente código muestra un formulario con cuatro cajas de texto
+        que al obtener el foco modifican su fondo a un color azulado mediante
+        una transición de color de un cuarto de segundo de duración ( 250
+        milisegundos ). Cuando pierden el foco recuperan el colo de fondo blanco
+        mediante una transición de la misma duración:
+      </p>
+      <p style="text-align: center">
+        <img
+          src="../../.imagenes/5.7.2.gif"
+          alt="animate"
+          width="241"
+          height="87"
+          class="img-responsive atto_image_button_text-bottom"
+        /><br />
+      </p>
 
-  <p style="text-align: center"></p>
+      <p style="text-align: center"></p>
 
-  <table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-      <tr>
-        <td width="576" valign="top">
-          <pre
-            style="color: #000000; background: #ffffff"
-          ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+      <table border="1" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td width="576" valign="top">
+              <pre
+                style="color: #000000; background: #ffffff"
+              ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -261,30 +298,30 @@ $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><sp
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <table border="1" cellspacing="0" cellpadding="0">
-    <tbody></tbody>
-  </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table border="1" cellspacing="0" cellpadding="0">
+        <tbody></tbody>
+      </table>
 
-  <br />Este mismo ejemplo podríamos implementarlo empleando la función<strong
-    ><em> $().toggleClass()</em></strong
-  >&nbsp;contra la caja de texto que gane o pierda el foco ( eventos<em>
-    blur()</em
-  >
-  y <em>focus() </em>) añadiendo y eliminando respectivamente una clase de
-  estilo que muestre la caja de texto seleccionada:&nbsp;<br />
-  <p></p>
-  <table>
-    <tbody>
-      <tr>
-        <td>
-          <p></p>
-          <pre
-            style="color: #000000; background: #ffffff"
-          ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+      <br />Este mismo ejemplo podríamos implementarlo empleando la
+      función<strong><em> $().toggleClass()</em></strong
+      >&nbsp;contra la caja de texto que gane o pierda el foco ( eventos<em>
+        blur()</em
+      >
+      y <em>focus() </em>) añadiendo y eliminando respectivamente una clase de
+      estilo que muestre la caja de texto seleccionada:&nbsp;<br />
+      <p></p>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <p></p>
+              <pre
+                style="color: #000000; background: #ffffff"
+              ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -325,50 +362,72 @@ $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><sp
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-<a
-  href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.6. Transiciones de visibilidad.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Anterior lección
-</a>
+    <a
+      href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.6. Transiciones de visibilidad.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Anterior lección
+    </a>
 
-<a
-  href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.8. Encadenamiento de transiciones.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Siguiente lección
-</a>
+    <a
+      href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.8. Encadenamiento de transiciones.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Siguiente lección
+    </a>
+    <a
+      href="../../readme.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Inicio/Leeme
+    </a>
+  </body>
+</html>

@@ -1,50 +1,85 @@
-<h2>3.2. Manejo de eventos con datos vinculados</h2>
-<h3>Manejo de eventos con datos vinculados</h3>
-<div class="box py-3 contents" id="yui_3_17_2_1_1749024240513_35">
-  <div class="no-overflow" id="yui_3_17_2_1_1749024240513_34">
-    <p dir="ltr" style="text-align: left"></p>
-    <h5><span>Vinculo de datos a Eventos</span></h5>
-    <h3>
-      <span style="font-size: 0.9375rem; font-weight: 400">La función </span
-      ><em style="font-size: 0.9375rem">$().on()</em
-      ><span style="font-size: 0.9375rem; font-weight: 400">
-        permite registrar eventos vinculando datos para la función manejadora.
-        Para ello se emplea la siguiente sintaxis:</span
-      ><br />
-    </h3>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iván López" />
+    <title>Curso Básico de JavaScript y jQuery</title>
+    <style>
+      .center-align {
+        text-align: center;
+      }
+      .right-align {
+        text-align: right;
+      }
+      .margin-left {
+        margin-left: 20px;
+      }
+      .custom-link-button {
+        display: inline-block;
+        padding: 4px 12px;
+        font-size: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>3.2. Manejo de eventos con datos vinculados</h2>
+    <h3>Manejo de eventos con datos vinculados</h3>
+    <div class="box py-3 contents" id="yui_3_17_2_1_1749024240513_35">
+      <div class="no-overflow" id="yui_3_17_2_1_1749024240513_34">
+        <p dir="ltr" style="text-align: left"></p>
+        <h5><span>Vinculo de datos a Eventos</span></h5>
+        <h3>
+          <span style="font-size: 0.9375rem; font-weight: 400">La función </span
+          ><em style="font-size: 0.9375rem">$().on()</em
+          ><span style="font-size: 0.9375rem; font-weight: 400">
+            permite registrar eventos vinculando datos para la función
+            manejadora. Para ello se emplea la siguiente sintaxis:</span
+          ><br />
+        </h3>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >           <strong> $<span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 128, 48);">&lt;</span>selección<span style="color: rgb(128, 128, 48);">&gt;</span><span style="color: rgb(128, 128, 48);">)</span><span style="color: rgb(128, 128, 48);">.</span>on<span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 128, 48);">&lt;</span>evento<span style="color: rgb(128, 128, 48);">&gt;</span><span style="color: rgb(128, 128, 48);">,</span> <span style="color: rgb(128, 128, 48);">&lt;</span>objeto_vinculado<span style="color: rgb(128, 128, 48);">&gt;</span><span style="color: rgb(128, 128, 48);">,</span> <span style="color: rgb(128, 128, 48);">&lt;</span>fn_manejadora<span style="color: rgb(128, 128, 48);">&gt;</span><span style="color: rgb(128, 128, 48);">)</span></strong></pre>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >           <strong> $<span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 128, 48);">&lt;</span>selección<span style="color: rgb(128, 128, 48);">&gt;</span><span style="color: rgb(128, 128, 48);">)</span><span style="color: rgb(128, 128, 48);">.</span>on<span style="color: rgb(128, 128, 48);">(</span><span style="color: rgb(128, 128, 48);">&lt;</span>evento<span style="color: rgb(128, 128, 48);">&gt;</span><span style="color: rgb(128, 128, 48);">,</span> <span style="color: rgb(128, 128, 48);">&lt;</span>objeto_vinculado<span style="color: rgb(128, 128, 48);">&gt;</span><span style="color: rgb(128, 128, 48);">,</span> <span style="color: rgb(128, 128, 48);">&lt;</span>fn_manejadora<span style="color: rgb(128, 128, 48);">&gt;</span><span style="color: rgb(128, 128, 48);">)</span></strong></pre>
 
-    <p>
-      La inclusión de datos al registrar un evento es especialmente útil cuando
-      se desea dar servicio a diferentes eventos empleando la misma función
-      manejadora. En estos casos, puedes emplearse la información vinculada para
-      indicar alguna modificación sobre la acción a realizar.&nbsp;<em></em>
-    </p>
+        <p>
+          La inclusión de datos al registrar un evento es especialmente útil
+          cuando se desea dar servicio a diferentes eventos empleando la misma
+          función manejadora. En estos casos, puedes emplearse la información
+          vinculada para indicar alguna modificación sobre la acción a
+          realizar.&nbsp;<em></em>
+        </p>
 
-    <p>
-      <em><u>Ejemplo</u></em
-      >: El siguiente código modifica el ejemplo visto en la lección anterior en
-      la que mediante la pulsación de tres botones “<em>ROJO</em>”,
-      “<em>VERDE</em>”&nbsp; y “<em>AZUL</em>” se modifica el color de fondo de
-      la página. En este caso, sin embargo; empleando la misma función
-      manejadora:
-    </p>
-    <table
-      border="1"
-      cellspacing="0"
-      cellpadding="0"
-      id="yui_3_17_2_1_1749024240513_33"
-    >
-      <tbody id="yui_3_17_2_1_1749024240513_32">
-        <tr id="yui_3_17_2_1_1749024240513_31">
-          <td width="576" valign="top" id="yui_3_17_2_1_1749024240513_30">
-            <pre
-              style="color: #000000; background: #ffffff"
-              id="yui_3_17_2_1_1749024240513_29"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <p>
+          <em><u>Ejemplo</u></em
+          >: El siguiente código modifica el ejemplo visto en la lección
+          anterior en la que mediante la pulsación de tres botones
+          “<em>ROJO</em>”, “<em>VERDE</em>”&nbsp; y “<em>AZUL</em>” se modifica
+          el color de fondo de la página. En este caso, sin embargo; empleando
+          la misma función manejadora:
+        </p>
+        <table
+          border="1"
+          cellspacing="0"
+          cellpadding="0"
+          id="yui_3_17_2_1_1749024240513_33"
+        >
+          <tbody id="yui_3_17_2_1_1749024240513_32">
+            <tr id="yui_3_17_2_1_1749024240513_31">
+              <td width="576" valign="top" id="yui_3_17_2_1_1749024240513_30">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                  id="yui_3_17_2_1_1749024240513_29"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -72,86 +107,87 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br /><span style="font-size: 0.9375rem"
-      >Para ello empleamos la función </span
-    ><strong style="font-size: 0.9375rem"><em>$().</em></strong
-    ><em style="font-size: 0.9375rem"><strong>on()</strong> </em
-    ><span style="font-size: 0.9375rem">para registrar el evento ‘</span
-    ><em style="font-size: 0.9375rem">click’</em
-    ><span style="font-size: 0.9375rem">
-      a cada botón incluyendo en cada caso un objeto con un atributo ‘</span
-    ><em style="font-size: 0.9375rem">color’</em>
-    <span style="font-size: 0.9375rem"
-      >&nbsp; y el código hexadecimal del color correspondiente:&nbsp;<br /></span
-    ><br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br /><span style="font-size: 0.9375rem"
+          >Para ello empleamos la función </span
+        ><strong style="font-size: 0.9375rem"><em>$().</em></strong
+        ><em style="font-size: 0.9375rem"><strong>on()</strong> </em
+        ><span style="font-size: 0.9375rem">para registrar el evento ‘</span
+        ><em style="font-size: 0.9375rem">click’</em
+        ><span style="font-size: 0.9375rem">
+          a cada botón incluyendo en cada caso un objeto con un atributo ‘</span
+        ><em style="font-size: 0.9375rem">color’</em>
+        <span style="font-size: 0.9375rem"
+          >&nbsp; y el código hexadecimal del color correspondiente:&nbsp;<br /></span
+        ><br />
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#696969; ">      // Registro del evento click </span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#696969; ">      // Registro del evento click </span>
       $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#btn_azul</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">click</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span><strong><u><span style="color:#800000; ">'</span><span style="color:#0000e6; ">color</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">#0000ff</span><span style="color:#800000; ">'</span></u></strong><span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> manejadora<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
       $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#btn_rojo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">click</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span><u><strong><span style="color:#800000; ">'</span><span style="color:#0000e6; ">color</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">#ff0000</span><span style="color:#800000; ">'</span></strong></u><span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> manejadora<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
       $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#btn_verde</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">click</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800080; ">{</span><u><strong><span style="color:#800000; ">'</span><span style="color:#0000e6; ">color</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">#00ff00</span><span style="color:#800000; ">'</span></strong></u><span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> manejadora<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
 </pre>
-    <p>
-      Por su parte la función manejadora puede obtener los valores vinculados
-      mediante la propiedad ‘<em>data</em>’ del objeto recibido por el
-      parámetro&nbsp;<em>event</em>. En este caso, para recuperar la propiedad
-      color del objeto vinculado al evento se
-      emplea:&nbsp;<em>event.data.color</em>:
-    </p>
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#696969; ">      // Funcion manejadora</span>
+        <p>
+          Por su parte la función manejadora puede obtener los valores
+          vinculados mediante la propiedad ‘<em>data</em>’ del objeto recibido
+          por el parámetro&nbsp;<em>event</em>. En este caso, para recuperar la
+          propiedad color del objeto vinculado al evento se
+          emplea:&nbsp;<em>event.data.color</em>:
+        </p>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#696969; ">      // Funcion manejadora</span>
 <span style="color:#800000; font-weight:bold; ">      function</span> manejadora<span style="color:#808030; ">(</span> event <span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
              <span style="color:#696969; ">// Obtención del color asociado al objeto 'data'</span>
              <span style="color:#800000; font-weight:bold; ">var</span> color <span style="color:#808030; ">=</span> <strong><u>event<span style="color:#808030; ">.</span>data<span style="color:#808030; ">.</span>color<span style="color:#800080; ">;</span> </u></strong>
              $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">body</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>css<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">background-color</span><span style="color:#800000; ">'</span><span style="color:#800080; ">:</span>color<span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 <span style="color:#800080; ">      }</span></pre>
 
-    <h5>Supresión de eventos</h5>
+        <h5>Supresión de eventos</h5>
 
-    <p>
-      La función <em><strong>$().off()</strong></em> permite desvincular de
-      el/los elementos seleccionados el evento indicado como argumento. Su
-      sintaxis es la siguiente:
-    </p>
+        <p>
+          La función <em><strong>$().off()</strong></em> permite desvincular de
+          el/los elementos seleccionados el evento indicado como argumento. Su
+          sintaxis es la siguiente:
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >           <strong><span class="" style="color: rgb(51, 51, 51);">$</span><span style="color: rgb(51, 51, 51);" class="">(&lt;</span><span class="" style="color: rgb(51, 51, 51);">selección</span><span style="color: rgb(51, 51, 51);" class="">&gt;).</span><span class="" style="color: rgb(51, 51, 51);">off</span><span style="color: rgb(51, 51, 51);" class="">(</span><span style="color: rgb(51, 51, 51);" class="">'</span><span style="color: rgb(51, 51, 51);" class="">&lt;evento&gt;</span><span style="color: rgb(51, 51, 51);" class="">'</span><span style="color: rgb(51, 51, 51);" class="">)</span></strong>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >           <strong><span class="" style="color: rgb(51, 51, 51);">$</span><span style="color: rgb(51, 51, 51);" class="">(&lt;</span><span class="" style="color: rgb(51, 51, 51);">selección</span><span style="color: rgb(51, 51, 51);" class="">&gt;).</span><span class="" style="color: rgb(51, 51, 51);">off</span><span style="color: rgb(51, 51, 51);" class="">(</span><span style="color: rgb(51, 51, 51);" class="">'</span><span style="color: rgb(51, 51, 51);" class="">&lt;evento&gt;</span><span style="color: rgb(51, 51, 51);" class="">'</span><span style="color: rgb(51, 51, 51);" class="">)</span></strong>
 </pre>
 
-    <p>
-      <em><u>Ejemplo</u>:</em> La siguiente página muestra una casilla de
-      verificación y un botón “<em>ACCION</em>”. Cuando la casilla es marcada se
-      registra el evento ‘<em>click’</em> al botón para que muestre un cuadro de
-      diálogo al ser pulsado. El mismo evento es desvinculado al desmarcar la
-      casilla de modo que el botón deja de responder a la pulsación del usuario:
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/3.2.1.gif"
-        alt="registro_eventos
+        <p>
+          <em><u>Ejemplo</u>:</em> La siguiente página muestra una casilla de
+          verificación y un botón “<em>ACCION</em>”. Cuando la casilla es
+          marcada se registra el evento ‘<em>click’</em> al botón para que
+          muestre un cuadro de diálogo al ser pulsado. El mismo evento es
+          desvinculado al desmarcar la casilla de modo que el botón deja de
+          responder a la pulsación del usuario:
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/3.2.1.gif"
+            alt="registro_eventos
 "
-        width="753"
-        height="128"
-        class="img-responsive atto_image_button_text-bottom"
-      /><br />
-    </p>
+            width="753"
+            height="128"
+            class="img-responsive atto_image_button_text-bottom"
+          /><br />
+        </p>
 
-    <p style="text-align: center"></p>
+        <p style="text-align: center"></p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -181,58 +217,60 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p><br /></p>
+        <p><br /></p>
 
-    <h5>Registro múltiple de eventos</h5>
+        <h5>Registro múltiple de eventos</h5>
 
-    <p>
-      El método $().on(), también permite vincular múltiples eventos con la
-      misma o distintas funciones manejadoras sobre los elementos seleccionados.
-      Para ello se emplean las siguientes sintaxis:&nbsp;
-    </p>
+        <p>
+          El método $().on(), también permite vincular múltiples eventos con la
+          misma o distintas funciones manejadoras sobre los elementos
+          seleccionados. Para ello se emplean las siguientes sintaxis:&nbsp;
+        </p>
 
-    <p></p>
-    <ul>
-      <li>Registro de varios eventos empleando la misma función manejadora:</li>
-    </ul>
-    <p></p>
+        <p></p>
+        <ul>
+          <li>
+            Registro de varios eventos empleando la misma función manejadora:
+          </li>
+        </ul>
+        <p></p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            >            <span style="color:#696969; ">// Registro del evento mouseenter y mouseleave para todas las capas. </span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >            <span style="color:#696969; ">// Registro del evento mouseenter y mouseleave para todas las capas. </span>
             $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">div</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">mouseenter mouseleave</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
                 …
             <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <ul>
-      <li>
-        Registro de múltiples eventos con sus correspondientes funciones
-        manejadoras:&nbsp;
-      </li>
-    </ul>
-    <p></p>
+        <ul>
+          <li>
+            Registro de múltiples eventos con sus correspondientes funciones
+            manejadoras:&nbsp;
+          </li>
+        </ul>
+        <p></p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            >            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">div</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >            $<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">div</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>on<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span>
                 mouseenter<span style="color:#800080; ">:</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
                     <span style="color:#800000; font-weight:bold; ">alert</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">El puntero del ratón entra en la capa</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
                 <span style="color:#800080; ">}</span><span style="color:#808030; ">,</span>
@@ -244,53 +282,75 @@
                 <span style="color:#800080; ">}</span>
             <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p><br /></p>
-    <br />
-    <p></p>
-  </div>
-</div>
-<a
-  href="../3. JQuery - Manejo de eventos/3.1. Captura de eventos.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Anterior lección
-</a>
-<a
-  href="../3. JQuery - Manejo de eventos/3.3. Delegación de eventos.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Siguiente lección
-</a>
+        <p><br /></p>
+        <br />
+        <p></p>
+      </div>
+    </div>
+    <a
+      href="../3. JQuery - Manejo de eventos/3.1. Captura de eventos.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Anterior lección
+    </a>
+    <a
+      href="../3. JQuery - Manejo de eventos/3.3. Delegación de eventos.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Siguiente lección
+    </a>
+    <a
+      href="../../readme.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Inicio/Leeme
+    </a>
+  </body>
+</html>

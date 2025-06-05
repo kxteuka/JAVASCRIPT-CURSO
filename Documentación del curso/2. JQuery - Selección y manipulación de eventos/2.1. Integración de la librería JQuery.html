@@ -1,134 +1,171 @@
-<h2>2.1. Integración de librería JQuery</h2>
-<h3>Versiones e Integración de JQuery</h3>
-<div class="box py-3 contents">
-  <div class="no-overflow">
-    <p>
-      <span
-        >jQuery es una librería programada a partir de Javascript que ayuda al
-        desarrollo de páginas interactivas simplificando su programación y
-        reduciendo la cantidad de código necesario. Las principales tareas que
-        simplifica el uso jQuery frente a la programación en Javascript pueden
-        resumirse en:</span
-      ><br />
-    </p>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iván López" />
+    <title>Curso Básico de JavaScript y jQuery</title>
+    <style>
+      .center-align {
+        text-align: center;
+      }
+      .right-align {
+        text-align: right;
+      }
+      .margin-left {
+        margin-left: 20px;
+      }
+      .custom-link-button {
+        display: inline-block;
+        padding: 4px 12px;
+        font-size: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>2.1. Integración de librería JQuery</h2>
+    <h3>Versiones e Integración de JQuery</h3>
+    <div class="box py-3 contents">
+      <div class="no-overflow">
+        <p>
+          <span
+            >jQuery es una librería programada a partir de Javascript que ayuda
+            al desarrollo de páginas interactivas simplificando su programación
+            y reduciendo la cantidad de código necesario. Las principales tareas
+            que simplifica el uso jQuery frente a la programación en Javascript
+            pueden resumirse en:</span
+          ><br />
+        </p>
 
-    <p></p>
-    <ul>
-      <ul>
-        <li>Manipulación de elementos HTML / DOM</li>
-        <li>Manipulación de CSS</li>
-        <li>
-          <span style="font-size: 0.9375rem"
-            >Control de eventos a elementos HTML</span
-          >
-        </li>
-        <li>Implementación de animaciones y efectos visuales diversos.</li>
-        <li>Implementación de operaciones asíncronas AJAX.</li>
-        <li>Utilidades complementarias</li>
-      </ul>
-    </ul>
-    <p></p>
-    <p>
-      El uso de JQuery requiere no obstante conocimientos de HTML, CSS y del
-      lenguaje Javascript.
-    </p>
+        <p></p>
+        <ul>
+          <ul>
+            <li>Manipulación de elementos HTML / DOM</li>
+            <li>Manipulación de CSS</li>
+            <li>
+              <span style="font-size: 0.9375rem"
+                >Control de eventos a elementos HTML</span
+              >
+            </li>
+            <li>Implementación de animaciones y efectos visuales diversos.</li>
+            <li>Implementación de operaciones asíncronas AJAX.</li>
+            <li>Utilidades complementarias</li>
+          </ul>
+        </ul>
+        <p></p>
+        <p>
+          El uso de JQuery requiere no obstante conocimientos de HTML, CSS y del
+          lenguaje Javascript.
+        </p>
 
-    <h4><br />Versiones de JQuery</h4>
+        <h4><br />Versiones de JQuery</h4>
 
-    <p><br />Tradicionalmente han convivido dos versiones de JQuery:</p>
+        <p><br />Tradicionalmente han convivido dos versiones de JQuery:</p>
 
-    <p>
-      <!--[if !supportLists]-->·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <!--[endif]--><strong><em>Versiones 1.X</em></strong
-      >&nbsp;: Versión compatible con navegadores previos IE 8.0
-    </p>
+        <p>
+          <!--[if !supportLists]-->·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!--[endif]--><strong><em>Versiones 1.X</em></strong
+          >&nbsp;: Versión compatible con navegadores previos IE 8.0
+        </p>
 
-    <p>
-      <!--[if !supportLists]-->·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <!--[endif]--><strong><em>Versiones 2.X</em></strong
-      >&nbsp;: Versión optimizada para navegadores IE 8.0 en adelante.
-    </p>
+        <p>
+          <!--[if !supportLists]-->·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!--[endif]--><strong><em>Versiones 2.X</em></strong
+          >&nbsp;: Versión optimizada para navegadores IE 8.0 en adelante.
+        </p>
 
-    <p>
-      A partir de Julio de 2015 apareció JQuery 3.0 con lo que se cambio la
-      nomenclatura:
-    </p>
+        <p>
+          A partir de Julio de 2015 apareció JQuery 3.0 con lo que se cambio la
+          nomenclatura:
+        </p>
 
-    <p>
-      <!--[if !supportLists]-->·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <!--[endif]--><strong><em>JQuery 3.0</em></strong
-      >&nbsp;: Versión moderna compatible con navegadores IE 9.0 en adelante
-      sucesora de JQuery 2.1.1.
-    </p>
+        <p>
+          <!--[if !supportLists]-->·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!--[endif]--><strong><em>JQuery 3.0</em></strong
+          >&nbsp;: Versión moderna compatible con navegadores IE 9.0 en adelante
+          sucesora de JQuery 2.1.1.
+        </p>
 
-    <p>
-      <!--[if !supportLists]-->·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <!--[endif]--><strong><em>JQuery Compact 3.0</em></strong
-      >&nbsp;: Versión retrocompatible con navegadores IE 8.0 sucesora de JQuery
-      1.11.1
-    </p>
+        <p>
+          <!--[if !supportLists]-->·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!--[endif]--><strong><em>JQuery Compact 3.0</em></strong
+          >&nbsp;: Versión retrocompatible con navegadores IE 8.0 sucesora de
+          JQuery 1.11.1
+        </p>
 
-    <h4><br />Integración con JQuery</h4>
+        <h4><br />Integración con JQuery</h4>
 
-    <p><br />La librería jQuery puede descargarse del sitio web oficial:</p>
+        <p><br />La librería jQuery puede descargarse del sitio web oficial:</p>
 
-    <p>
-      <strong><em>&nbsp;</em></strong
-      ><a href="http://jquery.com/download/"
-        ><em>http://jquery.com/download/</em></a
-      ><strong><em></em></strong>
-    </p>
+        <p>
+          <strong><em>&nbsp;</em></strong
+          ><a href="http://jquery.com/download/"
+            ><em>http://jquery.com/download/</em></a
+          ><strong><em></em></strong>
+        </p>
 
-    <p>Para cada una de las versiones existen dos distribuciones de jQuery:</p>
+        <p>
+          Para cada una de las versiones existen dos distribuciones de jQuery:
+        </p>
 
-    <p></p>
-    <ul>
-      <li>
-        <strong>Versión descomprimida<em> ( uncompressed ) --&gt;</em></strong
-        >&nbsp;Versión para desarrollo y depuración. El fichero .js puede
-        abrirse para ver el código fuente. &nbsp;
-      </li>
-      <li>
-        <strong>Versión comprimida<em> ( minified )</em></strong
-        >&nbsp;--&gt; Versión compacta más ligera y optimizada para uso en
-        sitios web en producción.
-      </li>
-    </ul>
-    <p></p>
+        <p></p>
+        <ul>
+          <li>
+            <strong
+              >Versión descomprimida<em> ( uncompressed ) --&gt;</em></strong
+            >&nbsp;Versión para desarrollo y depuración. El fichero .js puede
+            abrirse para ver el código fuente. &nbsp;
+          </li>
+          <li>
+            <strong>Versión comprimida<em> ( minified )</em></strong
+            >&nbsp;--&gt; Versión compacta más ligera y optimizada para uso en
+            sitios web en producción.
+          </li>
+        </ul>
+        <p></p>
 
-    <p>
-      En cualquiera de los casos la librería puede descargarse como un único
-      fichero con extensión <strong><em>.js</em></strong
-      >. Para su uso debe referenciarse en el atributo
-      <strong><em>src</em></strong> de la etiqueta
-      <strong><em>&lt;script&gt;</em></strong
-      >:
-    </p>
+        <p>
+          En cualquiera de los casos la librería puede descargarse como un único
+          fichero con extensión <strong><em>.js</em></strong
+          >. Para su uso debe referenciarse en el atributo
+          <strong><em>src</em></strong> de la etiqueta
+          <strong><em>&lt;script&gt;</em></strong
+          >:
+        </p>
 
-    <p>
-      <strong><em>Ejemplo</em></strong
-      >: Sea el siguiente sitio web:&nbsp;
-    </p>
-    <p>
-      La página principal está en la raíz del sitio web, mientras que la
-      librería <em>jquery.js </em>está situada localmente dentro de las
-      subcarpetas <strong><em>js/libs/jquery</em></strong
-      >:
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/2.1.1.png"
-        alt=""
-        width="250"
-        height="130"
-        role="presentation"
-        class="img-responsive atto_image_button_text-bottom"
-      /><br />
-    </p>
+        <p>
+          <strong><em>Ejemplo</em></strong
+          >: Sea el siguiente sitio web:&nbsp;
+        </p>
+        <p>
+          La página principal está en la raíz del sitio web, mientras que la
+          librería <em>jquery.js </em>está situada localmente dentro de las
+          subcarpetas <strong><em>js/libs/jquery</em></strong
+          >:
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/2.1.1.png"
+            alt=""
+            width="250"
+            height="130"
+            role="presentation"
+            class="img-responsive atto_image_button_text-bottom"
+          /><br />
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
         <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>TODO supply a title<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
@@ -142,80 +179,102 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
 
-    <p>
-      <strong
-        ><em
-          >(*) Es importante verifica que la ruta relativa al fichero .js sea
-          correcta según la localización de la librería en relación a la página.
-          Esta suele ser la principal causa de problemas cuando JQuery no
-          funciona adecuadamente.&nbsp;</em
-        ></strong
-      >
-    </p>
-    <p><br /></p>
-    <h4>Integración desde un <em>CDN (Content Delivery Network)</em></h4>
-    <p></p>
+        <p>
+          <strong
+            ><em
+              >(*) Es importante verifica que la ruta relativa al fichero .js
+              sea correcta según la localización de la librería en relación a la
+              página. Esta suele ser la principal causa de problemas cuando
+              JQuery no funciona adecuadamente.&nbsp;</em
+            ></strong
+          >
+        </p>
+        <p><br /></p>
+        <h4>Integración desde un <em>CDN (Content Delivery Network)</em></h4>
+        <p></p>
 
-    <p>
-      <br />Si no se desea descargar la librería en el propio sitio web puede
-      hacerse referencia a un <strong><em>CDN</em></strong> (
-      <em>Content Delivery Network</em> ).&nbsp; Existen múltiples
-      <em>CDNs</em> soportados por diferentes compañías;&nbsp; p.ej:
-      <strong><em>MaxCDN</em></strong
-      >. (
-      <a href="http://code.jquery.com"><em>http://code.jquery.com</em></a>
-      )&nbsp;&nbsp;
-    </p>
+        <p>
+          <br />Si no se desea descargar la librería en el propio sitio web
+          puede hacerse referencia a un <strong><em>CDN</em></strong> (
+          <em>Content Delivery Network</em> ).&nbsp; Existen múltiples
+          <em>CDNs</em> soportados por diferentes compañías;&nbsp; p.ej:
+          <strong><em>MaxCDN</em></strong
+          >. (
+          <a href="http://code.jquery.com"><em>http://code.jquery.com</em></a>
+          )&nbsp;&nbsp;
+        </p>
 
-    <p>
-      <em><strong>Ejemplo</strong></em
-      >: Referencia a librería jQuery 3.x para desarrollo.
-      <span lang="EN-US">(<em>uncompressed</em>)</span>
-    </p>
+        <p>
+          <em><strong>Ejemplo</strong></em
+          >: Referencia a librería jQuery 3.x para desarrollo.
+          <span lang="EN-US">(<em>uncompressed</em>)</span>
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"<a href="https://code.jquery.com/jquery-3.0.0.js" class="_blanktarget">https://code.jquery.com/jquery-3.0.0.js</a>"</span><span style="color:#a65700; ">/</span><span style="color:#a65700; ">&gt;</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"<a href="https://code.jquery.com/jquery-3.0.0.js" class="_blanktarget">https://code.jquery.com/jquery-3.0.0.js</a>"</span><span style="color:#a65700; ">/</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-  </div>
-</div>
-<a
-  href="../1. El lenguaje Javascript/1.8. Objetos.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Anterior lección
-</a>
-<a
-  href="../2. JQuery - Selección y manipulación de eventos/2.2. El Modelo de objetos del documento (DOM).html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Siguiente lección
-</a>
+      </div>
+    </div>
+    <a
+      href="../1. El lenguaje Javascript/1.8. Objetos.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Anterior lección
+    </a>
+    <a
+      href="../2. JQuery - Selección y manipulación de eventos/2.2. El Modelo de objetos del documento (DOM).html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Siguiente lección
+    </a>
+    <a
+      href="../../readme.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Inicio/Leeme
+    </a>
+  </body>
+</html>

@@ -1,100 +1,136 @@
-<h2>1.7. Matrices</h2>
-<h3>Matrices</h3>
-<div class="box py-3 contents" id="yui_3_17_2_1_1749018866265_24">
-  <div class="no-overflow" id="yui_3_17_2_1_1749018866265_23">
-    <p dir="ltr" style="text-align: left"></p>
-    <p></p>
-    <p dir="ltr" style="text-align: left"></p>
-    <p>
-      <span style="font-size: 0.9375rem"
-        >Una variable normal contiene un único valor.&nbsp;</span
-      >
-    </p>
-    <p>
-      <span style="font-size: 0.9375rem"
-        >Una matriz es un&nbsp;<em
-          ><u>objeto</u><strong> Array&nbsp;</strong></em
-        >capaz de almacenar muchos valores a la vez. Estos son accesibles
-        mediante un </span
-      ><em style="font-size: 0.9375rem">índice</em
-      ><span style="font-size: 0.9375rem"> o </span>
-      <em style="font-size: 0.9375rem">clave</em
-      ><span style="font-size: 0.9375rem">:&nbsp;</span><br />
-    </p>
-    <p style="text-align: center">
-      <span style="font-size: 0.9375rem"
-        ><img
-          src="../../.imagenes/1.7.1.png"
-          alt=""
-          role="presentation" /><br
-      /></span>
-    </p>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iván López" />
+    <title>Curso Básico de JavaScript y jQuery</title>
+    <style>
+      .center-align {
+        text-align: center;
+      }
+      .right-align {
+        text-align: right;
+      }
+      .margin-left {
+        margin-left: 20px;
+      }
+      .custom-link-button {
+        display: inline-block;
+        padding: 4px 12px;
+        font-size: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>1.7. Matrices</h2>
+    <h3>Matrices</h3>
+    <div class="box py-3 contents" id="yui_3_17_2_1_1749018866265_24">
+      <div class="no-overflow" id="yui_3_17_2_1_1749018866265_23">
+        <p dir="ltr" style="text-align: left"></p>
+        <p></p>
+        <p dir="ltr" style="text-align: left"></p>
+        <p>
+          <span style="font-size: 0.9375rem"
+            >Una variable normal contiene un único valor.&nbsp;</span
+          >
+        </p>
+        <p>
+          <span style="font-size: 0.9375rem"
+            >Una matriz es un&nbsp;<em
+              ><u>objeto</u><strong> Array&nbsp;</strong></em
+            >capaz de almacenar muchos valores a la vez. Estos son accesibles
+            mediante un </span
+          ><em style="font-size: 0.9375rem">índice</em
+          ><span style="font-size: 0.9375rem"> o </span>
+          <em style="font-size: 0.9375rem">clave</em
+          ><span style="font-size: 0.9375rem">:&nbsp;</span><br />
+        </p>
+        <p style="text-align: center">
+          <span style="font-size: 0.9375rem"
+            ><img
+              src="../../.imagenes/1.7.1.png"
+              alt=""
+              role="presentation" /><br
+          /></span>
+        </p>
 
-    <p style="text-align: center">
-      <strong><em> </em></strong><strong><em></em></strong>
-    </p>
+        <p style="text-align: center">
+          <strong><em> </em></strong><strong><em></em></strong>
+        </p>
 
-    <p style="text-align: center">
-      <strong><em>Representación de una matriz de 10 elementos.</em></strong>
-    </p>
-    <h3>Declaración de una matriz</h3>
-    <p></p>
+        <p style="text-align: center">
+          <strong
+            ><em>Representación de una matriz de 10 elementos.</em></strong
+          >
+        </p>
+        <h3>Declaración de una matriz</h3>
+        <p></p>
 
-    <p>Una matriz puede declararse vacía:&nbsp;</p>
+        <p>Una matriz puede declararse vacía:&nbsp;</p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#800000; font-weight:bold; ">var</span> v <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">new</span> <span style="color:#797997; ">Array</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>	<span style="color:#696969; ">// Sin valores. </span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#800000; font-weight:bold; ">var</span> v <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">new</span> <span style="color:#797997; ">Array</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>	<span style="color:#696969; ">// Sin valores. </span>
 </pre>
 
-    <p>También puede declararse con valores empleando la notación JSON:</p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/1.7.2.png"
-        alt=""
-        role="presentation"
-      /><br />
-    </p>
+        <p>También puede declararse con valores empleando la notación JSON:</p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/1.7.2.png"
+            alt=""
+            role="presentation"
+          /><br />
+        </p>
 
-    <p></p>
+        <p></p>
 
-    <p>
-      <strong><em>Ejemplos:</em></strong
-      ><strong><em></em></strong>
-    </p>
+        <p>
+          <strong><em>Ejemplos:</em></strong
+          ><strong><em></em></strong>
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#800000; font-weight:bold; ">var</span> v <span style="color:#808030; ">=</span> <span style="color:#808030; ">[</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">a</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">b</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">c</span><span style="color:#800000; ">"</span><span style="color:#808030; ">]</span><span style="color:#800080; ">;</span>	<span style="color:#696969; ">// Vector de caracteres.</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#800000; font-weight:bold; ">var</span> v <span style="color:#808030; ">=</span> <span style="color:#808030; ">[</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">a</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">b</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">c</span><span style="color:#800000; ">"</span><span style="color:#808030; ">]</span><span style="color:#800080; ">;</span>	<span style="color:#696969; ">// Vector de caracteres.</span>
 <span style="color:#800000; font-weight:bold; ">var</span> v <span style="color:#808030; ">=</span> <span style="color:#808030; ">[</span><span style="color:#008c00; ">1</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">10</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">20</span><span style="color:#808030; ">]</span><span style="color:#800080; ">;</span>	<span style="color:#696969; ">// Vector de valores.</span>
  
 </pre>
 
-    <h4>Acceso a los valores de la matriz</h4>
-    <p>
-      <br />Para acceder a un valor contenido en una matriz debemos indicar el
-      identificador de la matriz y el índice o clave con el que se almacenó el
-      valor:&nbsp;
-    </p>
+        <h4>Acceso a los valores de la matriz</h4>
+        <p>
+          <br />Para acceder a un valor contenido en una matriz debemos indicar
+          el identificador de la matriz y el índice o clave con el que se
+          almacenó el valor:&nbsp;
+        </p>
 
-    <p id="yui_3_17_2_1_1749018866265_22">
-      <strong id="yui_3_17_2_1_1749018866265_21"
-        ><em id="yui_3_17_2_1_1749018866265_20"
-          >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          &lt;identificador_vector&gt;[ &lt;índice&gt; ]
-        </em></strong
-      >
-    </p>
+        <p id="yui_3_17_2_1_1749018866265_22">
+          <strong id="yui_3_17_2_1_1749018866265_21"
+            ><em id="yui_3_17_2_1_1749018866265_20"
+              >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              &lt;identificador_vector&gt;[ &lt;índice&gt; ]
+            </em></strong
+          >
+        </p>
 
-    <p>
-      <strong><em>Ejemplo: </em></strong>El siguiente código define un vector en
-      el que se almacenan cuatro valores de diferentes tipos:
-    </p>
+        <p>
+          <strong><em>Ejemplo: </em></strong>El siguiente código define un
+          vector en el que se almacenan cuatro valores de diferentes tipos:
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-      id="yui_3_17_2_1_1749018866265_26"
-    ><span style="color:#696969; ">// Declaracion del vector</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+          id="yui_3_17_2_1_1749018866265_26"
+        ><span style="color:#696969; ">// Declaracion del vector</span>
 <span style="color:#800000; font-weight:bold; ">var</span> v <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">new</span> <span style="color:#797997; ">Array</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 <span style="color:#696969; ">// Asignacion de valores</span>
 v<span style="color:#808030; ">[</span><span style="color:#008c00; ">0</span><span style="color:#808030; ">]</span> <span style="color:#808030; ">=</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">Roger</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span> 
@@ -108,33 +144,34 @@ document<span style="color:#808030; ">.</span>write<span style="color:#808030; "
 document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span> v<span style="color:#808030; ">[</span><span style="color:#008c00; ">3</span><span style="color:#808030; ">]</span> <span style="color:#808030; ">+</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;br&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 </pre>
 
-    <h4>Longitud de una matriz.&nbsp;</h4>
+        <h4>Longitud de una matriz.&nbsp;</h4>
 
-    <p>
-      <br />
-      La longitud de una matriz indica la cantidad de valores que tiene
-      almacenados y se obtiene mediante la propiedad&nbsp;<em>length</em>.
-    </p>
+        <p>
+          <br />
+          La longitud de una matriz indica la cantidad de valores que tiene
+          almacenados y se obtiene mediante la propiedad&nbsp;<em>length</em>.
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    >        <span style="color:#800000; font-weight:bold; ">var</span> vector <span style="color:#808030; ">=</span> <span style="color:#808030; ">[</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">hola</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">mundo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">]</span><span style="color:#800080; ">;</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        >        <span style="color:#800000; font-weight:bold; ">var</span> vector <span style="color:#808030; ">=</span> <span style="color:#808030; ">[</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">hola</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">mundo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">]</span><span style="color:#800080; ">;</span>
         console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span>vector<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">length</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>   <span style="color:#696969; ">// muestra en la consola 2</span>
 </pre>
 
-    <h4><br /></h4>
-    <h4>Recorrido de vectores</h4>
+        <h4><br /></h4>
+        <h4>Recorrido de vectores</h4>
 
-    <p>
-      <br />
-      Recorrer una vector consiste en obtener uno por uno todos los valores que
-      contiene. Esta operación puede implementarse de tres maneras.&nbsp;
-    </p>
-    <p>Sea la siguiente matriz:&nbsp;</p>
+        <p>
+          <br />
+          Recorrer una vector consiste en obtener uno por uno todos los valores
+          que contiene. Esta operación puede implementarse de tres
+          maneras.&nbsp;
+        </p>
+        <p>Sea la siguiente matriz:&nbsp;</p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#800000; font-weight:bold; ">var</span> valores <span style="color:#808030; ">=</span> <span style="color:#808030; ">[</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Lunes</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> 
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#800000; font-weight:bold; ">var</span> valores <span style="color:#808030; ">=</span> <span style="color:#808030; ">[</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Lunes</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> 
       <span style="color:#800000; ">"</span><span style="color:#0000e6; ">Martes</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> 
       <span style="color:#800000; ">"</span><span style="color:#0000e6; ">Miercoles</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> 
       <span style="color:#800000; ">"</span><span style="color:#0000e6; ">Jueves</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> 
@@ -143,141 +180,164 @@ document<span style="color:#808030; ">.</span>write<span style="color:#808030; "
       <span style="color:#800000; ">"</span><span style="color:#0000e6; ">Domingo</span><span style="color:#800000; ">"</span><span style="color:#808030; ">]</span><span style="color:#800080; ">;</span> 
 </pre>
 
-    <p>
-      <u
-        >Recorrido con bucle <strong><em>for</em></strong
-        >:
-      </u>
-    </p>
+        <p>
+          <u
+            >Recorrido con bucle <strong><em>for</em></strong
+            >:
+          </u>
+        </p>
 
-    <p>
-      <span style="font-size: 0.9375rem"
-        >El siguiente código muestra por pantalla todos los valores contenidos
-        en el vector empleando una variable indx que recorre todos sus índices
-        del 0 al último = longitud-1.</span
-      >
-    </p>
+        <p>
+          <span style="font-size: 0.9375rem"
+            >El siguiente código muestra por pantalla todos los valores
+            contenidos en el vector empleando una variable indx que recorre
+            todos sus índices del 0 al último = longitud-1.</span
+          >
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#800000; font-weight:bold; ">for</span><span style="color:#808030; ">(</span> <span style="color:#800000; font-weight:bold; ">var</span> indx <span style="color:#808030; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span> indx <span style="color:#808030; ">&lt;</span> valores<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">length</span><span style="color:#800080; ">;</span> indx<span style="color:#808030; ">++</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#800000; font-weight:bold; ">for</span><span style="color:#808030; ">(</span> <span style="color:#800000; font-weight:bold; ">var</span> indx <span style="color:#808030; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span> indx <span style="color:#808030; ">&lt;</span> valores<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">length</span><span style="color:#800080; ">;</span> indx<span style="color:#808030; ">++</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
 	document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">En posicion </span><span style="color:#800000; ">"</span><span style="color:#808030; ">+</span>indx<span style="color:#808030; ">+</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">-&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">+</span>valores<span style="color:#808030; ">[</span>indx<span style="color:#808030; ">]</span><span style="color:#808030; ">+</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;br&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 <span style="color:#800080; ">}</span>
 </pre>
 
-    <p>El resultado mostrado es:</p>
+        <p>El resultado mostrado es:</p>
 
-    <p></p>
+        <p></p>
 
-    <p style="text-align: center" id="yui_3_17_2_1_1749018866265_29">
-      <u id="yui_3_17_2_1_1749018866265_28"
-        ><img
-          src="../../.imagenes/1.7.3.png"
-          alt=""
-          role="presentation"
-          id="yui_3_17_2_1_1749018866265_27" /><br
-      /></u>
-    </p>
-    <p>
-      <span
-        ><em
-          ><strong
-            >* Este bucle sólo debe emplearse si los valores se han almacenado
-            en la matriz con índices consecutivos.&nbsp;</strong
-          ></em
-        ></span
-      >
-    </p>
-    <p>
-      <u
-        ><br />
-        Recorrido con <strong><em>for( in )</em></strong></u
-      >
-    </p>
+        <p style="text-align: center" id="yui_3_17_2_1_1749018866265_29">
+          <u id="yui_3_17_2_1_1749018866265_28"
+            ><img
+              src="../../.imagenes/1.7.3.png"
+              alt=""
+              role="presentation"
+              id="yui_3_17_2_1_1749018866265_27" /><br
+          /></u>
+        </p>
+        <p>
+          <span
+            ><em
+              ><strong
+                >* Este bucle sólo debe emplearse si los valores se han
+                almacenado en la matriz con índices consecutivos.&nbsp;</strong
+              ></em
+            ></span
+          >
+        </p>
+        <p>
+          <u
+            ><br />
+            Recorrido con <strong><em>for( in )</em></strong></u
+          >
+        </p>
 
-    <p>
-      El siguiente código emplea un bucle <strong><em>for </em></strong>especial
-      que se ejecuta tantas veces como valores haya almacenados
-      <em><u>devolviendo el índice de cada uno:&nbsp;</u></em>
-    </p>
+        <p>
+          El siguiente código emplea un bucle
+          <strong><em>for </em></strong>especial que se ejecuta tantas veces
+          como valores haya almacenados
+          <em><u>devolviendo el índice de cada uno:&nbsp;</u></em>
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#800000; font-weight:bold; ">var</span> indice<span style="color:#800080; ">;</span> 
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#800000; font-weight:bold; ">var</span> indice<span style="color:#800080; ">;</span> 
 <span style="color:#800000; font-weight:bold; ">for</span><span style="color:#808030; ">(</span>indice <span style="color:#800000; font-weight:bold; ">in</span> valores<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
 	document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">valor es:</span><span style="color:#800000; ">"</span><span style="color:#808030; ">+</span> indice <span style="color:#808030; ">+</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">=&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">+</span>valores<span style="color:#808030; ">[</span>indice<span style="color:#808030; ">]</span><span style="color:#808030; ">+</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;br &gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
 <span style="color:#800080; ">}</span></pre>
 
-    <p>El resultado mostrado es:</p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/1.7.4.png"
-        alt=""
-        role="presentation"
-      /><br />
-    </p>
+        <p>El resultado mostrado es:</p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/1.7.4.png"
+            alt=""
+            role="presentation"
+          /><br />
+        </p>
 
-    <p></p>
+        <p></p>
 
-    <p>
-      <u
-        >Recorrido con<em><strong> for( of )&nbsp;</strong></em></u
-      >
-    </p>
-    <p>
-      El siguiente código emplea otro tipo especial de bucle
-      <em><strong>for </strong></em>que se ejecuta tantas veces como valores
-      haya en la matriz <em><u>devolviendo cada uno de ellos</u></em
-      >.&nbsp;
-    </p>
+        <p>
+          <u
+            >Recorrido con<em><strong> for( of )&nbsp;</strong></em></u
+          >
+        </p>
+        <p>
+          El siguiente código emplea otro tipo especial de bucle
+          <em><strong>for </strong></em>que se ejecuta tantas veces como valores
+          haya en la matriz <em><u>devolviendo cada uno de ellos</u></em
+          >.&nbsp;
+        </p>
 
-    <pre
-      style="color: #000000; background: #ffffff"
-    ><span style="color:#800000; font-weight:bold; ">var</span> indice<span style="color:#800080; ">;</span> 
+        <pre
+          style="color: #000000; background: #ffffff"
+        ><span style="color:#800000; font-weight:bold; ">var</span> indice<span style="color:#800080; ">;</span> 
 <span style="color:#800000; font-weight:bold; ">for</span><span style="color:#808030; ">(</span>valor of valores<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
 	document<span style="color:#808030; ">.</span>write<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">valor es:</span><span style="color:#800000; ">"</span><span style="color:#808030; ">+</span> valor <span style="color:#808030; ">+</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">&lt;br/&gt;</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
 <span style="color:#800080; ">}</span></pre>
-    <br />
-    <p></p>
-  </div>
-</div>
-<a
-  href="../1. El lenguaje Javascript/1.6. Funciones.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Anterior lección
-</a>
-<a
-  href="../1. El lenguaje Javascript/1.8. Objetos.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Siguiente lección
-</a>
+        <br />
+        <p></p>
+      </div>
+    </div>
+    <a
+      href="../1. El lenguaje Javascript/1.6. Funciones.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Anterior lección
+    </a>
+    <a
+      href="../1. El lenguaje Javascript/1.8. Objetos.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Siguiente lección
+    </a>
+    <a
+      href="../../readme.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Inicio/Leeme
+    </a>
+  </body>
+</html>

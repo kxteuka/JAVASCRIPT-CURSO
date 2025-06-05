@@ -1,186 +1,222 @@
-<h2>5.4. JQuery UI</h2>
-<h3>JQuery UI y Temas.</h3>
-<div class="box py-3 contents">
-  <div class="no-overflow">
-    <p dir="ltr" style="text-align: left"></p>
-    <p>
-      JQuery UI es una librería creada a partir de JQuery que provee efectos,
-      temas, eventos y componentes (<em>widgets</em>) adicionales para mejorar
-      el aspecto y funcionalidad de páginas web.
-    </p>
-    <p>
-      <span style="font-size: 0.9375rem"
-        >Al igual que en el caso de JQuery, JQuery UI puede instalarse de dos
-        modos:</span
-      >
-    </p>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iván López" />
+    <title>Curso Básico de JavaScript y jQuery</title>
+    <style>
+      .center-align {
+        text-align: center;
+      }
+      .right-align {
+        text-align: right;
+      }
+      .margin-left {
+        margin-left: 20px;
+      }
+      .custom-link-button {
+        display: inline-block;
+        padding: 4px 12px;
+        font-size: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>5.4. JQuery UI</h2>
+    <h3>JQuery UI y Temas.</h3>
+    <div class="box py-3 contents">
+      <div class="no-overflow">
+        <p dir="ltr" style="text-align: left"></p>
+        <p>
+          JQuery UI es una librería creada a partir de JQuery que provee
+          efectos, temas, eventos y componentes (<em>widgets</em>) adicionales
+          para mejorar el aspecto y funcionalidad de páginas web.
+        </p>
+        <p>
+          <span style="font-size: 0.9375rem"
+            >Al igual que en el caso de JQuery, JQuery UI puede instalarse de
+            dos modos:</span
+          >
+        </p>
 
-    <p>
-      Puede descargarse la librería como un fichero comprimido ZIP para
-      descargarla y descomprimirla en nuestro sitio web de modo que podamos
-      referenciarla localmente:
-    </p>
-    <p></p>
-    <div class="editor-indent" style="margin-left: 30px">
-      <p style="text-align: left">
-        <a href="http://jqueryui.com/download/"
-          ><strong><em>http://jqueryui.com/download/</em></strong></a
-        >
-      </p>
-      <p style="text-align: center">
-        <img
-          src="../../.imagenes/5.4.1.png"
-          alt=""
-          width="801"
-          height="290"
-          role="presentation"
-          class="img-responsive atto_image_button_text-bottom"
-        /><br />
-      </p>
-    </div>
-    <p>
-      <span style="font-size: 0.9375rem"
-        >También es posible referenciar la librería desde una dirección externa
-        empleando los enlaces del propio sitio web de JQuery a las diferentes
-        versiones de la librería JQueryUI.</span
-      ><br />
-    </p>
+        <p>
+          Puede descargarse la librería como un fichero comprimido ZIP para
+          descargarla y descomprimirla en nuestro sitio web de modo que podamos
+          referenciarla localmente:
+        </p>
+        <p></p>
+        <div class="editor-indent" style="margin-left: 30px">
+          <p style="text-align: left">
+            <a href="http://jqueryui.com/download/"
+              ><strong><em>http://jqueryui.com/download/</em></strong></a
+            >
+          </p>
+          <p style="text-align: center">
+            <img
+              src="../../.imagenes/5.4.1.png"
+              alt=""
+              width="801"
+              height="290"
+              role="presentation"
+              class="img-responsive atto_image_button_text-bottom"
+            /><br />
+          </p>
+        </div>
+        <p>
+          <span style="font-size: 0.9375rem"
+            >También es posible referenciar la librería desde una dirección
+            externa empleando los enlaces del propio sitio web de JQuery a las
+            diferentes versiones de la librería JQueryUI.</span
+          ><br />
+        </p>
 
-    <div class="editor-indent" style="margin-left: 30px">
-      <p style="text-align: left">
-        <a href="https://code.jquery.com/ui/"
-          ><strong><em>https://code.jquery.com/ui/</em></strong></a
-        >
-      </p>
-    </div>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/5.4.2.png"
-        alt=""
-        width="800"
-        height="437"
-        role="presentation"
-        class="img-responsive atto_image_button_text-bottom"
-      /><br />
-    </p>
-    <p>
-      En la página pueden encontrarse los enlaces a la última versión de la
-      librería comprimida (<em>minified</em>) y sin comprimir
-      (<em>uncompressed</em>). Al pulsar sobre los enlaces se muestra el código
-      que debemos añadir en nuestras páginas para integrar la librería.
-    </p>
+        <div class="editor-indent" style="margin-left: 30px">
+          <p style="text-align: left">
+            <a href="https://code.jquery.com/ui/"
+              ><strong><em>https://code.jquery.com/ui/</em></strong></a
+            >
+          </p>
+        </div>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/5.4.2.png"
+            alt=""
+            width="800"
+            height="437"
+            role="presentation"
+            class="img-responsive atto_image_button_text-bottom"
+          /><br />
+        </p>
+        <p>
+          En la página pueden encontrarse los enlaces a la última versión de la
+          librería comprimida (<em>minified</em>) y sin comprimir
+          (<em>uncompressed</em>). Al pulsar sobre los enlaces se muestra el
+          código que debemos añadir en nuestras páginas para integrar la
+          librería.
+        </p>
 
-    <h5>Temas (<em>Themes</em>)</h5>
+        <h5>Temas (<em>Themes</em>)</h5>
 
-    <p>
-      <br />La librería JQueryUI requiere de un <em><u>tema</u></em> para
-      funcionar. Los temas son hojas de estilo (.css) que definen las formas,
-      colores y estilos empleados por los componentes definidos en la librería
-      JQueryUI.&nbsp;
-    </p>
-    <p>
-      Existen conjuntos de estilos ya prediseñados que pueden descargarse o
-      referenciarse desde la propia página de JQueryUI. Es preciso asegurarse de
-      e<em
-        ><u
-          >mplear un estilo correspondiente a la versión de la librería que
-          vayamos a utilizar:</u
-        ></em
-      >
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/5.4.3.png"
-        alt=""
-        width="800"
-        height="309"
-        role="presentation"
-        class="img-responsive atto_image_button_text-bottom"
-      /><br />
-    </p>
-    <p>
-      Los estilos que conforman los temas pueden consultarse en la web:&nbsp;
-    </p>
-
-    <div class="editor-indent" style="margin-left: 30px">
-      <p style="text-align: left">
-        <a href="https://api.jqueryui.com/theming/css-framework/"
-          ><em
-            ><strong
-              >https://api.jqueryui.com/theming/css-framework/</strong
+        <p>
+          <br />La librería JQueryUI requiere de un <em><u>tema</u></em> para
+          funcionar. Los temas son hojas de estilo (.css) que definen las
+          formas, colores y estilos empleados por los componentes definidos en
+          la librería JQueryUI.&nbsp;
+        </p>
+        <p>
+          Existen conjuntos de estilos ya prediseñados que pueden descargarse o
+          referenciarse desde la propia página de JQueryUI. Es preciso
+          asegurarse de e<em
+            ><u
+              >mplear un estilo correspondiente a la versión de la librería que
+              vayamos a utilizar:</u
             ></em
-          ></a
-        >
-      </p>
-    </div>
-    <p style="text-align: left"><em></em></p>
+          >
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/5.4.3.png"
+            alt=""
+            width="800"
+            height="309"
+            role="presentation"
+            class="img-responsive atto_image_button_text-bottom"
+          /><br />
+        </p>
+        <p>
+          Los estilos que conforman los temas pueden consultarse en la
+          web:&nbsp;
+        </p>
 
-    <p>
-      Además de los temas predefinidos también es posible crear estilos
-      personalizados mediante la herramienta de generación
-      (<em>ThemeRoller</em>).&nbsp;
-    </p>
+        <div class="editor-indent" style="margin-left: 30px">
+          <p style="text-align: left">
+            <a href="https://api.jqueryui.com/theming/css-framework/"
+              ><em
+                ><strong
+                  >https://api.jqueryui.com/theming/css-framework/</strong
+                ></em
+              ></a
+            >
+          </p>
+        </div>
+        <p style="text-align: left"><em></em></p>
 
-    <div class="editor-indent" style="margin-left: 30px">
-      <p style="text-align: left">
-        <a href="http://jqueryui.com/themeroller/"
-          ><em><strong>http://jqueryui.com/themeroller/</strong></em></a
-        >
-      </p>
-      <p style="text-align: left">
-        Esta web es una herramienta que permite configurar visualmente un temas
-        de JQuery para que los componentes se vean de manera acorde al estilo de
-        nuestra web:&nbsp;
-      </p>
-    </div>
-    <p style="text-align: center">
-      <strong
-        ><img
-          src="../../.imagenes/5.4.4.png"
-          alt=""
-          width="800"
-          height="618"
-          role="presentation"
-          class="img-responsive atto_image_button_text-bottom" /><br
-      /></strong>
-    </p>
-    <p>
-      Una completada la personalización es posible descargar el tema como un
-      hoja de estilos CSS.&nbsp;
-    </p>
+        <p>
+          Además de los temas predefinidos también es posible crear estilos
+          personalizados mediante la herramienta de generación
+          (<em>ThemeRoller</em>).&nbsp;
+        </p>
 
-    <p>
-      <strong><em>Ejemplo:</em></strong> La siguiente página web muestra un
-      componente <strong><em>Spinner.&nbsp;</em></strong>
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/5.4.5.png"
-        alt=""
-        role="presentation"
-      /><br />
-    </p>
-    <p style="text-align: justify">
-      En los siguientes códigos de ejemplo, las librerías
-      <strong><em>JQuery</em></strong
-      >, <strong><em>JQueryUI </em></strong>y el tema
-      <span
-        ><span
-          ><u style="font-style: italic"
-            >están referenciadas remotamente desde la web de JQuery, </u
-          >por lo que no es necesario su descarga local para probar los
-          códigos:</span
-        ></span
-      >
-    </p>
+        <div class="editor-indent" style="margin-left: 30px">
+          <p style="text-align: left">
+            <a href="http://jqueryui.com/themeroller/"
+              ><em><strong>http://jqueryui.com/themeroller/</strong></em></a
+            >
+          </p>
+          <p style="text-align: left">
+            Esta web es una herramienta que permite configurar visualmente un
+            temas de JQuery para que los componentes se vean de manera acorde al
+            estilo de nuestra web:&nbsp;
+          </p>
+        </div>
+        <p style="text-align: center">
+          <strong
+            ><img
+              src="../../.imagenes/5.4.4.png"
+              alt=""
+              width="800"
+              height="618"
+              role="presentation"
+              class="img-responsive atto_image_button_text-bottom" /><br
+          /></strong>
+        </p>
+        <p>
+          Una completada la personalización es posible descargar el tema como un
+          hoja de estilos CSS.&nbsp;
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <p>
+          <strong><em>Ejemplo:</em></strong> La siguiente página web muestra un
+          componente <strong><em>Spinner.&nbsp;</em></strong>
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/5.4.5.png"
+            alt=""
+            role="presentation"
+          /><br />
+        </p>
+        <p style="text-align: justify">
+          En los siguientes códigos de ejemplo, las librerías
+          <strong><em>JQuery</em></strong
+          >, <strong><em>JQueryUI </em></strong>y el tema
+          <span
+            ><span
+              ><u style="font-style: italic"
+                >están referenciadas remotamente desde la web de JQuery, </u
+              >por lo que no es necesario su descarga local para probar los
+              códigos:</span
+            ></span
+          >
+        </p>
+
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">meta</span><span style="color:#274796; "> </span><span style="color:#074726; ">charset</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"utf-8"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
@@ -205,53 +241,75 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p><br /></p>
-    <br />
-    <p></p>
-  </div>
-</div>
-<a
-  href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.3. Animaciones.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Anterior lección
-</a>
-<a
-  href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.5. Componentes (Widgets).html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Siguiente lección
-</a>
+        <p><br /></p>
+        <br />
+        <p></p>
+      </div>
+    </div>
+    <a
+      href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.3. Animaciones.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Anterior lección
+    </a>
+    <a
+      href="../5. JQuery y JQueryUI - Efectos y Animaciones/5.5. Componentes (Widgets).html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Siguiente lección
+    </a>
+    <a
+      href="../../readme.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Inicio/Leeme
+    </a>
+  </body>
+</html>

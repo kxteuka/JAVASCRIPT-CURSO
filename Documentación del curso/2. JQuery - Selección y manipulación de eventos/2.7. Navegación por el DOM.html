@@ -1,144 +1,182 @@
-<h2>2.7. Navegación por el DOM</h2>
-<h3>Obtención de elementos padres.</h3>
-<div class="box py-3 contents">
-  <div class="no-overflow">
-    <p dir="ltr" style="text-align: left"></p>
-    <p>
-      JQuery dispone de métodos que permiten navegar por los elementos que
-      componen el modelo de documento (DOM). Para ello, debe seguirse la
-      estructura jerárquica del documento distinguiendo entre los elementos
-      <em>padres</em>, <em>hijos</em> y <em>hermanos</em> de cada elemento:
-    </p>
-    <p></p>
-    <ul>
-      <li>
-        <em>Elementos Padres </em>--&gt; Son aquellos que están por encima en la
-        jerarquía y que contienen a un determinado elemento.&nbsp;
-      </li>
-      <li>
-        <em>Elementos Hijos </em>--&gt; Son aquellos que están por debajo en la
-        jerarquía y que son contenidos por un determinado elemento.&nbsp;
-      </li>
-      <li>
-        <em>Elementos Hermanos</em> --&gt; Son aquellos que están en el mismo
-        nivel de jerarquía contenidos en el mismo elemento.&nbsp;
-      </li>
-    </ul>
-    <p></p>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iván López" />
+    <title>Curso Básico de JavaScript y jQuery</title>
+    <style>
+      .center-align {
+        text-align: center;
+      }
+      .right-align {
+        text-align: right;
+      }
+      .margin-left {
+        margin-left: 20px;
+      }
+      .custom-link-button {
+        display: inline-block;
+        padding: 4px 12px;
+        font-size: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>2.7. Navegación por el DOM</h2>
+    <h3>Obtención de elementos padres.</h3>
+    <div class="box py-3 contents">
+      <div class="no-overflow">
+        <p dir="ltr" style="text-align: left"></p>
+        <p>
+          JQuery dispone de métodos que permiten navegar por los elementos que
+          componen el modelo de documento (DOM). Para ello, debe seguirse la
+          estructura jerárquica del documento distinguiendo entre los elementos
+          <em>padres</em>, <em>hijos</em> y <em>hermanos</em> de cada elemento:
+        </p>
+        <p></p>
+        <ul>
+          <li>
+            <em>Elementos Padres </em>--&gt; Son aquellos que están por encima
+            en la jerarquía y que contienen a un determinado elemento.&nbsp;
+          </li>
+          <li>
+            <em>Elementos Hijos </em>--&gt; Son aquellos que están por debajo en
+            la jerarquía y que son contenidos por un determinado elemento.&nbsp;
+          </li>
+          <li>
+            <em>Elementos Hermanos</em> --&gt; Son aquellos que están en el
+            mismo nivel de jerarquía contenidos en el mismo elemento.&nbsp;
+          </li>
+        </ul>
+        <p></p>
 
-    <p>
-      <strong><em>Ejemplo</em></strong
-      >: Tomemos como ejemplo la siguiente página web:
-    </p>
+        <p>
+          <strong><em>Ejemplo</em></strong
+          >: Tomemos como ejemplo la siguiente página web:
+        </p>
 
-    <div style="text-align: center">
-      <img
-        src="../../.imagenes/2.7.1.png"
-        role="presentation"
-      /><br />
-    </div>
+        <div style="text-align: center">
+          <img src="../../.imagenes/2.7.1.png" role="presentation" /><br />
+        </div>
 
-    <p>
-      <br />
-      La representación del DOM correspondiente sería la siguiente:
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/2.7.2.png"
-        alt=""
-        width="701"
-        height="323"
-        role="presentation"
-        class="img-responsive atto_image_button_text-bottom"
-      /><br />
-    </p>
+        <p>
+          <br />
+          La representación del DOM correspondiente sería la siguiente:
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/2.7.2.png"
+            alt=""
+            width="701"
+            height="323"
+            role="presentation"
+            class="img-responsive atto_image_button_text-bottom"
+          /><br />
+        </p>
 
-    <p style="text-align: center"></p>
+        <p style="text-align: center"></p>
 
-    <p>
-      Podemos distinguir los siguientes elementos dentro de la jerarquía tal
-      como hemos comentado:&nbsp;
-    </p>
+        <p>
+          Podemos distinguir los siguientes elementos dentro de la jerarquía tal
+          como hemos comentado:&nbsp;
+        </p>
 
-    <p></p>
-    <ul>
-      <li>
-        <strong><em>Elemento padre</em></strong
-        >&nbsp;: La imagen <em>id=”imagen”</em> tiene por padre la capa
-        <em>id=”base”.</em>
-      </li>
-      <li>
-        &nbsp;<strong style="font-size: 0.9375rem"
-          ><em>Elementos hijos</em></strong
-        ><span style="font-size: 0.9375rem"
-          >&nbsp;: La capa id=”base” tiene como elementos hijos la imagen </span
-        ><em style="font-size: 0.9375rem">id=”imagen”</em
-        ><span style="font-size: 0.9375rem">, un párrafo, un encabezado </span
-        ><em style="font-size: 0.9375rem">&lt;h1&gt;</em
-        ><span style="font-size: 0.9375rem">, y otra capa.</span>
-      </li>
-      <li>
-        <strong style="font-size: 0.9375rem"><em>Elementos hermanos</em></strong
-        ><span style="font-size: 0.9375rem">&nbsp;: E elemento imagen </span
-        ><em style="font-size: 0.9375rem">id=”imagen”</em
-        ><span style="font-size: 0.9375rem">, el párrafo, el encabezado </span>
-        <em style="font-size: 0.9375rem">&lt;h1&gt;</em
-        ><span style="font-size: 0.9375rem">, y la capa </span
-        ><em style="font-size: 0.9375rem">id=”subcapa”</em
-        ><span style="font-size: 0.9375rem"> son hermanos.</span>
-      </li>
-    </ul>
-    <p></p>
+        <p></p>
+        <ul>
+          <li>
+            <strong><em>Elemento padre</em></strong
+            >&nbsp;: La imagen <em>id=”imagen”</em> tiene por padre la capa
+            <em>id=”base”.</em>
+          </li>
+          <li>
+            &nbsp;<strong style="font-size: 0.9375rem"
+              ><em>Elementos hijos</em></strong
+            ><span style="font-size: 0.9375rem"
+              >&nbsp;: La capa id=”base” tiene como elementos hijos la imagen </span
+            ><em style="font-size: 0.9375rem">id=”imagen”</em
+            ><span style="font-size: 0.9375rem"
+              >, un párrafo, un encabezado </span
+            ><em style="font-size: 0.9375rem">&lt;h1&gt;</em
+            ><span style="font-size: 0.9375rem">, y otra capa.</span>
+          </li>
+          <li>
+            <strong style="font-size: 0.9375rem"
+              ><em>Elementos hermanos</em></strong
+            ><span style="font-size: 0.9375rem">&nbsp;: E elemento imagen </span
+            ><em style="font-size: 0.9375rem">id=”imagen”</em
+            ><span style="font-size: 0.9375rem"
+              >, el párrafo, el encabezado
+            </span>
+            <em style="font-size: 0.9375rem">&lt;h1&gt;</em
+            ><span style="font-size: 0.9375rem">, y la capa </span
+            ><em style="font-size: 0.9375rem">id=”subcapa”</em
+            ><span style="font-size: 0.9375rem"> son hermanos.</span>
+          </li>
+        </ul>
+        <p></p>
 
-    <p>
-      JQuery dispone de métodos que permite obtener los elementos padres, hijos
-      y hermanos de un determinado elemento:
-    </p>
+        <p>
+          JQuery dispone de métodos que permite obtener los elementos padres,
+          hijos y hermanos de un determinado elemento:
+        </p>
 
-    <h5>Obtención de elementos padre.</h5>
+        <h5>Obtención de elementos padre.</h5>
 
-    <p></p>
-    <ul>
-      <li>
-        <strong><em>$().parent()</em></strong
-        >&nbsp;: Devuelve el elemento padre de un elemento seleccionado.&nbsp;
-      </li>
-      <li>
-        <strong><em>$().parents()</em></strong
-        >&nbsp;: Devuelve todos los elementos padre incluyendo los indirectos
-        (elementos padres del elemento padre). Este método acepta un selector
-        como argumento para restringir los elementos a devolver.
-      </li>
-      <li>
-        <strong><em>$().parentsUntil() :</em></strong
-        >&nbsp;Devuelve todos los elementos padres hasta uno determinado por el
-        selector indicado como argumento sin incluirlo.
-      </li>
-    </ul>
-    <p></p>
+        <p></p>
+        <ul>
+          <li>
+            <strong><em>$().parent()</em></strong
+            >&nbsp;: Devuelve el elemento padre de un elemento
+            seleccionado.&nbsp;
+          </li>
+          <li>
+            <strong><em>$().parents()</em></strong
+            >&nbsp;: Devuelve todos los elementos padre incluyendo los
+            indirectos (elementos padres del elemento padre). Este método acepta
+            un selector como argumento para restringir los elementos a devolver.
+          </li>
+          <li>
+            <strong><em>$().parentsUntil() :</em></strong
+            >&nbsp;Devuelve todos los elementos padres hasta uno determinado por
+            el selector indicado como argumento sin incluirlo.
+          </li>
+        </ul>
+        <p></p>
 
-    <p>
-      <em>Ejemplo</em>: Sea la siguiente página que muestra una serie de capas
-      anidadas unas dentro de otras:
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/2.7.3.png"
-        alt=""
-        width="703"
-        height="119"
-        role="presentation"
-        class="img-responsive atto_image_button_text-bottom"
-      /><br />
-    </p>
+        <p>
+          <em>Ejemplo</em>: Sea la siguiente página que muestra una serie de
+          capas anidadas unas dentro de otras:
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/2.7.3.png"
+            alt=""
+            width="703"
+            height="119"
+            role="presentation"
+            class="img-responsive atto_image_button_text-bottom"
+          /><br />
+        </p>
 
-    <p></p>
+        <p></p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre style="color: #000000; background: #ffffff">DOCTYPE html&gt;
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >DOCTYPE html&gt;
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
@@ -175,232 +213,237 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>
-      <span lang="EN-US"
-        ><strong style="font-size: 0.9375rem"
-          ><em><br />Ejemplo 1:</em></strong
-        ><span style="font-size: 0.9375rem">
-          Si incluimos la siguiente sección de código javascript, vemos como
-          seleccionar el elemento padre de aquel con id="<em>hijo</em>"
-          empleando para ello la función <strong><em>$().parent()</em></strong
-          >:</span
-        ><br
-      /></span>
-    </p>
+        <p>
+          <span lang="EN-US"
+            ><strong style="font-size: 0.9375rem"
+              ><em><br />Ejemplo 1:</em></strong
+            ><span style="font-size: 0.9375rem">
+              Si incluimos la siguiente sección de código javascript, vemos como
+              seleccionar el elemento padre de aquel con id="<em>hijo</em>"
+              empleando para ello la función
+              <strong><em>$().parent()</em></strong
+              >:</span
+            ><br
+          /></span>
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            >    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
         $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
             <span style="color:#696969; ">// Selecciona la capa padre de la capa id='hijo'</span>
             $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#hijo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>parent<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>addClass<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">seleccionado</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
         <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
     <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br />
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/2.7.4.png"
-        alt=""
-        width="751"
-        height="98"
-        role="presentation"
-        class="img-responsive atto_image_button_text-bottom"
-        style="font-size: 0.9375rem"
-      />
-    </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/2.7.4.png"
+            alt=""
+            width="751"
+            height="98"
+            role="presentation"
+            class="img-responsive atto_image_button_text-bottom"
+            style="font-size: 0.9375rem"
+          />
+        </p>
 
-    <p>
-      <br />
-      <strong><em>Ejemplo 2:</em></strong> La siguiente sección de código
-      selecciona <em><u>todas los elementos padres</u></em> del elemento con
-      id="<em>hijo</em>" empleando la función
-      <strong><em>$().parents()</em></strong
-      >:&nbsp;
-    </p>
+        <p>
+          <br />
+          <strong><em>Ejemplo 2:</em></strong> La siguiente sección de código
+          selecciona <em><u>todas los elementos padres</u></em> del elemento con
+          id="<em>hijo</em>" empleando la función
+          <strong><em>$().parents()</em></strong
+          >:&nbsp;
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            >    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
         $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
             <span style="color:#696969; ">// Selecciona todas las capas padre de la capa id='hijo'</span>
             $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#hijo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>parents<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>addClass<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">seleccionado</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
         <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
     <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br />
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/2.7.5.png"
-        alt=""
-        width="753"
-        height="89"
-        role="presentation"
-        class="img-responsive atto_image_button_text-bottom"
-        style="font-size: 0.9375rem"
-      />
-    </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/2.7.5.png"
+            alt=""
+            width="753"
+            height="89"
+            role="presentation"
+            class="img-responsive atto_image_button_text-bottom"
+            style="font-size: 0.9375rem"
+          />
+        </p>
 
-    <p>
-      El método <strong><em>parents()</em></strong> admite un selector como
-      argumento para restringir los elementos padres seleccionados. Por ejemplo,
-      el siguiente código selecciona aquellos elementos padre del elemento con
-      id="hijo" <em><u>que sean capas y tengan la hoja de estilo "capa"</u></em
-      >:&nbsp;
-    </p>
+        <p>
+          El método <strong><em>parents()</em></strong> admite un selector como
+          argumento para restringir los elementos padres seleccionados. Por
+          ejemplo, el siguiente código selecciona aquellos elementos padre del
+          elemento con id="hijo"
+          <em><u>que sean capas y tengan la hoja de estilo "capa"</u></em
+          >:&nbsp;
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            >    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
         $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
             <span style="color:#696969; ">// Selecciona todas las capa con estilo 'capa' padres de la capa 'hijo' </span>
             $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#hijo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>parents<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">div.capa</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>addClass<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">seleccionado</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
         <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
     <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br />
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/2.7.6.png"
-        alt=""
-        width="753"
-        height="97"
-        role="presentation"
-        class="img-responsive atto_image_button_text-bottom"
-        style="font-size: 0.9375rem"
-      />
-    </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/2.7.6.png"
+            alt=""
+            width="753"
+            height="97"
+            role="presentation"
+            class="img-responsive atto_image_button_text-bottom"
+            style="font-size: 0.9375rem"
+          />
+        </p>
 
-    <p>
-      <strong><em>Ejemplo 3:</em></strong> La siguiente sección de código
-      selecciona todos los elementos padre del elemento con id= “<em>nieto</em>”
-      hasta el elemento con id= “<em>abuelo</em>” empleando la función
-      <strong><em>$().parentsUntil()</em></strong
-      >:&nbsp;
-    </p>
+        <p>
+          <strong><em>Ejemplo 3:</em></strong> La siguiente sección de código
+          selecciona todos los elementos padre del elemento con id=
+          “<em>nieto</em>” hasta el elemento con id= “<em>abuelo</em>” empleando
+          la función <strong><em>$().parentsUntil()</em></strong
+          >:&nbsp;
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            >    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
         $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
             <span style="color:#696969; ">// Selecciona todas las capas padre de la capa 'nieto' hasta la capa 'padre'</span>
             $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#nieto</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>parentsUntil<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#abuelo</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>addClass<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">seleccionado</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
         <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
     <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <br clear="all" />
+        <br clear="all" />
 
-    <p style="text-align: center">
-      <strong
-        >&nbsp;<img
-          src="../../.imagenes/2.7.7.png"
-          alt=""
-          width="748"
-          height="95"
-          role="presentation"
-          class="img-responsive atto_image_button_text-bottom"
-      /></strong>
-    </p>
-    <br />
-    <p></p>
-  </div>
-</div>
-<h3>Obtención de elementos hijos.</h3>
-<div class="box py-3 contents">
-  <div class="no-overflow">
-    <p dir="ltr" style="text-align: left"></p>
-    <p>
-      <span style="font-size: 0.9375rem"
-        >JQuery dispone de los siguientes funciones para obtener los elementos
-        hijos de un elemento seleccionado:</span
-      ><br />
-    </p>
+        <p style="text-align: center">
+          <strong
+            >&nbsp;<img
+              src="../../.imagenes/2.7.7.png"
+              alt=""
+              width="748"
+              height="95"
+              role="presentation"
+              class="img-responsive atto_image_button_text-bottom"
+          /></strong>
+        </p>
+        <br />
+        <p></p>
+      </div>
+    </div>
+    <h3>Obtención de elementos hijos.</h3>
+    <div class="box py-3 contents">
+      <div class="no-overflow">
+        <p dir="ltr" style="text-align: left"></p>
+        <p>
+          <span style="font-size: 0.9375rem"
+            >JQuery dispone de los siguientes funciones para obtener los
+            elementos hijos de un elemento seleccionado:</span
+          ><br />
+        </p>
 
-    <p></p>
-    <ul>
-      <li>
-        <strong><em>$().children()</em></strong
-        >&nbsp;: Devuelve los elementos contenidos en el elemento
-        seleccionado.&nbsp;
-      </li>
-      <li>
-        <strong><em>$().find(&lt;selector&gt;)</em></strong
-        >&nbsp;:&nbsp; Devuelve
-        <em
-          ><u
-            >todos los elementos contenidos en el elemento seleccionados</u
-          ></em
-        >
-        ( tanto directos como indirectos ) que cumplan además con el selector
-        indicado como argumento. &nbsp;
-      </li>
-    </ul>
-    <p></p>
+        <p></p>
+        <ul>
+          <li>
+            <strong><em>$().children()</em></strong
+            >&nbsp;: Devuelve los elementos contenidos en el elemento
+            seleccionado.&nbsp;
+          </li>
+          <li>
+            <strong><em>$().find(&lt;selector&gt;)</em></strong
+            >&nbsp;:&nbsp; Devuelve
+            <em
+              ><u
+                >todos los elementos contenidos en el elemento seleccionados</u
+              ></em
+            >
+            ( tanto directos como indirectos ) que cumplan además con el
+            selector indicado como argumento. &nbsp;
+          </li>
+        </ul>
+        <p></p>
 
-    <p>
-      Vamos a emplear la siguiente web como modelo para nuestros ejemplos.
-      Contiene una capa ‘<em>padre’</em> que contiene 3 párrafos “<em>A</em>”,
-      “<em>B</em>”, y “<em>C</em>”, y una segunda capa ‘<em>hijo’</em> que
-      contiene los párrafos “ <em>1</em>”, “<em>2</em>” y “<em>3</em>”:&nbsp;
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/2.7.8.png"
-        alt=""
-        width="749"
-        height="214"
-        role="presentation"
-        class="img-responsive atto_image_button_text-bottom"
-      /><br />
-    </p>
+        <p>
+          Vamos a emplear la siguiente web como modelo para nuestros ejemplos.
+          Contiene una capa ‘<em>padre’</em> que contiene 3 párrafos
+          “<em>A</em>”, “<em>B</em>”, y “<em>C</em>”, y una segunda capa ‘<em
+            >hijo’</em
+          >
+          que contiene los párrafos “ <em>1</em>”, “<em>2</em>” y
+          “<em>3</em>”:&nbsp;
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/2.7.8.png"
+            alt=""
+            width="749"
+            height="214"
+            role="presentation"
+            class="img-responsive atto_image_button_text-bottom"
+          /><br />
+        </p>
 
-    <p></p>
+        <p></p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
@@ -436,219 +479,221 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>
-      &nbsp;<br /><strong style="font-size: 0.9375rem"
-        ><em>Ejemplo 1</em></strong
-      ><span style="font-size: 0.9375rem"
-        >: El siguiente código Javascript selecciona todos los elementos hijos
-        (directos) del elemento con id = ‘</span
-      ><em style="font-size: 0.9375rem">padre’ </em>
-      <span style="font-size: 0.9375rem"
-        >empleando la función
-        <strong><em>$().children():&nbsp;</em></strong></span
-      >
-    </p>
+        <p>
+          &nbsp;<br /><strong style="font-size: 0.9375rem"
+            ><em>Ejemplo 1</em></strong
+          ><span style="font-size: 0.9375rem"
+            >: El siguiente código Javascript selecciona todos los elementos
+            hijos (directos) del elemento con id = ‘</span
+          ><em style="font-size: 0.9375rem">padre’ </em>
+          <span style="font-size: 0.9375rem"
+            >empleando la función
+            <strong><em>$().children():&nbsp;</em></strong></span
+          >
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            >    <span style="color:#808030; ">&lt;</span>script<span style="color:#808030; ">&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >    <span style="color:#808030; ">&lt;</span>script<span style="color:#808030; ">&gt;</span>
         $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
             <span style="color:#696969; ">// Selecciona los elementos hijos directos de la capa 'padre'</span>
             $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#padre</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>children<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>addClass<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">seleccionado</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
         <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
     <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br />
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/2.7.9.png"
-        alt=""
-        width="752"
-        height="179"
-        role="presentation"
-        class="img-responsive atto_image_button_text-bottom"
-        style="font-size: 0.9375rem"
-      />
-    </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/2.7.9.png"
+            alt=""
+            width="752"
+            height="179"
+            role="presentation"
+            class="img-responsive atto_image_button_text-bottom"
+            style="font-size: 0.9375rem"
+          />
+        </p>
 
-    <p>
-      La función <strong><em>$().children() </em></strong>también acepta también
-      como argumento un selector para restringir los elementos hijos que quieren
-      obtenerse. Por ejemplo; el siguiente código
-      <em
-        ><u
-          >selecciona únicamente los párrafos contenidos en el elemento con id
-          =‘<span>padre’</span>:</u
-        ></em
-      >
-    </p>
+        <p>
+          La función <strong><em>$().children() </em></strong>también acepta
+          también como argumento un selector para restringir los elementos hijos
+          que quieren obtenerse. Por ejemplo; el siguiente código
+          <em
+            ><u
+              >selecciona únicamente los párrafos contenidos en el elemento con
+              id =‘<span>padre’</span>:</u
+            ></em
+          >
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            >    <span style="color:#808030; ">&lt;</span>script<span style="color:#808030; ">&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >    <span style="color:#808030; ">&lt;</span>script<span style="color:#808030; ">&gt;</span>
         $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
             <span style="color:#696969; ">// Selecciona los elementos hijos parrafo directos de la capa 'padre'</span>
             $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#padre</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>children<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">p</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>addClass<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">seleccionado</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
         <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
     <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br />
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/2.7.10.png"
-        alt=""
-        width="752"
-        height="179"
-        role="presentation"
-        class="img-responsive atto_image_button_text-bottom"
-        style="font-size: 0.9375rem"
-      />
-    </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/2.7.10.png"
+            alt=""
+            width="752"
+            height="179"
+            role="presentation"
+            class="img-responsive atto_image_button_text-bottom"
+            style="font-size: 0.9375rem"
+          />
+        </p>
 
-    <p>
-      <strong><em>Ejemplo 3:</em></strong> El siguiente código selecciona todos
-      los elementos hijos (directos e indirectos) del elemento con id = ‘<em
-        >padre’</em
-      >
-      que sean párrafos empleando la función <strong><em>$().find()</em></strong
-      >.&nbsp; Esto seleccionar por tanto los párrafos ‘<em>A’</em>,
-      ‘<em>B’</em>, y ‘<em>C’</em> de la capa id=‘<em>padre’ y</em>&nbsp;los
-      párrafos ‘<em>1’</em>, ‘ <em>2’</em>, y ‘<em>3’</em>&nbsp;contenidos a su
-      vez en la capa id=‘<em>hijo’</em>:
-    </p>
+        <p>
+          <strong><em>Ejemplo 3:</em></strong> El siguiente código selecciona
+          todos los elementos hijos (directos e indirectos) del elemento con id
+          = ‘<em>padre’</em> que sean párrafos empleando la función
+          <strong><em>$().find()</em></strong
+          >.&nbsp; Esto seleccionar por tanto los párrafos ‘<em>A’</em>,
+          ‘<em>B’</em>, y ‘<em>C’</em> de la capa id=‘<em>padre’ y</em>&nbsp;los
+          párrafos ‘<em>1’</em>, ‘ <em>2’</em>, y ‘<em>3’</em>&nbsp;contenidos a
+          su vez en la capa id=‘<em>hijo’</em>:
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            >    <span style="color:#808030; ">&lt;</span>script<span style="color:#808030; ">&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                >    <span style="color:#808030; ">&lt;</span>script<span style="color:#808030; ">&gt;</span>
         $<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>ready<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
             <span style="color:#696969; ">// Selecciona todos los párrafos hijos (directos/indirectos) de la capa 'padre'</span>
             $<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">#padre</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>find<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">p</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>addClass<span style="color:#808030; ">(</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">seleccionado</span><span style="color:#800000; ">'</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
         <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
     <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">/</span>script<span style="color:#808030; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>&nbsp;</p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/2.7.11.png"
-        alt=""
-        width="750"
-        height="180"
-        role="presentation"
-        class="img-responsive atto_image_button_text-bottom"
-        style="font-size: 0.9375rem"
-      />
-    </p>
-    <p></p>
-  </div>
-</div>
-<h3>Obtención de elementos hermanos.</h3>
-<div class="box py-3 contents">
-  <div class="no-overflow">
-    <p dir="ltr" style="text-align: left"></p>
-    <p>
-      <span style="font-size: 0.9375rem"
-        >JQuery dispone de funciones que permiten obtener y recorrer los
-        elementos ‘</span
-      ><em style="font-size: 0.9375rem">hermanos’</em
-      ><span style="font-size: 0.9375rem">
-        situados al mismo nivel de un elemento en el modelo de documento (DOM).
-        Todas ellas se invocan a partir de la selección de un elemento y
-        retornan la selección de sus respectivos elementos hermanos:</span
-      ><br />
-    </p>
+        <p>&nbsp;</p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/2.7.11.png"
+            alt=""
+            width="750"
+            height="180"
+            role="presentation"
+            class="img-responsive atto_image_button_text-bottom"
+            style="font-size: 0.9375rem"
+          />
+        </p>
+        <p></p>
+      </div>
+    </div>
+    <h3>Obtención de elementos hermanos.</h3>
+    <div class="box py-3 contents">
+      <div class="no-overflow">
+        <p dir="ltr" style="text-align: left"></p>
+        <p>
+          <span style="font-size: 0.9375rem"
+            >JQuery dispone de funciones que permiten obtener y recorrer los
+            elementos ‘</span
+          ><em style="font-size: 0.9375rem">hermanos’</em
+          ><span style="font-size: 0.9375rem">
+            situados al mismo nivel de un elemento en el modelo de documento
+            (DOM). Todas ellas se invocan a partir de la selección de un
+            elemento y retornan la selección de sus respectivos elementos
+            hermanos:</span
+          ><br />
+        </p>
 
-    <p></p>
-    <ul>
-      <li>
-        <strong><em>$().next()</em></strong
-        >&nbsp;: Devuelve el siguiente elemento hermano.
-      </li>
-      <li>
-        <strong><em>$().prev()</em></strong
-        >&nbsp;: Devuelve el anterior elemento hermano.
-      </li>
-      <li>
-        <strong><em>$().nextAll()</em></strong
-        >&nbsp;: Devuelve todos los elementos hermanos anteriores
-      </li>
-      <li>
-        <strong><em>$().prevAll()</em></strong
-        >&nbsp;: Devuelve todos los elementos hermanos previos.
-      </li>
-    </ul>
-    <p></p>
+        <p></p>
+        <ul>
+          <li>
+            <strong><em>$().next()</em></strong
+            >&nbsp;: Devuelve el siguiente elemento hermano.
+          </li>
+          <li>
+            <strong><em>$().prev()</em></strong
+            >&nbsp;: Devuelve el anterior elemento hermano.
+          </li>
+          <li>
+            <strong><em>$().nextAll()</em></strong
+            >&nbsp;: Devuelve todos los elementos hermanos anteriores
+          </li>
+          <li>
+            <strong><em>$().prevAll()</em></strong
+            >&nbsp;: Devuelve todos los elementos hermanos previos.
+          </li>
+        </ul>
+        <p></p>
 
-    <p>
-      Estas funciones pueden combinarse además con las funciones
-      <strong><em>$().first()</em></strong> y <strong><em>$().</em></strong
-      ><strong><em>last()</em></strong> que permiten obtener el primer y último
-      elemento de una selección.
-    </p>
+        <p>
+          Estas funciones pueden combinarse además con las funciones
+          <strong><em>$().first()</em></strong> y <strong><em>$().</em></strong
+          ><strong><em>last()</em></strong> que permiten obtener el primer y
+          último elemento de una selección.
+        </p>
 
-    <p>
-      <strong
-        ><em><u>Ejemplo: </u></em></strong
-      >La siguiente página muestra una lista de opciones y una serie de botones
-      que permiten seleccionar diferentes elementos hermanos
-      <em>&lt;li&gt;</em> contenidos en la lista ordenada <em>&lt;ol&gt;</em>:
-    </p>
-    <p style="text-align: center">
-      <img
-        src="../../.imagenes/2.7.12.png"
-        alt=""
-        width="200"
-        height="308"
-        role="presentation"
-        class="img-responsive atto_image_button_text-bottom"
-      /><br />
-    </p>
-    <p style="text-align: justify">
-      Cada botón selecciona el elemento <em>&lt;li&gt;</em> indicado asignándole
-      una clase de estilo para remarcarlo. Se emplean para ello las funciones
-      <strong><em>$().next(), $().prev(), $().nextAll()</em></strong> y
-      <strong><em>$().prevAll()</em></strong> vistas antes junto con otras
-      funciones de JQuery:&nbsp;
-    </p>
+        <p>
+          <strong
+            ><em><u>Ejemplo: </u></em></strong
+          >La siguiente página muestra una lista de opciones y una serie de
+          botones que permiten seleccionar diferentes elementos hermanos
+          <em>&lt;li&gt;</em> contenidos en la lista ordenada
+          <em>&lt;ol&gt;</em>:
+        </p>
+        <p style="text-align: center">
+          <img
+            src="../../.imagenes/2.7.12.png"
+            alt=""
+            width="200"
+            height="308"
+            role="presentation"
+            class="img-responsive atto_image_button_text-bottom"
+          /><br />
+        </p>
+        <p style="text-align: justify">
+          Cada botón selecciona el elemento <em>&lt;li&gt;</em> indicado
+          asignándole una clase de estilo para remarcarlo. Se emplean para ello
+          las funciones
+          <strong><em>$().next(), $().prev(), $().nextAll()</em></strong> y
+          <strong><em>$().prevAll()</em></strong> vistas antes junto con otras
+          funciones de JQuery:&nbsp;
+        </p>
 
-    <p></p>
+        <p></p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
@@ -715,65 +760,66 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>
-      <br />
-      <strong
-        ><em><u>Ejemplo:</u> </em></strong
-      >El siguiente ejemplo es semejante al anterior. Muestra una lista de
-      elemento <em>&lt;li&gt; </em>donde puede seleccionarse el primer elemento,
-      el último, o desplazarse entre ellos hacia delante y detrás pulsando los
-      botones “<em>PRIMERO</em>”, “<em>ULTIMO</em>”, “ <em>SIGUIENTE</em>” y
-      “<em>ANTERIOR</em>”:
-    </p>
-    <p>
-      <img
-        src="../../.imagenes/2.7.13.png"
-        alt=""
-        role="presentation"
-      /><br />
-    </p>
+        <p>
+          <br />
+          <strong
+            ><em><u>Ejemplo:</u> </em></strong
+          >El siguiente ejemplo es semejante al anterior. Muestra una lista de
+          elemento <em>&lt;li&gt; </em>donde puede seleccionarse el primer
+          elemento, el último, o desplazarse entre ellos hacia delante y detrás
+          pulsando los botones “<em>PRIMERO</em>”, “<em>ULTIMO</em>”, “
+          <em>SIGUIENTE</em>” y “<em>ANTERIOR</em>”:
+        </p>
+        <p>
+          <img
+            src="../../.imagenes/2.7.13.png"
+            alt=""
+            role="presentation"
+          /><br />
+        </p>
 
-    <p style="text-align: center"></p>
+        <p style="text-align: center"></p>
 
-    <p style="text-align: justify">
-      La variable <em>$opcion_seleccionada</em> almacena inicialmente la
-      referencia a la primera opción <em>&lt;li&gt;</em> asignándole la hoja de
-      estilo ‘sel’ para destacarle.&nbsp;<span style="font-size: 0.9375rem"
-        >Con la pulsación de cada botón, se desmarca (eliminando la hoja de
-        estilo "sel") el elemento actualmente marcado referenciado por la
-        variable<em> $opcion_seleccionada</em>, se obtiene el siguiente elemento
-        hermano correspondiente llamando&nbsp;</span
-      ><span style="font-size: 0.9375rem"
-        >a las funciones <strong><em>$().</em></strong></span
-      ><span style="font-size: 0.9375rem"> </span
-      ><em style="font-size: 0.9375rem"><strong>next()</strong></em
-      ><span style="font-size: 0.9375rem">
-        y <strong><em>$().</em></strong></span
-      ><span style="font-size: 0.9375rem"
-        ><span
-          ><em style="font-weight: bold">prev() </em
-          ><span>a partir del elemento actual</span
-          ><em style="font-weight: bold">, </em>y se le asigna la hoja
-          "<em>sel</em>" para remarcarlo como el actualmente seleccionado. Por
-          último se guarda la referencia al nuevo elemento seleccionado a la
-          variable <em>$opcion_seleccionada</em> para la siguiente pulsación de
-          botón:</span
-        ></span
-      >
-    </p>
+        <p style="text-align: justify">
+          La variable <em>$opcion_seleccionada</em> almacena inicialmente la
+          referencia a la primera opción <em>&lt;li&gt;</em> asignándole la hoja
+          de estilo ‘sel’ para destacarle.&nbsp;<span
+            style="font-size: 0.9375rem"
+            >Con la pulsación de cada botón, se desmarca (eliminando la hoja de
+            estilo "sel") el elemento actualmente marcado referenciado por la
+            variable<em> $opcion_seleccionada</em>, se obtiene el siguiente
+            elemento hermano correspondiente llamando&nbsp;</span
+          ><span style="font-size: 0.9375rem"
+            >a las funciones <strong><em>$().</em></strong></span
+          ><span style="font-size: 0.9375rem"> </span
+          ><em style="font-size: 0.9375rem"><strong>next()</strong></em
+          ><span style="font-size: 0.9375rem">
+            y <strong><em>$().</em></strong></span
+          ><span style="font-size: 0.9375rem"
+            ><span
+              ><em style="font-weight: bold">prev() </em
+              ><span>a partir del elemento actual</span
+              ><em style="font-weight: bold">, </em>y se le asigna la hoja
+              "<em>sel</em>" para remarcarlo como el actualmente seleccionado.
+              Por último se guarda la referencia al nuevo elemento seleccionado
+              a la variable <em>$opcion_seleccionada</em> para la siguiente
+              pulsación de botón:</span
+            ></span
+          >
+        </p>
 
-    <table border="1" cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          <td width="576" valign="top">
-            <pre
-              style="color: #000000; background: #ffffff"
-            ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="576" valign="top">
+                <pre
+                  style="color: #000000; background: #ffffff"
+                ><span style="color:#004a43; ">&lt;!DOCTYPE html&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
     <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
@@ -837,51 +883,73 @@
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
 <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br />
-    <p></p>
-  </div>
-</div>
-<a
-  href="../2. JQuery - Selección y manipulación de eventos/2.6. Manipulación del modelo de objeto de documento.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Anterior lección
-</a>
-<a
-  href="../3. JQuery - Manejo de eventos/3.1. Captura de eventos.html"
-  style="
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.backgroundColor='#0056b3'"
-  onmouseout="this.style.backgroundColor='#007bff'"
->
-  Siguiente lección
-</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <p></p>
+      </div>
+    </div>
+    <a
+      href="../2. JQuery - Selección y manipulación de eventos/2.6. Manipulación del modelo de objeto de documento.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Anterior lección
+    </a>
+    <a
+      href="../3. JQuery - Manejo de eventos/3.1. Captura de eventos.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Siguiente lección
+    </a>
+    <a
+      href="../../readme.html"
+      style="
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Inicio/Leeme
+    </a>
+  </body>
+</html>
